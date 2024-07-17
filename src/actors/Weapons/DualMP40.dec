@@ -1,0 +1,419 @@
+ACTOR DualMP40 : BrutalWeapon
+{
+	Weapon.AmmoType1 "Mauser9mm"
+	Weapon.AmmoType2 "DualMP40Ammo"
+	Weapon.SelectionOrder 1700
+	+WEAPON.NO_AUTO_SWITCH
+	-WEAPON.NOAUTOFIRE
+	Inventory.PickupSound "MP40/Draw"
+	Inventory.Pickupmessage "$GOTMP40"
+	Obituary "$OBBD_MP40"
+	+WEAPON.CHEATNOTWEAPON
+	Tag "$TAGBD_DUALMP40"
+	States
+	{
+	KickFlash: 
+		MP42 JKLM 1
+		MP42 N 10
+		MP42 MLKJ 1
+		stop
+	SlideFlash: 
+		MP42 JKLM 1
+		MP42 N 35
+		stop
+	SlideFlashEnd: 
+		MP42 N 5
+		MP42 MLKJ 1
+		stop
+	SlideFlashEndEarly: 
+		MP42 N 2
+		MP42 MLKJ 1
+		stop
+
+	Select:
+		TNT1 A 0 A_Giveinventory("GoSpecial",1)
+		TNT1 A 0 A_GiveInventory("TokenCleaner")
+		TNT1 A 0 A_TakeInventory("MP40",1)
+		TNT1 A 0 A_SetCrosshair( CallACS("GetCrosshair", 17) )
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("SwitchDuals", 1, "SelectDual")
+		TNT1 A 1
+		TNT1 A 0 A_PlaySound("MP40/Draw",5)
+	SelectAnimation:
+		MP42 IHGF 1 A_WeaponReady(WRF_NOFIRE)
+		TNT1 A 0 A_Takeinventory("StartDualWield",1)
+		Goto Ready3
+	SelectDual:
+		TNT1 A 0 A_Takeinventory("SwitchDuals",1)
+		MP42 OPQR 1 A_WeaponReady(WRF_NOFIRE)
+		TNT1 A 0 A_PlaySound("MP40/Draw",5)
+		MP42 STUV 1 A_WeaponReady(WRF_NOFIRE)
+		TNT1 A 0 A_Takeinventory("StartDualWield",1)
+		Goto Ready3
+
+	NoAmmoOnSecondGun:
+		MP42 A 2
+	Ready3:
+	Ready:
+		MP42 A 0
+		MP42 A 0 A_JumpIfInventory("HasUnloadedDualMP40",1,"Ready2")
+		MP42 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
+		MP42 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		MP42 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		MP42 A 0 A_JumpIfInventory("Salute1", 1, "Salute")
+		MP42 A 0 A_JumpIfInventory("Salute2", 1, "Salute")
+		MP42 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		MP42 A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")
+		MP42 A 0 A_JumpIfInventory("Unloading",1,"Unload")
+		MP42 A 1 A_WeaponReady//(WRF_ALLOWRELOAD)
+		MP42 A 0 A_JumpIfInventory("IsRunning",1,"StartSprint")
+		MP42 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		MP42 A 0 A_JumpIfInventory("StartDualWield",1,"DualWield")
+		Loop
+
+	Ready2:
+		MP42 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		MP42 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		MP42 A 0 A_JumpIfInventory("Salute1", 1, "Salute")
+		MP42 A 0 A_JumpIfInventory("Salute2", 1, "Salute")
+		MP42 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		MP42 A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")
+		MP42 A 0 A_JumpIfInventory("Unloading",1,"Unload")
+		MP42 F 1 A_WeaponReady//(WRF_ALLOWRELOAD)
+		MP42 A 0 A_JumpIfInventory("IsRunning",1,"StartSprint")
+		MP42 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		MP42 A 0 A_JumpIfInventory("StartDualWield",1,"DualWield")
+		Loop
+
+	DualWield:
+		MP42 A 1
+		MP40 A 0 A_Giveinventory("SwitchDuals",1)
+		TNT1 A 0 A_Takeinventory("StartDualWield",1)
+		TNT1 F 0 A_GiveInventory("MP40",1)
+		TNT1 A 0 A_SelectWEapon("MP40")
+		Goto Ready
+
+	Deselect:
+		TNT1 A 0 A_Takeinventory("Zoomed",1)
+		TNT1 A 0 A_Takeinventory("ADSmode",1)
+		TNT1 A 0 A_TakeInventory("TossGrenade", 1)
+		TNT1 A 0 A_TakeInventory("Kicking",1)
+		TNT1 A 0 A_TakeInventory("Taunting",1)
+		TNT1 A 0 A_TakeInventory("Reloading",1)
+		TNT1 A 0 A_TakeInventory("Unloading",1)
+		TNT1 A 0 A_TakeInventory("Salute1", 1)
+		TNT1 A 0 A_TakeInventory("Salute2", 1)
+		TNT1 A 0 A_Takeinventory("RifleSelected",1)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_JumpIfInventory("SwitchDuals", 1, "DeselectInstant")
+		MP42 FGHI 1
+		TNT1 AAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+		TNT1 A 1 A_Lower
+		Wait
+
+	Fire:
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
+		TNT1 A 0 A_JumpIfInventory("DualMP40Ammo",1,1)
+		Goto NoAmmo
+		TNT1 A 0 A_Takeinventory("MP40Ammo",1)
+		TNT1 A 0 A_Takeinventory("DualMP40Ammo",1)
+		TNT1 A 0 A_JumpIfInventory("MP40Ammo",9,2)
+		TNT1 A 0 A_PlaySound("weapons/lowammo",CHAN_AUTO)
+		TNT1 AAA 0
+		Goto ResumeFireFrame1
+
+	NoReload:
+		MP42 A 0 A_JumpIfInventory("Mauser9mm",1,1)
+		Goto NoAmmo
+		MP42 A 0 A_TakeInventory("Mauser9mm",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_JumpIfInventory("Mauser9mm",9,2)
+		TNT1 A 0 A_PlaySound("weapons/lowammo",CHAN_AUTO)
+		TNT1 AAA 0
+	ResumeFireFrame1:
+		TNT1 AAAA 0
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("FARSHT", 6)
+		TNT1 A 0 A_PlaySound("MP40/Fire", 1)
+		TNT1 A 0 A_ZoomFactor(0.98)
+		MP42 B 1 BRIGHT A_FireBullets (4, 3, -1, 18, "WeakPuff", FBF_NORANDOM)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_JumpIfInventory("IsNOTTacticalClass", 1, 2)//tactical mode has muzzle climb
+		TNT1 A 0 A_SetPitch(pitch-1.2)
+		TNT1 A 0
+		MP42 C 1 A_FireCustomMissile("DecorativeTracer", random(-6,3), 0, 5, 0)
+		TNT1 A 0 A_FireCustomMissile("PistolCaseSpawn",5,0,6,-2)
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload2")
+		TNT1 A 0 A_JumpIfInventory("MP40Ammo",1,1)//Checks if single gun is not depleted
+		Goto NoAmmoOnSecondGun
+		TNT1 A 0 A_JumpIfInventory("DualMP40Ammo",1,1)
+		Goto NoAmmo
+		TNT1 A 0 A_Takeinventory("DualMP40Ammo",1)
+		Goto ResumeFireFrame2
+
+	NoReload2:
+		TNT1 A 0 A_JumpIfInventory("Mauser9mm",1,1)
+		Goto NoAmmo
+		TNT1 A 0 A_TakeInventory("Mauser9mm",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_JumpIfInventory("Mauser9mm",9,2)
+		TNT1 A 0 A_PlaySound("weapons/lowammo",CHAN_AUTO)
+		TNT1 AAA 0
+	ResumeFireFrame2:
+		TNT1 A 0 A_PlaySound("FARSHT", 6)
+		TNT1 A 0 A_PlaySound("MP40/Fire", 1)
+		TNT1 A 0 A_ZoomFactor(0.98)
+		MP42 D 1 BRIGHT A_FireBullets (4, 3, -1, 18, "WeakPuff", FBF_NORANDOM)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_JumpIfInventory("IsNOTTacticalClass", 1, 2)//tactical mode has muzzle climb
+		TNT1 A 0 A_SetPitch(pitch-1.2)
+		TNT1 A 0
+		TNT1 A 0 A_FireCustomMissile("DecorativeTracer", random(-3,6), 0, -5, 0)
+		MP42 E 1
+		TNT1 A 0 A_FireCustomMissile("PistolCaseSpawn",5,0,-8,-2)
+		TNT1 A 0 A_ReFire
+		MP42 A 1 A_WeaponReady(1)
+		MP42 A 7 A_WeaponReady(1)
+		Goto Ready3
+
+	NoAmmo:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("Zoomed",1)
+		TNT1 A 0 A_Takeinventory("ADSmode",1)
+		TNT1 A 0 A_JumpIfInventory("TurboReload",1,"TurboReload")
+		TNT1 A 0 A_PlaySound("Weapon/Empty", 5)
+	NoAmmo2:
+		TNT1 A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")
+		TNT1 A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		TNT1 A 0 A_JumpIfInventory("Salute1", 1, "Salute")
+		TNT1 A 0 A_JumpIfInventory("Salute2", 1, "Salute")
+		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartSprint")
+		TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		MP42 A 5 A_WeaponReady(WRF_ALLOWZOOM | WRF_NOPRIMARY)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		TNT1 A 0 A_JumpIfInventory("TurboReload",1,"TurboReload")
+		TNT1 A 0 A_JumpIfInventory("DualMP40Ammo",1,"Ready3")
+		TNT1 A 0 A_JumpIfInventory("NoAutoReload", 1, "NoAmmo2")
+		TNT1 A 0 A_JumpIfInventory("Mauser9mm",1,"Reload")
+		TNT1 A 0 A_JumpIfInventory("FiredPrimary",1,"NoAmmo2")
+		Goto Ready3
+
+	Reload:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("Reloading",1)
+		TNT1 A 0 A_Takeinventory("Zoomed",1)
+		TNT1 A 0 A_Takeinventory("ADSmode",1)
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"Ready")
+		TNT1 A 0 A_JumpIfInventory("DualMP40Ammo",64,"Ready")
+		TNT1 A 0 A_JumpIfInventory("Mauser9mm",1,3)
+		Goto NoAmmo
+		TNT1 AAA 0
+		TNT1 A 0 A_GiveInventory ("Pumping", 1)
+		TNT1 A 0 A_Takeinventory("Reloading",1)
+		TNT1 A 0 A_JumpIfInventory("TurboReload",1,"TurboReload")
+		////Reloading starts here
+		MP42 FGHI 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 3 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("HasUnloadedDualMP40",1,"ReloadAfterUnload")
+		///Reloading Right
+		3P4R UVWX 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		2P4R QRR 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 D 0 A_PlaySound("weapons/empty",5)
+		2P4R SSSTUVWXXXY 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("MP40/Reload1",5)
+		2P4R Z 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		2P4R "[\]" 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-4)
+		3P4R ABCDEEEEEEEFGHIIJJJ 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("MP40/Reload2",5)
+		3P4R KLMNNOOOOP 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		2P4R UTRQ 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		3P4R XWVU 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 5
+		//Reloading Left
+		4P4R ABCD 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		4P4R EFF 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 D 0 A_PlaySound("weapons/empty",5)
+		4P4R GGGHIJKLLLM 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("MP40/Reload1",5)
+		4P4R NOPQ 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-4)
+		4P4R RSTUVVVVVVWXYZZ 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		4P4R "[[[" 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("MP40/Reload2",5)
+		4P4R "\]" 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		5P4R ABBCCCCD 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		4P4R HFEDCBA 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 5 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		MP42 IHGF 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+	TurboReload:
+		TNT1 A 0 A_Takeinventory("HasUnloadedMP40",1)
+		TNT1 A 0 A_Takeinventory("HasUnloadedDualMP40",1)
+		TNT1 BA 0
+		Goto InsertBullets
+
+	InsertBullets:
+		TNT1 AAAA 0
+		TNT1 A 0 A_JumpIfInventory("DualMP40Ammo",64,15)
+		TNT1 A 0 A_JumpIfInventory("Mauser9mm",1,3)
+		Goto Ready
+		TNT1 AAAAAA 0
+		TNT1 A 0 A_Giveinventory("MP40Ammo",1)
+		TNT1 A 0 A_Giveinventory("DualMP40Ammo",1)
+		TNT1 A 0 A_Takeinventory("Mauser9mm",1,TIF_NOTAKEINFINITE)
+		Goto InsertBullets
+		TNT1 AAAAAAAAAA 0
+		TNT1 A 0 A_Takeinventory("Reloading",1)
+		TNT1 A 0 A_Refire
+		Goto Ready
+		TNT1 AAAA 0
+		TNT1 A 0 A_Takeinventory("Reloading",1)
+		TNT1 A 0 A_Refire
+		Goto Ready
+
+	Unload:
+		TNT1 A 0 A_Takeinventory("ADSmode",1)
+		TNT1 A 0 A_Takeinventory("Unloading",1)
+		TNT1 A 0 A_JumpIfInventory("DualMP40Ammo",1,3)
+		Goto NoAmmo
+		TNT1 AAA 0
+		TNT1 A 0 A_Takeinventory("Zoomed",1)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_GiveInventory ("Pumping", 1)
+		TNT1 A 0 A_Takeinventory("Reloading",1)
+		MP42 FGHI 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 3 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		///unload Right
+		3P4R UVWX 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		2P4R QRR 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 D 0 A_PlaySound("weapons/empty",5)
+		2P4R SSSTUVWXXXY 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("MP40/Reload1",5)
+		2P4R Z 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		2P4R "[\]" 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		3P4R ABCDEEE 1
+		5P4R HGFE 1
+		3P4R VU 1
+		TNT1 A 5
+		//unload Left
+		4P4R ABCD 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		4P4R EFF 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 D 0 A_PlaySound("weapons/empty",5)
+		4P4R GGGHIJKLLLM 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("MP40/Reload1",5)
+		4P4R NOPQ 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		4P4R RSTUVVVVVU 1
+		5P4R KJI 1
+		4P4R BA 1
+		TNT1 A 0 A_Giveinventory("HasUnloadedDualMP40",1)
+		TNT1 A 0 A_GiveInventory("HasUnloadedMP40", 1)
+		TNT1 A 5 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		MP42 IHGF 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+	RemoveBullets:
+		TNT1 AAAA 0
+		TNT1 A 0 A_JumpIfInventory("DualMP40Ammo",1,3)
+		Goto Ready2
+		TNT1 AAAAAA 0
+		TNT1 A 0 A_Takeinventory("MP40Ammo",1)
+		TNT1 A 0 A_Takeinventory("DualMP40Ammo",1)
+		TNT1 A 0 A_Giveinventory("Mauser9mm",1)
+		Goto RemoveBullets
+		TNT1 AAAAAAAAAA 0
+		TNT1 A 0 A_Takeinventory("Reloading",1)
+		TNT1 A 0 A_Refire
+		Goto Ready2
+		TNT1 AAAA 0
+		TNT1 A 0 A_Takeinventory("Reloading",1)
+		TNT1 A 0 A_Refire
+		Goto Ready2
+
+	Spawn:
+		MP40 Y -1
+		Stop
+
+	Steady:
+		TNT1 A 1
+		Goto Ready
+
+	ReloadAfterUnload:
+		//ReloadRight
+		3P4R UV 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		5P4R EFGH 1
+		3P4R EEEEEEFGHIIJJJ 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("MP40/Reload2",5)
+		3P4R KLMNNOOOOP 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		2P4R UTRQ 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		3P4R XWVU 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 5
+		//Reloading Left
+		4P4R AB 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		5P4R IJK 1
+		4P4R UVVVVVVWXYZZ 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		4P4R "[[[" 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("MP40/Reload2",5)
+		4P4R "\]" 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		5P4R ABBCCCCD 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		4P4R HFEDCBA 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		TNT1 A 5 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		MP42 IHGF 1 A_WEAPONREADY(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		Goto Turboreload
+
+	///Sprint
+
+	StartSprint:
+		MP42 A 1 A_WeaponReady(WRF_NOFIRE)
+	StartSprinting:
+		"####" "#" 0 A_JumpIfInventory("UsedStamina", 40, "StopSprintTired")
+	Sprinting:
+		"####" "#" 0 OFFSET(-9,32)
+		"####" "#" 0 OFFSET(-9,32) A_JumpIfInventory("UsedStamina", 100, "StopSprintTired")
+		"####" "#" 0 offset(-9,32) ACS_ExecuteAlways(852, 0, 0, 0, 0)//Makes player faster.
+		"####" "#" 0 OFFSET(-9,32) A_JumpIfInventory("PowerStrength", 1, 2)
+		"####" "#" 0 OFFSET(-9,32) A_GiveInventory("UsedStamina", 6)
+		"####" "#" 0 OFFSET(-9,32)
+		"####" "#" 1 OFFSET(-9,34) A_SetPitch(pitch -0.5)
+		"####" "#" 1 OFFSET(-6,36) A_SetPitch(pitch -0.5)
+		"####" "#" 1 OFFSET(-3,38) A_SetPitch(pitch -0.5)
+		"####" "#" 1 OFFSET(0,38) A_SetPitch(pitch -0.5)
+		"####" "#" 1 OFFSET(3,36) A_SetPitch(pitch -0.5)
+		"####" "#" 1 OFFSET(6,34) A_SetPitch(pitch -0.5)
+		"####" "#" 1 OFFSET(9,32) A_SetPitch(pitch -0.5)
+		"####" "#" 0 OFFSET(9,32) A_WeaponReady(WRF_NOBOB)
+		"####" "#" 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		"####" "#" 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		"####" "#" 0 A_JumpIfInventory("Reloading",1,"Reload")
+		"####" "#" 0 OFFSET(-9,32) A_GiveInventory("UsedStamina", 6)
+		"####" "#" 0 OFFSET(9,33) A_SpawnItemEx("FootStep", 0, 0, 2, 0, 0, -4)
+		"####" "#" 1 OFFSET(9,34) A_SetPitch(pitch +0.5)
+		"####" "#" 1 OFFSET(6,36) A_SetPitch(pitch +0.5)
+		"####" "#" 1 OFFSET(3,38) A_SetPitch(pitch +0.5)
+		"####" "#" 1 OFFSET(0,38) A_SetPitch(pitch +0.5)
+		"####" "#" 1 OFFSET(-3,36) A_SetPitch(pitch +0.5)
+		"####" "#" 1 OFFSET(-6,34) A_SetPitch(pitch +0.5)
+		"####" "#" 1 OFFSET(-9,32) A_SetPitch(pitch +0.5)
+		"####" "#" 0 OFFSET(-9,32) A_WeaponReady(WRF_NOBOB)
+		"####" "#" 0 OFFSET(-9,32) A_JumpIfInventory("IsRunning", 1, "Sprinting")
+		Goto StopSprint
+
+	StopSprintTired:
+		"####" "#" 1
+		"####" "#" 0 ACS_ExecuteAlways(853, 0, 0, 0, 0)//Makes player slower.
+		"####" "#" 0 A_PlaySound("Tired", 2)
+		"####" "#" 0 A_TakeInventory("UsedStamina", 2)
+		"####" "#" 5 A_WeaponReady
+		"####" "#" 0 A_TakeInventory("UsedStamina", 2)
+		"####" "#" 5 A_WeaponReady
+		"####" "#" 0 A_TakeInventory("UsedStamina", 2)
+		"####" "#" 5 A_WeaponReady
+		"####" "#" 0 A_TakeInventory("UsedStamina", 2)
+		"####" "#" 5 A_WeaponReady
+		"####" "#" 0 A_TakeInventory("UsedStamina", 2)
+		"####" "#" 5 A_WeaponReady
+		Goto Ready
+
+	StopSprint:
+		"####" "#" 1
+		"####" "#" 0 A_JumpIfInventory("UsedStamina", 60, "StopSprintTired")
+		"####" "#" 0 ACS_ExecuteAlways(853, 0, 0, 0, 0)//Makes player slower.
+		Goto Ready
+	}
+}

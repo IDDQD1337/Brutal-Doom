@@ -1,0 +1,255 @@
+ACTOR DualFlameCannon : BrutalWeapon
+{
+	Weapon.SelectionOrder 3400
+	Weapon.AmmoType "Gas"
+	-WEAPON.NOAUTOFIRE
+	Inventory.PickupSound "Flamer/select"
+	Inventory.PickupMessage "$GOTFLAMECANNON"
+	+WEAPON.CHEATNOTWEAPON
+	Tag "$TAGBD_DUALFLAMECANNON"
+	Obituary "$OBBD_FLAMECANNON"
+	States
+	{
+	KickFlash: 
+		DUFL TUVW 1
+		DUFL X 10
+		DUFL WVUT 1
+		stop
+	SlideFlash: 
+		DUFL TUVW 1
+		DUFL X 35
+		stop
+	SlideFlashEnd: 
+		DUFL X 5
+		DUFL WVUT 1
+		stop
+	SlideFlashEndEarly: 
+		DUFL X 2
+		DUFL WVUT 1
+		stop
+
+	Select:
+		TNT1 A 0 A_Giveinventory("GoSpecial",1)
+		TNT1 A 0 A_GiveInventory("TokenCleaner")
+		TNT1 A 0 A_Giveinventory("FlameCannonSelected",1)
+		TNT1 A 0 A_TakeInventory("FlameCannon",1)
+		TNT1 A 0 A_SetCrosshair( CallACS("GetCrosshair", 15) )
+		TNT1 F 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("SwitchDuals", 1, "SelectDual")
+		TNT1 A 1 
+		TNT1 A 0 A_PlaySound("Flamer/select",5)
+		Goto SelectAnimation
+	SelectDual:
+		TNT1 A 0 A_Takeinventory("SwitchDuals",1)
+		FLMG YZ 1 A_WeaponReady(WRF_NOFIRE)
+		FLMG "[]" 1 A_WeaponReady(WRF_NOFIRE)
+		TNT1 A 0 A_PlaySound("Flamer/select",5)
+		FLMG "\" 1 A_WeaponReady(WRF_NOFIRE)
+		DUFL YZ 1 A_WeaponReady(WRF_NOFIRE)
+		DUFL "[" 1 A_WeaponReady(WRF_NOFIRE)
+		TNT1 A 0 A_Takeinventory("StartDualWield",1)
+		Goto Ready
+		
+	SelectAnimation:
+		DUFL SRQP 1 A_WeaponReady(WRF_NOFIRE)
+		TNT1 A 0 A_Takeinventory("StartDualWield",1)
+	Ready:
+	Ready3:
+		DUFL A 1 A_WeaponReady
+		DUFL A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		DUFL A 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		DUFL A 0 A_JumpIfInventory("Salute1", 1, "Salute")
+		DUFL A 0 A_JumpIfInventory("Salute2", 1, "Salute")
+		DUFL A 0 A_JumpIfInventory("TossGrenade",1,"TossGrenade")
+		DUFL A 0 A_JumpIfInventory("IsRunning",1,"StartSprint")
+		PIST F 0 A_JumpIfInventory("StartDualWield",1,"DualWield")
+		Goto Ready3
+
+
+
+	StartSprint:
+		DUFL PQR 1 A_WeaponReady(WRF_NOFIRE)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_JumpIfInventory("UsedStamina", 40, "StopSprintTired")
+		TNT1 A 0 A_JumpIf(CallACS("InfiniteSprint")==true,"SprintingInfinite")
+	Sprinting:
+		TNT1 T 0 offset(-9,32)
+		TNT1 T 0 offset(-9,32) A_JumpIfInventory("IsStandingStill", 1, "Ready3")
+		TNT1 T 0 offset(-9,32) A_JumpIfInventory("UsedStamina", 100, "StopSprintTired")
+		TNT1 A 0 offset(-9,32) ACS_ExecuteAlways(852, 0, 0, 0, 0)//Makes player faster.
+		TNT1 T 0 offset(-9,32) A_JumpIfInventory("PowerStrength", 1, 2)
+		TNT1 T 0 offset(-9,32) A_GiveInventory("UsedStamina", 8)
+		TNT1 T 0 offset(-9,32)
+		DUFL T 1 offset(-9,34) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(-6,36) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(-3,38) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(0,38) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(3,36) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(6,34) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(9,32) A_SetPitch(pitch -0.5)
+		TNT1 T 0 offset(9,32) A_WeaponReady(WRF_NOBOB)
+		TNT1 T 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 T 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		TNT1 T 0 offset(-9,32) A_GiveInventory("UsedStamina", 8)
+		TNT1 T 0 offset(9,33) A_SpawnItemEx("FootStep", 0, 0, 2, 0, 0, -4)
+		DUFL T 1 offset(9,34) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(6,36) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(3,38) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(0,38) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(-3,36) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(-6,34) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(-9,32) A_SetPitch(pitch +0.5)
+		TNT1 T 0 offset(-9,32) A_WeaponReady(WRF_NOBOB)
+		TNT1 T 0 offset(-9,32) A_JumpIfInventory("IsRunning", 1, "Sprinting")
+		Goto StopSprint
+
+	SprintingInfinite:
+		TNT1 T 0 offset(-9,32)
+		TNT1 T 0 offset(-9,32) A_JumpIfInventory("IsStandingStill", 1, "Ready3")
+		TNT1 T 0 offset(-9,32)
+		TNT1 A 0 offset(-9,32) ACS_ExecuteAlways(852, 0, 0, 0, 0)//Makes player faster.
+		TNT1 T 0 offset(-9,32)
+		TNT1 T 0 offset(-9,32)
+		TNT1 T 0 offset(-9,32)
+		DUFL T 1 offset(-9,34) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(-6,36) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(-3,38) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(0,38) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(3,36) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(6,34) A_SetPitch(pitch -0.5)
+		DUFL T 1 offset(9,32) A_SetPitch(pitch -0.5)
+		TNT1 T 0 offset(9,32) A_WeaponReady(WRF_NOBOB)
+		TNT1 T 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 T 0 A_JumpIfInventory("Taunting",1,"Taunt")
+		TNT1 T 0 offset(-9,32)
+		TNT1 T 0 offset(9,33) A_SpawnItemEx("FootStep", 0, 0, 2, 0, 0, -4)
+		DUFL T 1 offset(9,34) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(6,36) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(3,38) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(0,38) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(-3,36) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(-6,34) A_SetPitch(pitch +0.5)
+		DUFL T 1 offset(-9,32) A_SetPitch(pitch +0.5)
+		TNT1 T 0 offset(-9,32) A_WeaponReady(WRF_NOBOB)
+		TNT1 T 0 offset(-9,32) A_JumpIfInventory("IsRunning", 1, "SprintingInfinite")
+		Goto StopSprint
+
+	StopSprint:
+		TNT1 A 0 A_JumpIfInventory("UsedStamina", 60, "StopSprintTired")
+		DUFL RQP 1
+		TNT1 A 0 ACS_ExecuteAlways(853, 0, 0, 0, 0)//Makes player slower.
+		Goto Ready
+
+	StopSprintTired:
+		DUFL RQP 1
+		TNT1 A 0 ACS_ExecuteAlways(853, 0, 0, 0, 0)//Makes player slower.
+		TNT1 A 0 A_PlaySound("Tired", 2)
+		TNT1 A 0 A_TakeInventory("UsedStamina", 2)
+		DUFL A 5 A_WeaponReady
+		TNT1 A 0 A_TakeInventory("UsedStamina", 2)
+		DUFL A 5 A_WeaponReady
+		TNT1 A 0 A_TakeInventory("UsedStamina", 2)
+		DUFL A 5 A_WeaponReady
+		TNT1 A 0 A_TakeInventory("UsedStamina", 2)
+		DUFL A 5 A_WeaponReady
+		TNT1 A 0 A_TakeInventory("UsedStamina", 2)
+		DUFL A 5 A_WeaponReady
+		Goto Ready
+
+	DryFire:
+		DUFL A 10 A_PlaySound("Weapon/Empty",5)
+		Goto Ready+6
+
+	Deselect:
+		TNT1 A 0 A_JumpIfInventory("SwitchDuals", 1, "DeselectInstant")
+		TNT1 A 0 A_TakeInventory("TossGrenade", 1)
+		DUFL PQRS 1
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_Lower
+		TNT1 A 1 A_Lower
+		Wait
+
+	Spawn:
+		MANA H 1
+		Loop
+
+	Fire:
+		TNT1 A 0 A_JumpIf(waterlevel > 1, "DryFire")
+		TNT1 A 0 A_JumpIfInventory("Gas", 60, "Fireball")
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		Goto DryFire
+
+	AltFire:
+		TNT1 A 0 A_JumpIf(waterlevel > 1, "DryFire")
+		TNT1 A 0 A_JumpIfInventory("Gas", 88, "Flamethrower")
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		Goto DryFire
+
+	Fireball:
+		TNT1 A 0 A_AlertMonsters
+		DUFL B 1 BRIGHT A_FireCustomMissile("BigFireBallWithGravity", random(-2,2), 1, 12, -6)
+		TNT1 A 0 A_SetPitch(-2.0 + pitch)
+		TNT1 A 0 A_TakeInventory("Gas", 30)
+		TNT1 AAAAAAAAAAA 0 BRIGHT A_FireCustomMissile("Shotgunparticles2", random(-12,12), 0, 0, -2, 0, random(-9,9))
+		TNT1 A 0 A_FireCustomMissile("ShakeYourAssDouble", 0, 0, 0, 0)
+		DUFL CD 1 BRIGHT
+		DUFL EF 1 A_SetPitch(+1.0 + pitch)
+		DUFL G 1 BRIGHT A_FireCustomMissile("BigFireBallWithGravity", random(-2,2), 1, -12, -6)
+		TNT1 A 0 A_SetPitch(-2.0 + pitch)
+		TNT1 A 0 A_TakeInventory("Gas", 30)
+		TNT1 AAAAAAAAAAA 0 BRIGHT A_FireCustomMissile("Shotgunparticles2", random(-12,12), 0, 0, -2, 0, random(-9,9))
+		TNT1 A 0 A_FireCustomMissile("ShakeYourAssDouble", 0, 0, 0, 0)
+		DUFL HI 1 BRIGHT
+		DUFL JK 1 A_SetPitch(+1.0 + pitch)
+		Goto Ready+2
+
+	Flamethrower:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("FLAMER", CHAN_WEAPON, 1)
+		TNT1 A 0 BRIGHT A_FireCustomMissile("FlamethrowerMissile", 0, 1, 12, -12, 0, 8)
+		TNT1 AAA 0 BRIGHT A_FireCustomMissile("Shotgunparticles2", random(-12,12), 0, 12, -2, 0, random(-9,9))
+		TNT1 A 0 BRIGHT A_FireCustomMissile("FlamethrowerMissile", 0, 1, -12, -12, 0, 8)
+		TNT1 AAA 0 BRIGHT A_FireCustomMissile("Shotgunparticles2", random(-12,12), 0, -12, -2, 0, random(-9,9))
+		TNT1 A 0 A_TakeInventory("Gas", 22)
+		DUFL LM 1 BRIGHT A_SetAngle(random(1, -1) + angle)
+		TNT1 A 0 BRIGHT A_SetPitch(random(1, -1) + pitch)
+		TNT1 A 0 BRIGHT A_FireCustomMissile("FlamethrowerMissileNoLight", 0, 1, 12, -12, 0, 8)
+		TNT1 AAA 0 BRIGHT A_FireCustomMissile("Shotgunparticles2", random(-12,12), 0, 12, -2, 0, random(-9,9))
+		TNT1 A 0 BRIGHT A_FireCustomMissile("FlamethrowerMissileNoLight", 0, 1, 12, -12, 0, 8)
+		TNT1 AAA 0 BRIGHT A_FireCustomMissile("Shotgunparticles2", random(-12,12), 0, -12, -2, 0, random(-9,9))
+		TNT1 A 0 A_TakeInventory("Gas", 22)
+		DUFL NO 1 BRIGHT
+		TNT1 A 0 BRIGHT A_FireCustomMissile("FlamethrowerMissileNoLight", 0, 1, 12, -12, 0, 8)
+		TNT1 A 0 BRIGHT A_FireCustomMissile("Shotgunparticles2", random(-12,12), 0, 12, -2, 0, random(-9,9))
+		TNT1 A 0 BRIGHT A_FireCustomMissile("FlamethrowerMissileNoLight", 0, 1, -12, -12, 0, 8)
+		TNT1 A 0 BRIGHT A_FireCustomMissile("Shotgunparticles2", random(-12,12), 0, -12, -2, 0, random(-9,9))
+		TNT1 A 0 A_TakeInventory("Gas", 22)
+		DUFL LM 1 BRIGHT A_SetAngle(random(1, -1) + angle)
+		TNT1 A 0 BRIGHT A_SetPitch(random(1, -1) + pitch)
+		TNT1 A 0 BRIGHT A_FireCustomMissile("FlamethrowerMissileNoLight", 0, 1, 12, -12, 0, 8)
+		TNT1 A 0 BRIGHT A_FireCustomMissile("Shotgunparticles2", random(-12,12), 0, 12, -2, 0, random(-9,9))
+		TNT1 A 0 BRIGHT A_FireCustomMissile("FlamethrowerMissileNoLight", 0, 1, -12, -12, 0, 8)
+		TNT1 A 0 BRIGHT A_FireCustomMissile("Shotgunparticles2", random(-12,12), 0, -12, -2, 0, random(-9,9))
+		TNT1 A 0 A_TakeInventory("Gas", 22)
+		DUFL NO 1 BRIGHT
+		TNT1 A 0 A_PlaySound("FLAMSTOP", CHAN_WEAPON)
+		DUFL A 14
+		Goto Ready+6
+
+	DualWield:
+		TNT1 F 0
+		TNT1 F 0 A_Takeinventory("Zoomed",1)
+		TNT1 F 0 A_Takeinventory("ADSmode",1)
+		TNT1 F 0 A_TakeInventory("TossGrenade", 1)
+		TNT1 F 0 A_TakeInventory("Kicking",1)
+		TNT1 F 0 A_TakeInventory("Taunting",1)
+		TNT1 F 0 A_TakeInventory("Reloading",1)
+		TNT1 F 0 A_TakeInventory("Unloading",1)
+		TNT1 F 0 A_TakeInventory("Salute1", 1)
+		TNT1 F 0 A_TakeInventory("Salute2", 1)
+		TNT1 F 0 A_GiveInventory("FlameCannon",1)
+		FLMG A 0 A_GiveInventory("SwitchDuals",1)
+		TNT1 F 0 A_ZoomFactor(1.0)
+		TNT1 F 0 A_SelectWEapon("FlameCannon")
+		Goto Ready
+	}
+}

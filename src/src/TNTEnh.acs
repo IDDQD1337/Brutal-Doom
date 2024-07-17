@@ -1,0 +1,297 @@
+// TNT Evilution Enhancements
+Script "MAP01_2596FA81"
+{
+	SpawnForced("EvidenceCheckerBlueTorch",-32.0,1008.0,-72.0,66,0.0);
+}
+
+Script "MAP02_6080AA84"
+{
+	SpawnForced("EvidenceCheckerGreenTorch",162.0,507.0,80.0,16,0.0);
+}
+
+Script "MAP03_1C77F703"
+{
+	SpawnForced("EvidenceCheckerbERSERk",-1429.0,-103.0,0.0,182,0.0);
+}
+
+Script "MAP04_29488C08"
+{
+	SpawnForced("EvidenceCheckerLightpost",-592.0,432.0,0.0,13,0.0);
+}
+
+Script "MAP05_10987803"
+{
+	SpawnForced("EvidenceCheckerLightpost",368.0,456.0,0.0,205,0.0);
+}
+
+Script "MAP06_1800FF01"
+{
+	SpawnForced("EvidenceCheckerLightpost",528.0,-2160.0,0.0,12,0.0);
+}
+
+Script "MAP07_50C09604"
+{
+	SpawnForced("EvidenceCheckerbERSERk",-127.0,-1751.0,0.0,127,0.0);
+}
+
+Script "MAP08_25807304"
+{
+	SpawnForced("EvidenceCheckerLightpost",-256.0,2432.0,0.0,156,0.0);
+}
+
+Script "MAP09_4448AF0B"
+{
+	SpawnForced("EvidenceCheckerbERSERk",240.0,-368.0,0.0,316,0.0);
+}
+
+Script "MAP10_116E8C05"
+{
+	SpawnForced("EvidenceCheckerRedKey",-120.0,828.0,0.0,141,0.0);
+}
+
+Script "MAP11_11C86E02"
+{
+	SpawnForced("EvidenceCheckerRedKey",-64.0,1328.0,222.0,136,0.0);
+}
+
+Script "MAP12_5180A002"
+{
+	SpawnForced("EvidenceCheckerRedKey",-1184.0,2208.0,112.0,74,0.0);
+}
+
+Script "MAP13_0B80A006"
+{
+	SpawnForced("EvidenceCheckerRedKey",4000.0,2944.0,240.0,87,0.0);
+}
+
+Script "MAP14_2300A004"
+{
+	SpawnForced("EvidenceCheckerRedKey",-960.0,320.0,160.0,6,0.0);
+}
+
+Script "MAP15_5C207006"
+{
+	SpawnForced("EvidenceCheckerInvisibility",1608.0,2140.0,0.0,193,0.0);
+}
+
+Script "MAP16_45108704"
+{
+	SpawnForced("EvidenceCheckerBlueSkull",-992.0,-2264.0,0.0,84,0.0);
+}
+
+Script "MAP17_432C9B04"
+{
+	SpawnForced("EvidenceCheckerRedKey",-32.0,1672.0,235.0,10,0.0);
+}
+
+Script "MAP18_47C2AA05"
+{
+	SpawnForced("EvidenceCheckerRedKey",-1952.0,-160.0,-92.0,41,0.0);
+}
+
+Script "MAP19_4400A004"
+{
+	SpawnForced("EvidenceCheckerRedKey",1280.0,616.0,24.0,287,0.0);
+}
+
+Script "MAP20_40709607"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",-2192.0,1952.0,16.0,187,0.0);
+}
+
+Script "MAP21_4980AF04"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",-505.0,608.0,256.0,121,0.0);
+}
+
+Script "MAP22_256EB409"
+{
+	SpawnForced("EvidenceCheckerBlueKey",-4024.0,-1080.0,0.0,7,0.0);
+}
+
+Script "MAP23_47C0C883"
+{
+	SpawnForced("EvidenceCheckerRedKey",-5.0,713.0,32.0,105,0.0);
+}
+
+Script "MAP24_164CB483"{}
+
+Script "MAP25_4880A004"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",1816.0,-2176.0,-200.0,74,0.0);
+}
+
+Script "MAP26_12E00002"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",-1952.0,2112.0,368.0,26,0.0);
+}
+
+Script "MAP27_46807802"
+{
+	SpawnForced("EvidenceCheckerRedKey",-5542.0,1594.0,-320.0,198,0.0);
+}
+
+Script "MAP28_45009B82"
+{
+	SpawnForced("EvidenceCheckerBlueSkull",-2080.0,480.0,0.0,44,0.0);
+}
+
+Script "MAP29_0E807D03"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",288.0,-1632.0,128.0,300,0.0);
+}
+
+Script "MAP30_0E00A001"{}
+
+Script "MAP31_45647802"{}
+
+Script "MAP32_0EC0FF83"{}
+
+// TNT Evilution Enhancements (Wadsmoosh)
+Script "TN_MAP01_2596FA81"
+{
+	SpawnForced("EvidenceCheckerBlueTorch",-32.0,1008.0,-72.0,66,0.0);
+}
+
+Script "TN_MAP02_6080AA84"
+{
+	SpawnForced("EvidenceCheckerGreenTorch",162.0,507.0,80.0,16,0.0);
+}
+
+Script "TN_MAP03_1C77F703"
+{
+	SpawnForced("EvidenceCheckerbERSERk",-1429.0,-103.0,0.0,182,0.0);
+}
+
+Script "TN_MAP04_29488C08"
+{
+	SpawnForced("EvidenceCheckerLightpost",-592.0,432.0,0.0,13,0.0);
+}
+
+Script "TN_MAP05_10987803"
+{
+	SpawnForced("EvidenceCheckerLightpost",368.0,456.0,0.0,205,0.0);
+}
+
+Script "TN_MAP06_1800FF01"
+{
+	SpawnForced("EvidenceCheckerLightpost",528.0,-2160.0,0.0,12,0.0);
+}
+
+Script "TN_MAP07_50C09604"
+{
+	SpawnForced("EvidenceCheckerbERSERk",-127.0,-1751.0,0.0,127,0.0);
+}
+
+Script "TN_MAP08_25807304"
+{
+	SpawnForced("EvidenceCheckerLightpost",-256.0,2432.0,0.0,156,0.0);
+}
+
+Script "TN_MAP09_4448AF0B"
+{
+	SpawnForced("EvidenceCheckerbERSERk",240.0,-368.0,0.0,316,0.0);
+}
+
+Script "TN_MAP10_116E8C05"
+{
+	SpawnForced("EvidenceCheckerRedKey",-120.0,828.0,0.0,141,0.0);
+}
+
+Script "TN_MAP11_11C86E02"
+{
+	SpawnForced("EvidenceCheckerRedKey",-64.0,1328.0,222.0,136,0.0);
+}
+
+Script "TN_MAP12_5180A002"
+{
+	SpawnForced("EvidenceCheckerRedKey",-1184.0,2208.0,112.0,74,0.0);
+}
+
+Script "TN_MAP13_0B80A006"
+{
+	SpawnForced("EvidenceCheckerRedKey",4000.0,2944.0,240.0,87,0.0);
+}
+
+Script "TN_MAP14_2300A004"
+{
+	SpawnForced("EvidenceCheckerRedKey",-960.0,320.0,160.0,6,0.0);
+}
+
+Script "TN_MAP15_5C207006"
+{
+	SpawnForced("EvidenceCheckerInvisibility",1608.0,2140.0,0.0,193,0.0);
+}
+
+Script "TN_MAP16_45108704"
+{
+	SpawnForced("EvidenceCheckerBlueSkull",-992.0,-2264.0,0.0,84,0.0);
+}
+
+Script "TN_MAP17_432C9B04"
+{
+	SpawnForced("EvidenceCheckerRedKey",-32.0,1672.0,235.0,10,0.0);
+}
+
+Script "TN_MAP18_47C2AA05"
+{
+	SpawnForced("EvidenceCheckerRedKey",-1952.0,-160.0,-92.0,41,0.0);
+}
+
+Script "TN_MAP19_4400A004"
+{
+	SpawnForced("EvidenceCheckerRedKey",1280.0,616.0,24.0,287,0.0);
+}
+
+Script "TN_MAP20_40709607"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",-2192.0,1952.0,16.0,187,0.0);
+}
+
+Script "TN_MAP21_4980AF04"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",-505.0,608.0,256.0,121,0.0);
+}
+
+Script "TN_MAP22_256EB409"
+{
+	SpawnForced("EvidenceCheckerBlueKey",-4024.0,-1080.0,0.0,7,0.0);
+}
+
+Script "TN_MAP23_47C0C883"
+{
+	SpawnForced("EvidenceCheckerRedKey",-5.0,713.0,32.0,105,0.0);
+}
+
+Script "TN_MAP24_164CB483"{}
+
+Script "TN_MAP25_4880A004"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",1816.0,-2176.0,-200.0,74,0.0);
+}
+
+Script "TN_MAP26_12E00002"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",-1952.0,2112.0,368.0,26,0.0);
+}
+
+Script "TN_MAP27_46807802"
+{
+	SpawnForced("EvidenceCheckerRedKey",-5542.0,1594.0,-320.0,198,0.0);
+}
+
+Script "TN_MAP28_45009B82"
+{
+	SpawnForced("EvidenceCheckerBlueSkull",-2080.0,480.0,0.0,44,0.0);
+}
+
+Script "TN_MAP29_0E807D03"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",288.0,-1632.0,128.0,300,0.0);
+}
+
+Script "TN_MAP30_0E00A001"{}
+
+Script "TN_MAP31_45647802"{}
+
+Script "TN_MAP32_0EC0FF83"{}

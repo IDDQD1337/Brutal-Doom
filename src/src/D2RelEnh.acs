@@ -1,0 +1,5 @@
+// Doom II Reloaded Enhancements
+Script "MAP20_2568B004"
+{
+	SpawnForced("EvidenceCheckerBlueKey",-6240.0,2448.0,0.0,15,0.0);
+}

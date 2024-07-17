@@ -1,0 +1,158 @@
+
+Script "WadChecker"
+{
+	delay(2);
+	static str WadSelect[] =
+	{
+		"IsANazi", //Doom 2 (Default Nazi)
+		"BW", //Doom 2 (Brutal Wolfenstein Nazi)
+		"FormerMarine", //Doom 2 (Former Soldiers)
+		"Alieni", //Ancient Aliens
+		"Eviternity", //Eviternity
+		"DoubleTimeToTheHanger", //Scythe II
+		"DoubleTimeToTheHanger", //Resurgence
+		"ReplaceGoingDown", //Going Down
+		"IsEpic2Alien", //Epic 2
+		"Bloodstain", //Bloodstain
+		"TNTRevilution", //TNT Revilution
+		"Jenesis", //Jenesis
+		"2048Unleashed", //2048 Unleashed
+		"DoomZero", //Doom Zero
+		"Wormwood" //Wormwood
+	};
+    if(bd_WadCheck > 0)
+        SetActorState(0, wadSelect[bd_WadCheck - 1]);
+		//Log(s:wadSelect[bd_WadCheck - 1]);
+}
+
+int WadHash[] =
+{
+	//0x0000000, //Doom 2 (Default Nazi)
+	//0x0000000, //Doom 2 (Brutal Wolfenstein Nazi)
+	//0x0000000, //Doom 2 (Former Soldiers) eday06_2D500005
+	0x3706294F, //Ancient Aliens
+	0x692F6439, //Eviternity
+	0xC244EABF, //Scythe II
+	0x52300A40, //Resurgence
+	0x497293A6, //Going Down
+	0xD303FA02, //Epic 2
+	0x42E57B54, //Bloodstain
+	0xE76C8502, //TNT Revilution
+	0x1FC2CF3E, //Jenesis
+	0xDDD6DE16, //2048 Unleashed
+	0x31F67187, //Doom Zero
+	0xF69D278A //Wormwood
+};
+
+/*Script "BD_HashTitlepic" OPEN CLIENTSIDE
+{
+	if(!GetPlayerAccountName(PlayerIsLoggedIn(playernumber()))) terminate;
+	
+    int tpic, len, sum, tempTPic = -1;
+
+    do
+    {
+        tpic = tempTPic;
+        tempTPic = LumpOpen("TITLEPIC", tpic);
+        LumpClose(tpic);
+
+    } while(tempTPic != -1);
+
+    tpic = LumpOpen("TITLEPIC", tpic - 1);
+
+    if(!tpic)
+        terminate;
+
+    len = LumpGetInfo(tpic, LUMP_INFO_SIZE);
+    len -= len % 4;
+
+    for(int i = 0; i < len; i += 4)
+    {
+        sum += LumpRead(tpic, i, LUMP_READ_INT);
+    }
+	
+	//Log(x:sum); // returns wad hash#.
+
+	//ACS_NamedExecuteWithResult("BD_GetLumpSum", sum);
+	
+	//foreach(let int k, v; WadHash)
+	//{
+		//if(sum == v)
+		//{
+			//bd_WadCheck = k + 4;
+			//break;
+		//}
+	//}
+	
+	//Log(d:bd_WadCheck);
+	
+    LumpClose(tpic);
+}
+
+Script "BD_GetLumpSum" (int sum)
+{	
+	foreach(let int k, v; WadHash)
+	{
+		if(sum == v)
+		{
+			bd_WadCheck = k + 4;
+			break;
+		}
+	}	
+	Log(d:bd_WadCheck);
+}*/
+
+bool HasLumpReading ()
+{
+	static int cached = -1;
+	if(cached != -1)
+		return (bool)cached;
+
+	cached = ZC_LumpOpen("DECORATE");
+	if(cached)
+		ZC_LumpClose(cached);
+
+	return cached = !!cached;//(int)bool(cached);
+}
+	
+Script "BD_HashTitlepic" OPEN
+{
+    int tpic, len, sum, tempTPic = -1;
+	
+	if (!HasLumpReading()) terminate;
+
+    do
+    {
+        tpic = tempTPic;
+        tempTPic = ZC_LumpOpen("TITLEPIC", tpic);
+        ZC_LumpClose(tpic);
+
+    } while(tempTPic != -1);
+
+    tpic = ZC_LumpOpen("TITLEPIC", tpic - 1);
+
+    if(!tpic)
+        terminate;
+
+    len = ZC_LumpGetInfo(tpic, LUMP_INFO_SIZE);
+    len -= len % 4;
+
+    for(int i = 0; i < len; i += 4)
+    {
+        sum += ZC_LumpRead(tpic, i, LUMP_READ_INT);
+    }
+    
+    //Log(x:sum); // returns wad hash#.
+
+    foreach(let int k, v; WadHash)
+    {
+        if(sum == v)
+        {
+            bd_WadCheck = k + 4;
+            break;
+        }
+    }    
+    //Log(d:bd_WadCheck);
+    
+    ZC_LumpClose(tpic);
+}

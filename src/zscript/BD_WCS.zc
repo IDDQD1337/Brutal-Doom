@@ -1,0 +1,162 @@
+
+// when structs are the most neglected part of ZScript and maps
+// can't be static you have to do fun things like this
+
+class ZC_TMapHack : EventHandler
+{
+	Map<int, int> lumpRefCount;
+	Map<int, String> lumpBuf;
+
+	static play ZC_TMapHack fetch()
+	{
+		return ZC_TMapHack(Find("ZC_TMapHack"));
+	}
+}
+
+class ZandroCompat
+{
+	const LUMP_OPEN_FULLPATH = 1;
+
+	const LUMP_INFO_SIZE = 0;
+	const LUMP_INFO_NAME = 1;
+
+	const LUMP_READ_BYTE = 0;
+	const LUMP_READ_UBYTE = 1;
+	const LUMP_READ_SHORT = 2;
+	const LUMP_READ_USHORT = 3;
+	const LUMP_READ_INT = 4;
+	const LUMP_READ_FLOAT = 5; // unimplemented
+
+	static play int LumpOpen(String name, int start, int flags)
+	{
+		ZC_TMapHack m = ZC_TMapHack.fetch();
+
+		int lump;
+
+		if(flags & LUMP_OPEN_FULLPATH)
+			lump = Wads.CheckNumForFullName(name);
+
+		lump = Wads.FindLump(name, start + 1);
+
+		if(lump == -1)
+			return -1;
+
+		if(!m.lumpRefCount.CheckKey(lump))
+		{
+			m.lumpRefCount.Insert(lump, 1);
+			m.lumpBuf.Insert(lump, Wads.ReadLump(lump));
+			return lump;
+		}
+
+		// lovely way to type this out
+		m.lumpRefCount.Insert(lump, m.lumpRefCount.Get(lump) + 1);
+		return lump;
+	}
+
+	static play void LumpClose(int lump)
+	{
+		ZC_TMapHack m = ZC_TMapHack.fetch();
+
+		m.lumpRefCount.Insert(lump, m.lumpRefCount.Get(lump) - 1);
+		if( (lump == -1) || (!m.lumpRefCount.CheckKey(lump)) || (m.lumpRefCount.Get(lump) > 0) )
+			return;
+
+		m.lumpRefCount.Remove(lump);
+		m.lumpBuf.Remove(lump);
+	}
+
+	static play int LumpGetInfoInt(int lump, int info)
+	{
+		if(lump == -1)
+			return 0;
+
+		switch(info)
+		{
+			case LUMP_INFO_SIZE:
+				return Wads.GetLumpLength(lump);
+
+			case LUMP_INFO_NAME:
+				Console.Printf("LumpGetInfo internal error: LUMP_INFO_NAME requested, but GetInfoInt called");
+				return 0;
+
+			default:
+				Console.Printf("LumpGetInfo: unknown info type %i", info);
+				return 0;
+		}
+	}
+
+	static play String LumpGetInfoStr(int lump, int info)
+	{
+		if(lump == -1)
+			return "";
+
+		switch(info)
+		{
+			case LUMP_INFO_SIZE:
+				Console.Printf("LumpGetInfo internal error: LUMP_INFO_SIZE requested, but GetInfoStr called");
+				return "";
+
+			case LUMP_INFO_NAME:
+				return Wads.GetLumpName(lump);
+
+			default:
+				Console.Printf("LumpGetInfo: unknown info type %i", info);
+				return "";
+		}
+	}
+
+	static play String LumpReadString(int lump, int pos, int len)
+	{
+		ZC_TMapHack m = ZC_TMapHack.fetch();
+
+		if( (lump == -1) || !m.lumpRefCount.CheckKey(lump) )
+		{
+			Console.Printf("LumpReadString: Attempted read on non-existent lump handle!");
+			return "";
+		}
+
+		return m.lumpBuf.Get(lump).Mid(pos, len);
+	}
+
+	static play int LumpRead(int lump, int pos, int type)
+	{
+		ZC_TMapHack m = ZC_TMapHack.fetch();
+
+		if( (lump == -1) || !m.lumpRefCount.CheckKey(lump) )
+		{
+			Console.Printf("LumpRead: Attempted read on non-existent lump handle!");
+			return 0;
+		}
+
+		int temp;
+
+		String b = m.lumpBuf.Get(lump);
+
+		switch(type)
+		{
+			case LUMP_READ_UBYTE:
+				return b.ByteAt(pos) & 255;
+
+			case LUMP_READ_BYTE:
+				temp = b.ByteAt(pos) & 255;
+				return (temp > 127) ? (-temp) : temp;
+
+			case LUMP_READ_USHORT:
+				return (b.ByteAt(pos) & 255) | ((b.ByteAt(pos+1) & 255) << 8);
+
+			case LUMP_READ_SHORT:
+				temp = (b.ByteAt(pos) & 255) | ((b.ByteAt(pos+1) & 255) << 8);
+				return (temp > 32767) ? (-temp) : temp;
+
+			case LUMP_READ_INT:
+				return (b.ByteAt(pos) & 255) | ((b.ByteAt(pos+1) & 255) << 8) | ((b.ByteAt(pos+2) & 255) << 16) | ((b.ByteAt(pos+3) & 255) << 24);
+
+			case LUMP_READ_FLOAT:
+				Console.Printf("LumpRead: LUMP_READ_FLOAT not implemented!");
+				return 0;
+		}
+
+		Console.Printf("LumpRead: unknown read type %i!", type);
+		return 0;
+	}
+}

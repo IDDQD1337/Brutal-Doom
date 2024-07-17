@@ -1,0 +1,177 @@
+// The Plutonia Experiment Enhancements
+Script "MAP01_63809B01"
+{
+	SpawnForced("EvidenceCheckerGreenTorch",1392.0,48.0,0.0,20,0.0);
+}
+
+Script "MAP02_4910BE80"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",-1264.0,-657.0,0.0,44,0.0);
+}
+
+Script "MAP03_436C9D01"
+{
+	SpawnForced("EvidenceCheckerRedKey",1696.0,288.0,0.0,138,0.0);
+}
+
+Script "MAP04_47E0AF84"
+{
+	SpawnForced("EvidenceCheckerBlueKey",-1584.0,-627.0,0.0,87,0.0);
+}
+
+Script "MAP05_51009B01"
+{
+	SpawnForced("EvidenceCheckerBlueKey",4544.0,-4672.0,0.0,110,0.0);
+}
+
+Script "MAP06_0A80C886"
+{
+	SpawnForced("EvidenceCheckerBlueSkull",-448.0,1056.0,0.0,132,0.0);
+}
+
+Script "MAP07_2000B481"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",-16.0,16.0,0.0,12,0.0);
+}
+
+Script "MAP08_0900B481"{}
+
+Script "MAP09_09B99B02"{}
+
+Script "MAP10_63609603"{}
+
+Script "MAP11_5180B481"{}
+
+Script "MAP12_4000A502"{}
+
+Script "MAP13_48E2A001"{}
+
+Script "MAP14_6398B483"{}
+
+Script "MAP15_7D00B993"{}
+
+Script "MAP16_09009B80"{}
+
+Script "MAP17_25009B82"{}
+
+Script "MAP18_41808701"{}
+
+Script "MAP19_09909101"{}
+
+Script "MAP20_47C8B482"{}
+
+Script "MAP21_7DC0A580"{}
+
+Script "MAP22_0B60A004"{}
+
+Script "MAP23_7DC0A505"{}
+
+Script "MAP24_47809B07"{}
+
+Script "MAP25_7D80B481"{}
+
+Script "MAP26_57308703"{}
+
+Script "MAP27_47808F03"{}
+
+Script "MAP28_09809B04"{}
+
+Script "MAP29_43009B02"
+{
+	SpawnForced("EvidenceCheckerBlueSkull",1408.0,-768.0,0.0,178,0.0);
+}
+
+Script "MAP30_43C01900"{}
+
+Script "MAP31_4700B481"{}
+
+Script "MAP32_43C07202"{}
+
+// The Plutonia Experiment Enhancements (Wadsmoosh)
+Script "PL_MAP01_63809B01"
+{
+	SpawnForced("EvidenceCheckerGreenTorch",1392.0,48.0,0.0,20,0.0);
+}
+
+Script "PL_MAP02_4910BE80"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",-1264.0,-657.0,0.0,44,0.0);
+}
+
+Script "PL_MAP03_436C9D01"
+{
+	SpawnForced("EvidenceCheckerRedKey",1696.0,288.0,0.0,138,0.0);
+}
+
+Script "PL_MAP04_47E0AF84"
+{
+	SpawnForced("EvidenceCheckerBlueKey",-1584.0,-627.0,0.0,87,0.0);
+}
+
+Script "PL_MAP05_51009B01"
+{
+	SpawnForced("EvidenceCheckerBlueKey",4544.0,-4672.0,0.0,110,0.0);
+}
+
+Script "PL_MAP06_0A80C886"
+{
+	SpawnForced("EvidenceCheckerBlueSkull",-448.0,1056.0,0.0,132,0.0);
+}
+
+Script "PL_MAP07_2000B481"
+{
+	SpawnForced("EvidenceCheckerYellowSkull",-16.0,16.0,0.0,12,0.0);
+}
+
+Script "PL_MAP08_0900B481"{}
+
+Script "PL_MAP09_09B99B02"{}
+
+Script "PL_MAP10_63609603"{}
+
+Script "PL_MAP11_5180B481"{}
+
+Script "PL_MAP12_4000A502"{}
+
+Script "PL_MAP13_48E2A001"{}
+
+Script "PL_MAP14_6398B483"{}
+
+Script "PL_MAP15_7D00B993"{}
+
+Script "PL_MAP16_09009B80"{}
+
+Script "PL_MAP17_25009B82"{}
+
+Script "PL_MAP18_41808701"{}
+
+Script "PL_MAP19_09909101"{}
+
+Script "PL_MAP20_47C8B482"{}
+
+Script "PL_MAP21_7DC0A580"{}
+
+Script "PL_MAP22_0B60A004"{}
+
+Script "PL_MAP23_7DC0A505"{}
+
+Script "PL_MAP24_47809B07"{}
+
+Script "PL_MAP25_7D80B481"{}
+
+Script "PL_MAP26_57308703"{}
+
+Script "PL_MAP27_47808F03"{}
+
+Script "PL_MAP28_09809B04"{}
+
+Script "PL_MAP29_43009B02"
+{
+	SpawnForced("EvidenceCheckerBlueSkull",1408.0,-768.0,0.0,178,0.0);
+}
+
+Script "PL_MAP30_43C01900"{}
+
+Script "PL_MAP31_4700B481"{}
+
+Script "PL_MAP32_43C07202"{}

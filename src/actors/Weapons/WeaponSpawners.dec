@@ -1,0 +1,1454 @@
+ACTOR BasicWeaponPickup : Health
+{
+	scale 0.8
+	radius 16 //Anything above this value will cause the actor to get stuck on platforms. DO NOT CHANGE.
+	+FORCEXYBILLBOARD
+	+MOVEWITHSECTOR
+	-COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.Amount 0
+	Inventory.MaxAmount 99999
+	Inventory.PickupMessage ""
+	Inventory.PickupSound "dsempty"
+	+Quiet
+}
+
+Actor BasicWeaponPickup2: BasicWeaponPickup
+{
+	-INVENTORY.ALWAYSPICKUP
+	Inventory.MaxAmount 0
+}
+
+
+// Backpack ---------------------------------------------------------------
+
+ACTOR AmmoSuply : BackpackItem  Replaces Backpack
+{
+	//$Category Ammunition
+	//$Sprite BPAKA0
+	//$Title "Backpack"
+	//$Arg0 Spawn weapons with 
+	//$Arg0Tooltip Select the weapon to spawn.
+	//$Arg0Type 11
+	//$Arg0Enum { 0 = "Configurable by user (DEFAULT)"; 1 = "Force Chainsaw"; 2 = "Force Axe"; }
+	Game Doom
+	SpawnID 144
+	Height 26
+	Inventory.PickupMessage "$GOTBACKPACK"
+	Inventory.PickupSound "BACKPACK"
+	+FORCEXYBILLBOARD
+	States
+	{
+
+	Spawn:
+		BPAK A 0
+		BPAK A 0 ACS_NamedExecuteAlways("AmmoSupplyChecker", 0, 0, 0, 0)
+		BPAK A 2
+	Vanilla:
+	Spawn1:
+	Stay:
+		BPAK A 0
+		BPAK A -1
+		Stop
+
+	BDV22Style:
+		TNT1 A 0
+		TNT1 A 1 A_SpawnItemEx("NewGunsSpawner", random(-10, 10), random(-10, 10), 0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Goto Stay
+
+	Expanded:
+		TNT1 A 0
+		TNT1 A 1 A_SpawnItemEx("NewGunsSpawner2", random(-10, 10), random(-10, 10), 0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Goto Stay
+	}
+}
+
+
+//WEAPONS
+
+actor ChainsawSpawnerReplacer : BasicWeaponPickup Replaces Chainsaw
+{
+	//$Category Weapons
+	//$Sprite TNT1A0
+	//$Title "Tweakable chainsaw spawner"
+	//$Arg0 What weapon to spawn
+	//$Arg0Tooltip Select the weapon to spawn.
+	//$Arg0Type 11
+	//$Arg0Enum { 0 = "Configurable by user (DEFAULT)"; 1 = "Force Chainsaw"; 2 = "Force Axe"; }
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(args[0] == 1, "Spawn1")
+		TNT1 A 0 A_JumpIf(args[0] == 2, "Spawn2")
+		TNT1 A 0 ACS_NamedExecuteAlways("BDDisableChainsawSpawner", 0, 0, 0, 0)
+		TNT1 A 5
+		TNT1 A 0 A_Jump(128, "Spawn2")
+	Vanilla:
+	Spawn1:
+		TNT1 A -1 A_SpawnItemEx ("ChainsawSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Spawn2:
+		TNT1 A -1 A_SpawnItemEx ("BRUTALAXE",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+	}
+}
+
+ACTOR ShotgunSpawnerReplacer: BasicWeaponPickup Replaces Shotgun
+{
+	//$Category Weapons
+	//$Sprite TNT1A0
+	//$Title "Tweakable shotgun spawner"
+	//$Arg0 What weapon to spawn
+	//$Arg0Tooltip Select the weapon to spawn.
+	//$Arg0Type 11
+	//$Arg0Enum { 0 = "Configurable by user (DEFAULT)"; 1 = "Force shotgun"; 2 = "Force Revolver"; }
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(args[0] == 1, "Spawn1")
+		TNT1 A 0 A_JumpIf(args[0] == 2, "Spawn2")
+		TNT1 A 0 ACS_NamedExecuteAlways("BDDisableShotgunpawner", 0, 0, 0, 0)
+		TNT1 A 5
+		TNT1 A 0 A_Jump(48, "Spawn2")
+	Vanilla:
+	Spawn1:
+		TNT1 A -1 A_SpawnItemEx ("ShotgunSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Spawn2:
+		TNT1 A -1 A_SpawnItemEx ("RevolverSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+	}
+}
+
+
+actor SSGSpawnerReplacer: BasicWeaponPickup Replaces  SuperShotgun
+{
+	//$Category Weapons
+	//$Sprite TNT1A0
+	//$Title "Tweakable SSG spawner"
+	//$Arg0 What weapon to spawn
+	//$Arg0Tooltip Select the weapon to spawn.
+	//$Arg0Type 11
+	//$Arg0Enum { 0 = "Configurable by user (DEFAULT)"; 1 = "Force SSG"; 2 = "Force ASG"; }
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(args[0] == 1, "Spawn1")
+		TNT1 A 0 A_JumpIf(args[0] == 2, "Spawn2")
+		TNT1 A 0 ACS_NamedExecuteAlways("BDDisableSSGSpawner", 0, 0, 0, 0)
+		TNT1 A 5
+		TNT1 A 0 A_Jump(48, "Spawn2")
+	Vanilla:
+	Spawn1:
+		TNT1 A -1 A_SpawnItemEx ("SSGSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Spawn2:
+		TNT1 A -1 A_SpawnItemEx ("ASGSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+	}
+}
+
+
+actor ChaingunSpawnerReplacer : BasicWeaponPickup Replaces Chaingun
+{
+	//$Category Weapons
+	//$Sprite MGUNA0
+	//$Title "Tweakable chaingun spawner"
+	//$Arg0 What weapon to spawn
+	//$Arg0Tooltip Select the weapon to spawn.
+	//$Arg0Type 11
+	//$Arg0Enum { 0 = "Configurable by user (DEFAULT)"; 1 = "Force chaingun"; 2 = "Force SMG"; 3 = "Force Rifle"; }
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(args[0] == 1, "Spawn1")
+		TNT1 A 0 A_JumpIf(args[0] == 2, "Spawn2")
+		TNT1 A 0 A_JumpIf(args[0] == 3, "Spawn3")
+		
+		TNT1 A 0 ACS_NamedExecuteAlways("BDDisableMinigunSpawner", 0, 0, 0, 0)
+		TNT1 A 5
+		TNT1 A 0 A_Jump(64, "Spawn2")
+	Vanilla:
+	Spawn1:
+		TNT1 A -1 A_SpawnItemEx ("ChaingunSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Spawn2:
+		TNT1 A -1 A_SpawnItemEx ("SMGSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Spawn3:
+		TNT1 A -1 A_SpawnItemEx ("RifleSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+	}
+}
+
+actor RLSpawnerReplacer  : BasicWeaponPickup Replaces RocketLauncher
+{
+	//$Category Weapons
+	//$Sprite TNT1A0
+	//$Title "Tweakable Rocket Launcher spawner"
+	//$Arg0 What weapon to spawn
+	//$Arg0Tooltip Select the weapon to spawn.
+	//$Arg0Type 11
+	//$Arg0Enum { 0 = "Configurable by user (DEFAULT)"; 1 = "Force Rocket launcher"; 2 = "Force Grenade launcher"; 1 = "Spawn Nuke Launcher"; 1 = "Spawn Devastator"; 1 = "Spawn Incendiary Launcher";}
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(args[0] == 1, "Spawn1")
+		TNT1 A 0 A_JumpIf(args[0] == 2, "Spawn2")
+		TNT1 A 0 A_JumpIf(args[0] == 3, "Spawn3")
+		TNT1 A 0 A_JumpIf(args[0] == 4, "Spawn4")
+		TNT1 A 0 A_JumpIf(args[0] == 5, "Spawn5")
+		TNT1 A 0 ACS_NamedExecuteAlways("BDDisableROCKETLAUNCHERSPAWNER", 0, 0, 0, 0)
+		TNT1 A 5
+		TNT1 A 0 A_Jump(48, "Spawn2")
+	Vanilla:
+	Spawn1:
+		TNT1 A -1 A_SpawnItemEx ("RocketLauncherSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Spawn2:
+		TNT1 A -1 A_SpawnItemEx ("GrenadeLauncherSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+		
+	Spawn3:
+		TNT1 A -1 A_SpawnItemEx ("NukeSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+		
+	Spawn4:
+		TNT1 A -1 A_SpawnItemEx ("DevastatorSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+		
+	Spawn5:
+		TNT1 A -1 A_SpawnItemEx ("ILSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+	}
+}
+
+actor PlasmagunReplacer : BasicWeaponPickup Replaces PLasmaRifle
+{
+	//$Category Weapons
+	//$Sprite TNT1A0
+	//$Title "Tweakable Plasmagun spawner"
+	//$Arg0 What weapon to spawn
+	//$Arg0Tooltip Select the weapon to spawn.
+	//$Arg0Type 11
+	//$Arg0Enum { 0 = "Configurable by user (DEFAULT)"; 1 = "Force Plasmagun"; 2 = "Force Railgun"; }
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(args[0] == 1, "Spawn1")
+		TNT1 A 0 A_JumpIf(args[0] == 2, "Spawn2")
+		TNT1 A 0 ACS_NamedExecuteAlways("BDDisablePlasmaRifleSpawner", 0, 0, 0, 0)
+		TNT1 A 5
+		TNT1 A 0 A_Jump(48, "Spawn2")
+	Vanilla:
+	Spawn1:
+		TNT1 A -1 A_SpawnItemEx ("PLasmagunSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Spawn2:
+		TNT1 A -1 A_SpawnItemEx ("RailgunSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+	}
+}
+
+actor BFGReplacer : BasicWeaponPickup Replaces BFG9000
+{
+	//$Category Weapons
+	//$Sprite TNT1A0
+	//$Title "Tweakable BFG spawner"
+	//$Arg0 What weapon to spawn
+	//$Arg0Tooltip Select the weapon to spawn.
+	//$Arg0Type 11
+	//$Arg0Enum { 0 = "Configurable by user (DEFAULT)"; 1 = "Force BFG9000"; 2 = "Force BFG10K"; 3 = "Force Unmaker"; 4 = "Force Flamethrower"; 2 = "Force MG42";}
+	
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(args[0] == 1, "Spawn1")
+		TNT1 A 0 A_JumpIf(args[0] == 2, "BFG10K")
+		TNT1 A 0 A_JumpIf(args[0] == 3, "Unmaker")
+		TNT1 A 0 A_JumpIf(args[0] == 4, "Flamethrower")
+		TNT1 A 0 A_JumpIf(args[0] == 5, "MG42")
+		TNT1 A 0 Thing_ChangeTID(0,736)
+		TNT1 A 2
+		TNT1 A 0 A_JumpIfInventory("NaziVerificate1", 1, "MG42")
+		TNT1 A 0 ACS_NamedExecuteAlways("BDDisableBFGSPAWNER", 0, 0, 0, 0)
+		TNT1 A 3
+		TNT1 A 0 A_Jump(48, "BFG10K")
+		TNT1 A 0 A_Jump(4, "Unmaker")
+		Goto Vanilla
+
+	IdontwantafuckingMG42:
+		TNT1 A 2
+		TNT1 A 0 ACS_NamedExecuteAlways("BDDisableBFGSPAWNER", 0, 0, 0, 0)
+		TNT1 A 3
+		TNT1 A 0 A_Jump(48, "BFG10K")
+		TNT1 A 0 A_Jump(4, "Unmaker")
+	Vanilla:
+	Spawn1:
+	TNT1 A 1
+		TNT1 A -1 A_SpawnItemEx ("BFG9000Spawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	BFG10K:
+		TNT1 A -1 A_SpawnItemEx ("BFG10KSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Unmaker:
+		TNT1 A -1 A_SpawnItemEx ("UnmakerSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Flamethrower:
+		TNT1 A -1 A_SpawnItemEx ("Flamethrower2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	MG42:
+		TNT1 A 0 ACS_NamedExecuteAlways("OhNoNomg42", 0, 0, 0, 0)
+		TNT1 A 2
+		TNT1 A 0 A_SpawnItemEx("MG42", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERPOINTERS | SXF_TRANSFERAMBUSHFLAG)
+		Stop
+	}
+}
+
+Actor RevenantHellishLauncherSpawner: BasicWeaponPickup2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("NODemonWeapons")
+		TNT1 A 4
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx ("HMLSpawner",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Spawn3:
+		TNT1 A 0
+		Stop
+	}
+}
+
+/////END OF Zio's New garbage (Customizable weapon spawners)
+ACTOR BDWeaponSpawner: CustomInventory
+{
+	scale 0.8
+	radius 16 //Anything above this value will cause the actor to get stuck on platforms. DO NOT CHANGE.
+	+THRUACTORS +FORCEXYBILLBOARD
+	inventory.pickupsound "Rifle/Select"
+	Inventory.PickupMessage "You got a new weapon!"
+	Mass 1
+	States
+	{
+	Spawn:
+		CSAW A 0
+		CSAW A -1
+		Stop
+
+	Pickup:
+		TNT1 A 0
+		Stop
+
+	Purist:
+		TNT1 A 0
+		Stop
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//SLOT 1
+
+ACTOR ChainsawSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite CSAWA0
+	//$Title "Chainsaw spawner"
+	inventory.pickupsound "Chainsaw/Draw"
+	Inventory.PickupMessage "$GOTCHAINSAW"
+	States
+	{
+	Spawn:
+		CSAW A 0
+		CSAW A 10
+		CSAW A -1 A_ChangeFlag("THRUACTORS", 0)
+		Stop
+
+	Pickup:
+		CSAW A 0
+		CSAW A 0 A_GiveInventory("Chain_Saw", 1)
+		Stop
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//SLOT 2
+ACTOR PistolSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite P3STKA0
+	//$Title "Pistol spawner"
+	Inventory.PickupMessage "$GOTPISTOL"
+	Inventory.PickupSound "Pistol/Draw"
+	States
+	{
+	Spawn:
+		P3ST A 0
+		P3ST A 1
+		P3ST A 0 A_ChangeFlag("THRUACTORS", 0)
+	Stay:
+		P3ST K -1
+		Stop
+
+	Pickup:
+		P3ST A 0
+		P3ST A 0 A_JumpIfInventory("BrutalPistol", 1, "DualPistol")
+		P3ST A 0 A_JumpIfInventory("DualPistols", 1, "AmmoOnly")
+	PickupNormal:
+		P3ST A 0 A_GiveInventory("BrutalPistol", 1)
+		P3ST A 0 A_GiveInventory("Clip1", 10)
+		Stop
+
+	DualPistol:
+		P3ST A 0
+		P3ST A 0 A_GiveInventory("HasDualPistol", 1)
+		P3ST A 0 A_GiveInventory("Clip1", 10)
+		Stop
+
+	AmmoOnly:
+		P3ST A 0
+		P3ST A 0 A_GiveInventory("Clip1", 10)
+		Stop
+	}
+}
+
+ACTOR SMGSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite SMGZA0
+	//$Title "SMG spawner"
+	Inventory.PickupSound "CBOXPKUP"
+	Inventory.PickupMessage "$GOTSMG"
+	States
+	{
+	Spawn:
+		SMGZ A 0
+		SMGZ AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		SMGZ A 10
+		SMGZ A 0 A_Jump(128,2)
+		SMGZ A 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		SMGZ A 0 A_ChangeFlag("THRUACTORS", 0)
+		SMGZ A -1
+		Stop
+
+	Pickup:
+		SMGZ A 0
+		SMGZ A 0 A_JumpIfInventory("BrutalSMG", 1, "Dual")
+		SMGZ A 0 A_JumpIfInventory("DualSMG", 1, "AmmoOnly")
+	PickupNormal:
+		SMGZ A 0 A_GiveInventory("BrutalSMG", 1)
+		SMGZ A 0 A_GiveInventory("Clip1", 20)
+		Stop
+
+	Dual:
+		SMGZ A 0
+		SMGZ A 0 A_GiveInventory("HasDualSMG", 1)
+		SMGZ A 0 A_GiveInventory("Clip1", 20)
+		Stop
+
+	AmmoOnly:
+		SMGZ A 0 A_GiveInventory("Clip1", 20)
+		Stop
+	}
+}
+
+ACTOR RevolverSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite REVPA0
+	//$Title "Revolver spawner"
+	Inventory.PickupMessage "$GOTREVOLVER"
+	Inventory.PickupSound "Revolver/Hammer"
+	States
+	{
+	Spawn:
+		REVP A 0
+		REVP A 10 A_ChangeFlag("THRUACTORS", 0)
+		REVP A -1
+		Loop
+
+	Pickup:
+		REVP A 0
+		REVP A 0 A_JumpIfInventory("Revolver", 1, "GimmeOnlyTheAmmo")
+	PickupNormal:
+		REVP A 0 A_GiveInventory("Revolver", 1)
+		REVP A 0 A_GiveInventory("AmmoShell", 6)
+		Stop
+
+	GimmeOnlyTheAmmo:
+		REVP A 0 A_GiveInventory("AmmoShell", 6)
+		Stop
+	}
+}
+
+ACTOR MP40Spawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite MP40A0
+	//$Title "MP40 spawner"
+	Inventory.PickupMessage "$GOTMP40"
+	Inventory.PickupSound "MP40/Draw"
+	States
+	{
+	Spawn:
+		MP40 A 0
+		MP40 A 1
+		MP40 A 0 A_ChangeFlag("THRUACTORS", 0)
+	Stay:
+		MP40 A 0
+		MP40 Y -1
+		Loop
+
+	Pickup:
+		MP40 A 0
+		MP40 A 0 A_JumpIfInventory("MP40", 1, "Dual")
+		MP40 A 0 A_JumpIfInventory("DualMP40", 1, "AmmoOnly")
+	PickupNormal:
+		MP40 A 0 A_GiveInventory("MP40", 1)
+		MP40 A 0 A_GiveInventory("Mauser9mm", 30)
+		Stop
+
+	Dual:
+		MP40 A 0 A_GiveInventory("HasDualMP40", 1)
+		MP40 A 0 A_GiveInventory("Mauser9mm", 10)
+		Stop
+
+	AmmoOnly:
+		MP40 A 0 A_GiveInventory("Mauser9mm", 30)
+		Stop
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//SLOT 3
+
+ACTOR ShotgunSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite SHTCA0
+	//$Title "Shotgun spawner"
+	Inventory.PickupMessage "$GOTSHOTGUN"
+	Inventory.PickupSound "Shotgun/Pump1"
+	States
+	{
+	Spawn:
+		SHTC A 0
+		SHTC A 3
+		SHTC A 0 A_ChangeFlag("THRUACTORS", 0)
+		SHTC AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		SHTC A 5
+		SHTC A 0 A_Jump(128,"Stay2")
+	NoRandom:
+	Stay:
+		SHTC A -1
+		Loop
+
+	Stay2:
+		SHTC C -1
+		Loop
+
+	Pickup:
+		SHTC A 0
+		SHTC A 0 A_GiveInventory("Shot_Gun", 1)
+		SHTC A 0 A_GiveInventory("AmmoShell", 8)
+		Stop
+	}
+}
+
+ACTOR FriendlyShotgunSpawner: ShotgunSpawner
+{
+	Inventory.PickupMessage "You got your fallen comrade's \cgPump-Action Shotgun! \c-(slot 3)"
+}
+
+ACTOR ShotgunSpawnerDroped: ShotgunSpawner
+{
+	States
+	{
+	Spawn:
+		SHTC A 0
+		SHTC A 2
+		SHTC A 0 A_ChangeFlag("THRUACTORS", 0)
+	Stay:
+		SHTC A -1
+		Loop
+
+	Pickup:
+		SHTC A 0
+		SHTC A 0 A_GiveInventory("Shot_Gun", 1)
+		SHTC A 0 A_GiveInventory("AmmoShell", 2)
+		Stop
+	}
+}
+
+ACTOR SSGSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite SGN2A0
+	//$Title "SSG spawner"
+	Inventory.PickupMessage "$GOTSHOTGUN2"
+	Inventory.PickupSound "SSG/Draw"
+	States
+	{
+	Spawn:
+		SGN2 A 0
+		SGN2 AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		SGN2 A 10
+		SGN2 A 0 A_Jump(128,2)
+		SGN2 A 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		SGN2 A 0 A_ChangeFlag("THRUACTORS", 0)
+		SGN2 A -1
+		Stop
+
+	Pickup:
+		SGN2 A 0
+		SGN2 A 0 A_GiveInventory("SSG", 1)
+		SGN2 A 0 A_GiveInventory("AmmoShell", 8)
+		Stop
+	}
+}
+
+ACTOR ASGSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite A12PA0
+	//$Title "ASG spawner"
+	Inventory.PickupMessage "$GOTASSAULTSHOTGUN"
+	Inventory.PickupSound "ASG/Draw"
+	States
+	{
+	Spawn:
+		A12P A 0
+		A12P AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		A12P A 10
+		A12P A 0 A_Jump(128,2)
+		A12P A 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		A12P A 0 A_ChangeFlag("THRUACTORS", 0)
+		A12P A -1
+		Stop
+
+	Pickup:
+		A12P A 0
+		A12P A 0 A_GiveInventory("AssaultShotgun", 1)
+		A12P A 0 A_GiveInventory("AmmoShell", 10)
+		Stop
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//SLOT 4
+
+ACTOR RifleSpawner: BDWeaponSpawner Replaces Pistol
+{
+	//$Category Weapons
+	//$Sprite SHTCA0
+	//$Title "Rifle spawner"
+	Inventory.PickupMessage "$GOTRIFLE"
+	Inventory.PickupSound "Rifle/Select"
+	States
+	{
+	Spawn:
+		RIFL A 0
+		RIFL A 3
+		RIFL A 0 A_ChangeFlag("THRUACTORS", 0)
+	Stay:
+		RIFL A -1
+		Loop
+
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory("Rifle", 1, "DualRifle")
+		TNT1 A 0 A_JumpIfInventory("DualRifles", 1, "AmmoOnly")
+		TNT1 A 0 A_GiveInventory("Rifle", 1)
+		TNT1 A 0 A_GiveInventory("Clip2", 10)
+		Stop
+
+	DualRifle:
+		TNT1 A 0 A_GiveInventory("HasDualRifle", 1)
+		TNT1 A 0 A_GiveInventory("Clip2", 10)
+		Stop
+
+	AmmoOnly:
+		TNT1 A 0 A_GiveInventory("Clip2", 10)
+		Stop
+	}
+}
+
+ACTOR FriendlyRifleSpawner: RifleSpawner
+{
+	Inventory.PickupMessage  "You got your fallen comrade's \cqAssault Rifle! \c-(slot 4)"
+}
+
+
+ACTOR ChaingunSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite MGUNA0
+	//$Title "Chaingun spawner"
+	Inventory.PickupSound "CBOXPKUP"
+	Inventory.PickupMessage "$GOTCHAINGUN"
+	States
+	{
+	Spawn:
+		MGUN A 0
+		MGUN A 3
+		MGUN A 0 A_ChangeFlag("THRUACTORS", 0)
+		MGUN AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		MGUN A 5
+		MGUN A 0 A_Jump(128,2)
+		MGUN A 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		MGUN A -1
+		Loop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("Minigun", 1)
+		TNT1 A 0 A_GiveInventory("Clip2", 20)
+		Stop
+	}
+}
+
+ACTOR FriendlyChaingunSpawner: ChaingunSpawner
+{
+	Inventory.PickupMessage "You got your fallen comrade's \cqChaingun! \c-(slot 4)"
+}
+
+ACTOR DropedChaingunSpawner: ChaingunSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		MGUN A 2
+		TNT1 A 0 A_ChangeFlag("THRUACTORS", 0)
+	Stay:
+		MGUN A -1
+		Loop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("Minigun", 1)
+		TNT1 A 0 A_GiveInventory("Clip2", 10)
+		Stop
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//SLOT 5
+
+ACTOR RocketLauncherSpawner : BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite RLAUA0
+	//$Title "Rocket Launcher spawner"
+	Inventory.PickupSound "rocket/reload2"
+	Inventory.PickupMessage "$GOTLAUNCHER"
+	States
+	{
+	Spawn:
+		RLAU A 0
+		RLAU A 3
+		RLAU A 0 A_ChangeFlag("THRUACTORS", 0)
+		RLAU AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		RLAU A 5
+		RLAU A 0 A_Jump(128,"Stay2")
+	NoRandom:
+	Stay:
+		RLAU A -1
+		Loop
+
+	Stay2:
+		RLAU C -1
+		Loop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("AmmoRocket", 2)
+		TNT1 A 0 A_GiveInventory("Rocket_Launcher", 1)
+		Stop
+	}
+}
+
+
+ACTOR GrenadeLauncherSpawner: BDWeaponSpawner 2551
+{
+	//$Category Weapons
+	//$Sprite RLAUA0
+	//$Title "Grenade Launcher spawner"
+	Inventory.PickupSound "rocket/reload2"
+	Inventory.PickupMessage "$GOTGRENADELAUNCHER"
+	States
+	{
+	Spawn:
+		GLAP A 0
+		GLAP A 3
+		GLAP A 0 A_ChangeFlag("THRUACTORS", 0)
+		GLAP AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		GLAP A 5
+		GLAP A 0 A_Jump(128,2)
+		GLAP A 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		GLAP A -1
+		Loop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("GrenadeLauncher", 1)
+		TNT1 A 0 A_GiveInventory("AmmoRocket", 2)
+		Stop
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//SLOT 6
+
+ACTOR PLasmagunSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite PRAA0
+	//$Title "Plasmagun spawner"
+	Inventory.PickupSound "Plasma/Draw"
+	Inventory.PickupMessage "$GOTPLASMA"
+	States
+	{
+	Spawn:
+		PRAS C 0
+		PRAS C 3
+		PRAS C 0 A_ChangeFlag("THRUACTORS", 0)
+		PRAS AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		PRAS C 5
+		PRAS C 0 A_Jump(128,2)
+		PRAS C 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		PRAS C -1
+		Loop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfInventory("Plasma_Gun", 1, "DualPlasma")
+		TNT1 A 0 A_JumpIfInventory("DualPlasmaRifles", 1, "AmmoOnly")
+	PickupNormal:
+		TNT1 A 0 A_GiveInventory("Plasma_Gun", 1)
+		TNT1 A 0 A_GiveInventory("AmmoCell", 50)
+		Stop
+
+	DualPlasma:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("HasDualPlasma", 1)
+		TNT1 A 0 A_GiveInventory("AmmoCell", 50)
+		Stop
+
+	AmmoOnly:
+		TNT1 A 0 A_GiveInventory("AmmoCell", 50)
+		Stop
+	}
+}
+
+ACTOR DropedPlasmaGun: PlasmagunSpawner
+{
+	States
+	{
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfInventory("Plasma_Gun", 1, "DualPlasma")
+		TNT1 A 0 A_JumpIfInventory("DualPlasmaRifles", 1, "AmmoOnly")
+		TNT1 A 0 A_GiveInventory("Plasma_Gun", 1)
+		Stop
+
+	DualPlasma:
+		TNT1 A 0 A_GiveInventory("HasDualPlasma", 1)
+		Stop
+
+	AmmoOnly:
+		TNT1 A 0 A_GiveInventory("AmmoCell", 50)
+		Stop
+	}
+}
+
+
+ACTOR RailgunSpawner: BDWeaponSpawner  2552
+{
+	//$Category Weapons
+	//$Sprite SRCGA0
+	//$Title "Railgun spawner"
+	//$Obsolete
+	Inventory.PickupSound "Plasma/Draw"
+	Inventory.PickupMessage "$GOTRAILGUN"
+	States
+	{
+	Spawn:
+		SRCG A 0
+		SRCG A 3
+		SRCG A 0 A_ChangeFlag("THRUACTORS", 0)
+		SRCG AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		SRCG A 5
+		SRCG A 0 A_Jump(128,2)
+		SRCG A 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		SRCG A -1
+		Loop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("Railgun", 1)
+		TNT1 A 0 A_GiveInventory("AmmoCell", 50)
+		Stop
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//SLOT 7
+
+ACTOR BFG9000Spawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite BFUGA0
+	//$Title "BFG9000 spawner"
+	Inventory.PickupSound "BFG/Draw"
+	Inventory.PickupMessage "$GOTBFG9000"
+	States
+	{
+	Spawn:
+		BFUG A 0
+		BFUG A 3
+		BFUG A 0 A_ChangeFlag("THRUACTORS", 0)
+		BFUG AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		BFUG A 5
+		BFUG A 0 A_Jump(128,2)
+		BFUG A 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		BFUG A -1
+		Loop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("BIG_FUCKING_GUN", 1)
+		TNT1 A 0 A_GiveInventory("AmmoCell", 100)
+		Stop
+	}
+}
+
+
+ACTOR BFG10KSpawner: BDWeaponSpawner 2553
+{
+	//$Category Weapons
+	//$Sprite BFG2A0
+	//$Title "BFG10k spawner"
+	//$Obsolete
+	Inventory.PickupSound "BFG/Draw"
+	Inventory.PickupMessage "$GOTBFG10K"
+	States
+	{
+	Spawn:
+		BFG2 A 0
+		BFG2 A 3
+		BFG2 A 0 A_ChangeFlag("THRUACTORS", 0)
+		BFG2 AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		BFG2 A 5
+		BFG2 A 0 A_Jump(128,2)
+		BFG2 A 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		BFG2 A -1
+		Loop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("BFG10K", 1)
+		TNT1 A 0 A_GiveInventory("AmmoCell", 100)
+		Stop
+	}
+}
+
+
+ACTOR UnmakerSpawner: BDWeaponSpawner 8845
+{
+	//$Category Weapons
+	//$Sprite UNHWA0
+	//$Title "Unmaker spawner"
+	//$Obsolete
+	Inventory.PickupSound "BFG/Draw"
+	Inventory.PickupMessage "$GOTUNMAKER"
+	States
+	{
+	Spawn:
+		UNHW A 0
+		UNHW A 3
+		UNHW A 0 A_ChangeFlag("THRUACTORS", 0)
+		UNHW AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		UNHW A 5
+		UNHW A 0 A_Jump(128,2)
+		UNHW A 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		UNHW A -1
+		Loop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("Unmaker", 1)
+		TNT1 A 0 A_GiveInventory("SoulAmmo", 100)
+		Stop
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//THE REST
+
+ACTOR FlameCannonSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite MANAH0
+	//$Title "Flamecannon spawner"
+	Inventory.PickupSound "Flamer/select"
+	Inventory.PickupMessage "$GOTFLAMECANNON"
+	Scale 1.1
+	States
+	{
+	Spawn2:
+	Spawn:
+		MANA H 0
+		MANA H 10
+		MANA H -1 A_ChangeFlag("THRUACTORS", 0)
+		Stop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfInventory("FlameCannon", 1, "PickupDual")
+		TNT1 A 0 A_JumpIfInventory("DualFlameCannon", 1, "AmmoOnly")
+		TNT1 A 0 A_GiveInventory("FlameCannon", 1)
+		TNT1 A 0 A_GiveInventory("Gas", 30)
+		Stop
+
+	PickupDual:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("HasDualFlameCannon", 1)
+		TNT1 A 0 A_GiveInventory("Gas", 30)
+		Stop
+
+	AmmoOnly:
+		TNT1 A 0 A_GiveInventory("Gas", 30)
+		Stop
+	}
+}
+
+ACTOR SniperSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite WM14A0
+	//$Title "Sniper spawner"
+	Inventory.PickupSound "Rifle/Select"
+	Inventory.PickupMessage "$GOTSNIPER"
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 3
+		TNT1 A 0 A_ChangeFlag("THRUACTORS", 0)
+		TNT1 AA 0 ACS_NamedExecuteAlways("NoRandomSprites")
+		TNT1 A 5
+		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_SetScale(-scalex,scaley)
+	NoRandom:
+		WM14 b -1
+		Loop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("Sniper", 1)
+		TNT1 A 0 A_GiveInventory("SniperAmmo", 20)
+		Stop
+	}
+}
+
+ACTOR FlameThrowerSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite FLMTF0
+	//$Title "Flamethrower spawner"
+	Inventory.PickupSound "Flamer/select"
+	Inventory.PickupMessage "$GOTFLAMETHROWER"
+	Scale 0.90
+	States
+	{
+	Spawn:
+		FLMT F 0
+		FLMT F 10
+		FLMT F -1 A_ChangeFlag("THRUACTORS", 0)
+		Stop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("Flamethrower2", 1)
+		TNT1 A 0 A_GiveInventory("Gas", 300)
+		Stop
+	}
+}
+
+
+ACTOR HMLSpawner: BDWeaponSpawner
+{
+	//$Category Weapons
+	//$Sprite FATBD0
+	//$Title "Hellish Missile Launcher spawner"
+	Inventory.PickupSound "RevLaunch/Draw"
+	Inventory.PickupMessage "$GOTREVMISSILE"
+	States
+	{
+	Spawn2:
+	Spawn:
+		FATB D 0
+		FATB D 10
+		FATB D -1 A_ChangeFlag("THRUACTORS", 0)
+		Stop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("HellishMissileLauncher", 1)
+		TNT1 A 0 A_GiveInventory("MiniHellRocketAmmo", 4)
+		Stop
+	}
+}
+
+
+ACTOR NukeSpawner: BDWeaponSpawner replaces NukeLauncher 7452
+{
+	//$Category Weapons
+	//$Sprite NKLGD0
+	//$Title "Nuke launcher spawner"
+	//$Obsolete
+	Inventory.PickupSound "BFG/Draw"
+	Inventory.PickupMessage "$GOTNUKELAUNCHER"
+	States
+	{
+	Spawn:
+		NKLG D 0
+		NKLG D 10
+		NKLG D -1 A_ChangeFlag("THRUACTORS", 0)
+		Stop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("NukeLauncher", 1)
+		TNT1 A 0 A_GiveInventory("Nuke", 1)
+		Stop
+	}
+}
+
+ACTOR DevastatorSpawner: BDWeaponSpawner replaces Devastator 7458
+{
+	//$Category Weapons
+	//$Sprite DEVA[0
+	//$Title "Devastator spawner"
+	//$Obsolete
+	Inventory.PickupSound "BFG/Draw"
+	Inventory.PickupMessage "$GOTDEVASTATOR"
+	States
+	{
+	Spawn:
+		DEVA "[" 0
+		DEVA "[" 10
+		DEVA "[" -1 A_ChangeFlag("THRUACTORS", 0)
+		Stop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("Devastator", 1)
+		TNT1 A 0 A_GiveInventory("DevastatorAmmo", 100)
+		Stop
+	}
+}
+
+ACTOR ILSpawner: BDWeaponSpawner replaces IncendiaryLauncher 7459
+{
+	//$Category Weapons
+	//$Sprite W202A0
+	//$Title "Incendiary launcher spawner"
+	//$Obsolete
+	Inventory.PickupSound "BFG/Draw"
+	Inventory.PickupMessage "$GOTM202"
+	States
+	{
+	Spawn:
+		W202 A 0
+		W202 A 10
+		W202 A -1 A_ChangeFlag("THRUACTORS", 0)
+		Stop
+
+	Pickup:
+		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("IncendiaryLauncher", 1)
+		TNT1 A 0 A_GiveInventory("AmmoM202", 4)
+		Stop
+	}
+}
+
+
+/////Zio's New garbage (Customizable weapon spawners)
+////Modified by Dox
+//POWERUPS FIRST
+
+actor DemonStrengthRune: BasicWeaponPickup2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("BDNoPowerUps")//ACS_NamedExecuteAlways("NoEasyGameForMeThankYou")
+		TNT1 A 4
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx ("DemonStrengthRune2",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Cancels://Destroy:
+		TNT1 A 0
+		STOP
+	}
+}
+
+actor DemonRuneMix: BasicWeaponPickup2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("BDNoPowerUps")//ACS_NamedExecuteAlways("DemonRuneCheck")
+		TNT1 A 4
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx ("RealDemonRune",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Cancels:
+		TNT1 A 0
+		Stop
+	}
+}
+
+actor NightVisionSpawner : BasicWeaponPickup2  Replaces InfraRed
+{
+	Tag "Nightvision/Demon Rune"
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("BDNoPowerUps")//ACS_NamedExecuteAlways("DemonRuneCheck")
+		TNT1 A 4
+		TNT1 A 0 A_Jump(128,"Spawn2")
+
+	Cancels:
+		TNT1 A 1 A_SpawnItemEx ("NIghtvision",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx ("DemonRuneMix",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+	}
+}
+
+Actor RealDemonRune:BasicWeaponPickup2
+
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(128,"Spawn2")
+		TNT1 A 1
+		TNT1 A 1 A_SpawnItemEx ("BaronRune",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx ("RevenantRune",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+	}
+}
+
+actor SpectreBlurSphere: BasicWeaponPickup2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("BDNoPowerUps")//ACS_NamedExecuteAlways("NODemonBlur")
+		TNT1 A 4
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx ("SuperBlurSphere",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Cancels:
+		TNT1 A 0
+		Stop
+	}
+}
+
+////Cruelty bonuses
+///Are you happy,TSF?
+
+ACTOR 1ealthPlusFatalityBonus : Health
+{
+	Game Doom
+	+THRUACTORS
+	+CANNOTPUSH
+	-COUNTITEM
+	-INVENTORY.ALWAYSPICKUP
+	+INVENTORY.NEVERRESPAWN
+	+FORCEXYBILLBOARD
+	Inventory.Amount 5
+	Inventory.MaxAmount 150
+	Tag "Demonic Essence"
+	Inventory.PickupMessage "$GOTESSENCE"
+	Scale 0.7
+	States
+	{
+	Spawn:
+		ZHHP A 0
+		ZHHP ABABAB 2
+		TNT1 A 0 A_ChangeFlag("THRUACTORS", 0)
+		Goto Spawn2
+
+	Spawn2:
+		TNT1 A 0 A_CheckSight ("Spawn3")
+		ZHHP AB 2
+		Loop
+
+	Spawn3:
+		ZHHP A 9
+		Goto Spawn2
+	}
+}
+
+
+Actor 1ealthPlusFatalityBonus2 : 1ealthPlusFatalityBonus
+{
+	Inventory.Amount 2
+	Inventory.MaxAmount 150
+}
+
+Actor 1rmorShardFatalityBonus : ArmorShard
+{
+	-INVENTORY.ALWAYSPICKUP
+	Tag "Demonic armor"
+	inventory.pickupmessage "$GOTDEMONSHARD"
+	Inventory.Icon "BON3A0"
+	Scale 0.5
+	Armor.Saveamount 5
+	Armor.Maxsaveamount 150
+	+THRUGHOST
+	+GHOST
+	+THRUACTORS
+	-COUNTITEM
+	+FORCEXYBILLBOARD
+	+CANNOTPUSH
+	States
+	{
+	Spawn:
+		BON3 AAABCBAAABCBAAABCB 2
+		TNT1 A 0 A_ChangeFlag("THRUACTORS", 0)
+		Goto Spawn2
+
+	Spawn2:
+		BON3 AAABCB 2
+		Loop
+	}
+}
+
+Actor 1rmorShardFatalityBonus2 : 1rmorShardFatalityBonus
+{
+	Armor.Saveamount 2
+	Armor.Maxsaveamount 300
+}
+
+actor HealthPlusFatalityBonus: BasicWeaponPickup2
+{
+	+CANNOTPUSH
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("BDNoPowerUps")//ACS_NamedExecuteAlways("DisableBonuses")
+		TNT1 A 4
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx ("1ealthPlusFatalityBonus",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Cancels:
+		TNT1 A 0
+		Stop
+	}
+}
+
+actor HealthPlusFatalityBonus2: BasicWeaponPickup2
+{
+	+CANNOTPUSH
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("BDNoPowerUps")//ACS_NamedExecuteAlways("DisableBonuses")
+		TNT1 A 4
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx ("1ealthPlusFatalityBonus2",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Cancels:
+		TNT1 A 0
+		Stop
+	}
+}
+
+actor ArmorShardFatalityBonus: BasicWeaponPickup2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("BDNoPowerUps")//ACS_NamedExecuteAlways("DisableBonuses")
+		TNT1 A 4
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx ("1rmorShardFatalityBonus",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Cancels:
+		TNT1 A 0
+		Stop
+	}
+}
+
+actor ArmorShardFatalityBonus2: BasicWeaponPickup2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("BDNoPowerUps")//ACS_NamedExecuteAlways("DisableBonuses")
+		TNT1 A 4
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx ("1rmorShardFatalityBonus2",3,0,5,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		Stop
+
+	Cancels:
+		TNT1 A 0
+		Stop
+	}
+}

@@ -1,0 +1,91 @@
+clearplayerclasses
+addplayerclass Doomer2
+addplayerclass BDoomer
+addplayerclass Doomer3
+addplayerclass TacticalDoomer
+addplayerclass Purist
+
+
+weaponsection "Brutal_Doom"
+
+setslot 1 DSweap BrutalAxe Chain_Saw Melee_Attacks
+setslot 2 BrutalPistol DualPistols BrutalSMG DualSMG MP40 DualMP40 Revolver
+setslot 3 Shot_Gun AssaultShotgun SSG
+setslot 4 Sniper Rifle DualRifles MiniGun MG42
+setslot 5 IncendiaryLauncher GrenadeLauncher Rocket_Launcher Devastator
+setslot 6 Plasma_Gun DUalPlasmaRifles RailGun
+setslot 7 NukeLauncher BFG10k BIG_FUCKING_GUN
+setslot 8 HellishMissileLauncher Unmaker
+setslot 9 FlameCannon DualFlameCannon Flamethrower2
+setslot 0 HandGrenades
+
+   addkeysection "$BD_OPTIONS_ADVANCED_OPTIONS" BrutalDoomActions
+   addmenukey "$BD_OPTIONS_KICK" "+zoom"
+   defaultbind Q "+zoom"
+
+   addmenukey "$BD_OPTIONS_RELOAD" "+reload"
+   defaultbind R "+reload"
+
+   addmenukey "$BD_OPTIONS_FLASHLIGHT" flashlightswitch
+   alias flashlightswitch "puke 313"
+   defaultbind F flashlightswitch
+
+   addmenukey "$BD_OPTIONS_UNDERBARREL" AssaultRifleGrenade
+   alias AssaultRifleGrenade "pukename UBGLScript"
+
+	addmenukey "$BD_OPTIONS_TOSSGRENADE" grenadetoss
+   alias grenadetoss "pukename BDweaponActions always 4"
+   defaultbind G grenadetoss
+
+   addmenukey "$BD_OPTIONS_UNLOAD" unreloader
+   alias unreloader "pukename BDweaponActions always 3"
+
+   addmenukey "$BD_OPTIONS_DUALWIELD" dual
+   alias dual "puke 308"
+   defaultbind X dual
+
+   addmenukey "$BD_OPTIONS_AMMODROPPER" selectammodroper
+   alias selectammodroper "puke 309"
+
+   addmenukey "$BD_OPTIONS_ROLL" DodgeRoll
+   alias DodgeRoll "pukename DodgeRoll always"
+
+   addmenukey "$BD_OPTIONS_ROLL_LEFT" roleft
+   alias roleft "puke 306"
+
+   addmenukey "$BD_OPTIONS_ROLL_RIGHT" roright
+   alias roright "puke 307"
+
+
+
+   addkeysection "$BD_OPTIONS_INTERACTIONS" BrutalDoomInteractions
+
+
+
+   addmenukey "$BD_OPTIONS_OFFEND" brutaltaunt
+   alias brutaltaunt "pukename BDweaponActions always 1"
+   defaultbind H brutaltaunt
+
+   addmenukey "$BD_OPTIONS_TAUNT_GZDOOM" HMMMAHAH
+   alias HMMMAHAH "pukename GzDoomTaunt"
+
+   addmenukey "$BD_OPTIONS_WAVE1" wave1
+   alias wave1 "pukename BDweaponActions always 5"
+   defaultbind V wave1
+
+   addmenukey "$BD_OPTIONS_WAVE2" wave2
+   alias wave2 "pukename BDweaponActions always 6"
+   defaultbind N wave2
+
+   addmenukey "$BD_OPTIONS_ADVANCED_TAUNTS" advtaunt
+   alias advtaunt "pukename BDweaponActions always 7"
+   defaultbind J advtaunt
+
+   addmenukey "One-Liners" oneliner
+   alias oneliner "puke 305"
+   defaultbind K oneliner
+
+   addmenukey "$BD_OPTIONS_SLOWMOTION" slowmo
+   alias slowmo "i_timescale 0.35; rebind slowmostop; playsound slowon"
+   alias slowmostop "i_timescale 1.0; rebind slowmo; playsound slowoff"
+   //Remember to comment this out for the gold release. 
