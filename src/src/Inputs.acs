@@ -194,7 +194,7 @@ script "CheckSprint" ENTER
 	while (TRUE)
 	{
 		buttonSpeed = GetPlayerInput(-1, INPUT_BUTTONS);
-		if (buttonSpeed & BT_SPEED && CheckPlayerOnGround() && (GetPlayerInput(-1, INPUT_FORWARDMOVE) > 0||CheckInventory("Accelerate") == 1) 
+		if (buttonSpeed & BT_SPEED && /*CheckPlayerOnGround()*/(GetActorVelZ(0) >= -5 && GetActorVelZ(0) <= 5) && (GetPlayerInput(-1, INPUT_FORWARDMOVE) > 0||CheckInventory("Accelerate") == 1) 
 		&& (CheckInventory("IsCrouching") == 0) && (CheckInventory("IsTacticalClass") == 1) 
 		&& (GetActorProperty(0, APROP_WATERLEVEL) < 3))
 		{
