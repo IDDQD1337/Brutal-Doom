@@ -471,7 +471,7 @@ Actor RailGun : BrutalWeapon
 		TNT1 A 0 A_SetCrosshair( CallACS("GetCrosshair", 11) )
 		2HTN E 0 A_JumpIfInventory("IsPlayingAsPurist", 1,"PuristWarning")
 		RAIL A 0 A_JumpIfInventory("NoReloading", 1, "Fidget")
-		RAIL A 0 A_JumpIfInventory("RailgunAmmo",5,"Fidget")
+		RAIL A 0 A_JumpIfInventory("RailgunAmmo",0,"Fidget")
 		RAIL A 0 A_JumpIfInventory("AmmoCell",10,3)
 		Goto Ready
 		TNT1 AAAA 0
@@ -489,7 +489,7 @@ Actor RailGun : BrutalWeapon
 
 	InsertBullets:
 		TNT1 AAAA 0
-		RAIL A 0 A_JumpIfInventory("RailgunAmmo",5,"FinishReload")
+		RAIL A 0 A_JumpIfInventory("RailgunAmmo",0,"FinishReload")
 		RAIL A 0 A_JumpIfInventory("AmmoCell",10,3)
 		Goto FinishReload
 		TNT1 AAAAAA 0
