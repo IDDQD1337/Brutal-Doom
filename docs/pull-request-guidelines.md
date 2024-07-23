@@ -11,10 +11,10 @@ The pull request flow differs between general users and team members. In order f
 
 #### General user flow chart:
 <div align="center">
-	<img src="https://github.com/Brutal-Doom/Brutal-Doom/blob/main/files/flowchart-pullrequest.jpg?raw=true" />
+	<img src="https://github.com/Brutal-Doom/Brutal-Doom/blob/dev/files/flowchart-pullrequest.jpg?raw=true" />
 </div>
 
 #### Team member flow chart:
 <div align="center">
-	<img src="https://github.com/Brutal-Doom/Brutal-Doom/blob/main/files/flowchart-pullrequest-team.jpg?raw=true" />
+	<img src="https://github.com/Brutal-Doom/Brutal-Doom/blob/dev/files/flowchart-pullrequest-team.jpg?raw=true" />
 </div>
