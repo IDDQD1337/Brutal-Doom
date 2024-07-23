@@ -1,3 +1,4 @@
+
 # How to contribute
 
 One of the easiest ways to contribute is to participate in discussions on GitHub issues. You can also contribute by submitting pull requests with code changes.
@@ -6,71 +7,27 @@ One of the easiest ways to contribute is to participate in discussions on GitHub
 
 Start a discussion on the [issue tracker](https://github.com/Brutal-Doom/Brutal-Doom/issues).
 
-## WORKFLOW GUIDELINES / HOW TO WORK
 
-### SPRITE GUIDELINES
-- Save as 32 bpp (bits per pixel) png images ONLY.
-- Selective 8 bpp for images that appear for ~1 tick or dont have many colors.
-- Image resolutions should be to the power of 2, examples of proper, optimized resolutions:
-- ``
-32x32, 32x64, 32x128, 32x256
-64x32, 64x64,64x128, 64x256
-128x32, 128x64, 128x128, 128x256
-256x32, 256x64, 256x128, 256x256
-``
+## Found a bug, or want to propose a feature/change?
 
-OFFSETS:
-- If working with monsters/vanilla-related actors, use [this file](https://drive.google.com/file/d/1WrkyGcHv926K4Xvu9Ehskjne5gtrtUXP/view?usp=sharing) for proper offset placements.
-- No automatic offsets. AT ALL. (automation is fine as long as you manually clean it up).
-- If adding new custom sprites, try to align them with their corresponding angles.
-- When dealing with possibly mirrored sprites (A2A8), don't use the mirrored version (A8) as a base, try to find the actual A8 frame if possible and use that.
+Start a discussion on the [issue tracker](https://github.com/Brutal-Doom/Brutal-Doom/issues). To avoid duplicate issues we ask you to search for an existing issue listing your topic and possibly upvote it to add attention (👍). We would appreciate it if you contribute to the issue with your own comment so that we can consider your own experience or requirements related to that issue.
 
+## Creating an issue regarding a feature/change
+**Before posting, ensure the following requirements are met regarding your issue**:
+- Your posted suggestion should be about a genuine new feature or change and should not represent something that is a waste of time for developers to read and/or respond to.
+- Your suggestion should be a reasonable addition to add to Brutal Doom and should not be considered unrelated or not suitable.
+- If possible, try to only suggest something that is possible in both Zandronum and/or GZDoom.
 
-### SOUND GUIDELINES
-- ogg files only.
+_To avoid spam we enforce these rules and remove the ability to post to those who misuse it._
 
-### Code style
-I feel like we should all follow a some sort of decorate standard, so it's easier to read. 
-Not only for decorate, but any lump. Some are REALLY BAD... like SNDINFO.
+## Creating an issue regarding a bug
+**Before posting, ensure the following requirements are met regarding your issue**:
+* Ensure you run the latest version of GZDoom or Zandronum.
+* Make sure the bug **ONLY** appears with just Brutal Doom loaded. Any bugs with addons are automatically rejected, even if it is possibly related to Brutal Doom.
+* Delta Touch is **not supported**. Any bugs posted when you used Delta Touch is ignored.
+* Make sure you use the latest version of Brutal Doom. The latest release is found in the releases channel.
+* Please report screenshots and methods to replicate (if applicable) so debugging is easier.
 
-I propose an example for decorate:
-- Tab is 4 spaces
-- 1 tab for properties/flags
-- 1 tab for "states" and its bracket
-- 1 tab for state name
-- 2 tabs for stuff inside a state
-
-- Properties, state names, functions should follow the PascalCase convention (First letter capitalized)
-- FLAGS, SPRITES are FULLCAPS.
-``` 
-ACTOR Object: Clip replaces Clip
-{
-    //Properties first...
-    Width 10
-    Height 12
-    Speed 80
-    BounceType doom
-    BounceFactor 0.3
-	
-    //... then flags.
-    +FORCEXYBILLBOARD
-    +CLIENTSIDEONLY
-    +FLOAT
-	
-    States
-    {
-    Spawn:
-        TNT1 A 1 A_Jump(256, "State1", "State2")
-    State1:
-        CLIP A -1
-        stop      
-    State2:
-        CLIP B -1
-        stop
-  }
-}
-```
-
-### KEEP THE CODE ERROR FREE!
-Before commiting changes to the repository, clean up every warning you may have caused!
-We want to avoid the avalanche of orange/red text older bd versions are notorious for, and in geenral this gives a bad look.
+## Creating a pull request
+Coding styles and guidelines can be found in [coding guidelines](docs/coding-guidelines.md).
+Detailed information about steps taken when setting up a pull request can be found in [pull request guidelines](docs/pull-request-guidelines.md).
