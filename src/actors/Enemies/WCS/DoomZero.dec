@@ -299,6 +299,15 @@ Actor BossEyeChecker: BossEye replaces BossEye
 		TNT1 A 0 A_SpawnItemEx("DoomZeroBossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPOINTERS | SXF_TRANSFERAMBUSHFLAG)
 		Stop
 
+	D64D2:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
+		TNT1 A 0 A_ChangeFlag("NOTARGET", 1)
+		TNT1 A 0 A_ChangeFlag("NOBLOCKMAP", 1)
+		TNT1 A 0 A_SpawnItemEx("D64D2BossEye", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION | SXF_TRANSFERPOINTERS | SXF_TRANSFERAMBUSHFLAG)
+		Stop
+
 	SpawnRegular:
 		TNT1 A 2
 		goto super::spawn
@@ -357,5 +366,68 @@ ACTOR Pentagram
 	Spawn:
 		PNTG C -1
 		Stop
+	}
+}
+
+/*
+A faster flying, soundless version of the Demon Spawn Cube along with a Spawner 
+that doesn't make awakening sounds.
+*/
+ACTOR FasterSpawnShot : SpawnShot
+{
+	Speed 30
+	SeeSound ""
+	DeathSound ""
+	States
+	{
+		Spawn:
+			BOSF A 3 Bright
+			BOSF BCD 3 Bright A_SpawnFly
+			Loop
+	}
+}
+
+
+/*
+Altered demons spawner object.  These changes allow it to be killed.
+*/
+ACTOR D64D2BossEye : BossEye
+{
+	Health 10
+	Radius 20
+	Height 32
+	Mass 100
+	AttackSound ""
+	SeeSound ""
+	+SHOOTABLE
+	+SOLID
+	-NOBLOCKMAP
+    -NOSECTOR
+	/* - This doesn't work well because it spawns all of these guys once killed.
+	DropItem "DoomImp" 		255 50
+	DropItem "NightmareImp" 255 40
+	DropItem "Demon"		255 40
+	DropItem "Spectre"		255 30
+	DropItem "PainElemental"255 10
+	DropItem "Cacodemon"	255 30
+	DropItem "Archvile"		255  2
+	DropItem "Revenant"		255 10
+	DropItem "Arachnotron"	255 20
+	DropItem "Fatso"		255 30
+	DropItem "HellKnight"	255 24
+	DropItem "BaronOfHell"	255 10
+	*/
+	States
+	{
+		Spawn:
+			SSWV A 10 A_Look
+			Loop
+		See:
+			SSWV A 10
+			SSWV A 150 A_BrainSpit("FasterSpawnShot")
+			Wait
+		Death:
+			SSWV A 2 A_Fall
+			Stop
 	}
 }

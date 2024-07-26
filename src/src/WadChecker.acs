@@ -18,7 +18,8 @@ Script "WadChecker"
 		"Jenesis", //Jenesis
 		"2048Unleashed", //2048 Unleashed
 		"DoomZero", //Doom Zero
-		"Wormwood" //Wormwood
+		"Wormwood", //Wormwood
+		"D64D2" //D64D2
 	};
     if(bd_WadCheck > 0)
         SetActorState(0, wadSelect[bd_WadCheck - 1]);
@@ -41,7 +42,8 @@ int WadHash[] =
 	0x1FC2CF3E, //Jenesis
 	0xDDD6DE16, //2048 Unleashed
 	0x31F67187, //Doom Zero
-	0xF69D278A //Wormwood
+	0xF69D278A, //Wormwood
+	0xE7A8E948 //D64D2
 };
 
 /*Script "BD_HashTitlepic" OPEN CLIENTSIDE
