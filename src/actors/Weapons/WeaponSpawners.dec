@@ -286,6 +286,7 @@ actor BFGReplacer : BasicWeaponPickup Replaces BFG9000
 		TNT1 A 2
 		TNT1 A 0 A_JumpIfInventory("NaziVerificate1", 1, "MG42")
 		TNT1 A 0 ACS_NamedExecuteAlways("BDDisableBFGSPAWNER", 0, 0, 0, 0)
+		TNT1 A 0 ACS_NamedExecuteAlways("D64D2_Unmaker_Patch", 0, 0, 0, 0)
 		TNT1 A 3
 		TNT1 A 0 A_Jump(48, "BFG10K")
 		TNT1 A 0 A_Jump(4, "Unmaker")
@@ -307,6 +308,7 @@ actor BFGReplacer : BasicWeaponPickup Replaces BFG9000
 		TNT1 A -1 A_SpawnItemEx ("BFG10KSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
 		Stop
 
+	IsD64D2:
 	Unmaker:
 		TNT1 A -1 A_SpawnItemEx ("UnmakerSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
 		Stop

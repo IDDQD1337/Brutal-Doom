@@ -1,0 +1,15 @@
+// D64D2 Enhancements
+bool D64D2 = False;
+Script "MAP30_55B00001"
+{
+	D64D2 = True;
+}
+
+
+script "D64D2_Unmaker_Patch" 
+{ 
+	delay(1); 
+	if(D64D2 == False) terminate;
+	else 
+		SetActorState(0, "IsD64D2"); 
+}

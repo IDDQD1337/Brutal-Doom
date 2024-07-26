@@ -614,3 +614,40 @@ actor LetTheHateFlow : CustomInventory
 		Stop
 	}
 }
+
+ACTOR ChooserDemon// : TehArchvile
+{
+	Health 10
+	Height 56
+	Radius 20
+	Mass 500
+	Speed 15
+	PainChance 0
+	RenderStyle OptFuzzy
+	Alpha 0.5
+	+QUICKTORETALIATE
+	+FLOORCLIP
+	+NOTARGET
+	+SHOOTABLE
+	+SOLID
+	+CANPUSHWALLS
+	+CANUSEWALLS
+	+ACTIVATEMCROSS
+	+CANPASS
+	+SHADOW
+	States
+	{
+		Spawn:
+			VILE AB 10 A_Look
+			Loop
+		See:
+			VILE AABBCCDDEEFF 2 A_VileChase
+			Loop
+		Death:
+			VILE QR 7
+			VILE S 7 A_NoBlocking
+			VILE TUVWXY 7
+			VILE Z -1
+			Stop
+	}
+}

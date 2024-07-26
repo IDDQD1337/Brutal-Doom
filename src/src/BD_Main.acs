@@ -38,6 +38,7 @@
 #include "EDayEnh.acs"
 #include "EviEnh.acs"
 #include "ThunPkEnh.acs"
+#include "D64D2Enh.acs"
 
 // Server Variables
 int bd_mantling;
@@ -184,6 +185,7 @@ script "ClientCVars" ENTER
 
 script "GetCVars" (void) net
 {
+	delay(3);
 	ACS_NamedExecuteAlways("ServerCVars", 0);
 	ACS_NamedExecuteAlways("ClientCVars", 0);
 	ACS_NamedExecuteAlways("BDRespawn", 0);

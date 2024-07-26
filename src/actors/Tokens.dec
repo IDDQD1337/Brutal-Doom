@@ -645,6 +645,7 @@ Actor lowgraphicsmode : bd_Token {}
 Actor Timer : bd_Token { inventory.maxamount 4 }
 /////////////////////////////////////
 Actor IsNOTSunlust : bd_Token { } //This token allows barrels from any map but God Machine to explode as intended when they get crushed.
+Actor D64D2_Loaded : bd_Token { } //Used for D64D2 compatibility.
 Actor HasExplosiveBarrel : bd_Token {}
 Actor ComingTOGetTheBarrel : bd_Token {}
 Actor IsAnEvilMarine : bd_Token { inventory.maxamount 5 }

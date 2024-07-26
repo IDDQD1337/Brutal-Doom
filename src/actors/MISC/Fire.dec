@@ -148,6 +148,11 @@ ACTOR ImpFireBallFlames2: SmallFlameTrails
 		}
 }
 
+ACTOR NightmareImpFireBallFlames: ImpFireBallFlames2
+{
+	translation "168:191=192:207","16:47=240:247"
+}
+
 ACTOR FireBallExplosion: FlameTrails
 {
 	Renderstyle Add
