@@ -1,0 +1,7 @@
+// Wormwood Enhancements
+bool Wormwood = False;
+
+Script "MAP01_0AE00080"
+{
+	Wormwood = True;
+}
