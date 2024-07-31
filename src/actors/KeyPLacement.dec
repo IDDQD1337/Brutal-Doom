@@ -19,7 +19,6 @@ ACTOR KeySpawnerBase : CustomInventory
 	Spawn:
 		TNT1 A 1
 		Stop
-
 	Pickup:
 		TNT1 A 0
 		Stop
@@ -37,7 +36,6 @@ Actor GLBlueCard : KeySpawnerBase 5
 		BKEY A 0
 		BKEY A 0 A_SpawnItemEx("BlueCard", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION|SXF_CLEARCALLERTID|SXF_TRANSFERSCALE, 0, TID)
 		BKEY A 0 A_SetScale(1.0, 1.0)
-		BKEY A 0 ACS_NamedExecuteAlways("NoRandomSprites")
 		BKEY A 2
 		BKEY A 0 A_Jump(128,2)
 		BKEY A 0 A_SetScale(-scalex,scaley)
@@ -45,7 +43,6 @@ Actor GLBlueCard : KeySpawnerBase 5
 		BKEY A 10
 		BKEY B 10 Bright
 		Loop
-
 	Pickup:
 		TNT1 A 0 A_GiveInventory("BlueCard",1)
 		stop
@@ -63,7 +60,6 @@ Actor GLRedCard : KeySpawnerBase 13
 		RKEY A 0
 		RKEY A 0 A_SpawnItemEx("RedCard", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION|SXF_CLEARCALLERTID|SXF_TRANSFERSCALE, 0, TID)
 		RKEY A 0 A_SetScale(1.0, 1.0)
-		RKEY A 0 ACS_NamedExecuteAlways("NoRandomSprites")
 		RKEY A 2
 		RKEY A 0 A_Jump(128,2)
 		RKEY A 0 A_SetScale(-scalex,scaley)
@@ -71,7 +67,6 @@ Actor GLRedCard : KeySpawnerBase 13
 		RKEY A 10
 		RKEY B 10 Bright
 		Loop
-		
 	Pickup:
 		TNT1 A 0 A_GiveInventory("RedCard",1)
 		stop
@@ -89,7 +84,6 @@ Actor GLYellowCard : KeySpawnerBase 6
 		YKEY A 0
 		YKEY A 0 A_SpawnItemEx("YellowCard", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION|SXF_CLEARCALLERTID|SXF_TRANSFERSCALE, 0, TID)
 		YKEY A 0 A_SetScale(1.0, 1.0)
-		YKEY A 0 ACS_NamedExecuteAlways("NoRandomSprites")
 		YKEY A 2
 		YKEY A 0 A_Jump(128,2)
 		YKEY A 0 A_SetScale(-scalex,scaley)
@@ -97,17 +91,11 @@ Actor GLYellowCard : KeySpawnerBase 6
 		YKEY A 10
 		YKEY B 10 Bright
 		Loop
-
 	Pickup:
 		TNT1 A 0 A_GiveInventory("YellowCard",1)
 		stop
 	}
 }
-
-
-
-
-
 
 Actor GLBlueSkull : KeySpawnerBase 40
 {
@@ -120,14 +108,11 @@ Actor GLBlueSkull : KeySpawnerBase 40
 		BSKU A 0
 		BSKU A 0 A_SpawnItemEx("BlueSkull", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION|SXF_CLEARCALLERTID|SXF_TRANSFERSCALE, 0, TID)
 		BSKU A 0 A_SetScale(1.0, 1.0)
-		BSKU A 0 ACS_NamedExecuteAlways("NoRandomSprites")
 		BSKU A 2
-		BSKU A 0 A_Jump(256,"NoRandom","Loop2","Loop3","Loop4")
 	NoRandom:
 		BSKU A 10
 		BSKU B 10 Bright
 		Loop
-
 	Pickup:
 		TNT1 A 0 A_GiveInventory("BlueSkull",1)
 		Stop
@@ -145,20 +130,16 @@ Actor GLRedSkull : KeySpawnerBase 38
 		RSKU A 0
 		RSKU A 0 A_SpawnItemEx("RedSkull", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION|SXF_CLEARCALLERTID|SXF_TRANSFERSCALE, 0, TID)
 		BSKU A 0 A_SetScale(1.0, 1.0)
-		RSKU A 0 ACS_NamedExecuteAlways("NoRandomSprites")
 		RSKU A 2
-		RSKU A 0 A_Jump(256,"NoRandom","Loop2","Loop3","Loop4")
 	NoRandom:
 		RSKU A 10
 		RSKU B 10 Bright
 		Loop
-
 	Pickup:
 		TNT1 A 0 A_GiveInventory("RedSkull",1)
 		stop
 	}
 }
-
 
 Actor GLYellowSkull : KeySpawnerBase 39
 {
@@ -171,14 +152,11 @@ Actor GLYellowSkull : KeySpawnerBase 39
 		YSKU A 0
 		YSKU A 0 A_SpawnItemEx("YellowSkull", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION|SXF_CLEARCALLERTID|SXF_TRANSFERSCALE, 0, TID)
 		BSKU A 0 A_SetScale(1.0, 1.0)
-		YSKU A 0 ACS_NamedExecuteAlways("NoRandomSprites")
 		YSKU A 2
-		YSKU A 0 A_Jump(256,"NoRandom","Loop2","Loop3","Loop4")
 	NoRandom:
 		YSKU A 10
 		YSKU B 10 Bright
 		Loop
-
 	Pickup:
 		TNT1 A 0 A_GiveInventory("YellowSkull",1)
 		stop
