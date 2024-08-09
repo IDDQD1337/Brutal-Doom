@@ -321,7 +321,7 @@ ACTOR CrueltyBonus5health : Health
 	+INVENTORY.ALWAYSPICKUP
 	Inventory.Amount 5
 	Inventory.MaxAmount 9999
-	Inventory.PickupMessage "*** Cruelty Bonus awarded! +5 health ***"
+	Inventory.PickupMessage "$GOTCRUELTYHEALTH"
 	States
 	{
 	Spawn:

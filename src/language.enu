@@ -531,6 +531,7 @@ GOTMEDIKIT = "Picked up a \cdMedikit";
 GOTESSENCE = "Picked up a \cgDemonic Essence";
 GOTSTIMNEED = "Picked up a \cdStimpack\c-, just in time!";
 GOTMEDINEED = "Picked up a \cdMedikit \c-that you REALLY need!";
+GOTCRUELTYHEALTH = "*** Cruelty Bonus awarded! \cd+5 health \c-***";
 
 GOTARMBONUS = "Picked up an \cdArmor Bonus";
 GOTARMOR = "Picked up the \cdSecurity Armor";
