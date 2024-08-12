@@ -882,209 +882,206 @@ OptionString "BDLanguageOptions"
 
 OptionMenu "BDCredits1"
 {
-	Title "Brutal Doom v22 by Sergeant_Mark_IV"
-	StaticText ""
-	StaticText "In case of missing names, please contact me."
-	StaticText "Discord: sergeant_mark_iv"
-	StaticText "Twitter: BrutalDoomGuy"
-	StaticText "Youtube: SGtMarkIV"
-	StaticText "Also avalaible on Moddb, Doomworld, and Zandronum forums."
-	StaticText ""
-	StaticText "====================================-- Graphics --====================================",1
-	StaticText "ID Software, 3D Realms, Raven Software, TNT Team, Valve,"
-	StaticText "Probe Entertainment, Bethesda, SNK Playmore, Raven Software"
-	StaticText "The entirety of 'Doom 2 Minor Sprite Fixing Project'"
-	StaticText ""
-	StaticText "Tesefy ----- v22 artist"
-	StaticText ""
-	StaticText "===-- Weapons --===",1
-	StaticText "Azona _____________________________________ SSG"
-	StaticText "Eriance __________________ edits for tank weapons"
-	StaticText "Necrodome ___________________ artillery tank hud"
-	StaticText "Perkristian ______________ smooth vanilla weapons"
-	StaticText "Scuba Steeve _____________________ Tank textures"
-	StaticText "Squig ________________ bloodstained chainsaw, axe"
-	StaticText "Tomtefars _________________________________ SSG"
-	StaticText ""
-	StaticText "===-- Monsters --===",1
-	StaticText "Das_M ___ cheering marine, zombie scientist deaths"
-	StaticText "David G ___________________ pinky, minigunner gore"
-	StaticText "Dr. Doctor ________________________ some imp gore"
-	StaticText "DRUMASTER __________________________ juggernaut"
-	StaticText "Jekyll Grim Payne ___________ flameless lost soul"
-	StaticText "Mike12 ______________ Good amount of monster gore"
-	StaticText "scalliano ______________________ Zombie scientist"
-	StaticText ""
-	StaticText "===-- Visual --===",1
-	StaticText "Ashish Yadav ________________ large fire particles"
-	StaticText "NightFright ______________ Brightmaps Plus project"
-	StaticText ""
-	StaticText "===-- Decorations --===",1
-	StaticText "Doom_Jedi ___________________________ green trees"
-	StaticText "Sitters ____________________ destroyed Lamp posts"
-	StaticText ""
-	StaticText "===-- Misc. --===",1
-	StaticText "Agent_Ash ______________________ glow for spheres"
-	StaticText "Blue Shadow ______________________ Extra keycards"
-	StaticText "Captain Toenail __________________ unarmed marine"
-	StaticText "Craneo _________________________________ new keys"
-	StaticText "DoomNukem ____________________ helmet overlay hud"
-	StaticText "Freedoom team ____________________ Extra keycards"
-	StaticText "KENSUKE21 _______________________ Tip suggestions"
-	StaticText "Sgt. Ham ________________________ Tip suggestions"
-	StaticText "Skulltag team __________________ crouching marine"
-	StaticText "Vader _________________________ 3rd person weapon"
-	StaticText "waifujade _______________________ Tip suggestions"
-	StaticText "Brandon (Keeper)"
-	StaticText "Bret Arts"
-	StaticText "CrucuxDuo"
-	StaticText "EletricPulse"
-	StaticText "Ghastly"
-	StaticText "Joey_TD"
-	StaticText "KamiJojo"
-	StaticText "Kars van Kouwen"
-	StaticText "Lynn Forest"
-	StaticText "Minigunner"
-	StaticText "Mr. Enchanter"
-	StaticText "Pa1nki113r"
-	StaticText "Revilution"
-	StaticText ""
-	StaticText "====================================-- Sounds --====================================",1
-	StaticText "id Software _______________ Plenty of Quake sounds"
-	StaticText "Running with Scissors ___________ grenade launcher"
-	StaticText "Tripwire Interactive __________ some sound sources"
-	StaticText "Valve ________________________ Some sound sources"
-	StaticText "Nintendo ______________________ Some sound sources"
-	
-	StaticText "Dissy EX _________________ Sound mixing"
-	StaticText "Dzierzan _________________ high quality rat sounds"
-	StaticText "jadster221 _____________________ Barrel explosion"
-	StaticText "Jaxxoon R ________________________ Sound caulking"
-	StaticText "MSKyuuni ______________ Revenant missile explosion"
-	StaticText "Navaro _____________ Cyberdemon missile explosions" 
-	StaticText "Perkristian _____________ high quality doom sounds"
-	StaticText "sulflix _____________________________ SMG reload"
-	StaticText ""
-	StaticText "====================================-- Code Contributions --====================================",1
-	StaticText "Jekyll Grim Payne"
-	StaticText "Nash"
-	StaticText "FusedQyou ______________________________ titlemap"
-	StaticText "Pigargue00fr __________________ French translation"
-	StaticText "Solarsnowfall ________________ third person camera"
-	StaticText "TerminusEst13 ________________________ tracer code"
-	StaticText " "
-	StaticText "====================================-- Voice Acting --====================================",1
-	StaticText "Black Metal Chainsaw _______________ Female player"
-	StaticText "Tiberium Soul ____________________ Friendly marines"
-	StaticText "Zero X. Diamond ___________________ Brutal Doomguy"
-	StaticText " "
-	StaticText "====================================-- PSX Doom Maps --====================================",1
-	StaticText "Dragonsbretheren"
-	StaticText "fenderc01"
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
+   Title "Brutal Doom v22 by Sergeant_Mark_IV"
+   StaticText ""
+   StaticText "In case of missing names, please contact me."
+   StaticText "Discord: sergeant_mark_iv"
+   StaticText "Twitter: BrutalDoomGuy"
+   StaticText "Youtube: SGtMarkIV"
+   StaticText "Also avalaible on Moddb, Doomworld, and Zandronum forums."
+   StaticText ""
+   StaticText "====================================-- Graphics --====================================",1
+   StaticText "ID Software, 3D Realms, Raven Software, TNT Team, Valve,"
+   StaticText "Probe Entertainment, Bethesda, SNK Playmore, Raven Software"
+   StaticText "The entirety of 'Doom 2 Minor Sprite Fixing Project'"
+   StaticText ""
+   StaticText "Tesefy ----- v22 artist"
+   StaticText ""
+   StaticText "===-- Weapons --===",1
+   StaticText "Azona _____________________________________ SSG"
+   StaticText "Eriance __________________ edits for tank weapons"
+   StaticText "Necrodome ___________________ artillery tank hud"
+   StaticText "Perkristian ______________ smooth vanilla weapons"
+   StaticText "Scuba Steeve _____________________ Tank textures"
+   StaticText "Squig ________________ bloodstained chainsaw, axe"
+   StaticText "Tomtefars _________________________________ SSG"
+   StaticText ""
+   StaticText "===-- Monsters --===",1
+   StaticText "Das_M ___ cheering marine, zombie scientist deaths"
+   StaticText "David G ___________________ pinky, minigunner gore"
+   StaticText "Dr. Doctor ________________________ some imp gore"
+   StaticText "DRUMASTER __________________________ juggernaut"
+   StaticText "Jekyll Grim Payne ___________ flameless lost soul"
+   StaticText "Mike12 ______________ Good amount of monster gore"
+   StaticText "scalliano ______________________ Zombie scientist"
+   StaticText ""
+   StaticText "===-- Visual --===",1
+   StaticText "Ashish Yadav ________________ large fire particles"
+   StaticText "NightFright ______________ Brightmaps Plus project"
+   StaticText ""
+   StaticText "===-- Decorations --===",1
+   StaticText "Doom_Jedi ___________________________ green trees"
+   StaticText "Sitters ____________________ destroyed Lamp posts"
+   StaticText ""
+   StaticText "===-- Misc. --===",1
+   StaticText "Agent_Ash ______________________ glow for spheres"
+   StaticText "Blue Shadow ______________________ Extra keycards"
+   StaticText "Captain Toenail __________________ unarmed marine"
+   StaticText "Craneo _________________________________ new keys"
+   StaticText "DoomNukem ____________________ helmet overlay hud"
+   StaticText "Freedoom team ____________________ Extra keycards"
+   StaticText "KENSUKE21 _______________________ Tip suggestions"
+   StaticText "Sgt. Ham ________________________ Tip suggestions"
+   StaticText "Skulltag team __________________ crouching marine"
+   StaticText "Vader _________________________ 3rd person weapon"
+   StaticText "waifujade _______________________ Tip suggestions"
+   StaticText "Brandon (Keeper)"
+   StaticText "Bret Arts"
+   StaticText "CrucuxDuo"
+   StaticText "EletricPulse"
+   StaticText "Ghastly"
+   StaticText "Joey_TD"
+   StaticText "KamiJojo"
+   StaticText "Kars van Kouwen"
+   StaticText "Lynn Forest"
+   StaticText "Minigunner"
+   StaticText "Mr. Enchanter"
+   StaticText "Pa1nki113r"
+   StaticText "Revilution"
+   StaticText ""
+   StaticText "====================================-- Sounds --====================================",1
+   StaticText "id Software _______________ Plenty of Quake sounds"
+   StaticText "Running with Scissors ___________ grenade launcher"
+   StaticText "Tripwire Interactive __________ some sound sources"
+   StaticText "Valve ________________________ Some sound sources"
+   StaticText "Nintendo ______________________ Some sound sources"
+   
+   StaticText "Dissy EX _________________ Sound mixing"
+   StaticText "Dzierzan _________________ high quality rat sounds"
+   StaticText "jadster221 _____________________ Barrel explosion"
+   StaticText "Jaxxoon R ________________________ Sound caulking"
+   StaticText "MSKyuuni ______________ Revenant missile explosion"
+   StaticText "Navaro _____________ Cyberdemon missile explosions" 
+   StaticText "Perkristian _____________ high quality doom sounds"
+   StaticText "sulflix _____________________________ SMG reload"
+   StaticText ""
+   StaticText "====================================-- Code Contributions --====================================",1
+   StaticText "Jekyll Grim Payne"
+   StaticText "Nash"
+   StaticText "FusedQyou ______________________________ titlemap"
+   StaticText "Pigargue00fr __________________ French translation"
+   StaticText "Solarsnowfall ________________ third person camera"
+   StaticText "TerminusEst13 ________________________ tracer code"
+   StaticText " "
+   StaticText "====================================-- Voice Acting --====================================",1
+   StaticText "Black Metal Chainsaw _______________ Female player"
+   StaticText "Tiberium Soul ____________________ Friendly marines"
+   StaticText "Zero X. Diamond ___________________ Brutal Doomguy"
+   StaticText " "
+   StaticText "====================================-- PSX Doom Maps --====================================",1
+   StaticText "Dragonsbretheren"
+   StaticText "fenderc01"
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
 }
 
 OptionMenu "BDCredits2"
 {
-	Title "Special Thanks"
-	StaticText ""
-	StaticText "In case of missing names, please contact me:"
-	StaticText "Discord: sergeant_mark_iv"
-	StaticText "Twitter: BrutalDoomGuy"
-	StaticText "Youtube: SGtMarkIV"
-	StaticText "Also avalaible on Moddb, Doomworld, and Zandronum forums."
-	StaticText ""
-	StaticText "==========-- In memory of --==========",1
-	StaticText "TiberiumSoul"
-	StaticText "A long-time friend of the Doom community."
-	StaticText "You were taken too suddenly, too soon. May you rest in peace."
-	StaticText ""
-	StaticText ""
+   Title "Special Thanks"
+   StaticText ""
+   StaticText "In case of missing names, please contact me:"
+   StaticText "Discord: sergeant_mark_iv"
+   StaticText "Twitter: BrutalDoomGuy"
+   StaticText "Youtube: SGtMarkIV"
+   StaticText "Also avalaible on Moddb, Doomworld, and Zandronum forums."
+   StaticText ""
+   StaticText "==========-- In memory of --==========",1
+   StaticText "TiberiumSoul"
+   StaticText "A long-time friend of the Doom community."
+   StaticText "You were taken too suddenly, too soon. May you rest in peace."
+   StaticText ""
+   StaticText ""
 
-	StaticText "====================================-- Special Thanks --====================================",1
-	StaticText "Andrew Hulshult"
-	StaticText "Finfr0sk"
-	StaticText "John Romero"
-	StaticText "Bethesda's Doom Community Managers"
-	StaticText "Brutal Doom v22 development team"
-	StaticText "And YOU!"
-	StaticText ""
-	StaticText "====================================-- V22 Development team --====================================",1
-	StaticText "",1
-	StaticText "Sergeant_Mark_IV"
-	StaticText "Lead developer",1
-	StaticText "",1
-	StaticText "BROS_ETT_311"
-	StaticText "Github admin, coder",1
-	StaticText "gameplay responsiveness",1
-	StaticText "optimization",1
-	StaticText "compatibility",1
-	StaticText "Dox778's dad",1
-	StaticText "",1
-	StaticText "BLOODWOLF"
-	StaticText "Coder",1
-	StaticText "bug fixing",1
-	StaticText "",1
-	StaticText "Dox778"
-	StaticText "Weapon animator",1
-	StaticText "small spriter/coder",1
-	StaticText "quality of life features/options",1
-	StaticText "Bug creator",1
-	StaticText "",1
-	StaticText "IDDQD_1337"
-	StaticText "Misc. coder",1
-	StaticText "Misc. spriter",1
-	StaticText "New features",1
-	StaticText "Compatibility",1
-	StaticText "Bug fixes",1  
-	StaticText "",1
-	StaticText "Mechanical Sanity"
-	StaticText "Code contributor",1
-	StaticText "Out of the loop",1
-	StaticText "",1
-	StaticText "Tesefy"
-	StaticText "The everything artist",1
-	StaticText "Bagel Horde appreciator",1
-	StaticText "",1
-	StaticText "The Almighty Egg"
-	StaticText "Sprite implementer",1
-	StaticText "Sprite offset quality assurance",1
-	StaticText "",1
-	/*StaticText "ZioMcCall"
-	StaticText "Coder",1
-	StaticText "compatibility",1
-	StaticText "bug fixes",1
-	StaticText "LA FORZA DE DEMONIIIIIII!!!!!",1
-	StaticText "",1*/
+   StaticText "====================================-- Special Thanks --====================================",1
+   StaticText "Andrew Hulshult"
+   StaticText "Finfr0sk"
+   StaticText "John Romero"
+   StaticText "Bethesda's Doom Community Managers"
+   StaticText "Brutal Doom v22 development team"
+   StaticText "And YOU!"
+   StaticText ""
+   StaticText "====================================-- V22 Development team --====================================",1
+   StaticText "",1
+   StaticText "Sergeant_Mark_IV"
+   StaticText "Lead developer",1
+   StaticText "",1
+   StaticText "BROS_ETT_311"
+   StaticText "Github admin, coder",1
+   StaticText "gameplay responsiveness",1
+   StaticText "optimization",1
+   StaticText "Dox778's dad",1
+   StaticText "",1
+   StaticText "BLOODWOLF"
+   StaticText "Coder",1
+   StaticText "bug fixing",1
+   StaticText "",1
+   StaticText "Dox778"
+   StaticText "Weapon animator",1
+   StaticText "small spriter/coder",1
+   StaticText "quality of life features/options",1
+   StaticText "Bug creator",1
+   StaticText "",1
+   StaticText "IDDQD_1337"
+   StaticText "Misc. coder",1
+   StaticText "Misc. spriter",1
+   StaticText "New features",1
+   StaticText "",1
+   StaticText "Mechanical Sanity"
+   StaticText "Code contributor",1
+   StaticText "Out of the loop",1
+   StaticText "",1
+   StaticText "Tesefy"
+   StaticText "The everything artist",1
+   StaticText "Bagel Horde appreciator",1
+   StaticText "",1
+   StaticText "The Almighty Egg"
+   StaticText "Sprite implementer",1
+   StaticText "Sprite offset quality assurance",1
+   StaticText "",1
+   StaticText "ZioMcCall"
+   StaticText "Coder",1
+   StaticText "compatibility",1
+   StaticText "bug fixes",1
+   StaticText "LA FORZA DE DEMONIIIIIII!!!!!",1
+   StaticText "",1
 
-	StaticText "====================================-- Special Sponsors --====================================",1
-	StaticText "Aaron Stockman"
-	StaticText "Jian Feng"
-	StaticText "Josef S. E. Trendevski"
-	StaticText "Khayman"
-	StaticText "Kyle Quintanilla"
-	StaticText "Lasse Skov"
-	StaticText "Matthew J. Meade"
-	StaticText "Rowan Waltho"
-	StaticText "Suleyman Kutlu"
-	StaticText "SenorFussion"
-	StaticText "Tainted Reality"
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
-	StaticText " "
+   StaticText "====================================-- Special Sponsors --====================================",1
+   StaticText "Aaron Stockman"
+   StaticText "Jian Feng"
+   StaticText "Josef S. E. Trendevski"
+   StaticText "Khayman"
+   StaticText "Kyle Quintanilla"
+   StaticText "Lasse Skov"
+   StaticText "Matthew J. Meade"
+   StaticText "Rowan Waltho"
+   StaticText "Suleyman Kutlu"
+   StaticText "SenorFussion"
+   StaticText "Tainted Reality"
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
+   StaticText " "
 }
