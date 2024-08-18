@@ -70,7 +70,7 @@ Actor ZioBrutalWolfensteinSS
 	DamageFactor "CauseObjectsToSplashBlood", 0.0 DamageFactor "CauseObjectsToSplashLava", 0.0
 	MaxStepHeight 24
 	MaxDropOffHeight 32
-	Tag "$TAGBD_ZIOSS"
+	Tag "$TAGBD_WOLF3DSS"
 	Species "UnNazistabuonoèunnazistamorto"
 	damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood", 0.0
 	+USEKILLSCRIPTS

@@ -21,7 +21,7 @@ ACTOR Nazi: WolfensteinSS 2549
 	PainSound "dsempty"
 	DeathSound "nazi/death"
 	Obituary "$OB_NAZI"
-	tag "$TAGBD_ZIOSS"
+	tag "$TAGBD_WOLF3DSS"
 	DamageFactor "ExtremePunches", 2.0 DamageFactor "ExtremeKicks", 2.0
 	DropItem "None"
 	DamageFactor "Melee", 2.0
