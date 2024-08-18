@@ -113,8 +113,8 @@ TXT_BUDDHAON = "\ckBuddha mode \cdON \n\ci(Trying to play god, hmm?)";
 TXT_BUDDHAOFF = "\ckBuddha mode \cgOFF \n\ci(alright I actually want to die now)";
 TXT_CHASECAM_ON = "\ckChasecam \cdON"; //It's a commonly used command, so I think jokes in here could get annoying
 TXT_CHASECAM_OFF = "\ckChasecam \cgOFF";
-TXT_LIGHTER = "\ckFlight \cdON \n\ci(Almost creative mode)";
-TXT_GRAVITY = "\ckFlight \cgOFF \n\ci(Almost survival mode)";
+TXT_LIGHTER = "\ckFlight \cdON \n\ci(You feel lighter)";
+TXT_GRAVITY = "\ckFlight \cgOFF \n\ci(Gravity weighs you down)";
 TXT_NOTARGET_ON = "\ckNo Target \cdON \n\ci(OooOoo, I'm a ghost!)";
 TXT_NOTARGET_OFF = "\ckNo Target \cgOFF \n\ci(Who you gonna call? Ghostbusters!)";
 TXT_CHEATHEALTH = "\ckFull Health \n\ci(Picked up a cheat code that you REALLY need!)"; 
@@ -232,9 +232,16 @@ MNU_CREDITS ="Credits";
 
 BD_APPLY_ALL_CHANGES = "'Apply All Changes' for options to take effect.";
 BD_APPLY_ALL_CHANGES_COMMAND = "-Apply All Changes-";
+
+BD_PRESETS_SETTINGS = "---------------------------------------- Setting presets ----------------------------------------";
+BD_PRESETS_SETTINGS_SOURCE_PORT_RECOMMEND_CHECK = "Check recommended source port options";
+BD_PRESETS_DEFAULTS = "Defaults";
+BD_PRESETS_ALLFEATURES = "Enable all features";
+BD_PRESETS_MINIMALISM = "Minimalism";
+
+BD_PREFERENCE = "----------------------------------------- Preferences -----------------------------------------";
 BD_PERFORMANCE = "Performance Options";
 BD_LEVEL_OPTIONS = "Level Options";
-BD_GAMEPLAY = "Gameplay Options";
 BD_PLAYER_OPTIONS = "Player/HUD Options";
 BD_SCREEN_OPTIONS = "Screen Effects Options";
 BD_TESTING_MAP = "Go to Weapons Testing Map";
@@ -252,6 +259,7 @@ BD_SCREEN_SPLASH_TEXT3 = "Does not work for the BDv21 Mode.";
 BD_BRUTAL_CREDITS_RESOURCES = "Credits - Resources";
 BD_BRUTAL_CREDITS_THANKS = "Credits - Special Thanks";
 
+//Performance
 BD_MENU_PERFORMANCE = "Performance Options";
 BD_PERFORMANCE_ENGINE = "Engine used:";
 BD_PERFORMANCE_ENGINE_TEXT1 = "Due the way CVARs works, you must inform the game";
@@ -277,21 +285,23 @@ BD_PERFORMANCE_FLASHLIGHT_BEAM = "Flashlight beam";
 BD_PERFORMANCE_FLASHLIGHT_BEAM_TEXT1 = "Switches between the v22 and v21 flashlight beam.";
 BD_PERFORMANCE_FLASHLIGHT_BEAM_TEXT2 = "WARNING - v21 can be more performance heavy.";
 
-BD_MENU_BACKPACK = "Backpack's weapons list";
-BD_MENU_BACKPACK_TEXT = "Weapons might have a chance to spawn alongside backpacks!";
-BD_BACKPACK_ONLY = "Backpack only";
-BD_BACKPACK_DEFAULT = "Limited (Default)";
-BD_BACKPACK_TEXT1 = "Submachine gun - Assault Shotgun - Grenade Launcher";
-BD_BACKPACK_TEXT2 = "Railgun - BFG10K - Flamethrower - Incendiary Launcher";
-BD_BACKPACK_TEXT3 = "Nuke Launcher";
-BD_BACKPACK_TEXT4 = "Very low chance of weapons spawning.";
-BD_BACKPACK_EXTENDED = "Expanded";
-BD_BACKPACK_TEXT5 = "Submachine gun - Assault Shotgun - Grenade Launcher";
-BD_BACKPACK_TEXT6 = "Railgun,BFG10K - Flamethrower - Incendiary Launcher";
-BD_BACKPACK_TEXT7 = "Nuke Launcher - Dragon Slayer - MP40 - MG42 - Devastators";
-BD_BACKPACK_TEXT8 = "Revolver";
-BD_BACKPACK_TEXT9 = "Slightly higher chance of weapons spawning.";
-
+BD_LEVEL_OPTIONS = "Level Options";
+BD_LEVEL_OPTIONS_CHANGES1 = "All changes made here will take effect on next level,";
+BD_LEVEL_OPTIONS_CHANGES2 = "or when you start a new game.";
+BD_LEVEL_OPTIONS_SUPPORTED_WADS = "Supported WADs";
+BD_LEVEL_OPTIONS_SUPPORTED_WADSTEXT = "List of compatible WADs supported by the WAD Compatibility System.";
+BD_LEVEL_OPTIONS_MES = "Map Enhancement System";
+BD_LEVEL_OPTIONS_MES_TEXT1 =  "Improves several maps with better textures,";
+BD_LEVEL_OPTIONS_MES_TEXT2 =  "new decorations and sometimes new enemies.";
+BD_LEVEL_OPTIONS_MES_VOXEL = "MES - Disable Voxels";
+BD_LEVEL_OPTIONS_MES_VOXEL_TEXT = "Disable voxel decorations to prevent crashes on Android.";
+BD_LEVEL_OPTIONS_MAP_BOSS = "Brutal Doom's Bosses";
+BD_LEVEL_OPTIONS_MAP_BOSS_TEXT1 = "Reworks supported Icon of Sin maps and bosses";
+BD_LEVEL_OPTIONS_MAP_BOSS_TEXT2 = "Disable this option if it causes problems on certain custom wads.";
+BD_LEVEL_OPTIONS_MAP_VANILLA = "Vanilla Monsters";
+BD_LEVEL_OPTIONS_MAP_VANILLA_TEXT = "Disables new enemy AI and new attacks.";
+BD_LEVEL_OPTIONS_MAP_DECORATIONS = "Advanced Decorations";
+BD_LEVEL_OPTIONS_MAP_DECORATIONS_TEXT = "Fancy particle effects for torches and lamps.";
 
 BD_WAD_LIST_REPLACES = "Replaces:";
 BD_WAD_LIST_TITLE = "List of supported wads and what they do";
@@ -339,6 +349,60 @@ BD_WAD_LIST_WORMWOOD = "Wormwood";
 BD_WAD_LIST_WORMWOOD_TEXT1 = "Wolfenstein SS with Bat";
 BD_WAD_LIST_WORMWOOD_TEXT2 = "Commander Keen with Cyberdemon";
 
+BD_CROSSHAIR = "Customizable Crosshairs";
+BD_CROSSHAIR_INDIVIDUAL = "Enable individual crosshairs";
+BD_CROSSHAIR_TURNOFF = "Disable this for customizable crosshairs to work.";
+BD_CROSSHAIR_CHOOSE ="Choose a crosshair for each individual gun.";
+BD_CROSSHAIR_DEFAULT ="Default Crosshair";
+BD_CROSSHAIR_RANDOM = "Randomize crosshairs";
+BD_CROSSHAIR_RESTOREDEFAULT = "Restore defaults";
+
+BD_PLAYER_OPTIONS_CUSTOM = "Crosshair options";
+BD_PLAYER_OPTIONS_GENDER_ZANDRO = "Player Gender Zandro";
+BD_PLAYER_OPTIONS_GENDER_GZ = "Player Gender GZ/VK";
+BD_PLAYER_OPTIONS_ONE_LINERS = "One-Liners";
+BD_PLAYER_OPTIONS_HUD_TYPE = "HUD Type";
+BD_PLAYER_OPTIONS_HUD_SCREEN = "HUD screen size";
+BD_PLAYER_OPTIONS_HUD_CENTER = "Centered HUD";
+BD_PLAYER_OPTIONS_HUD_CENTER_TEXT1 = "This option is for Simple Hud and Minimalist for ultrawide monitors, ";
+BD_PLAYER_OPTIONS_HUD_CENTER_TEXT2 = "but you can use it for other aspect ratios as well.";
+BD_PLAYER_OPTIONS_HEALTH = "Show enemy health";
+BD_PLAYER_OPTIONS_WEAPON = "Weapon Pickup animation";
+BD_PLAYER_OPTIONS_WEAPON_TEXT1 = "Plays an animation when you pickup a weapon for the first time.";
+BD_PLAYER_OPTIONS_WEAPON_TEXT2 = "(Best toggled before starting a new game)";
+BD_PLAYER_OPTIONS_PICKUP = "Randomized pickup sprites";
+
+BD_MAP_SELECTION = "BDTestMapSelection";
+BD_MAP_SELECTION_TEXT = "Select your Test Map";
+
+BD_SCALING_OPTIONS = "HUD Scaling Options";
+BD_SCALING_OPTIONS_STRETCH_BAR = "Stretch status bar";
+BD_SCALING_OPTIONS_STRETCH_FULLSCREEN = "Stretch Fullscreen HUD";
+BD_SCALING_OPTIONS_ADVANCED_SCALING = "Advanced Scaling Options";
+BD_SCALING_OPTIONS_BAR_SCALE = "Statusbar Scale size";
+BD_SCALING_OPTIONS_FULLSCREEN_SCALE = "Fullscreen HUD Scale size";
+BD_SCALING_OPTIONS_PRESERVE_RATIO = "Preserve HUD aspect ratio";
+BD_SCALING_OPTIONS_TEXT1 = "Please note that the full helmet HUD";
+BD_SCALING_OPTIONS_TEXT2 = "may have scaling issues";
+BD_SCALING_OPTIONS_TEXT3 = "on ultra-wide screen resolutions";
+BD_SCALING_OPTIONS_TEXT4 = "and on low screen resolutions.";
+
+BD_GAMEPLAY = "------------------------------------------- Gameplay -------------------------------------------";
+
+BD_GAMEPLAY_OPTIONS = "Gameplay Options";
+BD_GAMEPLAY_OPTIONS_CHANGES_TEXT = "Most changes made here require a level restart.";
+BD_GAMEPLAY_OPTIONS_SUGGESTIONS = "Gameplay Tips";
+BD_GAMEPLAY_OPTIONS_SUGGESTIONS_TEXT = "Provide gameplay tips at start/respawn.";
+BD_GAMEPLAY_OPTIONS_ROCKETBLAST = "Rocket Launcher backblast";
+BD_GAMEPLAY_OPTIONS_SLIDE = "Enhanced Slidekick";
+BD_GAMEPLAY_OPTIONS_SLIDE_TEXT = "One-button press while moving.";
+BD_GAMEPLAY_OPTIONS_AIM = "Aiming Mode";
+BD_GAMEPLAY_OPTIONS_LAVA_SPLASH = "Damaging lava splashes";
+BD_GAMEPLAY_OPTIONS_FOOTSTEP = "Footstep Sounds";
+BD_GAMEPLAY_OPTIONS_DEMON = "Spawn Demon Spheres";
+BD_GAMEPLAY_OPTIONS_MARINE = "Rescuable Marines";
+BD_GAMEPLAY_OPTIONS_SHOOT_ROCKET = "Shootable rocket ammo";
+
 BD_EXTREME_GAMEPLAY = "Extreme gameplay options";
 BD_DEFAULT_DISABLED = "(Disabled by default)";
 BD_DEFAULT_ENABLED = "(Enabled by default)";
@@ -367,6 +431,20 @@ BD_EXTREME_GAMEPLAY_ = "";
 BD_EXTREME_GAMEPLAY_ = "";
 BD_EXTREME_GAMEPLAY_ = "";
 
+BD_MENU_BACKPACK = "Backpack's weapons list";
+BD_MENU_BACKPACK_TEXT = "Weapons might have a chance to spawn alongside backpacks!";
+BD_BACKPACK_ONLY = "Backpack only";
+BD_BACKPACK_DEFAULT = "Limited (Default)";
+BD_BACKPACK_TEXT1 = "Submachine gun - Assault Shotgun - Grenade Launcher";
+BD_BACKPACK_TEXT2 = "Railgun - BFG10K - Flamethrower - Incendiary Launcher";
+BD_BACKPACK_TEXT3 = "Nuke Launcher";
+BD_BACKPACK_TEXT4 = "Very low chance of weapons spawning.";
+BD_BACKPACK_EXTENDED = "Expanded";
+BD_BACKPACK_TEXT5 = "Submachine gun - Assault Shotgun - Grenade Launcher";
+BD_BACKPACK_TEXT6 = "Railgun,BFG10K - Flamethrower - Incendiary Launcher";
+BD_BACKPACK_TEXT7 = "Nuke Launcher - Dragon Slayer - MP40 - MG42 - Devastators";
+BD_BACKPACK_TEXT8 = "Revolver";
+BD_BACKPACK_TEXT9 = "Slightly higher chance of weapons spawning.";
 
 BD_WEAPON_SPAWNERS = "Weapon spawner options";
 BD_APPLY_NEXT_LEVEL = "Any change here requires a level restart in order to work.";
@@ -389,76 +467,6 @@ BD_MONSTER_SPAWNERS_ZOMBIEMAN = "Zombieman Spawner";
 BD_MONSTER_SPAWNERS_SHOTGUNGUY = "Shotgunguy Spawner";
 BD_MONSTER_SPAWNERS_USENAZI = "Nazi variants";
 BD_MONSTER_SPAWNERS_USENAZITEXT = "Choose between Brutal Doom or Wolfenstein 3D nazis.";
-
-BD_LEVEL_OPTIONS = "Level Options";
-BD_LEVEL_OPTIONS_CHANGES1 = "All changes made here will take effect on next level,";
-BD_LEVEL_OPTIONS_CHANGES2 = "or when you start a new game.";
-BD_LEVEL_OPTIONS_SUPPORTED_WADS = "Supported WADs";
-BD_LEVEL_OPTIONS_SUPPORTED_WADSTEXT = "List of compatible WADs supported by the WAD Compatibility System.";
-BD_LEVEL_OPTIONS_MES = "Map Enhancement System";
-BD_LEVEL_OPTIONS_MES_TEXT1 =  "Improves several maps with better textures,";
-BD_LEVEL_OPTIONS_MES_TEXT2 =  "new decorations and sometimes new enemies.";
-BD_LEVEL_OPTIONS_MES_VOXEL = "MES - Disable Voxels";
-BD_LEVEL_OPTIONS_MES_VOXEL_TEXT = "Disable voxel decorations to prevent crashes on Android.";
-BD_LEVEL_OPTIONS_MAP_BOSS = "Brutal Doom's Bosses";
-BD_LEVEL_OPTIONS_MAP_BOSS_TEXT1 = "Reworks supported Icon of Sin maps and bosses";
-BD_LEVEL_OPTIONS_MAP_BOSS_TEXT2 = "Disable this option if it causes problems on certain custom wads.";
-BD_LEVEL_OPTIONS_MAP_VANILLA = "Vanilla Monsters";
-BD_LEVEL_OPTIONS_MAP_VANILLA_TEXT = "Disables new enemy AI and new attacks.";
-BD_LEVEL_OPTIONS_MAP_DECORATIONS = "Advanced Decorations";
-BD_LEVEL_OPTIONS_MAP_DECORATIONS_TEXT = "Fancy particle effects for torches and lamps.";
-
-BD_GAMEPLAY_OPTIONS = "Gameplay Options";
-BD_GAMEPLAY_OPTIONS_CHANGES_TEXT = "Most changes made here require a level restart.";
-BD_GAMEPLAY_OPTIONS_SUGGESTIONS = "Gameplay Tips";
-BD_GAMEPLAY_OPTIONS_SUGGESTIONS_TEXT = "Provide gameplay tips at start/respawn.";
-BD_GAMEPLAY_OPTIONS_ROCKETBLAST = "Rocket Launcher backblast";
-BD_GAMEPLAY_OPTIONS_SLIDE = "Enhanced Slidekick";
-BD_GAMEPLAY_OPTIONS_SLIDE_TEXT = "One-button press while moving.";
-BD_GAMEPLAY_OPTIONS_AIM = "Aiming Mode";
-BD_GAMEPLAY_OPTIONS_LAVA_SPLASH = "Damaging lava splashes";
-BD_GAMEPLAY_OPTIONS_FOOTSTEP = "Footstep Sounds";
-BD_GAMEPLAY_OPTIONS_DEMON = "Spawn Demon Spheres";
-BD_GAMEPLAY_OPTIONS_MARINE = "Rescuable Marines";
-BD_GAMEPLAY_OPTIONS_SHOOT_ROCKET = "Shootable rocket ammo";
-
-BD_CROSSHAIR = "Customizable Crosshairs";
-BD_CROSSHAIR_INDIVIDUAL = "Enable individual crosshairs";
-BD_CROSSHAIR_TURNOFF = "Disable this for customizable crosshairs to work.";
-BD_CROSSHAIR_CHOOSE ="Choose a crosshair for each individual gun.";
-BD_CROSSHAIR_DEFAULT ="Default Crosshair";
-BD_CROSSHAIR_RANDOM = "Randomize crosshairs";
-BD_CROSSHAIR_RESTOREDEFAULT = "Restore defaults";
-
-BD_PLAYER_OPTIONS_CUSTOM = "Crosshair options";
-BD_PLAYER_OPTIONS_GENDER_ZANDRO = "Player Gender Zandro";
-BD_PLAYER_OPTIONS_GENDER_GZ = "Player Gender GZ";
-BD_PLAYER_OPTIONS_ONE_LINERS = "One-Liners";
-BD_PLAYER_OPTIONS_HUD_TYPE = "HUD Type";
-BD_PLAYER_OPTIONS_HUD_SCREEN = "HUD screen size";
-BD_PLAYER_OPTIONS_HUD_CENTER = "Centered HUD";
-BD_PLAYER_OPTIONS_HUD_CENTER_TEXT1 = "This option is for Simple Hud and Minimalist for ultrawide monitors, ";
-BD_PLAYER_OPTIONS_HUD_CENTER_TEXT2 = "but you can use it for other aspect ratios as well.";
-BD_PLAYER_OPTIONS_HEALTH = "Show enemy health";
-BD_PLAYER_OPTIONS_WEAPON = "Weapon Pickup animation";
-BD_PLAYER_OPTIONS_WEAPON_TEXT1 = "Plays an animation when you pickup a weapon for the first time.";
-BD_PLAYER_OPTIONS_WEAPON_TEXT2 = "(Best toggled before starting a new game)";
-BD_PLAYER_OPTIONS_PICKUP = "Randomized pickup sprites";
-
-BD_MAP_SELECTION = "BDTestMapSelection";
-BD_MAP_SELECTION_TEXT = "Select your Test Map";
-
-BD_SCALING_OPTIONS = "HUD Scaling Options";
-BD_SCALING_OPTIONS_STRETCH_BAR = "Stretch status bar";
-BD_SCALING_OPTIONS_STRETCH_FULLSCREEN = "Stretch Fullscreen HUD";
-BD_SCALING_OPTIONS_ADVANCED_SCALING = "Advanced Scaling Options";
-BD_SCALING_OPTIONS_BAR_SCALE = "Statusbar Scale size";
-BD_SCALING_OPTIONS_FULLSCREEN_SCALE = "Fullscreen HUD Scale size";
-BD_SCALING_OPTIONS_PRESERVE_RATIO = "Preserve HUD aspect ratio";
-BD_SCALING_OPTIONS_TEXT1 = "Please note that the full helmet HUD";
-BD_SCALING_OPTIONS_TEXT2 = "may have scaling issues";
-BD_SCALING_OPTIONS_TEXT3 = "on ultra-wide screen resolutions";
-BD_SCALING_OPTIONS_TEXT4 = "and on low screen resolutions.";
 
 BD_ENGINE_OPTIONS = "Engine (GZD, Zand) Shortcuts";
 BD_ENGINE_OPTIONS_TEXT1 = "Zdoom options, available here for your convenience.";
@@ -500,7 +508,7 @@ BD_ENGINE_OPTIONS_ = "";
 
 
 //////////////////////////////////////////////////////////////////
-//Options
+//Keybinds
 BD_OPTIONS_ADVANCED_OPTIONS = "-------------------  Brutal Doom - Advanced Actions  -------------------";
 BD_OPTIONS_KICK = "Kick";
 BD_OPTIONS_RELOAD = "Reload";
@@ -515,7 +523,7 @@ BD_OPTIONS_ROLL_LEFT = "Dodge Roll Left";
 BD_OPTIONS_ROLL_RIGHT = "Dodge Roll Right";
 BD_OPTIONS_INTERACTIONS = "-------------------  Brutal Doom - Interactions  -------------------";
 BD_OPTIONS_OFFEND = "Offend";
-BD_OPTIONS_TAUNT_GZDOOM = "Taunt (GzDoom)";
+BD_OPTIONS_TAUNT_GZDOOM = "Taunt (for Gz/VkDoom)";
 BD_OPTIONS_WAVE1 = "Emote (1)";
 BD_OPTIONS_WAVE2 = "Emote (2)";
 BD_OPTIONS_ADVANCED_TAUNTS = "Advanced Taunt";
@@ -769,7 +777,7 @@ TAGBD_MUMMY2 = "Experiment";
 TAGBD_VOLCABUS = "Volcabus";
 TAGBD_ACIENTALIEN = "Alien Guardian";
 TAGBD_UNALIENO = "Cloaked Alien";
-TAGBD_ZIOSS = "Wolfenstein SS";
+TAGBD_WOLF3DSS = "Wolfenstein SS";
 TAGBD_UBER = "Ubersoldat";
 TAGBD_ALPHASOUL = "Lost Soul (Alpha)";
 TAGBD_EVILMARINE = "Evil Marine";
@@ -833,7 +841,7 @@ OB_ICON = "%o was wiped out by the \crIcon of Sin\c-.";
 OB_MOTHER = "%o was obliterated by the \crmother of all demons\c-.";
 OB_ANCIENTALIEN = "%o has been sodomized by an \crAlien guardian\c-.";
 OB_UNALIENO = "%o has met an alien and it didn't come in peace\c-.";
-OB_ZIOSS = "%o was executed by an \crSS\c-.";
+OB_WOLF3DSS = "%o was executed by an \crSS\c-.";
 OB_EVILMARINE = "%o is no longer a stone in the shoes of the UAC\c-.";
 OB_FORMERMARINE = "%o was betrayed by a \crbrainwashed marine\c-.";
 OB_EVILMARINEPLASMA = "%o had a heated encounter with \crMr. X\c-.";

@@ -83,15 +83,15 @@ OptionMenu "BrutalMenu"
 	Command "$BD_APPLY_ALL_CHANGES_COMMAND", "Pukename GetCVars always"
 	StaticText " "
 	StaticText " "
-	StaticText "---------------------------------------- Setting presets ----------------------------------------",1
+	StaticText "$BD_PRESETS_SETTINGS",1
 	StaticText " "
-	Command "Check recommended source port options", "pukename CheckSourcePortOptions"
-	SafeCommand "Defaults", "pukename DefaultCvars always"
-	SafeCommand "Enable all features", "pukename AllCvarsOn always"
-	SafeCommand "Minimalism", "pukename MinimalismCvars always"
+	Command "$BD_PRESETS_SETTINGS_SOURCE_PORT_RECOMMEND_CHECK", "pukename CheckSourcePortOptions"
+	SafeCommand "$BD_PRESETS_DEFAULTS", "pukename DefaultCvars always"
+	SafeCommand "$BD_PRESETS_ALLFEATURES", "pukename AllCvarsOn always"
+	SafeCommand "$BD_PRESETS_MINIMALISM", "pukename MinimalismCvars always"
 	StaticText " "
 	StaticText " "
-	StaticText "----------------------------------------- Preferences -----------------------------------------",1
+	StaticText "$BD_PREFERENCE",1
 	StaticText " "
 	Submenu "$BD_PERFORMANCE",	"BrutalDoomOptionsPerformance"
 	Submenu "$BD_LEVEL_OPTIONS",	"BrutalDoomOptionsLevel"
@@ -100,9 +100,9 @@ OptionMenu "BrutalMenu"
 	Submenu "$BD_SCREEN_OPTIONS",	"BrutalDoomScreenOptions"
 	StaticText " "
 	StaticText " "
-	StaticText "------------------------------------------- Gameplay -------------------------------------------",1
+	StaticText "$BD_GAMEPLAY",1
 	StaticText " "
-	Submenu "$BD_GAMEPLAY",	"BrutalDoomOptionsGame"
+	Submenu "$BD_GAMEPLAY_OPTIONS",	"BrutalDoomOptionsGame"
 	Submenu "$BD_EXTREME_GAMEPLAY",	"BrutalDoomOptionsExtremeGame"
 	Submenu "$BD_WEAPON_SPAWNERS",	"BrutalDoomWeaponsSpawner"
 	Submenu "$BD_MONSTER_SPAWNERS",	"BrutalDoomMonstersSpawner"
