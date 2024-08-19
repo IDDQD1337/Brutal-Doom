@@ -235,9 +235,9 @@ BD_APPLY_ALL_CHANGES_COMMAND = "-Apply All Changes-";
 
 BD_PRESETS_SETTINGS = "---------------------------------------- Setting presets ----------------------------------------";
 BD_PRESETS_SETTINGS_SOURCE_PORT_RECOMMEND_CHECK = "Check recommended source port options";
-BD_PRESETS_DEFAULTS = "Defaults";
-BD_PRESETS_ALLFEATURES = "Enable all features";
-BD_PRESETS_MINIMALISM = "Minimalism";
+BD_PRESETS_SETTINGS_DEFAULTS = "Defaults";
+BD_PRESETS_SETTINGS_ALLFEATURES = "Enable all features";
+BD_PRESETS_SETTINGS_MINIMALISM = "Minimalism";
 
 BD_PREFERENCE = "----------------------------------------- Preferences -----------------------------------------";
 BD_PERFORMANCE = "Performance Options";

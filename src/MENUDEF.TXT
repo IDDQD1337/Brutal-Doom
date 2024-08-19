@@ -86,9 +86,9 @@ OptionMenu "BrutalMenu"
 	StaticText "$BD_PRESETS_SETTINGS",1
 	StaticText " "
 	Command "$BD_PRESETS_SETTINGS_SOURCE_PORT_RECOMMEND_CHECK", "pukename CheckSourcePortOptions"
-	SafeCommand "$BD_PRESETS_DEFAULTS", "pukename DefaultCvars always"
-	SafeCommand "$BD_PRESETS_ALLFEATURES", "pukename AllCvarsOn always"
-	SafeCommand "$BD_PRESETS_MINIMALISM", "pukename MinimalismCvars always"
+	SafeCommand "$BD_PRESETS_SETTINGS_DEFAULTS", "pukename DefaultCvars always"
+	SafeCommand "$BD_PRESETS_SETTINGS_ALLFEATURES", "pukename AllCvarsOn always"
+	SafeCommand "$BD_PRESETS_SETTINGS_MINIMALISM", "pukename MinimalismCvars always"
 	StaticText " "
 	StaticText " "
 	StaticText "$BD_PREFERENCE",1
