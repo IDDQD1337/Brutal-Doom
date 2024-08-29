@@ -83,34 +83,33 @@ OptionMenu "BrutalMenu"
 	Command "$BD_APPLY_ALL_CHANGES_COMMAND", "Pukename GetCVars always"
 	StaticText " "
 	StaticText " "
-	StaticText "---------------------------------------- Setting presets ----------------------------------------",1
+	StaticText "$BD_PRESETS_SETTINGS",1
 	StaticText " "
-	Command "Check recommended source port options", "pukename CheckSourcePortOptions"
-	SafeCommand "Defaults", "pukename DefaultCvars always"
-	SafeCommand "Enable all features", "pukename AllCvarsOn always"
-	SafeCommand "Minimalism", "pukename MinimalismCvars always"
-	StaticText " "
-	StaticText " "
-	StaticText "----------------------------------------- Preferences -----------------------------------------",1
-	StaticText " "
-	Submenu "$BD_PERFORMANCE",		"BrutalDoomOptionsPerformance"
-	Submenu "$BD_LEVEL_OPTIONS",			"BrutalDoomOptionsLevel"
-	Submenu "$BD_PLAYER_OPTIONS_CUSTOM", "DOXCROSSHAIRS"
-	Submenu "$BD_PLAYER_OPTIONS",			"BrutalDoomOptionsPlayer"
-	Submenu "$BD_SCREEN_OPTIONS",			"BrutalDoomScreenOptions"
+	Command "$BD_PRESETS_SETTINGS_SOURCE_PORT_RECOMMEND_CHECK", "pukename CheckSourcePortOptions"
+	SafeCommand "$BD_PRESETS_SETTINGS_DEFAULTS", "pukename DefaultCvars always"
+	SafeCommand "$BD_PRESETS_SETTINGS_ALLFEATURES", "pukename AllCvarsOn always"
+	SafeCommand "$BD_PRESETS_SETTINGS_MINIMALISM", "pukename MinimalismCvars always"
 	StaticText " "
 	StaticText " "
-	StaticText "------------------------------------------- Gameplay -------------------------------------------",1
+	StaticText "$BD_PREFERENCE",1
 	StaticText " "
-	Submenu "$BD_GAMEPLAY",			"BrutalDoomOptionsGame"
-	Submenu "$BD_EXTREME_GAMEPLAY", "BrutalDoomOptionsExtremeGame"
+	Submenu "$BD_PERFORMANCE",	"BrutalDoomOptionsPerformance"
+	Submenu "$BD_LEVEL_OPTIONS",	"BrutalDoomOptionsLevel"
+	Submenu "$BD_PLAYER_OPTIONS_CUSTOM",	"DOXCROSSHAIRS"
+	Submenu "$BD_PLAYER_OPTIONS",	"BrutalDoomOptionsPlayer"
+	Submenu "$BD_SCREEN_OPTIONS",	"BrutalDoomScreenOptions"
+	StaticText " "
+	StaticText " "
+	StaticText "$BD_GAMEPLAY",1
+	StaticText " "
+	Submenu "$BD_GAMEPLAY_OPTIONS",	"BrutalDoomOptionsGame"
+	Submenu "$BD_EXTREME_GAMEPLAY",	"BrutalDoomOptionsExtremeGame"
 	Submenu "$BD_WEAPON_SPAWNERS",	"BrutalDoomWeaponsSpawner"
 	Submenu "$BD_MONSTER_SPAWNERS",	"BrutalDoomMonstersSpawner"
 	StaticText " "
 	StaticText ""
-	Submenu "$BD_ENGINE_OPTIONS",		"GZDShortcuts"
+	Submenu "$BD_ENGINE_OPTIONS","GZDShortcuts"
 }
-
 
 OptionMenu "BrutalDoomScreenOptions"
 {
@@ -128,14 +127,12 @@ OptionMenu "BrutalDoomScreenOptions"
 	StaticText "$BD_SCREEN_SPLASH_TEXT3", 1
 }
 
-
 OptionMenu "BrutalCreditsMenu"
 {
 	Title "$MNU_CREDITS"
-	Submenu "$BD_BRUTAL_CREDITS_RESOURCES",			"BDCredits1"
-	Submenu "$BD_BRUTAL_CREDITS_THANKS",			"BDCredits2"
+	Submenu "$BD_BRUTAL_CREDITS_RESOURCES","BDCredits1"
+	Submenu "$BD_BRUTAL_CREDITS_THANKS","BDCredits2"
 }
-
 
 OptionMenu "BrutalDoomOptionsPerformance"
 {
@@ -159,7 +156,7 @@ OptionMenu "BrutalDoomOptionsPerformance"
 	StaticText "$BD_PERFORMANCE_BLOOD_TEXT"  , 1
 	StaticText " "
 	Option "$BD_PERFORMANCE_MAX_DECALS", "cl_maxdecals", "maxdecals"
-  	Option "$BD_PERFORMANCE_MAX_GIBS", "sv_corpsequeuesize", "maxgibs"
+	Option "$BD_PERFORMANCE_MAX_GIBS", "sv_corpsequeuesize", "maxgibs"
 	StaticText " "
 	Option "$BD_PERFORMANCE_GORE_JANITOR_SINGLE", "zdoombrutaljanitor", "OnOff"
 	Option "$BD_PERFORMANCE_GORE_JANITOR_MULTI", "bd_lowgraphicsmode", "OnOff"
@@ -175,12 +172,10 @@ OptionMenu "BrutalDoomOptionsPerformance"
 	StaticText "$BD_PERFORMANCE_DESTRUCTUBLE_BODIES_TEXT2" , 1
 	StaticText ""
 
-    Option "$BD_PERFORMANCE_FLASHLIGHT_BEAM", "bd_flashlight", "LightBeam"
+	Option "$BD_PERFORMANCE_FLASHLIGHT_BEAM", "bd_flashlight", "LightBeam"
 	StaticText "$BD_PERFORMANCE_FLASHLIGHT_BEAM_TEXT1"  , 1
 	StaticText "$BD_PERFORMANCE_FLASHLIGHT_BEAM_TEXT2"  , 1
 	StaticText " "
-
-
 }
 
 
@@ -223,7 +218,7 @@ OptionMenu "BrutalDoomOptionsExtremeGame"
 	StaticText "$BD_DEFAULT_DISABLED"  , 1
 	StaticText " "
 
-    Option "$BD_EXTREME_GAMEPLAY_LEDGE_CLIMB", "bd_mantling", "MantleMode"//"OnOff"
+	Option "$BD_EXTREME_GAMEPLAY_LEDGE_CLIMB", "bd_mantling", "MantleMode"//"OnOff"
 	StaticText "$BD_EXTREME_GAMEPLAY_LEDGE_CLIMB_TEXT" , 1
 	StaticText "$BD_DEFAULT_ENABLED" , 1
 	StaticText ""
@@ -246,7 +241,7 @@ OptionMenu "BrutalDoomOptionsExtremeGame"
 	StaticText "$BD_EXTREME_GAMEPLAY_POWERUPS_TEXT1" , 1
 	StaticText "$BD_EXTREME_GAMEPLAY_POWERUPS_TEXT2" , 1
 	StaticText ""
-	
+
 	Option "$BD_EXTREME_GAMEPLAY_DROP_ON_DEATH", "sv_dropitems", "OnOff"
 	StaticText "$BD_EXTREME_GAMEPLAY_DROP_ON_DEATH_TEXT" , 1
 	StaticText "$BD_DEFAULT_DISABLED" , 1
