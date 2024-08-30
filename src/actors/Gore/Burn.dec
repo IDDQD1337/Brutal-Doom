@@ -12,15 +12,15 @@ actor GenericBurningGuy
 	Spawn:
 		TNT1 A 0 BRIGHT
 		BUR2 A 1 BRIGHT
-		BUR2 AABBCCDDEE 3 BRIGHT A_CustomMissile ("BurnParticles", 36, 0, random (0, 180), 2, random (0, 180))
-		BURN FFGGHH 3 BRIGHT A_CustomMissile ("BurnParticles", 36, 0, random (0, 180), 2, random (0, 180))
-		BURN IIJJKKLL 3 BRIGHT A_CustomMissile ("BurnParticles", 28, 0, random (0, 180), 2, random (0, 180))
-		BURN MMN 3 BRIGHT A_CustomMissile ("BurnParticles", 32, 0, random (0, 180), 2, random (0, 180))
-		BURN NOOPP 3 BRIGHT A_CustomMissile ("BurnParticles", 22, 0, random (0, 180), 2, random (0, 180))
-		BURN QQ 3 BRIGHT A_CustomMissile ("BurnParticles", 18, 0, random (0, 180), 2, random (0, 180))
+		BUR2 ABCDE 6 BRIGHT A_CustomMissile ("BurnParticles", 36, 0, random (0, 180), 2, random (0, 180))
+		BURN FGH 6 BRIGHT A_CustomMissile ("BurnParticles", 36, 0, random (0, 180), 2, random (0, 180))
+		BURN IJKL 6 BRIGHT A_CustomMissile ("BurnParticles", 28, 0, random (0, 180), 2, random (0, 180))
+		BURN M 6 BRIGHT A_CustomMissile ("BurnParticles", 32, 0, random (0, 180), 2, random (0, 180))
+		BURN NOP 6 BRIGHT A_CustomMissile ("BurnParticles", 22, 0, random (0, 180), 2, random (0, 180))
+		BURN Q 6 BRIGHT A_CustomMissile ("BurnParticles", 18, 0, random (0, 180), 2, random (0, 180))
 		//TNT1 A 0 A_PlaySound("DSFDTHE")
-		BURN RRSSTTSSRRSSTTSSRRSSTTRRSSTTSSRRSSTTSSRRSSTTSSTT 3 BRIGHT A_CustomMissile ("SmallBurnParticles", 12, 0, random (0, 180), 2, random (0, 180))
-		BURN UU 3 BRIGHT A_CustomMissile ("BurnParticles", 12, 0, random (0, 180), 2, random (0, 180))
+		BURN RSTRSTRSTRSTRSTRSTRSTRST 6 BRIGHT A_CustomMissile ("SmallBurnParticles", 12, 0, random (0, 180), 2, random (0, 180))
+		BURN U 6 BRIGHT A_CustomMissile ("BurnParticles", 12, 0, random (0, 180), 2, random (0, 180))
 		TNT1 A 0 A_SpawnItem("100SmallFireFocusSpawnerz")
 		BURN VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV 9// A_CustomMissile ("PlasmaSmoke", 8, 0, random (0, 360), 2, random (90, 110))
 		BURN V -1
@@ -74,9 +74,9 @@ ACTOR BurnParticles
 	Spawn:
 		TNT1 A 0
 		XDT3 A 0 A_Explode(3,30)
-		TNT1 A 0 A_SpawnItem("RedFlare", 0, 5)
-		TTRB A 0 bright A_CustomMissile ("PlasmaSmoke", 20, 0, random (0, 360), 2, random (60, 130))
-		TTRB A 0 bright A_CustomMissile ("SmallFireTrail324", 0, 0, random (0, 360), 2, random (0, 130))
+		//TNT1 A 0 A_SpawnItem("RedFlare", 0, 5)
+		//TTRB A 0 bright A_CustomMissile ("PlasmaSmoke", 20, 0, random (0, 360), 2, random (60, 130))
+		TTRB A 0 bright A_CustomMissile ("BurningPersonParticle", 0, 0, random (0, 360), 2, random (0, 130))
 		TNT1 A 3
 		stop
 	}
@@ -90,9 +90,10 @@ ACTOR SmallBurnParticles: BurnParticles
 	Spawn:
 		TNT1 A 0
 		XDT3 A 0 A_Explode(2,30)
-		TNT1 A 0 A_SpawnItem("RedFlare", 0, 5)
-		TTRB A 0 bright A_CustomMissile ("PlasmaSmoke", 20, 0, random (0, 360), 2, random (60, 130))
-		TTRB A 0 bright A_CustomMissile ("SmallFlameTrails", 0, 0, random (0, 360), 2, random (60, 130))
+		//TNT1 A 0 A_SpawnItem("RedFlare", 0, 5)
+		TTRB A 0 bright A_CustomMissile ("BurningPersonParticle", 0, 0, random (0, 360), 2, random (0, 130))
+		//TTRB A 0 bright A_CustomMissile ("PlasmaSmoke", 20, 0, random (0, 360), 2, random (60, 130))
+		//TTRB A 0 bright A_CustomMissile ("SmallFlameTrails", 0, 0, random (0, 360), 2, random (60, 130))
 		stop
 	}
 }
@@ -105,7 +106,8 @@ ACTOR BurnParticlesNoDamage: BurnParticles
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("RedFlare", 0, 5)
 		TTRB A 0 bright A_CustomMissile ("PlasmaSmoke", 20, 0, random (0, 360), 2, random (60, 130))
-		TTRB A 0 bright A_CustomMissile ("FlameTrails", 0, 0, random (0, 360), 2, random (60, 130))
+		TTRB A 0 bright A_CustomMissile ("BurningPersonParticle", 0, 0, random (0, 360), 2, random (0, 130))
+		//TTRB A 0 bright A_CustomMissile ("FlameTrails", 0, 0, random (0, 360), 2, random (60, 130))
 		stop
 	}
 }
@@ -177,19 +179,19 @@ actor BurningImp
 	States
 	{
 	Spawn:
-		IZD4 CCC 2 A_CustomMissile ("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
+		IZD4 C 6 A_CustomMissile("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_PlaySound("imp/pain")
-		IZD4 DDD 2 A_CustomMissile ("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
+		IZD4 D 6 A_CustomMissile("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_PlaySound("imp/pain")
-		IZD4 CCC 3 A_CustomMissile ("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
+		IZD4 C 6 A_CustomMissile("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_PlaySound("imp/pain")
-		IZD4 DDD 2 A_CustomMissile ("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
-		TROO LLLL 2 A_CustomMissile ("FlameTrails", 25, 0, random (0, 360), 2, random (50, 130))
+		IZD4 D 6 A_CustomMissile ("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
+		TROO LLL 6 A_CustomMissile ("BurningPersonParticle", 25, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Playsound("props/redfire")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
-		BOSB FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 2 A_CustomMissile ("FlameTrails", 15, 0, random (0, 360), 2, random (50, 130))
+		BOSB FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 8 A_CustomMissile ("BurningPersonParticle", 1, 0, random (0, 360), 2, random (50, 130))
 		BOSB FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 20 A_CustomMissile ("SmallSmoke", 25, 0, random (0, 360), 2, random (70, 110))
 		BOSB F -1
 		Stop
@@ -223,11 +225,9 @@ actor BurningDemon2
 		CRB7 M 3 A_Wander
 		TNT1 A 0 A_CustomMissile ("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
 		CRB7 N 3 A_Wander
-		TNT1 A 0 A_CustomMissile ("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
 		CRB7 O 3 A_Wander
 		TNT1 A 0 A_CustomMissile ("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
 		CRB7 P 3 A_Wander
-		TNT1 A 0 A_CustomMissile ("BurnParticles", 25, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_playsound ("demon/pain")
 		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
 		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 7, "GotoDeath")
@@ -274,13 +274,13 @@ Actor BurnedDemon
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_playsound ("demon/death")
-		CRB7 QQQQ 2 A_CustomMissile ("FlameTrails", 45, 0, random (0, 360), 2, random (50, 130))
-		CRB7 RRRR 2 A_CustomMissile ("FlameTrails", 30, 0, random (0, 360), 2, random (50, 130))
+		CRB7 QQQQ 6 A_CustomMissile ("BurningPersonParticle", 20, 0, random (0, 360), 2, random (50, 130))
+		CRB7 RRRR 6 A_CustomMissile ("BurningPersonParticle", 15, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Playsound("props/redfire")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
-		CARB JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ 2 A_CustomMissile ("FlameTrails", 25, 0, random (0, 360), 2, random (50, 130))
+		CARB JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ 8 A_CustomMissile ("BurningPersonParticle", 1, 0, random (0, 360), 2, random (50, 130))
 		CARB JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ 20 A_CustomMissile ("SmallSmoke", 35, 0, random (0, 360), 2, random (70, 110))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
 		CARB J -1
@@ -321,16 +321,16 @@ ACTOR DyingZombiemanInFlames
 	See2:
 		ZMAB A 5 A_Chase
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		ZMAB A 5 A_Chase
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		TNT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		ZMAB B 5 A_Chase
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		TNT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		ZMAB B 5 A_Chase
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		TNT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot")
 		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
@@ -348,7 +348,7 @@ ACTOR DyingZombiemanInFlames
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
 		TNT1 A 0 A_Stopsound(4)
-		BRZ3 HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 3 A_CustomMissile("BurnParticles", 5, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 8 A_CustomMissile("BurnParticles", 0, 0, random (0, 360), 2, random (70, 90))
 		TNT1 A 0 A_SpawnItem("100SmallFireFocusSpawnerz")
 		BRZ3 HHHHHHHHHHHHHHHHHHHHHHHH 10 A_CustomMissile("PlasmaSmoke", 15, 0, random (0, 360), 2, random (50, 130))
 		BRZ3 H -1
@@ -404,13 +404,13 @@ ACTOR DyingSergeantNoLegInFlames
 
 	See:
 		SMBM A 5 A_Chase
-		TNT1 A 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		SMBM A 5 A_Chase
-		TNT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		TNT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		SMBM B 5 A_Chase
-		TNT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		TNT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		SMBM B 5 A_Chase
-		TNT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		TNT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
 		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 10, "GotoDeath")
 		Loop
@@ -426,7 +426,7 @@ ACTOR DyingSergeantNoLegInFlames
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_Stopsound(4)
-		BRZ3 HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 3 A_CustomMissile("BurnParticles", 5, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 6 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_SpawnItem("100SmallFireFocusSpawnerz")
 		BRZ3 HHHHHHHHHHHHHHHHHHHHHHHH 10 A_CustomMissile("PlasmaSmoke", 15, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
@@ -493,11 +493,11 @@ ACTOR BurningZombie
 	Suffer:
 		BDT1 AAA 1 Bright A_Wander
 		TNT1 A 0 A_Recoil(-2)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 40, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 30, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BDT1 BBB 1 Bright A_Wander
 		TNT1 A 0 A_Recoil(-2)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 40, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 50, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BDT1 CCC 1 Bright A_Wander
 		TNT1 A 0 A_Recoil(-2)
@@ -514,17 +514,17 @@ ACTOR BurningZombie
 
 	Falling:
 		BDT2 AA 1 Bright
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BDT2 BB 1 Bright
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BDT2 CC 1 Bright
 		TNT1 A 0 A_JumpIf(momz == 0, "fallDeath")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BDT2 DD 1 Bright
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_JumpIf(momz == 0, "fallDeath")
 		Loop
@@ -537,17 +537,17 @@ ACTOR BurningZombie
 
 	Looping:
 		BDT3 AAAA 1 Bright A_JumpIf(momz == 0, "fallDeath")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT3 BBBB 1 Bright A_JumpIf(momz == 0, "fallDeath")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT3 CCCC 1 Bright A_JumpIf(momz == 0, "fallDeath")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT3 DDDD 1 Bright A_JumpIf(momz == 0, "fallDeath")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		Loop
 
 	FallDeath:
-		TNT1 AAAAAAAAAA 0 A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (20, 150))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (20, 150))
 		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy", 10, 0, random (0, 360), 2, random (20, 150))
 		TNT1 AAAA 0 A_CustomMissile("XDeath1", 10, 0, random (0, 360), 2, random (20, 150))
 		TNT1 A 0 A_PlaySound("misc/xdeath")
@@ -565,16 +565,16 @@ ACTOR BurningZombie
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_Stopsound(4)
 		TNT1 A 0 A_Jump(128, "Death2")
-		BDT1 EEFFGGHHiijjkkLLmm 3 Bright A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
-		NJEX AAAAAAAAAAAAAAAAAA 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BDT1 EEFFGGHHIIJJKKLLMM 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		NJEX AAAAAAAAAAAAAAAAAA 3 Bright A_CustomMissile("BurnParticles", 2, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_SpawnItem("100SmallFireFocusSpawnerz")
 		//NJEX AAAAAAAAAAAAAAAAAA 10 Bright A_CustomMissile("PlasmaSmoke", 15, 0, random (0, 360), 2, random (50, 130))
 		NJEX A -1
 		Stop
 
 	Death2:
-		BDT1 EEFFGGHHiijjkkLLmm 3 Bright A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
-		NJEX BBBBBBBBBBBBBBBBBB 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BDT1 EEFFGGHHIIJJKKLLMM 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		NJEX BBBBBBBBBBBBBBBBBB 3 Bright A_CustomMissile("BurnParticles", 2, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_SpawnItem("100SmallFireFocusSpawnerz")
 		//NJEX BBBBBBBBBBBBBBBBBB 10 Bright A_CustomMissile("PlasmaSmoke", 15, 0, random (0, 360), 2, random (50, 130))
 		NJEX B -1
@@ -703,19 +703,19 @@ ACTOR BurningZombieMan
 	Suffer:
 		BRZ3 AAA 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ3 BBB 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ3 CCC 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ3 BBB 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_GiveInventory("PoorGuyBurningLife", 1)
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
@@ -731,17 +731,17 @@ ACTOR BurningZombieMan
 
 	Looping:
 		BDT3 AAAA 1 Bright A_JumpIf(momz == 0, "fallDeath")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT3 BBBB 1 Bright A_JumpIf(momz == 0, "fallDeath")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT3 CCCC 1 Bright A_JumpIf(momz == 0, "fallDeath")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT3 DDDD 1 Bright A_JumpIf(momz == 0, "fallDeath")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		Loop
 
 	FallDeath:
-		TNT1 AAAAAAAAAA 0 A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (20, 150))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (20, 150))
 		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy", 10, 0, random (0, 360), 2, random (20, 150))
 		TNT1 AAAA 0 A_CustomMissile("XDeath1", 10, 0, random (0, 360), 2, random (20, 150))
 		TNT1 A 0 A_PlaySound("misc/xdeath")
@@ -762,48 +762,48 @@ ACTOR BurningZombieMan
 	Death1:
 		TNT1 A 0 A_PlaySound("BurnZom",4)
 		BRZ3 DD 3 A_CustomMissile("BurnParticles", 30, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 EE 3 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 EE 3 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
@@ -818,48 +818,48 @@ ACTOR BurningZombieMan
 	Death2:
 		TNT1 A 0 A_PlaySound("BurnZom",4)
 		BRZ3 DD 3 A_CustomMissile("BurnParticles", 30, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 EE 3 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 EE 3 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
@@ -874,18 +874,18 @@ ACTOR BurningZombieMan
 	Death3:
 		TNT1 A 0 A_PlaySound("BurnZom",4)
 		BRZ3 DD 3 A_CustomMissile("BurnParticles", 30, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 EE 3 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 EE 3 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_SpawnItem("DyingZombiemanInFlames")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stopsound(4)
@@ -922,19 +922,19 @@ ACTOR BurningShotgunguy: BurningZombieMan
 	Suffer:
 		BRZ3 AAA 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ3 BBB 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ3 CCC 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ3 BBB 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_GiveInventory("PoorGuyBurningLife", 1)
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
@@ -955,48 +955,48 @@ ACTOR BurningShotgunguy: BurningZombieMan
 	Death1:
 		TNT1 A 0 A_PlaySound("BurnZom",4)
 		BRZ3 DD 3 A_CustomMissile("BurnParticles", 30, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 EE 3 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 EE 3 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		BRZ3 HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH 3 A_CustomMissile("BurnParticles", 5, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_SpawnItem("100SmallFireFocusSpawnerz")
@@ -1008,48 +1008,48 @@ ACTOR BurningShotgunguy: BurningZombieMan
 	Death2:
 		TNT1 A 0 A_PlaySound("BurnZom",4)
 		BRZ3 DD 3 A_CustomMissile("BurnParticles", 30, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 EE 3 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 EE 3 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
-		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		TNT1 A 0 A_Wander
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
@@ -1064,18 +1064,18 @@ ACTOR BurningShotgunguy: BurningZombieMan
 	Death3:
 		TNT1 A 0 A_PlaySound("BurnZom",4)
 		BRZ3 DD 3 A_CustomMissile("BurnParticles", 30, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 EE 3 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 EE 3 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 FF 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_Wander
-		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+		BRZ3 GG 3 Bright A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_SpawnItem("DyingSergeantNoLegInFlames")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stopsound(4)
@@ -1097,19 +1097,19 @@ ACTOR BurningcHAINGUNGUY: BurningZombieMan
 	Suffer:
 		CPBR AAA 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		CPBR BBB 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		CPBR CCC 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		CPBR BBB 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_GiveInventory("PoorGuyBurningLife", 1)
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
@@ -1144,19 +1144,19 @@ ACTOR BurningImpRunning: BurningZombieMan
 		TRBR AAA 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
 		TNT1 A 0 A_PlaySound("imp/pain")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		TRBR BBB 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		TRBR CCC 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		TRBR DDD 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_GiveInventory("PoorGuyBurningLife", 1)
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
@@ -1189,19 +1189,19 @@ ACTOR BurningDemon: BurningZombieMan
 		SBRG AAA 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
 		TNT1 A 0 A_playsound ("demon/pain")
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		SBRG BBB 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		SBRG CCC 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		SBRG DDD 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_GiveInventory("PoorGuyBurningLife", 1)
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))
@@ -1250,27 +1250,27 @@ ACTOR BurningZombieManSimple: BurningZombieMan
 	Suffer:
 		BRZ5 AAA 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ5 BBB 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ5 CCC 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ5 DDD 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ5 EEE 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		BRZ5 FFF 1 BRIGHT A_Wander
 		TNT1 A 0 A_Recoil(-1)
-		BDT1 B 0 A_CustomMissile("BurnParticles", 20, 0, random (0, 360), 2, random (50, 130))
+		BDT1 B 0 A_CustomMissile("BurnParticles", 1, 0, random (0, 360), 2, random (50, 130))
 		BDT1 B 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_GiveInventory("PoorGuyBurningLife", 1)
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece3", random (-15, 15), random (-15, 15))

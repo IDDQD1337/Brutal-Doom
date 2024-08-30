@@ -116,7 +116,6 @@ Actor DebrisGeneral
 #include "actors/Enemies/ARCHVILE.dec"
 #include "actors/Enemies/CYBERDEMON.dec"
 #include "actors/Enemies/MASTERMIND.dec"
-#include "actors/Enemies/ICONOFSIN.dec"
 
 //Demon Weapons
 #include "actors/Weapons/Devastator.dec"//Uses Revenant missiles
@@ -133,6 +132,8 @@ Actor DebrisGeneral
 //Bosses
 #include "actors/Enemies/Bosses/MOTHERDEMON.dec"
 #include "actors/Enemies/Bosses/UBERSOLDAT.dec"
+#include "actors/Enemies/Bosses/ICONOFSIN.dec"
+#include "actors/Enemies/Bosses/BossBrain.dec"
 
 //Monsters Cast
 #include "actors/Enemies/MonstersCast.dec"
@@ -159,7 +160,6 @@ Actor DebrisGeneral
 #include "actors/PlayerClasses/MARINES.dec"
 #include "actors/PlayerClasses/Footsteps.dec"
 
-#include "actors/PlayerClasses/BossBrain.dec"
 #include "actors/PlayerClasses/VanillaMonsters.dec"
 #include "actors/PlayerClasses/DyingGuys.dec"
 #include "actors/PlayerClasses/LastStandMonsters.dec"

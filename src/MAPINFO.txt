@@ -252,6 +252,21 @@ name = "TEST - Abandoned city"
 }
 map TEST "TEST - Abandoned City"
 {
+next = "TEST"
+secretnext = "TEST"
+sky1 = "SKYEAR1", 0.1
+cluster = 1
+music = D_IN_CIT
+NoIntermission
+ResetInventory
+}
+
+episode TEST_old
+{
+name = "TEST - Abandoned city (Old)"
+}
+map TEST_old "TEST - Abandoned City (Old)"
+{
 next = "MAP01"
 secretnext = "MAP01"
 sky1 = "SKYEAR1", 0.1
@@ -260,11 +275,11 @@ music = D_IN_CIT
 AllowRespawn
 }
 
-episode TEST_old
+episode TEST_uac
 {
 name = "TEST - UAC Testing facility"
 }
-map TEST_old "TEST - UAC Testing Facility"
+map TEST_uac "TEST - UAC Testing Facility"
 {
 next = "MAP01"
 secretnext = "MAP01"
@@ -274,22 +289,56 @@ music = D_SHAWN
 AllowRespawn
 }
 
+///////////////////////////// EXTRA MAPS
 
 
-map DF01 "The Final Frontier"
+map TEST_01 "Slaughter Valley"
 {
 next = "DF02"
+next = "TEST"
 sky1 = "SKYEAR1", 0.1
 music = "EPIC"
+cluster = 1
+}
+
+
+
+
+
+//////////////////////////// HORDE MODE MAPS
+
+map DF01 "Cathedral of Pain"
+{
+next = "DF02"
+sky1 = "SKYDEI"
+music = "D_DM10"
 noinfighting
 cluster = 1
 }
 
 map DF02 "Death Factory"
 {
-next = "DF01"
+next = "DF03"
 sky1 = "SKYEAR1", 0.1
 music = "D_DM10"
+noinfighting
+cluster = 1
+}
+
+map DF03 "Downtown"
+{
+next = "DF04"
+sky1 = "SKYEAR1", 0.1
+music = "D_DM10"
+noinfighting
+cluster = 1
+}
+
+map DF04 "The Final Frontier"
+{
+next = "DF01"
+sky1 = "SKYEAR1", 0.1
+music = "EPIC"
 noinfighting
 cluster = 1
 }

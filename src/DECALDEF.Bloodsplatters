@@ -186,6 +186,15 @@ decalgroup BrutalBloodSuper
 	BrutalBloodSuper02 6
 }
 
+decal BrutalBloodSuperDuper
+{
+	pic BSPLBIG5
+	x-scale 0.6
+	y-scale 0.6
+	randomflipx
+	randomflipy
+}
+
 decal BrutalBloodGiant01
 {
 	pic BSPLBIG1

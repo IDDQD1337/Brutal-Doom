@@ -1314,3 +1314,8 @@ ACTOR MrX : EvilMarinePlasma
 		Goto Idle
 	}
 }
+
+Actor DEH_ACtor_153 3010
+{
+Game Doom
+}

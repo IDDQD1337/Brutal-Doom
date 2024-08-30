@@ -1222,12 +1222,11 @@ Texture FIRELAV3
 	pic FIRELAV2 rand 3 3
 	pic FIRELAV3 rand 3 3
 
-texture SPACM0
+texture SPACM0  ALLOWDECALS
 	pic SPACM1 tics 2
 	pic SPACM2 tics 2
 	pic SPACM3 tics 2
 	pic SPACM4 tics 2
-
 
 texture SKYHELF
 	pic SKYHF1 tics 2

@@ -60,14 +60,22 @@ ACTOR BDECRubbleSpawner: BDdecorationBase 11001
 	//$Title "Rubble Spawner"
 	-FORCEYBILLBOARD
 	+FORCEXYBILLBOARD
+	SCALE 0.6
+	Radius 8
+	Height 4	
 	States
 	{
 	Spawn:
-		SPDC C 1
-		TNT1 AAAA 0 A_SpawnItemEx("BDECRubble1", random(-150, 150), random(-150, 150))
-		TNT1 AA 0 A_SpawnItemEx("BDECRubble2", random(-150, 150), random(-150, 150))
-		TNT1 A 0 A_SpawnItemEx("BDECRubble3", random(-150, 150), random(-150, 150))
-		SPDC C -1
+		SPDZ U 1
+		TNT1 AAAA 0 A_SpawnItemEx("BDECRubble1", random(-200, 200), random(-200, 200))
+		TNT1 AAA 0 A_SpawnItemEx("BDECRubble2", random(-150, 150), random(-150, 150))
+		TNT1 AAA 0 A_SpawnItemEx("BDECRubble3", random(-150, 150), random(-150, 150))
+		TNT1 A 0 A_Jump(128, "Spawn2")
+		SPDZ U -1
+		Stop
+	Spawn2:
+		SPDZ V 1
+		SPDZ V -1
 		Stop
 	}
 }
@@ -77,6 +85,7 @@ ACTOR BDECRubble1: BDdecorationBase
 	-ACTLIKEBRIDGE
 	-FORCEYBILLBOARD
 	+FORCEXYBILLBOARD
+	SCALE 0.7
 	States
 	{
 	Spawn:
@@ -91,6 +100,7 @@ ACTOR BDECRubble2: BDdecorationBase
 	-ACTLIKEBRIDGE
 	-FORCEYBILLBOARD
 	+FORCEXYBILLBOARD
+	SCALE 0.7
 	States
 	{
 	Spawn:
@@ -105,6 +115,7 @@ ACTOR BDECRubble3: BDdecorationBase
 	-ACTLIKEBRIDGE
 	-FORCEYBILLBOARD
 	+FORCEXYBILLBOARD
+	SCALE 0.7
 	States
 	{
 	Spawn:
@@ -239,9 +250,10 @@ ACTOR BDECDestroyedLightPost: BDdecorationBase 11011
 {
 	//$Title "Broken light post"
 	-THRUACTORS
+	+SOLID
 	Radius 8
 	Height 64
-	Scale 2.0
+	Scale 1.0
 	States
 	{
 	Spawn:
@@ -257,8 +269,6 @@ ACTOR BDECDestroyedLightPost: BDdecorationBase 11011
 	}
 }
 
-
-
 ACTOR BDECGrassSpawner: BDdecorationBase 15848
 {
 	//$Category "BD Vegetation"
@@ -272,10 +282,10 @@ ACTOR BDECGrassSpawner: BDdecorationBase 15848
 	{
 	Spawn:
 		SPDC M 1
-		TNT1 AAAA 0 A_SpawnItemEx("BDECGrass", random(-100, 100), random(-100, 100))
-		TNT1 AA 0 A_SpawnItemEx("BDECGrass2", random(-120, 120), random(-120, 120))
-		TNT1 A 0 A_SpawnItemEx("BDECGrass3", random(-100, 100), random(-100, 100))
-		TNT1 A 0 A_SpawnItemEx("BDECGrass4")
+		TNT1 AAAAAAA 0 A_SpawnItemEx("BDECGrassSpecial", random(-100, 100), random(-100, 100))
+		TNT1 AAAAA 0 A_SpawnItemEx("BDECGrassSpecial", random(-120, 120), random(-120, 120))
+		TNT1 AAA 0 A_SpawnItemEx("BDECGrassSpecial", random(-100, 100), random(-100, 100))
+		TNT1 A 0 A_SpawnItemEx("BDECGrassSpecial")
 		Stop
 	}
 }
@@ -291,10 +301,10 @@ ACTOR BDECGrassSpawnerLarge: BDdecorationBase
 	{
 	Spawn:
 		SPDC M 1
-		TNT1 AAAAAAAA 0 A_SpawnItemEx("BDECGrass", random(-300, 300), random(-300, 300))
-		TNT1 AAAAAA 0 A_SpawnItemEx("BDECGrass2", random(-320, 320), random(-320, 320))
-		TNT1 AAAAA 0 A_SpawnItemEx("BDECGrass3", random(-300, 300), random(-300, 300))
-		TNT1 A 0 A_SpawnItemEx("BDECGrass4")
+		TNT1 AAAAAAAAAAAAA 0 A_SpawnItemEx("BDECGrassSpecial", random(-300, 300), random(-300, 300))
+		TNT1 AAAAAAAAAAA 0 A_SpawnItemEx("BDECGrassSpecial", random(-320, 320), random(-320, 320))
+		TNT1 AAAAAAAAA 0 A_SpawnItemEx("BDECGrassSpecial", random(-300, 300), random(-300, 300))
+		TNT1 A 0 A_SpawnItemEx("BDECGrassSpecial")
 		Stop
 	}
 }
@@ -306,16 +316,34 @@ ACTOR BDECGrass: BDdecorationBase
 	+SHOOTABLE
 	+NOBLOOD
 	-ACTLIKEBRIDGE
+	+FORCEXYBILLBOARD
+	-FORCEYBILLBOARD
 	Health 50
 	Radius 1
 	Height 1
 	Mass 99999
-	DamageFactor "Plasma", 200.0 DamageFactor "PLasma2", 200.0
+	Scale 0.5
+	DamageFactor "Plasma", 200.0 
+	DamageFactor "PLasma2", 200.0
 	States
 	{
 	Spawn:
-		SPDC M 1
-		SPDC M -1
+		M3GR A 0
+		M3GR A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3")
+
+	Spawn1:
+		M3GR A 1
+		M3GR A -1
+		Stop
+
+	Spawn2:
+		M3GR A 1
+		M3GR A -1
+		Stop
+
+	Spawn3:
+		M3GR A 1
+		M3GR A -1
 		Stop
 
 	Death.Fire:
@@ -323,20 +351,19 @@ ACTOR BDECGrass: BDdecorationBase
 	Death.Flames:
 	Death.Plasma2:
 	Death.Plasma:
-			TNT1 A 0
-			TNT1 A 0 A_NoBlocking
-			TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumnInfinite")
-			TNT1 A 0 A_CustomMissile("TinyBurningPieceInfinite")
-			TNT1 A 0 A_SpawnItemEx("RealisticFireSparksLoop", 0, 0, 15)
-			BPDC A 1
-			BPDC A -1
-			Stop
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumnInfinite")
+		TNT1 A 0 A_SpawnItem("TinyBurningPieceInfinite")
+		BPDC A 1
+		BPDC A -1
+		Stop
 	}
 }
 
 ACTOR BDECGrass2: BDECGrass
 {
-	Scale 0.5
+	Scale 0.6
 }
 
 ACTOR BDECGrass3: BDECGrass
@@ -346,7 +373,7 @@ ACTOR BDECGrass3: BDECGrass
 
 ACTOR BDECGrass4: BDECGrass
 {
-	Scale 1.0
+	Scale 0.4
 }
 
 ACTOR BDECGrassSpecial: BDECGrass
@@ -365,26 +392,23 @@ ACTOR BDECGrassSpecial: BDECGrass
 		TNT1 A 0
 		TNT1 A 0 A_Jump(255, "SpawnForest1", "SpawnForest2", "SpawnForest3", "SpawnForest4")
 	SpawnForest1:
-		SPDC M 1
-		SPDC M -1
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("BDECGrass")
 		Stop
 
-	SpawnFOrest2:
-		SPDC M 1
-		TNT1 A 0 A_SetScale (-0.6, 0.6)
-		SPDC M -1
+	SpawnForest2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("BDECGrass2")
 		Stop
 
-	SpawnFOrest3:
-		SPDC M 1
-		TNT1 A 0 A_SetScale (0.8, 0.8)
-		SPDC M -1
+	SpawnForest3:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("BDECGrass3")
 		Stop
 
-	SpawnFOrest4:
-		SPDC M 1
-		TNT1 A 0 A_SetScale (-1.1, 1.1)
-		SPDC M -1
+	SpawnForest4:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("BDECGrass4")
 		Stop
 	}
 }
@@ -393,7 +417,7 @@ ACTOR BDECBush: BDdecorationBase 15849
 {
 	//$Category "BD Vegetation"
 	//$Title "Bush"
-	Scale 0.6
+	Scale 0.5
 	+SHOOTABLE
 	+NOBLOOD
 	+THRUACTORS
@@ -405,8 +429,24 @@ ACTOR BDECBush: BDdecorationBase 15849
 	States
 	{
 	Spawn:
-		SPDC P 1
-		SPDC P -1
+		M3GR D 1
+		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3")
+		M3GR D -1
+		Stop
+
+	Spawn1:
+		M3GR D 1
+		M3GR D -1
+		Stop
+
+	Spawn1:
+		M3GR E 1
+		M3GR E -1
+		Stop
+
+	Spawn1:
+		M3GR F 1
+		M3GR F -1
 		Stop
 
 	Death.Explosives:
@@ -1536,11 +1576,26 @@ ACTOR BDECLightPost: BDdecorationBase 11033
 {
 	//$Category "BD Decorations"
 	//$Title "Light post"
+	+SHOOTABLE
+	+SOLID
+	-NOBLOCKMAP
+	+NOBLOOD
+	-THRUACTORS
+	Radius 8
+	Height 160
+	Health 9999
+	DamageFactor "Nuke", 999.0
 	States
 	{
-		Spawn:
+	Spawn:
 		SPDC T 2 A_SpawnItemEx("LensFlareAlt", 0, 0, 205)
 		Loop
+
+	Death:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("BDECDestroyedLightPost")
+		Stop
 	}
 }
 

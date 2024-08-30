@@ -31,6 +31,8 @@ ACTOR DyingZombieman
 	-COUNTKILL
 	//+GHOST
 	//+THRUGHOST
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"	
 	States
 	{
 	Pain.Kick:
@@ -217,32 +219,34 @@ ACTOR ZombiemanFallingBeheaded
 	+THRUGHOST
 	-COUNTKILL
 	Mass 500
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"
 	States
 	{
 	Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(196, "Instant")
 		TNT1 A 0 A_Jump(128, "Long")
-		ZZD6 AABBCCDD 4 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, 120, 2, random (0, 60))
-		ZZD6 EE 3 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, 120, 2, random (0, 60))
+		ZZD6 AABBCCDD 4 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
+		ZZD6 EE 3 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 A 0 A_Noblocking
 		TNT1 A 0 A_Scream
-		ZZD6 FFGG 2 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, 120, 2, random (0, 60))
+		ZZD6 FFGG 2 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		TNT1 A 0 A_SpawnItem ("DeadZombieman_NoHeadFront")
 		TNT1 A 5 A_CustomMissile ("ArterialBloodSPray", 10, -10, 45, 2, random (0, 60))
 		Stop
 
 	Long:
-		ZZD6 AABBCCDD 3 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, 120, 2, random (0, 60))
-		ZZD6 AABBCCDD 3 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, 120, 2, random (0, 60))
-		ZZD6 AABBCCDD 3 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, 120, 2, random (0, 60))
-		ZZD6 EE 3 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, 120, 2, random (0, 60))
+		ZZD6 AABBCCDD 3 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
+		ZZD6 AABBCCDD 3 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
+		ZZD6 AABBCCDD 3 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
+		ZZD6 EE 3 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 A 0 A_Noblocking
 		TNT1 A 0 A_Scream
-		ZZD6 FFGG 2 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, 120, 2, random (0, 60))
+		ZZD6 FFGG 2 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		TNT1 A 0 A_SpawnItem ("DeadZombieman_NoHeadFront")
 		TNT1 A 5 A_CustomMissile ("ArterialBloodSPray", 10, -10, 45, 2, random (0, 60))
@@ -250,12 +254,12 @@ ACTOR ZombiemanFallingBeheaded
 
 	Instant:
 		ZZD6 I 8
-		ZZD6 EEEEE 3 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, 120, 2, random (0, 60))
+		ZZD6 EEEEE 3 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
 	Death:
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 A 0 A_Noblocking
 		TNT1 A 0 A_Scream
-		ZZD6 FFGG 2 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, 120, 2, random (0, 60))
+		ZZD6 FFGG 2 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		TNT1 A 0 A_SpawnItem ("DeadZombieman_NoHeadFront")
 		TNT1 A 5 A_CustomMissile ("ArterialBloodSPray", 10, -10, 45, 2, random (0, 60))
@@ -293,8 +297,6 @@ ACTOR ZombiemanFallingBeheaded
 	}
 }
 
-
-
 ACTOR ZombiemanFallingSplattered
 {
 	Radius 12
@@ -315,17 +317,19 @@ ACTOR ZombiemanFallingSplattered
 	+THRUGHOST
 	-COUNTKILL
 	Mass 500
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"
 	States
 	{
 	Spawn:
 		TNT1 A 0
 		ZXZ2 A 1 A_Stop
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
-		ZXZ2 BBBBBBBBBBBBBBBBBBB 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (30, 60))
+		ZXZ2 BBBBBBBBBBBBBBBBBBB 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (30, 60))
 		TNT1 A 0 A_NoBlocking
-		ZXZ2 CCC 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 10, -45, 2, random (0, 60))
+		ZXZ2 CCC 3 A_CustomMissile ("ArterialBlood22Big", 26, 10, -45, 2, random (0, 60))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
-		ZXZ2 DD 3 A_CustomMissile ("Brutal_LiquidBlood2", 12, 10, -45, 2, random (0, 60))
+		ZXZ2 DD 3 A_CustomMissile ("ArterialBlood22Big", 12, 10, -45, 2, random (0, 60))
 		TNT1 A 0 A_CustomMissile ("ArterialBloodSPray", 10, 10, -45, 2, random (0, 60))
 		ZXZ1 E 0
 		TNT1 A 0 A_SpawnItem("DeadZombieMan_Blasted")
@@ -399,10 +403,6 @@ ACTOR ZombiemanFallingSplattered
 	}
 }
 
-
-
-
-
 ACTOR ZombiemanFallingHoleOnStomach
 {
 	Radius 12
@@ -423,17 +423,19 @@ ACTOR ZombiemanFallingHoleOnStomach
 	+THRUGHOST
 	-COUNTKILL
 	Mass 500
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"
 	States
 	{
 	Spawn:
 		TNT1 A 0
 		ZXZ1 A 1 A_Stop
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
-		ZXZ1 BBBBBBBBBBBBBBBBBBB 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (30, 60))
+		ZXZ1 BBBBBBBBBBBBBBBBBBB 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (30, 60))
 		TNT1 A 0 A_NoBlocking
-		ZXZ1 CCC 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (10, 40))
+		ZXZ1 CCC 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (10, 40))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
-		ZXZ1 DD 3 A_CustomMissile ("Brutal_LiquidBlood2", 6, 0, random (0, 360), 2, random (30, 60))
+		ZXZ1 DD 3 A_CustomMissile ("ArterialBlood22Big", 6, 0, random (0, 360), 2, random (30, 60))
 		ZXZ1 E 0
 		TNT1 A 0 A_SpawnItem("DeadZombieMan_StomachExploded")
 		Stop
@@ -523,17 +525,19 @@ ACTOR SergeantFallingSplattered
 	+THRUGHOST
 	-COUNTKILL
 	Mass 500
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"
 	States
 	{
 	Spawn:
 		TNT1 A 0
 		ZXZ6 A 1 A_Stop
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
-		ZXZ6 BBBBBBBBBBBBBBBBBBB 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (30, 60))
+		ZXZ6 BBBBBBBBBBBBBBBBBBB 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (30, 60))
 		TNT1 A 0 A_NoBlocking
-		ZXZ6 CCC 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 10, -45, 2, random (0, 60))
+		ZXZ6 CCC 3 A_CustomMissile ("ArterialBlood22Big", 26, 10, -45, 2, random (0, 60))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
-		ZXZ6 DD 3 A_CustomMissile ("Brutal_LiquidBlood2", 12, 10, -45, 2, random (0, 60))
+		ZXZ6 DD 3 A_CustomMissile ("ArterialBlood22Big", 12, 10, -45, 2, random (0, 60))
 		TNT1 A 0 A_CustomMissile ("ArterialBloodSPray", 10, 10, -45, 2, random (0, 60))
 		ZXZ6 E 0
 		TNT1 A 0 A_SpawnItem("DeadShotgunguyZXZ6E")
@@ -627,17 +631,19 @@ ACTOR SergeantFallingHoleOnStomach
 	+THRUGHOST
 	-COUNTKILL
 	Mass 500
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"
 	States
 	{
 	Spawn:
 		TNT1 A 0
 		ZXZ7 A 1 A_Stop
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
-		ZXZ7 BBBBBBBBBBBBBBBBBBB 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (30, 60))
+		ZXZ7 BBBBBBBBBBBBBBBBBBB 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (30, 60))
 		TNT1 A 0 A_NoBlocking
-		ZXZ7 CCC 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (10, 40))
+		ZXZ7 CCC 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (10, 40))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
-		ZXZ7 DD 3 A_CustomMissile ("Brutal_LiquidBlood2", 6, 0, random (0, 360), 2, random (30, 60))
+		ZXZ7 DD 3 A_CustomMissile ("ArterialBlood22Big", 6, 0, random (0, 360), 2, random (30, 60))
 		ZXZ7 E 0
 		TNT1 A 0 A_SpawnItem("DeadShotgunguyZXZ7E")
 		Stop
@@ -707,7 +713,6 @@ ACTOR SergeantFallingHoleOnStomach
 	}
 }
 
-
 ACTOR BrutalizedZombieMan1
 {
 	Game Doom
@@ -733,6 +738,8 @@ ACTOR BrutalizedZombieMan1
 	-COUNTKILL
 	Scale 1.0
 	Mass 500
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"
 	States
 	{
 	Spawn:
@@ -788,9 +795,9 @@ ACTOR BrutalizedZombieMan1
 	}
 }
 
-actor BrutalizedZombieManStop: CurbstompedMarine
+Actor BrutalizedZombieManStop: CurbstompedMarine
 {
-	States
+	states
 	{
 	Spawn:
 		TNT1 A 0
@@ -894,6 +901,8 @@ actor ZombieLegOnFoot: CurbstompedMarine
 	Scale 1.0
 	-SHOOTABLE
 	-SOLID
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"	
 	States
 	{
 	Spawn:
@@ -965,6 +974,8 @@ ACTOR DyingSergeant
 	+THRUGHOST
 	-SOLID
 	-COUNTKILL
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"
 	States
 	{
 	Death.Fire: 
@@ -1121,7 +1132,6 @@ ACTOR DyingSergeant
 	}
 }
 
-
 ACTOR DeadShotgunguyNoHeadContinue: DyingSergeant
 {
 	Radius 16
@@ -1133,12 +1143,12 @@ ACTOR DeadShotgunguyNoHeadContinue: DyingSergeant
 	{
 		Spawn:
 		TNT1 A 0
-		SPDH BBBBBBBBBBBBBBBBBBCCCCC 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (60, 120))
+		SPDH BBBBBBBBBBBBBBBBBBCCCCC 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (60, 120))
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_ChangeFLag("SHOOTABLE", 0)
 		TNT1 A 0 A_NoBlocking
-		SPDH DDDD 2 A_CustomMissile ("Brutal_LiquidBlood2", 15, -10, 45, 2, random (60, 120))
+		SPDH DDDD 2 A_CustomMissile ("ArterialBlood22Big", 15, -10, 45, 2, random (60, 120))
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		TNT1 A 0 A_CustomMissile ("ArterialBloodSPray", 10, 10, -45, 2, random (0, 60))
 		TNT1 A 0 A_SpawnItem("DeadShotgunguySPDHE")
@@ -1186,8 +1196,6 @@ ACTOR DeadShotgunguyNoHeadContinue: DyingSergeant
 	}
 }
 
-
-
 ACTOR DyingSergeantNoLeg
 {
 	Radius 12
@@ -1215,6 +1223,8 @@ ACTOR DyingSergeantNoLeg
 	damagefactor "Leg", 0.0
 	damagefactor "Death.KickDowned", 100.0
 	Damagefactor "Stealth", 1000.0
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"	
 	States
 	{
 	Pain.Kick:
@@ -1345,8 +1355,6 @@ ACTOR DyingSergeantNoLeg
 		Stop
 	}
 }
-
-
 
 ACTOR DyingSergeantLegBlewedOff: DyingSergeantNoLeg
 {
@@ -1500,11 +1508,6 @@ ACTOR DyingSergeantLegBlewedOff: DyingSergeantNoLeg
 	}
 }
 
-
-
-
-
-
 ACTOR BrutalizedSergeant1
 {
 	Game Doom
@@ -1526,6 +1529,8 @@ ACTOR BrutalizedSergeant1
 	//+THRUGHOST
 	-COUNTKILL
 	Scale 1.0
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"	
 	States
 	{
 	Spawn:
@@ -1686,7 +1691,6 @@ ACTOR BrutalizedSergeant3: BrutalizedSergeant1
 	}
 }
 
-
 actor BrutalizedSergeantStop3: CurbstompedMarine
 {
 	States
@@ -1699,7 +1703,6 @@ actor BrutalizedSergeantStop3: CurbstompedMarine
 		Stop
 	}
 }
-
 
 ACTOR StompedSergeant: CurbstompedMarine
 {
@@ -1731,7 +1734,6 @@ ACTOR StompedSergeant: CurbstompedMarine
 	}
 }
 
-
 ACTOR VeryFuckedUpBrutalizedSergeantLeg: CurbstompedMarine
 {
 	Health 200 
@@ -1760,7 +1762,6 @@ ACTOR VeryFuckedUpBrutalizedSergeantLeg: CurbstompedMarine
 	}
 }
 
-
 ACTOR BrutalizedSergeantLeg: BrutalizedSergeant1
 {
 	States
@@ -1786,9 +1787,6 @@ ACTOR BrutalizedSergeantLeg: BrutalizedSergeant1
 		Stop
 	}
 }
-
-
-
 
 ACTOR DyingZombiemanNoArm: DyingSergeant
 {
@@ -1828,49 +1826,49 @@ ACTOR DyingZombiemanNoArm: DyingSergeant
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 BBBBB 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 BBBBB 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_Jump(128, "GotoDeath")
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 EEEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 EEEEE 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 BBBBB 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 BBBBB 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 EEEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 EEEEE 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 BBBBB 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 BBBBB 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 EEEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 EEEEE 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 BBBBB 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 BBBBB 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_Jump(32, "LastStand")
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 EEEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 EEEEE 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 BBBBB 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 BBBBB 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 EEEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 EEEEE 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 		TNT1 A 0 A_FaceTarget
-		ZZD2 BBBBB 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, 90, 2, random (0, 45))
+		ZZD2 BBBBB 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, 90, 2, random (0, 45))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget10", 0, 28,0)
 	GotoDeath:
 		TNT1 A 0 A_Jump(32, "LastStand")
@@ -1882,10 +1880,10 @@ ACTOR DyingZombiemanNoArm: DyingSergeant
 		TNT1 A 0 A_KillChildren
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_StopSound(4)
-		ZZD2 CCCC 2 A_CustomMissile ("Brutal_LiquidBlood2", 15, 0, 90, 2, random (0, 45))
+		ZZD2 CCCC 2 A_CustomMissile ("ArterialBlood22Big", 15, 0, 90, 2, random (0, 45))
 		TNT1 A 0 A_PlaySound ("grunt/death")
 		TNT1 A 0 A_SpawnItem ("DeadZombieman_NoArmFront")
-		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 A_CustomMissile ("Brutal_LiquidBlood2", 1, 0, 90, 2, random (10, 45))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 A_CustomMissile ("ArterialBlood22Big", 1, 0, 90, 2, random (10, 45))
 		Stop
 
 	Death.Head:
@@ -2142,7 +2140,6 @@ ACTOR ZombieManDyingAfterFatality: DyingZombiemanNoArm
 	}
 }
 
-
 ACTOR ZombiemanGotHisLegBlowed: DyingZombiemanNoArm
 {
 	States
@@ -2359,8 +2356,6 @@ ACTOR SergeantGotHisLegBlowed: DyingZombiemanNoArm
 		TNT1 A 0 A_SpawnItem ("DeadShotgunguy_NoLeg")
 		Stop
 
-
-
 	LastStand:
 		TNT1 A 0 A_KillChildren
 		TNT1 A 0 A_NoBlocking
@@ -2421,6 +2416,8 @@ ACTOR FlyingImpaledSergeant
 	DeathSound "misc/xdeath1"
 	Decal BrutalBloodSplat
 	Mass 1
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"	
 	States
 	{
 	Spawn:
@@ -2446,10 +2443,6 @@ ACTOR FlyingImpaledSergeant
 	}
 }
 
-
-
-
-
 ACTOR DyingImp
 {
 	Game Doom
@@ -2470,6 +2463,8 @@ ACTOR DyingImp
 	damagefactor "Crush", 50.0
 	Damagefactor "Stealth", 1000.0
 	Scale 1.0
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"	
 	States
 	{
 	Spawn:
@@ -2535,7 +2530,8 @@ ACTOR DyingImp
 		TNT1 A 0 A_SpawnItemEx("DyingImpNoHeadContinue",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		Stop
 
-	Death.Plasma: Death.Plasma2:
+	Death.Plasma: 
+	Death.Plasma2:
 		TNT1 A 0
 		TNT1 A 0 A_KillChildren
 		TNT1 A 0 A_XScream
@@ -2587,7 +2583,6 @@ ACTOR DyingImp
 		//TROG H -1
 		Stop
 
-
 	Death.SSG:
 		TNT1 A 0 A_KillChildren
 		//TNT1 A 0 A_CustomMissile ("MeatDeath", 0, 0, random (0, 360), 2, random (0, 160))
@@ -2609,8 +2604,6 @@ ACTOR DyingImp
 		IZD1 H -1
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		Stop
-
-
 
 	Death.Shotgun:
 	Death.Blast:
@@ -2645,7 +2638,6 @@ ACTOR DyingImp
 		Stop
 	}
 }
-
 
 ACTOR DyingImpNoHeadContinue: DyingImp
 {
@@ -2725,9 +2717,9 @@ ACTOR DyingImpNoHeadContinue: DyingImp
 		TRO3 B 1 A_NoBlocking
 		TNT1 A 0 A_SpawnItemEx("DyingImpNoHeadNoArmContinue",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		Stop
-		TRO3 BBBBBBBBBB 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (30, 60))
-		TRO3 CCC 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (10, 40))
-		TRO3 DD 3 A_CustomMissile ("Brutal_LiquidBlood2", 6, 0, random (0, 360), 2, random (30, 60))
+		TRO3 BBBBBBBBBB 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (30, 60))
+		TRO3 CCC 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (10, 40))
+		TRO3 DD 3 A_CustomMissile ("ArterialBlood22Big", 6, 0, random (0, 360), 2, random (30, 60))
 		TNT1 A 0 A_SpawnItem("DeadImpTRO3E")
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		Stop
@@ -2742,12 +2734,12 @@ ACTOR DyingImpNoHeadClean: DyingImp
 	Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_XScream
-		TROH CCCCCCCC 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (60, 120))
-		TROH DDD 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
+		TROH CCCCCCCC 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (60, 120))
+		TROH DDD 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, random (0, 360), 2, random (60, 120))
 		TROH D 1 A_die("Kick")
 	Death.Kick:
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
-		TROH EEEEEEEEEEEEEEEEEEEEEEEEEEEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 15, 0, random (0, 360), 2, random (15, 40))
+		TROH EEEEEEEEEEEEEEEEEEEEEEEEEEEEE 2 A_CustomMissile ("ArterialBlood22Big", 15, 0, random (0, 360), 2, random (15, 40))
 		TNT1 A 0 A_SpawnItem("DeadImp_NoHead")
 		Stop
 
@@ -2756,8 +2748,6 @@ ACTOR DyingImpNoHeadClean: DyingImp
 		GOto Death.Shotgun
 	}
 }
-
-
 
 ACTOR DyingImpHalfFace: DyingImp
 {
@@ -2770,30 +2760,30 @@ ACTOR DyingImpHalfFace: DyingImp
 		TNT1 A 0 A_SpawnItemEx("Dying_Headshot",0,0,30,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION)
 		TNT1 A 0
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 48,0)
-		T6SW AAAA 2 A_CustomMissile ("Brutal_LiquidBlood2", 50, 0, random (0, 360), 2, random (60, 120))
-		T6SW BBBB 2 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, random (0, 360), 2, random (60, 120))
+		T6SW AAAA 2 A_CustomMissile ("ArterialBlood22Big", 50, 0, random (0, 360), 2, random (60, 120))
+		T6SW BBBB 2 A_CustomMissile ("ArterialBlood22Big", 40, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 28,0)
 		T6SW CCCC 2 A_CustomMissile ("Brutal_LiquidBlood", 30, 0, random (0, 360), 2, random (60, 120))
-		T6SW DDDDDD 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
+		T6SW DDDDDD 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 28,0)
-		T6SW EEE 3 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
+		T6SW EEE 3 A_CustomMissile ("ArterialBlood22Big", 20, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_PlaySound("imp/pain")
-		T6SW DDD 3 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
+		T6SW DDD 3 A_CustomMissile ("ArterialBlood22Big", 20, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 28,0)
-		T6SW EEE 3 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
+		T6SW EEE 3 A_CustomMissile ("ArterialBlood22Big", 20, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_PlaySound("imp/pain")
-		T6SW DDD 3 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
+		T6SW DDD 3 A_CustomMissile ("ArterialBlood22Big", 20, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 28,0)
-		T6SW EEE 3 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
+		T6SW EEE 3 A_CustomMissile ("ArterialBlood22Big", 20, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_PlaySound("imp/pain")
-		T6SW DDD 3 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
+		T6SW DDD 3 A_CustomMissile ("ArterialBlood22Big", 20, 0, random (0, 360), 2, random (60, 120))
 		T6SW F 1 A_Die
 	Death:
 		TNT1 A 0 A_KillChildren
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
-		T6SW FF 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
-		T6SW GGGG 2 A_CustomMissile ("Brutal_LiquidBlood2", 10, 0, random (0, 360), 2, random (15, 40))
+		T6SW FF 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, random (0, 360), 2, random (60, 120))
+		T6SW GGGG 2 A_CustomMissile ("ArterialBlood22Big", 10, 0, random (0, 360), 2, random (15, 40))
 		TNT1 A 0 A_SpawnItem("DeadImpNoFace")
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		Stop
@@ -2805,7 +2795,6 @@ ACTOR DyingImpHalfFace: DyingImp
 	}
 }
 
-
 ACTOR DyingImpNoHeadLikeChicken: DyingImp
 {
 	Damagefactor "Stealth", 0.0
@@ -2814,26 +2803,26 @@ ACTOR DyingImpNoHeadLikeChicken: DyingImp
 	Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("misc/xdeath2c")
-		TROH FFFGGGHHHIII 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (10, 90))
+		TROH FFFGGGHHHIII 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (10, 90))
 		TNT1 A 0 A_PlaySound("misc/xdeath2c")
-		TROH FFFGGGHHHIII 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (10, 90))
+		TROH FFFGGGHHHIII 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (10, 90))
 		TNT1 A 0 A_PlaySound("misc/xdeath2c")
-		TROH FFFGGGHHHIII 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (10, 90))
+		TROH FFFGGGHHHIII 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (10, 90))
 		TNT1 A 0 A_PlaySound("misc/xdeath2c")
-		TROH FFFGGGHHHIII 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (10, 90))
+		TROH FFFGGGHHHIII 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (10, 90))
 		TNT1 A 0 A_PlaySound("misc/xdeath2c")
-		TROH FFFGGGHHHIII 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (10, 90))
+		TROH FFFGGGHHHIII 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (10, 90))
 		TNT1 A 0 A_PlaySound("misc/xdeath2c")
-		TROH FFFGGGHHHIII 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (10, 90))
+		TROH FFFGGGHHHIII 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (10, 90))
 		TROH C 1 A_die("Kick")
 
 	Death.Kick:
 		TNT1 A 0 A_NoBlocking
-		TROH CCCCCCCC 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (60, 120))
+		TROH CCCCCCCC 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
-		TROH DDD 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
+		TROH DDD 2 A_CustomMissile ("ArterialBlood22Big", 20, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
-		TROH EEEEEEEEEEEEEEEEEEEEEEEEEEEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 15, 0, random (0, 360), 2, random (15, 40))
+		TROH EEEEEEEEEEEEEEEEEEEEEEEEEEEEE 2 A_CustomMissile ("ArterialBlood22Big", 15, 0, random (0, 360), 2, random (15, 40))
 		TNT1 A 0 A_SpawnItem("DeadImp_NoHead")
 		Stop
 
@@ -2848,7 +2837,6 @@ ACTOR DyingImpNoHeadLikeChicken: DyingImp
 	}
 }
 
-
 ACTOR DyingImpNoHeadNoArmContinue: DyingImp
 {
 	Damagefactor "Stealth", 0.0
@@ -2856,10 +2844,10 @@ ACTOR DyingImpNoHeadNoArmContinue: DyingImp
 	{
 	Spawn:
 		TNT1 A 0
-		TRO3 BBBBBBBBBB 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (30, 60))
-		TRO3 CCC 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (10, 40))
+		TRO3 BBBBBBBBBB 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (30, 60))
+		TRO3 CCC 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (10, 40))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
-		TRO3 DD 3 A_CustomMissile ("Brutal_LiquidBlood2", 6, 0, random (0, 360), 2, random (30, 60))
+		TRO3 DD 3 A_CustomMissile ("ArterialBlood22Big", 6, 0, random (0, 360), 2, random (30, 60))
 		TRO3 D 1 A_Die("Kick")
 	Death.Kick:
 		TNT1 A 0 A_SpawnItem("DeadImpTRO3E")
@@ -3078,7 +3066,6 @@ ACTOR BrutalizedImp3: BrutalizedImp1
 	}
 }
 
-
 actor BrutalizedImpStop3: BrutalizedImpStop
 {
 	States
@@ -3105,13 +3092,10 @@ actor BrutalizedImpStop3: BrutalizedImpStop
 	}
 }
 
-
 ACTOR ThisImpGotFuckedHard: DeadImpID17G
 {
 	Health 200
 }
-
-
 
 ACTOR ImpBrutalizedWithNoLeg
 {
@@ -3300,9 +3284,9 @@ ACTOR DyingImpNoArm
 		TNT1 AAA 0 A_CustomMissile ("BloodMistBig", 40, 0, random (0, 360), 2, random (30, 90))
 		TROG A 6 A_Stop
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
-		TROG BBBBBBBBBB 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (30, 60))
-		TROG CCC 3 A_CustomMissile ("Brutal_LiquidBlood2", 26, 0, random (0, 360), 2, random (10, 40))
-		TROG DD 3 A_CustomMissile ("Brutal_LiquidBlood2", 6, 0, random (0, 360), 2, random (30, 60))
+		TROG BBBBBBBBBB 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (30, 60))
+		TROG CCC 3 A_CustomMissile ("ArterialBlood22Big", 26, 0, random (0, 360), 2, random (10, 40))
+		TROG DD 3 A_CustomMissile ("ArterialBlood22Big", 6, 0, random (0, 360), 2, random (30, 60))
 		TNT1 A 0 A_SpawnItem("DeadImp_Half")
 		Stop
 
@@ -3318,8 +3302,6 @@ ACTOR DyingImpNoArm
 		Stop
 	}
 }
-
-
 
 ACTOR DyingImpNoLeg
 {
@@ -3418,10 +3400,6 @@ ACTOR DyingImpNoLeg
 	}
 }
 
-
-
-
-
 ACTOR ImpDyingOfBloodLoss : Imp
 {
 	Radius 16
@@ -3479,10 +3457,6 @@ ACTOR ImpDyingOfBloodLoss : Imp
 		Stop
 	}
 }
-
-
-
-
 
 ACTOR PoorPinkyLostHisArm: Demon
 {
@@ -3549,10 +3523,6 @@ ACTOR PoorPinkyLostHisArm: Demon
 		Stop
 	}
 }
-
-
-
-
 
 ACTOR BrutalizedCommando1
 {
@@ -3647,7 +3617,6 @@ ACTOR BrutalizedCommando2: BrutalizedCommando1
 	}
 }
 
-
 ACTOR BrutalizedCommando3: BrutalizedCommando1
 {
 	Damagefactor "Stealth", 0.0
@@ -3678,7 +3647,6 @@ ACTOR BrutalizedCommando3: BrutalizedCommando1
 	}
 }
 
-
 ACTOR BrutalizedCommandoBlasted: BrutalizedCommando3
 {
 	+NOPAIN
@@ -3686,18 +3654,17 @@ ACTOR BrutalizedCommandoBlasted: BrutalizedCommando3
 	{
 	Spawn:
 		TNT1 A 0
-		MPSD AAAA 6 A_CustomMissile ("Brutal_LiquidBlood2", 64, 0, random (0, 360), 2, random (30, 60))
-		MPSD BBBBCCCC 2 A_CustomMissile ("Brutal_LiquidBlood2", 34, 0, random (0, 60), 2, random (30, 60))
+		MPSD AAAA 6 A_CustomMissile ("ArterialBlood22Big", 64, 0, random (0, 360), 2, random (30, 60))
+		MPSD BBBBCCCC 2 A_CustomMissile ("ArterialBlood22Big", 34, 0, random (0, 60), 2, random (30, 60))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
-		MPSD DDDDDDDDDDDDDDDDDDDDD 6 A_CustomMissile ("Brutal_LiquidBlood2", 16, 0, random (0, 60), 2, random (30, 60))
+		MPSD DDDDDDDDDDDDDDDDDDDDD 6 A_CustomMissile ("ArterialBlood22Big", 16, 0, random (0, 60), 2, random (30, 60))
 		TNT1 A 0 A_SpawnItem("DeadChaingunguyMPSDD")
 		TNT1 A 0 A_Noblocking
 		TNT1 A -1
 		Stop
 	}
 }
-
 
 ACTOR BrutalizedCommandoLostHead: BrutalizedCommando1
 {
@@ -3707,14 +3674,14 @@ ACTOR BrutalizedCommandoLostHead: BrutalizedCommando1
 	{
 	Spawn:
 		TNT1 A 0
-		CPHS BBB 2 A_CustomMissile ("Brutal_LiquidBlood2", 50, 0, random (0, 360), 2, random (60, 120))
+		CPHS BBB 2 A_CustomMissile ("ArterialBlood22Big", 50, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_XScream
-		CPHS CCCCCCCCCCCCCCC 2 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, random (0, 360), 2, random (60, 120))
+		CPHS CCCCCCCCCCCCCCC 2 A_CustomMissile ("ArterialBlood22Big", 40, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_NoBlocking
-		CPHS DDDEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (60, 120))
+		CPHS DDDEEE 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
-		CPHS FFFFFFFFFFFFFFF 2 A_CustomMissile ("Brutal_LiquidBlood2", 5, 0, random (0, 360), 2, random (10, 40))
+		CPHS FFFFFFFFFFFFFFF 2 A_CustomMissile ("ArterialBlood22Big", 5, 0, random (0, 360), 2, random (10, 40))
 		TNT1 A 1 A_SpawnItem ("DeadChaingunGuy_NoHeadExploded", 3)
 		Stop
 
@@ -3734,9 +3701,6 @@ ACTOR BrutalizedCommandoLostHead: BrutalizedCommando1
 	}
 }
 
-
-
-
 ACTOR BrutalizedCommandoLostHead2: BrutalizedCommandoLostHead
 {
 	+NOPAIN
@@ -3745,14 +3709,14 @@ ACTOR BrutalizedCommandoLostHead2: BrutalizedCommandoLostHead
 	{
 	Spawn:
 		TNT1 A 0
-		CPHD BBB 2 A_CustomMissile ("Brutal_LiquidBlood2", 50, 0, random (0, 360), 2, random (60, 120))
+		CPHD BBB 2 A_CustomMissile ("ArterialBlood22Big", 50, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_XScream
-		CPHD CCCCCCCCCCCCCCCCCCC 2 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, random (0, 360), 2, random (60, 120))
+		CPHD CCCCCCCCCCCCCCCCCCC 2 A_CustomMissile ("ArterialBlood22Big", 40, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_NoBlocking
-		CPHD DDDEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (60, 120))
+		CPHD DDDEEE 2 A_CustomMissile ("ArterialBlood22Big", 30, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
-		CPHD FFFFFFFFFFFFFFF 2 A_CustomMissile ("Brutal_LiquidBlood2", 5, 0, random (0, 360), 2, random (10, 40))
+		CPHD FFFFFFFFFFFFFFF 2 A_CustomMissile ("ArterialBlood22Big", 5, 0, random (0, 360), 2, random (10, 40))
 		TNT1 A 1 A_SpawnItem ("DeadChaingunGuy_NoHead", 3)
 		Stop
 	}
@@ -3836,8 +3800,6 @@ ACTOR ZombiemanSaciLol: ZombiemanGotHisLegBlowed
 		Stop
 	}
 }
-
-
 
 ACTOR ImpSaciLol: DyingImpNoLeg
 {
@@ -4067,7 +4029,6 @@ ACTOR DyingZombiemanLostTeeth: RifleZombie
 	}
 }
 
-
 ACTOR DyingShotgunguyHitInEye: Shotgunguy1
 {
 	Radius 12
@@ -4084,6 +4045,8 @@ ACTOR DyingShotgunguyHitInEye: Shotgunguy1
 	Damagefactor "Stealth", 1000.0
 	PainChance "Stealth", 255
 	DropItem "None" 255
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"	
 	States
 	{
 	Spawn:
@@ -4145,9 +4108,6 @@ ACTOR DyingShotgunguyHitInEye: Shotgunguy1
 		Stop
 	}
 }
-
-
-
 
 ACTOR ZombieScientistDyingGuts: DyingZombiemanNoArm
 {
@@ -4272,11 +4232,6 @@ ACTOR ZombieScientistDyingGuts: DyingZombiemanNoArm
 	}
 }
 
-
-
-
-
-
 ACTOR DyingZManFatality5: DyingZombiemanNoArm
 {
 	Radius 12
@@ -4291,6 +4246,8 @@ ACTOR DyingZManFatality5: DyingZombiemanNoArm
 	Species "Marines"
 	DropItem "None" 255
 	DamageFactor "Stealth", 0.0
+	+NOBLOODDECALS
+	BloodType "DeadBlood", "SawBlood", "SawBlood"	
 	States
 	{
 	Spawn:
@@ -4301,17 +4258,17 @@ ACTOR DyingZManFatality5: DyingZombiemanNoArm
 		TNT1 A 0 A_PlaySound("BURNZOM", 4)
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 32,0)
-		FRAA FGHG 5 A_CustomMissile("Brutal_LiquidBlood2", 32 , 0, random (0, 360), 2, random (40, 90))
+		FRAA FGHG 5 A_CustomMissile("ArterialBlood22Big", 32 , 0, random (0, 360), 2, random (40, 90))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 32,0)
-		FRAA FGHG 5 A_CustomMissile("Brutal_LiquidBlood2", 32 , 0, random (0, 360), 2, random (40, 90))
+		FRAA FGHG 5 A_CustomMissile("ArterialBlood22Big", 32 , 0, random (0, 360), 2, random (40, 90))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 32,0)
-		FRAA FGHG 5 A_CustomMissile("Brutal_LiquidBlood2", 32 , 0, random (0, 360), 2, random (40, 90))
+		FRAA FGHG 5 A_CustomMissile("ArterialBlood22Big", 32 , 0, random (0, 360), 2, random (40, 90))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 32,0)
-		FRAA FGHG 5 A_CustomMissile("Brutal_LiquidBlood2", 32 , 0, random (0, 360), 2, random (40, 90))
+		FRAA FGHG 5 A_CustomMissile("ArterialBlood22Big", 32 , 0, random (0, 360), 2, random (40, 90))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 32,0)
-		FRAA FGHG 5 A_CustomMissile("Brutal_LiquidBlood2", 32 , 0, random (0, 360), 2, random (40, 90))
+		FRAA FGHG 5 A_CustomMissile("ArterialBlood22Big", 32 , 0, random (0, 360), 2, random (40, 90))
 		TNT1 A 0 //A_SpawnItem ("HeadshotTarget20", 0, 32,0)
-		FRAA FGHG 5 A_CustomMissile("Brutal_LiquidBlood2", 32 , 0, random (0, 360), 2, random (40, 90))
+		FRAA FGHG 5 A_CustomMissile("ArterialBlood22Big", 32 , 0, random (0, 360), 2, random (40, 90))
 		FRAA I 1 A_Die
 
 	Death:
@@ -4351,8 +4308,6 @@ ACTOR DyingZManFatality5: DyingZombiemanNoArm
 		Goto Death.SSG
 	}
 }
-
-
 
 Actor FatalizedSGGuy6: DeadShotgunGuy1
 {

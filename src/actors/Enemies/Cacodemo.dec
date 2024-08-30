@@ -292,7 +292,6 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 
 	Death.saw:
 		TNT1 A 0 A_SetFloorClip
-		TNT1 A 0 A_SetFloorClip
 		TNT1 A 0 A_Scream
 		TNT1 O 0 A_NoBlocking
 		TNT1 A 0 A_SpawnItem("Muchblood2Blue", 0, 40)
@@ -330,7 +329,6 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 		TNT1 O 0 A_Jump(64, 2)
 		Goto Death.Brutal
 		TNT1 A 0 A_SetFloorClip
-		TNT1 A 0 A_SetFloorClip
 		TNT1 A 0 A_Scream
 		TNT1 O 0 A_NoBlocking
 		TNT1 A 0 A_SpawnItem("Muchblood2Blue", 0, 40)
@@ -347,7 +345,8 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 	Death.Brutal:
 	Death.Blast:
 	Death.Railgun:
-		TNT1 A 0 A_SetFloorClip
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfInventory("SlaughterCounter", 60, "Death.SFestExplode")//If its a slaughterfest map, spawn less effects death
 		TNT1 A 0 A_SetFloorClip
 		TNT1 A 0 A_Scream
 		TNT1 O 0 A_NoBlocking
@@ -365,6 +364,30 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 		TNT1 A 0 A_SpawnItem("BrutalizedCacodemon1")
 		TNT1 A -1
 		Stop
+
+
+
+	Death.SFestExplode:
+		TNT1 A 0 A_SetFloorClip
+		TNT1 A 0 A_Scream
+		TNT1 O 0 A_NoBlocking
+		TNT1 A 0 A_FaceTarget
+		CCD1 A 0
+		TNT1 AAAAA 0 A_CustomMissile ("BlueBloodMistExtraBig", 50, 0, random (0, 360), 2, random (0, 160))
+		HEDC AB 4
+		HEDC C -1
+		Stop
+
+	Death.Nuke:
+		TNT1 A 0 A_SetFloorClip
+		TNT1 A 0 A_Scream
+		TNT1 O 0 A_NoBlocking
+		TNT1 A 0 A_FaceTarget
+		CCD1 A 0
+		HEDC AB 4
+		HEDC C -1
+		Stop
+
 
 	Death.SuperPlasma:
 	Death.Plasma: 
@@ -415,6 +438,7 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 	Death.Explosives:
 	Death.Desintegrate:
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_JumpIfInventory("SlaughterCounter", 60, "Death.SFestExplode")//If its a slaughterfest map, spawn less effects death
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile ("CacoXDeath", 0, 0, random (0, 360), 2, random (0, 160))
 		Stop
@@ -540,10 +564,9 @@ ACTOR CacodemonBall_ Replaces CacodemonBall
 		Loop
 
 	Death:
-		TNT1 AAA 0 A_CustomMissile ("BDExplosionparticles", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 AA 0 A_CustomMissile ("BDExplosionparticles2", 0, 0, random (0, 360), 2, random (0, 90))
-		TNT1 AAA 0 A_CustomMissile ("SmallExplosionFlames", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 A 0 A_CustomMissile ("PurplePlasmaFire", 0, 0, random (0, 360), 2, random (0, 360))
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.6, 0.6)
+		EXP8 ABCDEFGHIJKLMNOPQRSTUVWX 1 BRIGHT
 		Stop
 	}
 }
@@ -560,10 +583,9 @@ ACTOR CacodemonBall_Slaughterfest : CacodemonBall_
 		Loop
 
 	Death:
-		TNT1 AA 0 A_CustomMissile ("BDExplosionparticles", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 A 0 A_CustomMissile ("BDExplosionparticles2", 0, 0, random (0, 360), 2, random (0, 90))
-		TNT1 AA 0 A_CustomMissile ("SmallExplosionFlames", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 A 0 A_CustomMissile ("PurplePlasmaFire", 0, 0, random (0, 360), 2, random (0, 360))
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.6, 0.6)
+		EXP8 ABCDEFGHIJKLMNOPQRSTUVWX 1 BRIGHT
 		Stop
 	}
 }
