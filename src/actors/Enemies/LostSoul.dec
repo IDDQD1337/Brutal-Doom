@@ -70,7 +70,7 @@ ACTOR TehLostSoul: LostSoul Replaces LostSoul
 		TNT1 A 0 A_CheckSight("Spawn2")
 		LSOL A 2 BRIGHT A_Look
 		TNT1 A 0 A_SpawnItem ("RedFlareMedium", 0, 24)
-		LSOL AA 0 A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
+		LSOL AA 0 //A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
 		Loop
 
 	Spawn2:
@@ -80,6 +80,17 @@ ACTOR TehLostSoul: LostSoul Replaces LostSoul
 		Goto Spawn3
 
 	See:
+		LSO9 AB 2 BRIGHT A_Chase("", "")
+		TNT1 A 0 A_JumpIfCloser(160, "Retreat")
+		TNT1 A 0 A_ChangeFlag("NOPAIN", 0)
+		LSO9 CD 2 BRIGHT A_Chase("", "")
+		TNT1 A 0 A_JumpIfCloser(160, "Retreat")
+		TNT1 A 0 A_SpawnItem ("RedFlareMedium", 0, 24)
+		LSO9 EF 2 BRIGHT A_Chase
+		LSO9 G 2 BRIGHT A_Chase("", "")
+		Loop
+
+	See5:
 		TNT1 A 0
 		TNT1 A 0 A_TakeInventory("MaxLostSoulRange", 30)
 		LSOL A 2 BRIGHT A_Chase("", "")
@@ -88,14 +99,14 @@ ACTOR TehLostSoul: LostSoul Replaces LostSoul
 		LSOL A 2 BRIGHT A_Chase
 		TNT1 A 0 A_JumpIfCloser(160, "Retreat")
 		TNT1 A 0 A_SpawnItem ("RedFlareMedium", 0, 24)
-		LSOL A 0 A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
+		LSOL A 0 //A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
 		Loop
 
 	Retreat:
 		LSOL A 1 A_FaceTarget
 		TNT1 A 0 A_Recoil(3)
 		TNT1 A 0 A_SpawnItem ("RedFlareMedium", 0, 24)
-		LSOL A 0 A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
+		LSOL A 0 //A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
 		Goto See
 
 	Missile:
@@ -113,31 +124,31 @@ ACTOR TehLostSoul: LostSoul Replaces LostSoul
 		Goto Missile+6
 
 	Pain:
-		TNT1 AAA 0 A_CustomMissile ("SoulTrails", 12, 0, random (0, 360), 2, random (0, 160))
+		//TNT1 AAA 0 A_CustomMissile ("SoulTrails", 12, 0, random (0, 360), 2, random (0, 160))
 		LSOL C 3 BRIGHT
 		TNT1 A 0 A_Jump (128, 3)
 		Goto Avoid
 		TNT1 AAA 0
-		TNT1 AAA 0 A_CustomMissile ("SoulTrails", 12, 0, random (0, 360), 2, random (0, 160))
+		//TNT1 AAA 0 A_CustomMissile ("SoulTrails", 12, 0, random (0, 360), 2, random (0, 160))
 		LSOL C 1 BRIGHT A_Pain
 		Goto See
 
 	Avoid:
 		NULL A 0 A_FaceTarget
 		LSOL B 6 A_FastChase
-		LSOL AA 0 A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
+		LSOL AA 0 //A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
 		SKUL A 0 BRIGHT A_SpawnItem ("RedFlareMedium", 0, 24)
 		NULL A 0 A_FaceTarget
 		LSOL B 6 BRIGHT A_FastChase
-		LSOL AA 0 A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
+		LSOL AA 0 //A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
 		SKUL A 0 BRIGHT A_SpawnItem ("RedFlareMedium", 0, 24)
 		NULL A 0 A_FaceTarget
 		LSOL B 6 BRIGHT A_FastChase
-		LSOL AA 0 A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
+		LSOL AA 0 //A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
 		SKUL A 0 BRIGHT A_SpawnItem ("RedFlareMedium", 0, 24)
 		NULL A 0 A_FaceTarget
 		LSOL B 6 BRIGHT A_FastChase
-		LSOL AA 0 A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
+		LSOL AA 0 //A_CustomMissile ("SoulTrails", 24, 0, random (0, 360), 2, random (0, 160))
 		SKUL A 0 BRIGHT A_SpawnItem ("RedFlareMedium", 0, 24)
 		Goto Missile
 
@@ -155,15 +166,12 @@ ACTOR TehLostSoul: LostSoul Replaces LostSoul
 		LSOL F 4 BRIGHT A_NoBlocking
 		TNT1 AAAA 0 A_CustomMissile ("SmallLSPart1", 0, 0, random (0, 360), 2, random (0, 360))
 		TNT1 AAAA 0 A_CustomMissile ("SmallLSPart3", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 AAA 0 A_CustomMissile ("CoolAndNewFlameTrailsLong", 12, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("ImpBallExplosionparticles", 1, 0, random (0, 180), 2, random (40, 90))
+		TNT1 AA 0 A_CustomMissile ("BDExplosionparticles3", 1, 0, random (0, 180), 2, random (40, 90))
 		LSOL G 0 BRIGHT A_Scream
-		EXPL AA 0 A_SpawnItem("ExplosionParticleSpawner")
-		TNT1 A 0 A_SpawnItemEx ("ExplosionFlareSpawner",0,0,32,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		EXPL AAAAA 0 A_CustomMissile ("FireBallExplosionFlamesMedium", 32, 0, random (0, 360), 2, random (0, 360))
-		TNT1 AAAA 0 A_CustomMissile ("PlasmaSmoke", 32, 0, random (0, 360), 2, random (0, 360))
 		TNT1 AAA 0 A_CustomMissile ("LSpart1", 42, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_CustomMissile ("LSpart3", 42, 0, random (0, 360), 2, random (0, 160))
 		TNT1 AA 0 A_CustomMissile ("LSpart2", 42, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_CustomMissile ("LSpart3", 42, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0
 		LSOL HI 0
 		Stop
@@ -205,7 +213,6 @@ ACTOR LSPart1
 	{
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 Thing_ChangeTID(0,394)
 		TNT1 A 0 A_Jump(128,9)
 		LGI1 ABCDEFGH 2
 		wait
@@ -229,7 +236,6 @@ actor LSpart2 : LSpart1
 	{
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 Thing_ChangeTID(0,394)
 		TNT1 A 0 A_Jump(128,9)
 		LGI2 ABCDEFGH 2
 		wait
@@ -254,7 +260,6 @@ actor LSpart3 : LSpart1
 	spawn:
 		TNT1 A 0
 		TNT1 A 0 A_QueueCorpse
-		TNT1 A 0 Thing_ChangeTID(0,394)
 		TNT1 A 0 A_Jump(128,9)
 		LGI3 ABCDEFGH 2
 		wait

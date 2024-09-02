@@ -594,15 +594,15 @@ ACTOR ShotgunGuy1: ShotgunGuy Replaces ShotgunGuy
 		TNT1 A 0 A_GiveToTarget("SoulAmmo", 10)
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil (6)
-		SPO4 Z 5 A_CustomMissile ("Brutal_LiquidBlood3", 15, 0, random (0, 360), 2, random (0, 40))
+		SPO4 Z 5 A_CustomMissile ("ArterialBlood22Big3", 15, 0, random (0, 360), 2, random (0, 40))
 		TNT1 A 0 A_JumpIf((MomY == 0), "TakeASit")
-		SPO4 Z 5 A_CustomMissile ("Brutal_LiquidBlood3", 15, 0, random (0, 360), 2, random (0, 40))
+		SPO4 Z 5 A_CustomMissile ("ArterialBlood22Big3", 15, 0, random (0, 360), 2, random (0, 40))
 		TNT1 A 0 A_JumpIf((MomY == 0), "TakeASit")
-		SPO4 [ 5 A_CustomMissile ("Brutal_LiquidBlood3", 15, 0, random (0, 360), 2, random (0, 40))
+		SPO4 [ 5 A_CustomMissile ("ArterialBlood22Big3", 15, 0, random (0, 360), 2, random (0, 40))
 		TNT1 A 0 A_JumpIf((MomY == 0), "TakeASit")
-		SPO4 W 5 A_CustomMissile ("Brutal_LiquidBlood3", 15, 0, random (0, 360), 2, random (0, 40))
-		SPO4 X 5 A_CustomMissile ("Brutal_LiquidBlood3", 15, 0, random (0, 360), 2, random (0, 40))
-		SPO4 Y 5 A_CustomMissile ("Brutal_LiquidBlood3", 15, 0, random (0, 360), 2, random (0, 40))
+		SPO4 W 5 A_CustomMissile ("ArterialBlood22Big3", 15, 0, random (0, 360), 2, random (0, 40))
+		SPO4 X 5 A_CustomMissile ("ArterialBlood22Big3", 15, 0, random (0, 360), 2, random (0, 40))
+		SPO4 Y 5 A_CustomMissile ("ArterialBlood22Big3", 15, 0, random (0, 360), 2, random (0, 40))
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
 		TNT1 A 0 A_SpawnItem("DeadShotgunguy1")
 		TNT1 A -1
@@ -764,11 +764,11 @@ ACTOR ShotgunGuy1: ShotgunGuy Replaces ShotgunGuy
 		TNT1 A 0 A_CustomMissile ("Brains3", 50, 0, random (90, 110), 2, random (0, 160))
 		TNT1 A 0 A_CustomMissile ("Brains5", 50, 0, random (100, 130), 2, random (0, 160))
 		TNT1 A 0 A_Scream
-		SPOS TTTTUU 2 A_CustomMissile ("Brutal_LiquidBlood", 40, 0, 120, 2, random (0, 60))
-		SPOS VVV 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, 120, 2, random (60, 120))
+		SPOS TTTTUU 2 A_CustomMissile ("ArterialBlood22Big", 40, 0, 120, 2, random (0, 60))
+		SPOS VVV 2 A_CustomMissile ("ArterialBlood22Big2", 30, 0, 120, 2, random (60, 120))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("SoulAmmo", 10)
-		SPOS XXXYYY 2 A_CustomMissile ("Brutal_LiquidBlood2", 20, 0, random (0, 360), 2, random (60, 120))
+		SPOS XXXYYY 2 A_CustomMissile ("ArterialBlood22Big2", 20, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_CustomMissile ("ArterialBloodSPray", 10, 10, -45, 2, random (0, 60))
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		TNT1 A 0 A_SpawnItem("DeadShotgunguySPOSZ")
@@ -810,7 +810,7 @@ ACTOR ShotgunGuy1: ShotgunGuy Replaces ShotgunGuy
 		TNT1 A 0 A_SpawnItem("ShotgunguyHeadExplode", 0, 50)
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("SoulAmmo", 10)
-		SPDH AAAAA 2 A_CustomMissile ("Brutal_LiquidBlood2", 40, 0, random (0, 360), 2, random (60, 120))
+		SPDH AAAAA 2 A_CustomMissile ("ArterialBlood22Big2", 40, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_SpawnItemEx("DeadShotgunguyNoHeadContinue",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		Stop
@@ -845,9 +845,9 @@ ACTOR ShotgunGuy1: ShotgunGuy Replaces ShotgunGuy
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("SoulAmmo", 10)
-		SPDH AAAAABBBBBBBBBBCCCCC 2 A_CustomMissile ("Brutal_LiquidBlood2", 30, 0, random (0, 360), 2, random (60, 120))
-		SPDH DDDDDDEEEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 10, 0, random (0, 360), 2, random (60, 120))
-		SPDH EEEEEEEEEEEE 2 A_CustomMissile ("Brutal_LiquidBlood2", 5, 0, random (0, 360), 2, random (10, 40))
+		SPDH AAAAABBBBBBBBBBCCCCC 2 A_CustomMissile ("ArterialBlood22Big2", 30, 0, random (0, 360), 2, random (60, 120))
+		SPDH DDDDDDEEEEE 2 A_CustomMissile ("ArterialBlood22Big2", 10, 0, random (0, 360), 2, random (60, 120))
+		SPDH EEEEEEEEEEEE 2 A_CustomMissile ("ArterialBlood22Big2", 5, 0, random (0, 360), 2, random (10, 40))
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		TNT1 A 0 A_SpawnItem("DeadShotgunguySPDHE")
 		TNT1 A -1
@@ -918,9 +918,6 @@ ACTOR ShotgunGuy1: ShotgunGuy Replaces ShotgunGuy
 		TNT1 AAA 0 A_CustomMissile ("Guts", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("XDeath1", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("Xdeath3", 16, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBlood", 32, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBloodFaster", 32, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBloodMuchFaster", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 AA 0 A_CustomMissile ("SuperWallRedBlood", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 AA 0 A_CustomMissile ("BloodMistBig", 40, 0, random (0, 360), 2, random (30, 90))
 		TNT1 AAA 0 A_CustomMissile ("BloodMistBig", 40, 0, random (0, 360), 2, random (30, 90))
@@ -938,9 +935,6 @@ ACTOR ShotgunGuy1: ShotgunGuy Replaces ShotgunGuy
 		TNT1 AAA 0 A_CustomMissile ("XDeath1", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("Xdeath3", 16, 0, random (170, 190), 2, random (0, 40))
 		TNT1 AA 0 A_CustomMissile ("Xdeath2", 16, 0, random (130, 210), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBlood", 32, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBloodFaster", 32, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBloodMuchFaster", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 AA 0 A_CustomMissile ("SuperWallRedBlood", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("BloodMistBig", 40, 0, random (0, 360), 2, random (30, 90))
 		TNT1 AAA 0 A_CustomMissile ("BloodMist", 40, 0, random (0, 360), 2, random (40, 90))
@@ -1175,6 +1169,13 @@ ACTOR ShotgunGuy1: ShotgunGuy Replaces ShotgunGuy
 		TNT1 AA 0 A_CustomMissile ("BloodMistBig", 40, 0, random (0, 360), 2, random (0, 70))
 		TNT1 AA 0 A_CustomMissile ("BloodmistLarge", 40, 0, random (0, 360), 2, random (0, 90))
 		TNT1 A 0 A_Stop
+		TGIB ABCDEFGHIJKLMNOPQ 3
+		TGIB Q -1
+		Stop
+
+	Death.Nuke:
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		TGIB ABCDEFGHIJKLMNOPQ 3
 		TGIB Q -1
 		Stop
@@ -1611,9 +1612,6 @@ Actor DeadShotgunguy_Slumped: ZombiemanTorso
 		TNT1 AAA 0 A_CustomMissile ("Guts", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("XDeath1", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("Xdeath3", 16, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBlood", 32, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBloodFaster", 32, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBloodMuchFaster", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 AA 0 A_CustomMissile ("SuperWallRedBlood", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("BloodMistBig", 40, 0, random (0, 360), 2, random (30, 90))
 		TNT1 AA 0 A_CustomMissile ("XDeathArm1", 40, 0, random (0, 360), 2, random (30, 90))
@@ -1648,9 +1646,6 @@ Actor DeadShotgunguy_Slumped_NoHead: ZombiemanTorso
 		TNT1 AAA 0 A_CustomMissile ("Guts", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("XDeath1", 32, 0, random (150, 210), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("Xdeath3", 16, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBlood", 32, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBloodFaster", 32, 0, random (170, 190), 2, random (0, 40))
-		TNT1 AAAA 0 A_CustomMissile ("Brutal_FlyingBloodMuchFaster", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 AA 0 A_CustomMissile ("SuperWallRedBlood", 32, 0, random (170, 190), 2, random (0, 40))
 		TNT1 AAA 0 A_CustomMissile ("BloodMistBig", 40, 0, random (0, 360), 2, random (30, 90))
 		TNT1 AA 0 A_CustomMissile ("XDeathArm1", 40, 0, random (0, 360), 2, random (30, 90))

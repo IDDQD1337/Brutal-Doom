@@ -52,6 +52,7 @@ ACTOR TehArchvile: Archvile Replaces Archvile
 		MARN A 0 ACS_ExecuteAlways(177, 0, 0, 0, 0)//Check if you are playing on an Wolfenstein level
 		TNT1 A 0 ACS_NamedExecuteAlways("BDCHeckClassicMonsters", 0, 0, 0, 0)//Check if Vanilla Mode is activated
 		TNT1 A 0 A_JumpIfInventory("SlaughterCounter", 200, "Stand")
+		TNT1 A 0 A_SpawnItemEx("Vile_HeadHitbox",0,0,56,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION)
 		TNT1 A 0 A_RadiusGive("SlaughterCounter", 600, RGF_MONSTERS, 1)
 		//TNT1 A 0 ACS_NamedExecuteAlways("BDCHeckClassicMonsters", 0, 0, 0, 0)//Check if Vanilla Mode is activated
 
@@ -267,7 +268,7 @@ ACTOR TehArchvile: Archvile Replaces Archvile
 		TNT1 AAA 0 A_CustomMissile ("Guts", 32, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_NoBlocking
 		VID3 A 3
-		VID3 AAAAAAAAAAAAAAAAAAAAA 2 A_CustomMissile ("Brutal_LiquidBlood", 46, 0, random (0, 360), 2, random (0, 45))
+		VID3 AAAAAAAAAAAAAAAAAAAAA 2 A_CustomMissile ("ArterialBlood22Big", 46, 0, random (0, 360), 2, random (0, 45))
 		VID3 BCDEFGHIJK 3
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		TNT1 A 0 A_SpawnItemEx ("DeadArchvileVID3L", 0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
@@ -531,11 +532,11 @@ ACTOR DyingArchvileNoArm: TehArchvile
 	Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_FaceTarget
-		VID2 KKKLLL 2 A_CustomMissile ("Brutal_LiquidBlood", 24, 0, random (0, 360), 2, random (0, 45))
-		VID2 KKKLLL 2 A_CustomMissile ("Brutal_LiquidBlood", 24, 0, random (0, 360), 2, random (0, 45))
-		VID2 KKKLLL 2 A_CustomMissile ("Brutal_LiquidBlood", 24, 0, random (0, 360), 2, random (0, 45))
-		VID2 KKKLLL 2 A_CustomMissile ("Brutal_LiquidBlood", 24, 0, random (0, 360), 2, random (0, 45))
-		VID2 KKKLLL 2 A_CustomMissile ("Brutal_LiquidBlood", 24, 0, random (0, 360), 2, random (0, 45))
+		VID2 KKKLLL 2 A_CustomMissile ("ArterialBlood22Big", 24, 0, random (0, 360), 2, random (0, 45))
+		VID2 KKKLLL 2 A_CustomMissile ("ArterialBlood22Big", 24, 0, random (0, 360), 2, random (0, 45))
+		VID2 KKKLLL 2 A_CustomMissile ("ArterialBlood22Big", 24, 0, random (0, 360), 2, random (0, 45))
+		VID2 KKKLLL 2 A_CustomMissile ("ArterialBlood22Big", 24, 0, random (0, 360), 2, random (0, 45))
+		VID2 KKKLLL 2 A_CustomMissile ("ArterialBlood22Big", 24, 0, random (0, 360), 2, random (0, 45))
 		VID2 K 1 A_Die
 	Death:
 		VID2 A 0 A_Scream
@@ -593,7 +594,7 @@ ACTOR DyingArchvileNoArm: TehArchvile
 		TNT1 AAA 0 A_CustomMissile ("Guts", 32, 0, random (0, 360), 2, random (60, 120))
 		TNT1 A 0 A_NoBlocking
 		VID3 A 3
-		VID3 AAAAAAAAAAAAAAAAAAAAA 2 A_CustomMissile ("Brutal_LiquidBlood", 46, 0, random (0, 360), 2, random (0, 45))
+		VID3 AAAAAAAAAAAAAAAAAAAAA 2 A_CustomMissile ("ArterialBlood22Big", 46, 0, random (0, 360), 2, random (0, 45))
 		VID3 BCDEFGHIJK 3
 		TNT1 A 0 A_SpawnItem ("GrowingBloodPool")
 		TNT1 A 0 A_SpawnItem("DeadArchvileVID3L")

@@ -28,7 +28,10 @@ actor Brutal_Blood Replaces Blood
 		TNT1 A 0 A_CustomMissile ("WaterBloodCHecker", 7, 0, random (0, 360), 2, random (30, 60))
 	Spawn2:
 		TNT1 A 0 A_CustomMissile ("Brutal_FlyingBlood", 7, 0, random (0, 360), 2, random (30, 60))
-		TNT1 A 0 A_CustomMissile ("Brutal_FlyingBloodTrail", 0, 0, random (0, 360), 2, random (20, 90))
+		//TNT1 A 0 A_CustomMissile ("Brutal_FlyingBloodTrail", 0, 0, random (0, 360), 2, random (20, 90))
+
+		TNT1 A 0 A_CustomMissile("ArterialBlood22Small", 0, 0, random (0, 360), 2, random (30, 90))
+		TNT1 A 0 A_CustomMissile("BloodMist22Small", 0, 0, random (0, 360), 2, random (30, 90))
 		Goto LowBlood  
 
 	Splash:
@@ -217,7 +220,7 @@ actor Brutal_FlyingBloodTrail
 	scale 0.5
 	mass 1
 	renderstyle Normal
-	Decal BrutalBloodSplat
+	Decal None
 	+NOTELEPORT
 	+NOBLOCKMAP
 	+FORCEXYBILLBOARD
@@ -314,18 +317,16 @@ actor Bloodmist : Brutal_FlyingBlood
 	states
 	{
 	Spawn:
-		BLHT A 0
-		TNT1 A 0 ACS_NamedExecuteAlways("BDCHeckJanitor4", 0 , 0, 0, 0)
 		BLHT A 1
 		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Live")
 	Spawn1:
 		TNT1 A 0
-		TNT1 A 0 A_SetScale(-0.8, 0.8)
+		TNT1 A 0 A_SetScale(0.8, 0.8)
 		Goto live
 
 	Spawn2:
 		TNT1 A 0
-		TNT1 A 0 A_SetScale(-0.9, -0.9)
+		TNT1 A 0 A_SetScale(0.9, -0.9)
 		Goto live
 
 	Spawn3:
@@ -334,9 +335,9 @@ actor Bloodmist : Brutal_FlyingBlood
 		Goto live
 
 	Live:
-		BLHT ABCDEFGHI 3
-		TNT1 A 0 
-		BLHT JJJJ 6 A_JumpIf(waterlevel > 1, "Splash")
+		GTXZ ABCDEFGHIJKLMNOPQRSTUVWXY 1
+		//TNT1 A 0 
+		//BLHT JJJJ 6 A_JumpIf(waterlevel > 1, "Splash")
 		Stop
 
 	Vanish:
@@ -350,8 +351,261 @@ actor Bloodmist : Brutal_FlyingBlood
 	}
 }
 
+actor Bloodmist22 : Bloodmist
+{
+	+BOUNCEONWALLS
+	+BOUNCEONCEILINGS
+	scale 0.7
+	radius 2
+	height 2
+	speed  4
+	Gravity 0.3
+	aLPHA 0.5
+	states
+	{
+	Spawn:
+		GTXP A 1
+		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Live")
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.55, 0.55)
+		Goto live
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.8, 0.8)
+		Goto live
+
+	Spawn3:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.65, 0.55)
+		Goto live
+
+	Live:
+		GTXP BCDEFGHIJKLMNOPQRSTUVWXY 1
+		Stop
+
+	Vanish:
+		TNT1 A 0
+		Stop
+	Death:
+		XDT1 FGHIJKL 2
+		Stop
+		
+	}
+}
 
 
+actor Bloodmist22Small : Bloodmist22
+{
+	speed  2
+	Scale 0.3
+	aLPHA 0.4
+	states
+	{
+	Spawn:
+		GTXP A 1
+		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Live")
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.35, 0.35)
+		Goto live
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.4, 0.4)
+		Goto live
+
+	Spawn3:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.35, 0.3)
+		Goto live
+
+	Live:
+		GTXP BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Vanish:
+		TNT1 A 0
+		Stop
+
+	Death:
+		XDT1 FGHIJKL 2
+		Stop
+
+	}
+}
+
+
+
+actor ArterialBlood22 : Bloodmist22
+{
+	Speed 1
+	alpha 0.9
+	Gravity 0.01
+	Scale 0.1
+	aLPHA 0.6
+	states
+	{
+	Spawn:
+		GTXZ A 0
+		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.1, 0.1)
+		GTXZ AAAAA 1 A_SetScale(scalex+0.015, scaley+0.015)
+		GTXZ BDFHJLNPRTVY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.1, 0.1)
+		GTXZ AAAAA 1 A_SetScale(scalex+0.02, scaley+0.02)
+		GTXZ BDFHJLNPRTVY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn3:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.1, 0.1)
+		GTXZ AAAAA 1 A_SetScale(scalex-0.012, scaley+0.012)
+		GTXZ BDFHJLNPRTVY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn4:
+		TNT1 A 0 A_SetScale(-0.1, 0.1)
+		GTXZ AAAAA 1 A_SetScale(scalex-0.013, scaley+0.013)
+		GTXZ BDFHJLNPRTVY 1 A_JumpIf(waterlevel > 1, "Splash")
+		//GTXZ BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+	}
+}
+
+
+actor ArterialBlood22Big3 : ArterialBlood22
+{
+	Speed 1
+	alpha 0.9
+	Gravity 0.01
+	Scale 0.1
+	aLPHA 0.6
+	states
+	{
+	Spawn:
+		GTXZ A 1
+		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
+	Spawn1:
+		TNT1 A 0
+		GTXZ AAAAA 1 A_SetScale(scalex+0.05, scaley+0.05)
+		GTXZ BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		GTXZ AAAAA 1 A_SetScale(scalex+0.06, scaley+0.06)
+		GTXZ BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn3:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.1, 0.1)
+		GTXZ AAAAA 1 A_SetScale(scalex-0.05, scaley+0.05)
+		GTXZ BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn4:
+		TNT1 A 0 A_SetScale(-0.1, 0.1)
+		GTXZ AAAAA 1 A_SetScale(scalex-0.07, scaley+0.05)
+		GTXZ BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+	}
+}
+
+
+
+
+actor ArterialBlood22Big2 : ArterialBlood22
+{
+	Speed 1
+	alpha 0.9
+	Gravity 0.01
+	Scale 0.1
+	aLPHA 0.6
+	states
+	{
+	Spawn:
+		GTXZ A 1
+		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
+	Spawn1:
+		TNT1 A 0
+		GTXZ AAAAA 1 A_SetScale(scalex+0.05, scaley+0.05)
+		GTXZ BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		GTXZ AAAAA 1 A_SetScale(scalex+0.06, scaley+0.06)
+		GTXZ BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn3:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.1, 0.1)
+		GTXZ AAAAA 1 A_SetScale(scalex-0.05, scaley+0.05)
+		GTXZ BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn4:
+		TNT1 A 0 A_SetScale(-0.1, 0.1)
+		GTXZ AAAAA 1 A_SetScale(scalex-0.07, scaley+0.05)
+		GTXZ BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+	}
+}
+
+
+
+actor ArterialBlood22Small : ArterialBlood22Big3
+{
+	Speed 3
+	aLPHA 1.0
+	states
+	{
+	Spawn:
+		GTXZ A 0
+		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Spawn4")
+	Spawn1:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.4, 0.4)
+		GTXZ BDFHJLNPRTVY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn2:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.5, 0.5)
+		GTXZ BDFHJLNPRTVY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn3:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.4, 0.4)
+		GTXZ BDFHJLNPRTVY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+
+	Spawn4:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.5, 0.3)
+		GTXZ BDFHJLNPRTVY 1 A_JumpIf(waterlevel > 1, "Splash")
+		//GTXZ BCDEFGHIJKLMNOPQRSTUVWXY 1 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
+	}
+}
+
+
+
+actor ArterialBlood22Big : ArterialBlood22Big3
+{
+	Speed 1
+}
 
 actor BloodmistSmall : Bloodmist
 {
@@ -362,16 +616,16 @@ actor BloodmistSmall : Bloodmist
 	{
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 ACS_NamedExecuteAlways("BDCHeckJanitor4", 0 , 0, 0, 0)
+		//TNT1 A 0 ACS_NamedExecuteAlways("BDCHeckJanitor4", 0 , 0, 0, 0)
 		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Live")
 	Spawn1:
 		TNT1 A 0
-		TNT1 A 0 A_SetScale(-0.5, 0.5)
+		TNT1 A 0 A_SetScale(0.5, 0.5)
 		Goto live
 
 	Spawn2:
 		TNT1 A 0
-		TNT1 A 0 A_SetScale(-0.4, -0.4)
+		TNT1 A 0 A_SetScale(0.4, -0.4)
 		Goto live
 
 	Spawn3:
@@ -383,29 +637,35 @@ actor BloodmistSmall : Bloodmist
 
 actor BloodmistBig : Bloodmist
 {
-	scale 1
+	scale 0.8
 	speed 5
 	GRAVITY 0.4
 	states
 	{
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 ACS_NamedExecuteAlways("BDCHeckJanitor4", 0 , 0, 0, 0)
+		//TNT1 A 0 ACS_NamedExecuteAlways("BDCHeckJanitor4", 0 , 0, 0, 0)
 		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Live")
 	Spawn1:
 		TNT1 A 0
-		TNT1 A 0 A_SetScale(-1.1, 1.1)
+		TNT1 A 0 A_SetScale(-1.0, 1.0)
 		Goto live
 
 	Spawn2:
 		TNT1 A 0
-		TNT1 A 0 A_SetScale(-0.9, -0.9)
+		TNT1 A 0 A_SetScale(-0.8, 0.8)
 		Goto live
 
 	Spawn3:
 		TNT1 A 0
-		TNT1 A 0 A_SetScale(1.0, -1.0)
+		TNT1 A 0 A_SetScale(0.9, 0.9)
 		Goto live
+		
+	Live:
+		GTXZ ABCDEFGHIJKLMNOPQRSTUVWXY 1
+		//TNT1 A 0 
+		//BLHT JJJJ 6 A_JumpIf(waterlevel > 1, "Splash")
+		Stop		
 	}
 }
 
@@ -418,7 +678,7 @@ actor BloodmistExtraBig : Bloodmist
 	{
 	Spawn:
 		TNT1 A 0
-		TNT1 A 0 ACS_NamedExecuteAlways("BDCHeckJanitor4", 0 , 0, 0, 0)
+		//TNT1 A 0 ACS_NamedExecuteAlways("BDCHeckJanitor4", 0 , 0, 0, 0)
 		TNT1 A 0 A_Jump(255, "Spawn1", "Spawn2", "Spawn3", "Live")
 	Spawn1:
 		TNT1 A 0
@@ -428,12 +688,21 @@ actor BloodmistExtraBig : Bloodmist
 	Spawn2:
 		TNT1 A 0
 		TNT1 A 0 A_SetScale(-1.5, -1.6)
+		TNT1 A 0 A_SetScale(-1.5, 1.6)
 		Goto live
 
 	Spawn3:
 		TNT1 A 0
 		TNT1 A 0 A_SetScale(1.4, -1.5)
+		TNT1 A 0 A_SetScale(1.4, 1.5)
 		Goto live
+
+
+	Live:
+		GTXZ ABCDEFGHIJKLMNOPQRSTUVWXY 1
+		//TNT1 A 0 
+		//BLHT JJJJ 6 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
 	}
 }
 
@@ -458,12 +727,20 @@ actor BloodmistXXXBig : Bloodmist
 	Spawn2:
 		TNT1 A 0
 		TNT1 A 0 A_SetScale(-3.5, -3.6)
+		TNT1 A 0 A_SetScale(-3.5, 3.6)
 		Goto live
-		
+
 	Spawn3:
 		TNT1 A 0
 		TNT1 A 0 A_SetScale(3.2, -3.2)
+		TNT1 A 0 A_SetScale(3.2, 3.2)
 		Goto live
+
+	Live:
+		GTXZ ABCDEFGHIJKLMNOPQRSTUVWXY 2
+		//TNT1 A 0 
+		//BLHT JJJJ 6 A_JumpIf(waterlevel > 1, "Splash")
+		Stop
 	}
 }
 
@@ -883,6 +1160,33 @@ ACTOR ArterialBloodSpray
 	States
 	{
 	Spawn:
+		TNT1 AAAA 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 6
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 6
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 6
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 6
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 9
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 9
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 9
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 9
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 12
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 12
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 16
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		TNT1 A 19
+		TNT1 A 2 A_CustomMissile ("ArterialBlood22", 0, 0, 0, 2, random (0, 60))
+		Stop
+	SpawnOld:
 		TNT1 A 0
 		TNT1 A 0 A_stop
 		TNT1 AAAA 2 A_CustomMissile ("Brutal_LiquidBlood2", 0, 0, 0, 2, random (0, 60))
@@ -1219,6 +1523,46 @@ ACTOR SuperWallRedBlood: WallRedBlood
 	}
 }
 
+Actor RedBloodCircularWallPainter
+{
+	+THRUACTORS
+	+NOCLIP
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 10, 0, 0, 2, random (0, 10))
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 10, 0, 50, 2, random (0, 10))
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 10, 0, 100, 2, random (0, 10))
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 10, 0, 150, 2, random (0, 10))
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 10, 0, 200, 2, random (0, 10))
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 10, 0, 250, 2, random (0, 10))
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 10, 0, 300, 2, random (0, 10))
+		Stop
+	}
+}
+
+Actor RedBloodCircularWallPainterSmall
+{
+	+THRUACTORS
+	+NOCLIP
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 0, 0, 0, 2, random (0, 10))
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 0, 0, 90, 2, random (0, 10))
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 0, 0, 180, 2, random (0, 10))
+		TNT1 A 0 A_CustomMissile ("SuperWallRedBloodLonger", 0, 0, 270, 2, random (0, 10))
+		Stop
+	}
+}
+
+ACTOR SuperWallRedBloodLonger: SuperWallRedBlood
+{
+	speed 40
+	Decal BrutalBloodSuperDuper
+}
 
 //This one spawns a ridiculously bigger decal, used by BFG extreme deaths
 ACTOR GiantWallRedBlood: WallRedBlood
@@ -1234,7 +1578,6 @@ ACTOR GiantWallRedBlood: WallRedBlood
 		Stop
 	}
 }
-
 
 ACTOR ChainsawWallRedBlood: GiantWallRedBlood
 {
@@ -1624,12 +1967,13 @@ ACTOR RedBloodFootPrintRight: GrowingBloodPool
 
 actor DeadBlood
 {
-	Decal BrutalBloodSplat
+	Decal None
 	Renderstyle Translucent
 	+FORCEXYBILLBOARD
 	+THRUACTORS
 	+CLIENTSIDEONLY
 	+NOGRAVITY
+	+NOBLOODDECALS	
 	Scale 0.6
 	Alpha 0.9
 	Mass 999999
@@ -1638,12 +1982,17 @@ actor DeadBlood
 	{
 	Spawn:
 		BSPR A 0
-		TNT1 A 0 A_CustomMissile("SuperGoreMistTiny", 0, 0, random (0, 360), 2, random (40, 90))
+		//TNT1 A 0 A_CustomMissile("SuperGoreMistTiny", 0, 0, random (0, 360), 2, random (40, 90))
+
+		TNT1 A 0 A_CustomMissile("ArterialBlood22Small", 0, 0, random (0, 360), 2, random (30, 90))
+		TNT1 A 0 A_CustomMissile("BloodMist22Small", 0, 0, random (0, 360), 2, random (30, 90))
+
+		//TNT1 A 0 A_CustomMissile("SuperGoreMistTiny", 0, 0, random (0, 360), 2, random (40, 90))		
 		TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
 		TNT1 A 0 ACS_NamedExecuteAlways("BD_CheckBloodIntensity")
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("misc/xdeath5")
-		BSPR A 2
+		BSPR A 0
 		TNT1 A 0 A_CustomMissile("WaterBloodCHecker", 7, 0, random (0, 360), 2, random (30, 60))
 	Spawn2:
 		//TNT1 A 0 A_CustomMissile ("Brutal_FlyingBloodTrail", 10, 0, random (0, 360), 2, random (40, 90))
@@ -1693,7 +2042,7 @@ actor DeadBlood
 		TNT1 A 0 A_JumpIf((z - floorz) < 48, 2)
 		TNT1 A 0 A_RadiusGive("BloodSplasher_Red", 48, RGF_PLAYERS, 1)
 		TNT1 AA 0
-		BSPR ABCDEFGHIJ 1
+		BSPR ABCDEFGHIJ 0
 		Stop
 
 	SpawnPlayer:

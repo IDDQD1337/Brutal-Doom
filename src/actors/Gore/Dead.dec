@@ -182,6 +182,7 @@ actor CurbstompedMarine
 	+NOTARGET
 	+NEVERTARGET
 	+ALWAYSTELEFRAG
+	+NOBLOODDECALS
 	damagefactor "Crusher", 50.0
 	Health 300
 	PainChance 255

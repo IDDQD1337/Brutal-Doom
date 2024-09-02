@@ -46,7 +46,7 @@ Actor ExplosionGreenFlareEffect : ExplosionFlareEffect
 
 Actor RedFlare : Flare_General
 {
-states
+	states
 	{
 	Spawn:
 		LENR A 0
@@ -77,13 +77,13 @@ states
 
 Actor RedFlare3Flat : RedFlare3
 {
-XScale 1.0
-YScale 0.6
+	XScale 1.0
+	YScale 0.6
 }
 
 Actor BlueFlare : Flare_General
 {
-states
+	states
 	{
 	Spawn:
 		LENB A 0
@@ -99,7 +99,7 @@ states
 
 Actor BlueFlare3 : Flare_General
 {
-states
+	states
 	{
 	Spawn:
 		LENB A 0
@@ -114,7 +114,7 @@ states
 
 Actor GreenFlare : Flare_General
 {
-states
+	states
 	{
 	Spawn:
         LENG A 0
@@ -129,7 +129,7 @@ states
 
 Actor GreenFlare3 : Flare_General
 {
-states
+	states
 	{
 	Spawn:
         LENG A 0
@@ -144,7 +144,7 @@ states
 
 Actor YellowFlare : Flare_General
 {
-states
+	states
 	{
 	Spawn:
 		LENY A 0
@@ -161,101 +161,100 @@ states
 
 Actor YellowFlareSmall : YellowFlare
 {
-scale 0.3
+	scale 0.3
 }
 
 Actor YellowFlareMedium : YellowFlare
 {
-scale 0.4
+	scale 0.4
 }
 
 Actor YellowFlareLarge1X : YellowFlare
 {
-scale 2.0
+	scale 2.0
 }
 
 Actor RedFlareMedium : RedFlare
 {
-scale 0.5
+	scale 0.5
 }
 
 
 Actor RedFlareBig : RedFlare
 {
-scale 1.8
+	scale 1.8
 }
 
 Actor RedFlareLarge1X : RedFlare
 {
-scale 2.0
+	scale 2.0
 }
 
 Actor RedFlareSmall : RedFlare
 {
-scale 0.3
+	scale 0.3
 }
 
 Actor RedFlareVerySmall : RedFlare
 {
-alpha 0.15
-scale 0.4
+	alpha 0.15
+	scale 0.4
 }
 
 Actor RedFlareSmall2 : RedFlare
 {
-scale 0.2
+	scale 0.2
 }
 
 Actor GreenFlareSmall : GreenFlare
 {
-alpha 0.4
-scale 0.4
+	alpha 0.4
+	scale 0.4
 }
 
 Actor GreenFlareMedium : GreenFlare
 {
-alpha 0.3
-scale 0.5
+	alpha 0.3
+	scale 0.5
 }
 
 Actor BlueFlareMedium : BlueFlare
 {
-alpha 0.3
-scale 0.3
+	alpha 0.3
+	scale 0.3
 }
 
 Actor BlueFlareMedium2 : BlueFlare
 {
-alpha 0.3
-scale 0.5
+	alpha 0.3
+	scale 0.5
 }
 
 Actor BlueFlareMedium3 : BlueFlare
 {
-alpha 0.3
-scale 0.7
+	alpha 0.3
+	scale 0.7
 }
 
 Actor BlueFlareSmall : BlueFlare
 {
-alpha 0.3
-scale 0.3
+	alpha 0.3
+	scale 0.3
 }
 
 Actor BlueFlareSmallItem : BlueFlare
 {
-alpha 0.5
-Xscale 0.36
-YScale 0.13
-+FORCEXYBILLBOARD
+	alpha 0.5
+	Xscale 0.36
+	YScale 0.13
+	+FORCEXYBILLBOARD
 }
-
 
 Actor PlasmaFlare : Flare_General
 {
-alpha 0.4
-scale 0.3
-states
+	alpha 0.4
+	scale 0.3
+	states
 	{
 	Spawn:
 		L2NB A 0
@@ -270,9 +269,9 @@ states
 
 Actor FireballFlare : Flare_General
 {
-alpha 0.6
-scale 0.3
-states
+	alpha 0.6
+	scale 0.3
+	states
 	{
 	Spawn:
 		LENY A 0
@@ -287,10 +286,10 @@ states
 
 Actor RocketFlare : Flare_General
 {
-alpha 1.0
-yscale 1.2
-xscale 1.2
-states
+	alpha 1.0
+	yscale 1.2
+	xscale 1.2
+	states
 	{
 	Spawn:
 	    LEYS O 2 BRIGHT
@@ -298,28 +297,12 @@ states
 	}
 }
 
-Actor NukeFlare : Flare_General
-{
-alpha 0.8
-yscale 19.2
-xscale 19.2
-states
-	{
-	Spawn:
-	    LEYS O 120 BRIGHT
-		LEYS ooooooooooooooooooooooooOOOOOOOOOOOOOOOOO 2 BRIGHT a_fADEouT(0.02)
-		Stop
-	}
-}
-
-
-
 Actor BFGBigFlare : Flare_General
 {
-alpha 0.1
-yscale 3.2
-xscale 3.2
-states
+	alpha 0.1
+	yscale 3.2
+	xscale 3.2
+	states
 	{
 	Spawn:
 		LEYS GGGGGGGGGGGGGGGGGG 1 BRIGHT a_fADEIn(0.02)
@@ -331,19 +314,15 @@ states
 
 Actor GreenFlareSmall2 : GreenFlare
 {
-alpha 0.15
-scale 0.3
+	alpha 0.15
+	scale 0.3
 }
-
-
-
-
 
 Actor LensFlare : Flare_General
 {
-alpha 0.45
-scale 1.0
-states
+	alpha 0.45
+	scale 1.0
+	states
 	{
 	Spawn:
 		LENS A 5 bright
@@ -354,9 +333,9 @@ states
 
 Actor WhiteFlareSmall : Flare_General
 {
-alpha 0.05
-scale 0.3
-states
+	alpha 0.05
+	scale 0.3
+	states
 	{
 	Spawn:
 		LENW A 5 bright
@@ -366,9 +345,9 @@ states
 
 Actor FireFightFlare : Flare_General
 {
-+FORCEXYBILLBOARD
-scale 0.4
-states
+	+FORCEXYBILLBOARD
+	scale 0.4
+	states
 	{
 	Spawn:
 		L2NY A 0
@@ -383,10 +362,10 @@ states
 
 Actor YellowFlareSmallB : YellowFlare
 {
-+FORCEXYBILLBOARD
-scale 0.3
-Alpha 0.3
-states
+	+FORCEXYBILLBOARD
+	scale 0.3
+	Alpha 0.3
+	states
 	{
 	Spawn:
 		LENY A 0
@@ -398,14 +377,6 @@ states
 		stop
 	}
 }
-
-
-
-
-
-
-
-
 
 ACTOR RedFlareSpawn
 {
@@ -420,8 +391,6 @@ ACTOR RedFlareSpawn
 	}
 }
 
-
-
 ACTOR PLasmaFlareSpawn
 {
 	Speed 20
@@ -435,7 +404,6 @@ ACTOR PLasmaFlareSpawn
 		Stop
 	}
 }
-
 
 ACTOR YellowFlareSpawn
 {
@@ -560,26 +528,9 @@ ACTOR GreenFlareSpawn
 	}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Actor RedFlare22 : Flare_General
 {
-states
+	states
 	{
 	Spawn:
 		L2NR A 0
@@ -594,12 +545,12 @@ states
 
 Actor RedFlareSmall22 : RedFlare22
 {
-scale 0.3
+	scale 0.3
 }
 
 Actor BlueFlare22 : Flare_General
 {
-states
+	states
 	{
 	Spawn:
 		L2NB A 0
@@ -614,7 +565,7 @@ states
 
 Actor GreenFlare22 : Flare_General
 {
-states
+	states
 	{
 	Spawn:
         L2NG A 0
@@ -629,12 +580,12 @@ states
 
 Actor GreenFlareSmall22 : GreenFlare22
 {
-scale 0.44
+	scale 0.44
 }
 
 Actor YellowFlare22 : Flare_General
 {
-states
+	states
 	{
 	Spawn:
 		L2NY A 0
@@ -649,13 +600,13 @@ states
 
 Actor YellowFlareSmall22 : YellowFlare22
 {
-scale 0.3
+	scale 0.3
 }
 
 Actor YellowFlareSmall22Long : YellowFlare22
 {
-scale 0.3
-states
+	scale 0.3
+	states
 	{
 	Spawn:
 		L2NY A 0
@@ -672,7 +623,7 @@ states
 
 Actor ExplosionFlareSpawner : Flare_General
 {
-states
+	states
 	{
 	Spawn:
 	    TNT1 A 0
@@ -687,7 +638,7 @@ states
 
 Actor ExplosionGreenFlareSpawner : ExplosionFlareSpawner
 {
-states
+	states
 	{
 	Spawn:
 	    TNT1 A 0
@@ -702,10 +653,10 @@ states
 
 Actor LensFlareAlt : Flare_General
 {
-alpha 0.5
-xscale 1.2
-yscale 0.6
-states
+	alpha 0.5
+	xscale 1.2
+	yscale 0.6
+	states
 	{
 	Spawn:
 		LENS A 5 bright
@@ -715,7 +666,7 @@ states
 
 Actor LensFlareAltLong : LensFlareAlt
 {
-states
+	states
 	{
 	Spawn:
 		LENS A 10 bright
@@ -726,7 +677,7 @@ states
 
 Actor LensFlareAltLonger : LensFlareAlt
 {
-states
+	states
 	{
 	Spawn:
 		TNT1 A 0
@@ -738,10 +689,10 @@ states
 
 Actor YellowLensFlareAlt : Flare_General
 {
-alpha 0.5
-xscale 1.2
-yscale 0.4
-states
+	alpha 0.5
+	xscale 1.2
+	yscale 0.4
+	states
 	{
 	Spawn:
 		LEYS A 5 bright
@@ -751,7 +702,7 @@ states
 
 Actor YellowLensFlareAltLong : YellowLensFlareAlt
 {
-states
+	states
 	{
 	Spawn:
 		LEYS A 5 bright
@@ -761,11 +712,11 @@ states
 
 Actor GreenLensFlareAltSmall : Flare_General
 {
-+FORCEYBILLBOARD
-alpha 0.3
-xscale 0.8
-yscale 0.2
-states
+	+FORCEYBILLBOARD
+	alpha 0.3
+	xscale 0.8
+	yscale 0.2
+	states
 	{
 	Spawn:
 		LEYS G 8 bright
@@ -776,12 +727,12 @@ states
 
 Actor OrangeLensFlareAlt : Flare_General
 {
-+MISSILE
-Speed 20
-alpha 0.6
-xscale 1.0
-yscale 0.4
-states
+	+MISSILE
+	Speed 20
+	alpha 0.6
+	xscale 1.0
+	yscale 0.4
+	states
 	{
 	Spawn:
 	    TNT1 A 1
@@ -795,7 +746,7 @@ states
 
 Actor OrangeLensFlareAltFast : OrangeLensFlareAlt
 {
-states
+	states
 	{
 	Spawn:
 		LEYS O 2 bright
@@ -809,7 +760,7 @@ states
 
 Actor DistantRifleFireSound : OrangeLensFlareAlt
 {
-states
+	states
 	{
 	Spawn:
 		TNT1 A 0
@@ -823,7 +774,7 @@ states
 
 Actor DistantMinigunFireSound : OrangeLensFlareAlt
 {
-states
+	states
 	{
 	Spawn:
 		TNT1 A 0
@@ -838,11 +789,11 @@ states
 
 Actor GreenLensFlareAltSmallZZ : Flare_General
 {
-+FORCEXYBILLBOARD
-alpha 0.4
-xscale 0.4
-yscale 0.4
-states
+	+FORCEXYBILLBOARD
+	alpha 0.4
+	xscale 0.4
+	yscale 0.4
+	states
 	{
 	Spawn:
 		LEYS G 3 bright
@@ -852,11 +803,11 @@ states
 
 Actor BlueLensFlareAltSmallZZ : Flare_General
 {
-+FORCEXYBILLBOARD
-alpha 0.4
-xscale 0.4
-yscale 0.4
-states
+	+FORCEXYBILLBOARD
+	alpha 0.4
+	xscale 0.4
+	yscale 0.4
+	states
 	{
 	Spawn:
 		LEYS B 3 bright
@@ -864,16 +815,13 @@ states
 	}
 }
 
-
-
-
 Actor ItemFlareYellow : Flare_General
 {
-+FORCEXYBILLBOARD
-alpha 0.7
-xscale 0.4
-yscale 0.2
-states
+	+FORCEXYBILLBOARD
+	alpha 0.7
+	xscale 0.4
+	yscale 0.2
+	states
 	{
 	Spawn:
 		LEYS A 1 bright
@@ -884,7 +832,7 @@ states
 
 Actor ItemFlareBlue : ItemFlareYellow
 {
-states
+	states
 	{
 	Spawn:
 		LEYS B 1 bright
@@ -895,7 +843,7 @@ states
 
 Actor ItemFlareRed : ItemFlareYellow
 {
-states
+	states
 	{
 	Spawn:
 		LEYS R 1 bright
