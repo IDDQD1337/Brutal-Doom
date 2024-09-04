@@ -312,6 +312,7 @@ ACTOR XDeathArm1
 	+FORCEXYBILLBOARD
 	seesound "bloood"
 	deathsound "bloood"
+	damagetype "Limb"
 	States
 	{
 	Spawn:
