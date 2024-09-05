@@ -202,7 +202,7 @@ Actor DebrisGeneral
 #include "actors/VEHICLES/Critters.dec"
 #include "actors/VEHICLES/BIKE.dec"
 
-//Wad Compatibility System (WCS) by ZioMcCall
+//Wad Compatibility System (WCS)
 #include "actors/Enemies/WCS/EEEVILLL.dec"
 #include "actors/Enemies/WCS/NAZIS.dec"
 #include "actors/Enemies/WCS/BWSS.dec"
@@ -229,7 +229,6 @@ actor STPLasmaRifleReplacer : RandomSpawner
     DropItem "Railgun"
 }
 
-
 actor STBFGReplacer : RandomSpawner
 {
     DropItem "BIG_FUCKING_GUN"
@@ -237,7 +236,6 @@ actor STBFGReplacer : RandomSpawner
 	DropItem "BIG_FUCKING_GUN"
     DropItem "BFG10K"
 }
-
 
 actor STRocketLauncherReplacer : RandomSpawner
 {
@@ -247,7 +245,6 @@ actor STRocketLauncherReplacer : RandomSpawner
     DropItem "GrenadeLauncher"
 }
 
-
 actor STSSGReplacer : RandomSpawner
 {
     DropItem "SSG"
@@ -255,7 +252,6 @@ actor STSSGReplacer : RandomSpawner
 	DropItem "SSG"
     DropItem "AssaultShotgun"
 }
-
 
 //For bullet and bloodsplash screen effect
 Actor ScreenFX : Inventory
@@ -278,3 +274,22 @@ inventory.maxamount 1
 #include "actors/Daisy.dec"
 #include "actors/Hissy.dec"
 #include "actors/Sentrybot.dec"
+
+Actor RandomIcon 1337
+{
+	//$Title "Random Icon"
+	+FLOAT
+	+FLOATBOB
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+DROPOFF
+	+NOTELEPORT
+	+FORCEXYBILLBOARD
+	+GHOST
+	states
+	{
+	Spawn:
+		RAND O 1
+		Loop	
+	}
+}	
