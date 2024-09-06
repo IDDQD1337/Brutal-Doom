@@ -328,7 +328,7 @@ script "MinimalismCvars" (void) net
 	SetCvar("bd_AgileZombies", 0);
 	SetCvar("bd_reloading", 0);
 	SetCvar("bd_infinitesprint", 0);
-	SetCvar("BD_DestructibleBodies", 1);
+	SetCvar("BD_DestructibleBodies", 0);
 	SetCvar("bd_ChainsawSpawner", 0);
 	SetCvar("bd_ShotgunSpawner", 0);
 	SetCvar("bd_SSGSpawner", 0);

@@ -113,7 +113,7 @@ server int bd_shotgunguyspawn = 0;
 
 ////ZioMcCall's Cvars
 
-Server int BD_DestructibleBodies = 0;
+Server int BD_DestructibleBodies = 1;
 server int bd_ChainsawSpawner = 0;
 server int BD_ShotgunSpawner = 0;
 server int bd_SSGSpawner = 0;
