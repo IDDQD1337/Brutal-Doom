@@ -117,10 +117,9 @@ bool HasLumpReading ()
 	return cached = !!cached;//(int)bool(cached);
 }
 	
-int tpic, len, sum, tempTPic = -1;	
-	
 Script "BD_HashTitlepic" OPEN
 {
+    int tpic, len, sum, tempTPic = -1;
 	
 	if (!HasLumpReading()) terminate;
 
@@ -144,6 +143,8 @@ Script "BD_HashTitlepic" OPEN
     {
         sum += ZC_LumpRead(tpic, i, LUMP_READ_INT);
     }
+    
+    //Log(x:sum); // returns wad hash#.
 
     foreach(let int k, v; WadHash)
     {
@@ -153,18 +154,7 @@ Script "BD_HashTitlepic" OPEN
             break;
         }
     }    
-    
+    //Log(d:bd_WadCheck);
     
     ZC_LumpClose(tpic);
-}
-
-script "BD_TitleMapAndWadHashes" ENTER
-{
-	if(!GetCvar("bd_showtitlemaphash"))
-		terminate;
-		Log(x:sum); // returns wad hash#.
-		
-	if(!GetCvar("bd_showwadhash"))
-		terminate;
-		Log(d:bd_WadCheck);	
 }
