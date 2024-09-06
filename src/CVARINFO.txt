@@ -113,7 +113,7 @@ server int bd_shotgunguyspawn = 0;
 
 ////ZioMcCall's Cvars
 
-Server int BD_DestructibleBodies = 0;
+Server int BD_DestructibleBodies = 1;
 server int bd_ChainsawSpawner = 0;
 server int BD_ShotgunSpawner = 0;
 server int bd_SSGSpawner = 0;
@@ -129,7 +129,7 @@ Server int BD_GIMMELESSAMMO = 0;
 Server int BD_NODEMONWEAPONS = 0;
 Server int bd_NoZombieRifleDrop = 0;
 Server bool bd_NoPickupsAnimations = false;
-Server int bd_norandompickupsprites = 0;
+Server int bd_norandompickupsprites = 1;
 Server int bd_LavaSplashes = 0;
 Server int bd_NoPowerUps = 0;
 

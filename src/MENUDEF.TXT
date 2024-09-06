@@ -183,18 +183,18 @@ OptionMenu "BDBackpacks"
 {
 	Title "$BD_MENU_BACKPACK"
 	StaticText ""
-	StaticText "$BD_BACKPACK_DEFAULT"
 	StaticText "$BD_BACKPACK_TEXT1" , 1
 	StaticText "$BD_BACKPACK_TEXT2" , 1
-	StaticText "$BD_BACKPACK_TEXT3" , 1
-	StaticText "$BD_BACKPACK_TEXT4" , 1
 	StaticText ""
-	StaticText "$BD_BACKPACK_EXTENDED"
-	StaticText "$BD_BACKPACK_TEXT5" , 1
-	StaticText "$BD_BACKPACK_TEXT6" , 1
-	StaticText "$BD_BACKPACK_TEXT7" , 1
-	StaticText "$BD_BACKPACK_TEXT8" , 1
-	StaticText "$BD_BACKPACK_TEXT9" , 1
+	StaticText "$BD_BACKPACK_LIST1" , 1
+	StaticText "$BD_BACKPACK_LIST2" , 1
+	StaticText "$BD_BACKPACK_LIST3" , 1
+	StaticText "$BD_BACKPACK_LIST4" , 1
+	StaticText "$BD_BACKPACK_LIST5" , 1
+	StaticText "$BD_BACKPACK_LIST6" , 1
+	StaticText "$BD_BACKPACK_LIST7" , 1
+	StaticText "$BD_BACKPACK_LIST8" , 1
+	StaticText "$BD_BACKPACK_LIST9" , 1
 	StaticText ""
 }
 
@@ -272,7 +272,7 @@ OptionMenu "BrutalDoomWeaponsSpawner"
 	Option "$BD_WEAPON_SPAWNER_BFG", "bd_BFGSpawner", "BFGSpawnerValue"
 	StaticText " "
 	StaticText " "
-	Option "$BD_WEAPON_SPAWNER_BACKPACK", "BD_AmmoPackCheck", "AmmoPackValue"
+	Option "$BD_WEAPON_SPAWNER_BACKPACK", "BD_AmmoPackCheck", "OnOff"
 	Submenu "$BD_MENU_BACKPACK", "BDBackpacks"
 	StaticText "$BD_MENU_BACKPACK_TEXT" , 1
 	StaticText ""
@@ -808,13 +808,6 @@ OptionValue "ChainsawSpawnerValue"
 	0, "Randomized"
 	1, "Chainsaw Only"
 	2, "Axe Only"
-}
-
-Optionvalue "AmmoPackValue"
-{
-	1, "Backpack only"
-	2, "Limited"
-	3, "Extended"
 }
 
 OptionValue "IronSights"

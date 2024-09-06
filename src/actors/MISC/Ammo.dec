@@ -7,6 +7,14 @@ actor NewGunsSpawner
 	{
 	Spawn:
 		TNT1 A 0
+		TNT1 A 0 A_JumpIf(args[0] == 2, "SpawnSMG")
+		TNT1 A 0 A_JumpIf(args[0] == 3, "SpawnASG")
+		TNT1 A 0 A_JumpIf(args[0] == 4, "SpawnSniper")
+		TNT1 A 0 A_JumpIf(args[0] == 5, "SpawnGrenadeLAuncher")
+		TNT1 A 0 A_JumpIf(args[0] == 6, "SpawnRailgun")
+		TNT1 A 0 A_JumpIf(args[0] == 7, "SpawnFLamethrower")
+		TNT1 A 0 A_JumpIf(args[0] == 8, "SpawnNuke")
+		TNT1 A 0 A_JumpIf(args[0] == 9, "SpawnBFG10K")
 		TNT1 A 0 A_Jump(48, "SpawnSMG")
 		TNT1 A 0 A_Jump(36, "SpawnASG","SpawnSniper")
 		TNT1 A 0 A_Jump(28, "SpawnRailgun", "SpawnGrenadeLAuncher")
