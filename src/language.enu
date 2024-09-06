@@ -468,7 +468,7 @@ BD_MONSTER_SPAWNERS_SHOTGUNGUY = "Shotgunguy Spawner";
 BD_MONSTER_SPAWNERS_USENAZI = "Nazi variants";
 BD_MONSTER_SPAWNERS_USENAZITEXT = "Choose between Brutal Doom or Wolfenstein 3D nazis.";
 
-BD_ENGINE_OPTIONS = "Engine (GZD, Zand) Shortcuts";
+BD_ENGINE_OPTIONS = "Engine (GZ/VKD, Zand) Shortcuts";
 BD_ENGINE_OPTIONS_TEXT1 = "Zdoom options, available here for your convenience.";
 BD_ENGINE_OPTIONS_TEXT2 = "We recommend you review these changes before playing!";
 BD_ENGINE_OPTIONS_TEXT3 = "If an option isn't easily accessible in at least one";
@@ -488,7 +488,7 @@ BD_ENGINE_OPTIONS_CHASEDIST = "Chasecam distance";
 BD_ENGINE_OPTIONS_CHASEHEIGHT = "Chasecam height";
 BD_ENGINE_OPTIONS_QUAKE = "Quake intensity";
 BD_ENGINE_OPTIONS_ONLYZANDRO = "Zandronum exclusive";
-BD_ENGINE_OPTIONS_ONLYGZDOOM = "GZDoom exclusive";
+BD_ENGINE_OPTIONS_ONLYGZDOOM = "GZ/VKDoom exclusive";
 BD_ENGINE_OPTIONS_MOVEBOB = "Move bobbing intensity";
 BD_ENGINE_OPTIONS_SOUNDINACTIVE = "Sound when inactive (online)";
 BD_ENGINE_OPTIONS_ZANDROCRASH = "Zandronum crash handling";
@@ -523,11 +523,27 @@ BD_OPTIONS_ROLL_LEFT = "Dodge Roll Left";
 BD_OPTIONS_ROLL_RIGHT = "Dodge Roll Right";
 BD_OPTIONS_INTERACTIONS = "-------------------  Brutal Doom - Interactions  -------------------";
 BD_OPTIONS_OFFEND = "Offend";
-BD_OPTIONS_TAUNT_GZDOOM = "Taunt (for Gz/VkDoom)";
+BD_OPTIONS_TAUNT_GZDOOM = "Taunt (for GZ/VKDoom)";
 BD_OPTIONS_WAVE1 = "Emote (1)";
 BD_OPTIONS_WAVE2 = "Emote (2)";
 BD_OPTIONS_ADVANCED_TAUNTS = "Advanced Taunt";
 BD_OPTIONS_SLOWMOTION = "Switch slow motion mode";
+
+//Source Port Options Check (need to check how to work with ACS on future)
+BD_SOURCE_PORT_CHECK = "\ccChecking source port options for any potentially confusing values... (Suggestions regarding which options to check for are welcomed!)\n\n";
+BD_SOURCE_PORT_CHECK_FAIL = "Results can be inaccurate in netplay! Please use this command only in singleplayer.";
+BD_SOURCE_PORT_CHECK_SUCCESS = "\n\n\cdAll engine options seem to have their proper values.";
+BD_SOURCE_PORT_CHECK_REVIEW = "\n\n\caPlease review these settings for an optimal experience with the mod.";
+BD_SOURCE_PORT_CHECK_TEXTURE_FILTER = "\cfTexture filtering (gl_texture_filter) is not 0. Textures and sprites will appear blurry.";
+BD_SOURCE_PORT_CHECK_MONSTER_INTERPOLATION = "\cfDisabled monster movement interpolation \ck(nomonsterinterpolation) \cfis not 0. Monster movement won't be smoothed out.";
+BD_SOURCE_PORT_CHECK_SPRITE_CLIP = "\cfSprite clipping \ck(gl_spriteclip) \cfis not 2. Brutal Doom's hitboxes are most accurate to this type of sprite clipping.";
+BD_SOURCE_PORT_CHECK_DRAW_SPRITES = "\cgDrawing weapon sprites (r_drawplayersprites) is not 1. Player sprites will not be drawn.";
+BD_SOURCE_PORT_CHECK_LIGHT_SPRITES = "\cgLights affect sprites (gl_light_sprites) is not 1. Dynamic lights won't affect actors.";
+BD_SOURCE_PORT_CHECK_TEXTURE = "\cgDrawing textures (gl_texture) is not 1. Textures will not be rendered.";
+BD_SOURCE_PORT_CHECK_TEXTURE_FORMAT = "\cgTexture format (gl_texture_format) is not 0. Sprites and texture's colors and transparency might not render properly.";
+BD_SOURCE_PORT_CHECK_GZ_BILLBOARD_FACES_CAMERA = "\cfSprites facing camera (gl_billboard_faces_camera) is not 0. Sprites will turn and shift in a weird way.";
+BD_SOURCE_PORT_CHECK_ADDITIVE_LIGHTS = "\cfAdditive lighting (gl_lights_additive) is not 0. Dynamic lights might appear flat.";
+BD_SOURCE_PORT_CHECK_MODELS = "\cfUsing models \ck(gl_use_models) \cfis not 1. Some actors or effects might decline in quality.";
 
 EMPTYSTRING = "empty slot";
 

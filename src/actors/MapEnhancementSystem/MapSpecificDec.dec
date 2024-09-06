@@ -439,12 +439,12 @@ ACTOR BDECBush: BDdecorationBase 15849
 		M3GR D -1
 		Stop
 
-	Spawn1:
+	Spawn2:
 		M3GR E 1
 		M3GR E -1
 		Stop
 
-	Spawn1:
+	Spawn3:
 		M3GR F 1
 		M3GR F -1
 		Stop

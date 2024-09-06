@@ -381,11 +381,11 @@ Script "CheckSourcePortOptions" (void)// net clientside
 {
 	int IsSomethingWrong;
 	Log(s:"\n\n\cc-----------------------------------------------------------------------");
-	Log(s:"\ccChecking source port options for any potentially confusing values... (Suggestions regarding which options to check for are welcomed!)\n\n");
+	Log(l:"BD_SOURCE_PORT_CHECK");
 	
 	if (GameType() != 0)
 	{
-	log(s:"Results can be inaccurate in netplay! Please use this command only in singleplayer.");
+	log(l:"BD_SOURCE_PORT_CHECK_FAIL");
 	terminate;
 	}
 	
@@ -393,17 +393,17 @@ Script "CheckSourcePortOptions" (void)// net clientside
 	//Non-important reports first (those wont potentially make it seem like something is wrong)
 	If(GetCVAR("gl_texture_filter") != 0)
 	{
-		Log(s:"\cfTexture filtering (gl_texture_filter) is not 0. Textures and sprites will appear blurry.");
+		Log(l:"BD_SOURCE_PORT_CHECK_TEXTURE_FILTER");
 	}
 	Delay(1);
 	If(GetCVAR("nomonsterinterpolation") != 0)
 	{
-		Log(s:"\cfDisabled monster movement interpolation \ck(nomonsterinterpolation) \cfis not 0. Monster movement won't be smoothed out.");
+		Log(l:"BD_SOURCE_PORT_CHECK_MONSTER_INTERPOLATION");
 	}
 	Delay(1);
 	If(GetCVAR("gl_spriteclip") != 2)
 	{
-		Log(s:"\cfSprite clipping \ck(gl_spriteclip) \cfis not 2. Brutal Doom's hitboxes are most accurate to this type of sprite clipping.");
+		Log(l:"BD_SOURCE_PORT_CHECK_SPRITE_CLIP");
 	}
 	Delay(1);
 	
@@ -415,26 +415,26 @@ Script "CheckSourcePortOptions" (void)// net clientside
 	
 	If(GetCVAR("r_drawplayersprites") != 1)
 	{
-		Log(s:"\cgDrawing weapon sprites (r_drawplayersprites) is not 1. Player sprites will not be drawn.");
+		Log(l:"BD_SOURCE_PORT_CHECK_DRAW_SPRITES");
 		IsSomethingWrong++;
 	}
 	Delay(1);
 	If(GetCVAR("gl_light_sprites") != 1)
 	{
-		Log(s:"\cgLights affect sprites (gl_light_sprites) is not 1. Dynamic lights won't affect actors.");
+		Log(l:"BD_SOURCE_PORT_CHECK_LIGHT_SPRITES");
 		IsSomethingWrong++;
 	}
 	Delay(1);
 	If(GetCVAR("gl_texture") != 1)
 	{
-		Log(s:"\cgDrawing textures (gl_texture) is not 1. Textures will not be rendered.");
+		Log(l:"BD_SOURCE_PORT_CHECK_TEXTURE");
 		IsSomethingWrong++;
 	}
 	Delay(1);
 	
 	If(GetCVAR("gl_texture_format") != 0)
 	{
-		Log(s:"\cgTexture format (gl_texture_format) is not 0. Sprites and texture's colors and transparency might not render properly.");
+		Log(l:"BD_SOURCE_PORT_CHECK_TEXTURE_FORMAT");
 		IsSomethingWrong++;
 	}
 	Delay(1);
@@ -449,7 +449,7 @@ Script "CheckSourcePortOptions" (void)// net clientside
 		//yellow
 		If(GetCVAR("gl_billboard_faces_camera") != 0)
 		{
-			Log(s:"\cfSprites facing camera (gl_billboard_faces_camera) is not 0. Sprites will turn and shift in a weird way.");
+			Log(l:"BD_SOURCE_PORT_CHECK_GZ_BILLBOARD_FACES_CAMERA");
 		}
 		Delay(1);
 	
@@ -461,13 +461,13 @@ Script "CheckSourcePortOptions" (void)// net clientside
 		//yellow
 		If(GetCVAR("gl_lights_additive") != 0)
 		{
-			Log(s:"\cfAdditive lighting (gl_lights_additive) is not 0. Dynamic lights might appear flat.");
+			Log(l:"BD_SOURCE_PORT_CHECK_ADDITIVE_LIGHTS");
 		}
 		Delay(1);
 		
 		If(GetCVAR("gl_use_models") != 1)
 		{
-			Log(s:"\cfUsing models \ck(gl_use_models) \cfis not 1. Some actors or effects might decline in quality.");
+			Log(l:"BD_SOURCE_PORT_CHECK_MODELS");
 		}
 		Delay(1);
 		
@@ -483,11 +483,11 @@ Script "CheckSourcePortOptions" (void)// net clientside
 
 	If(IsSomethingWrong == 0)
 	{
-		Log(s:"\n\n\cdAll engine options seem to have their proper values.");
+		Log(l:"BD_SOURCE_PORT_CHECK_SUCCESS");
 	}
 	else
 	{
-		Log(s:"\n\n\caPlease review these settings for an optimal experience with the mod.");
+		Log(l:"BD_SOURCE_PORT_CHECK_REVIEW");
 	}
 	Delay(3);
 	terminate;
