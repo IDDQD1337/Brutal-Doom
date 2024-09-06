@@ -129,7 +129,7 @@ Server int BD_GIMMELESSAMMO = 0;
 Server int BD_NODEMONWEAPONS = 0;
 Server int bd_NoZombieRifleDrop = 0;
 Server bool bd_NoPickupsAnimations = false;
-Server int bd_norandompickupsprites = 0;
+Server int bd_norandompickupsprites = 1;
 Server int bd_LavaSplashes = 0;
 Server int bd_NoPowerUps = 0;
 
