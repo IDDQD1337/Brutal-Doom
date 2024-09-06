@@ -27,10 +27,10 @@ ACTOR AmmoSuply : BackpackItem  Replaces Backpack
 	//$Category Ammunition
 	//$Sprite BPAKA0
 	//$Title "Backpack"
-	//$Arg0 Spawn weapons with 
-	//$Arg0Tooltip Select the weapon to spawn.
+	//$Arg0 Spawn extra guns? 
+	//$Arg0Tooltip Select whether to force a chance for extra weapon spawns for this pickup.
 	//$Arg0Type 11
-	//$Arg0Enum { 0 = "Configurable by user (DEFAULT)"; 1 = "Force Chainsaw"; 2 = "Force Axe"; }
+	//$Arg0Enum { 0 = "Configurable by user (DEFAULT)"; 1 = "Force random extra weapon"; 2 = "Force SMG"; 3 = "Force ASG"; 4 = "Force Sniper"; 5 = "Force Grenade Launcher"; 6 = "Force Railgun"; 7 = "Force Flamethrower"; 8 = "Force Nuke Launcher"; 9 = "Force BFG10k"; }
 	Game Doom
 	SpawnID 144
 	Height 26
@@ -42,6 +42,7 @@ ACTOR AmmoSuply : BackpackItem  Replaces Backpack
 
 	Spawn:
 		BPAK A 0
+		TNT1 A 0 A_JumpIf(args[0] == 1, "BDV22Style")
 		BPAK A 0 ACS_NamedExecuteAlways("AmmoSupplyChecker", 0, 0, 0, 0)
 		BPAK A 2
 	Vanilla:
@@ -53,13 +54,9 @@ ACTOR AmmoSuply : BackpackItem  Replaces Backpack
 
 	BDV22Style:
 		TNT1 A 0
-		TNT1 A 1 A_SpawnItemEx("NewGunsSpawner", random(-10, 10), random(-10, 10), 0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
+		TNT1 A 1 A_SpawnItemEx("NewGunsSpawner", random(-10, 10), random(-10, 10), 0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERSPECIAL,0)
 		Goto Stay
 
-	Expanded:
-		TNT1 A 0
-		TNT1 A 1 A_SpawnItemEx("NewGunsSpawner2", random(-10, 10), random(-10, 10), 0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG ,0)
-		Goto Stay
 	}
 }
 

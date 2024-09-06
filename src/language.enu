@@ -434,17 +434,19 @@ BD_EXTREME_GAMEPLAY_ = "";
 BD_MENU_BACKPACK = "Backpack's weapons list";
 BD_MENU_BACKPACK_TEXT = "Weapons might have a chance to spawn alongside backpacks!";
 BD_BACKPACK_ONLY = "Backpack only";
-BD_BACKPACK_DEFAULT = "Limited (Default)";
-BD_BACKPACK_TEXT1 = "Submachine gun - Assault Shotgun - Grenade Launcher";
-BD_BACKPACK_TEXT2 = "Railgun - BFG10K - Flamethrower - Incendiary Launcher";
-BD_BACKPACK_TEXT3 = "Nuke Launcher";
-BD_BACKPACK_TEXT4 = "Very low chance of weapons spawning.";
-BD_BACKPACK_EXTENDED = "Expanded";
-BD_BACKPACK_TEXT5 = "Submachine gun - Assault Shotgun - Grenade Launcher";
-BD_BACKPACK_TEXT6 = "Railgun,BFG10K - Flamethrower - Incendiary Launcher";
-BD_BACKPACK_TEXT7 = "Nuke Launcher - Dragon Slayer - MP40 - MG42 - Devastators";
-BD_BACKPACK_TEXT8 = "Revolver";
-BD_BACKPACK_TEXT9 = "Slightly higher chance of weapons spawning.";
+BD_BACKPACK_TEXT1 = "List of weapons and their chances.";
+BD_BACKPACK_TEXT2 = "Percentages are rounded and estimate!";
+BD_BACKPACK_LIST1 = "\cf20%: \cjSubmachine gun";
+BD_BACKPACK_LIST2 = "\cf14%: \cjAssault Shotgun";
+BD_BACKPACK_LIST3 = "\cf14%: \cjSniper rifle";
+BD_BACKPACK_LIST4 = "\cf11%: \cjGrenade Launcher";
+BD_BACKPACK_LIST5 = "\cf11%: \cjRailgun";
+BD_BACKPACK_LIST6 = "\cf3%: \cjBFG10K";
+BD_BACKPACK_LIST7 = "\cf3%: \cjFlamethrower";
+BD_BACKPACK_LIST8 = "\cf3%: \cjIncendiary Launcher";
+BD_BACKPACK_LIST9 = "\cf<1%: \cjNuke Launcher";
+
+
 
 BD_WEAPON_SPAWNERS = "Weapon spawner options";
 BD_APPLY_NEXT_LEVEL = "Any change here requires a level restart in order to work.";

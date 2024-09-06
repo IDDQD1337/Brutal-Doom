@@ -954,11 +954,10 @@ Script "AmmoSupplyChecker" (Void)
 {		
 	static str spawnType[] =
 	{
-		"Vanilla", "BDV22Style",
-		"Expanded"
+		"Vanilla", "BDV22Style"
 	};	
 	delay(1);
-	SetActorState(0, spawnType[BD_AmmoPackCheck - 1]);
+	SetActorState(0, spawnType[BD_AmmoPackCheck]);
 }
 
 script "MG42Checker" (void)
