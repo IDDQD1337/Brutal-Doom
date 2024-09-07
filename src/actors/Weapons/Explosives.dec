@@ -209,6 +209,7 @@ Actor HugeRocketBackblast: RocketBackblast
 	damage (random(120,120))
 	Decal "BigScorch"
 	DamageType Fire
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -266,7 +267,8 @@ actor RocketExplosion
 	+MISSILE
 	Radius 2
 	Height 2
-	Damagetype ExplosiveImpact
+	Damagetype "ExplosiveImpact"
+	RenderStyle "None"
 	Obituary "$OBBD_ROCKETLAUNCHER"
 	States
 	{
@@ -275,8 +277,7 @@ actor RocketExplosion
 
 	Death:
 		TNT1 A 0
-		TNT1 A 0 A_SpawnItem("WhiteShockwave")
-		TNT1 A 3
+		TNT1 A 3 A_SpawnItem("WhiteShockwave")
 		TNT1 A 0 A_Explode(100,150)
 		Stop
 	}
@@ -288,7 +289,8 @@ actor LiquidExplosionEffectSpawner
 	+MISSILE
 	Radius 2
 	Height 2
-	Damagetype CauseWaterSplash
+	Damagetype "CauseWaterSplash"
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -308,8 +310,7 @@ actor BarrelExplosion: RocketExplosion
 
 	Death:
 		TNT1 A 0
-		TNT1 A 0 A_SpawnItem("WhiteShockwaveBig")
-		TNT1 A 3
+		TNT1 A 3 A_SpawnItem("WhiteShockwaveBig")
 		TNT1 A 0 A_Explode(160,200)
 		Stop
 	}
@@ -325,8 +326,7 @@ actor TankMissileExplosion: RocketExplosion
 
 	Death:
 		TNT1 A 0
-		TNT1 A 0 A_SpawnItem("WhiteShockwaveBig")
-		TNT1 A 3
+		TNT1 A 3 A_SpawnItem("WhiteShockwaveBig")
 		TNT1 A 0 A_Explode(200,300)
 		Stop
 	}
@@ -344,8 +344,7 @@ actor BarrelExplosionAnnouncer: RocketExplosion
 
 	Death:
 		TNT1 A 0
-		TNT1 A 0 A_SpawnItem("WhiteShockwaveBig")
-		TNT1 A 3
+		TNT1 A 3 A_SpawnItem("WhiteShockwaveBig")
 		TNT1 A 0 A_Explode(3,220)
 		Stop
 	}
@@ -355,6 +354,7 @@ actor GrenadeExplosion: RocketExplosion
 {
 	+FORCERADIUSDMG
 	Obituary "$OBBD_GRENADELAUNCHER"
+	RenderStyle "None"
 	States	
 	{
 	Spawn:
@@ -369,6 +369,7 @@ actor GrenadeExplosion: RocketExplosion
 actor UGBLExplosion: RocketExplosion
 {
 	+FORCERADIUSDMG
+	RenderStyle "None"
 	Obituary "$OBBD_RIFLE_GRENADE"
 	States	
 	{
@@ -384,6 +385,7 @@ actor UGBLExplosion: RocketExplosion
 actor BFGSprayExplosion: RocketExplosion
 {
 	+FORCERADIUSDMG
+	RenderStyle "None"
 	DamageType "Desintegrate"
 	States
 	{
@@ -424,7 +426,7 @@ ACTOR GrenadeMissile
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(waterlevel > 1, "SpawnUnderwater")
+		GBPJ A 0 A_JumpIf(waterlevel > 1, "SpawnUnderwater")
 		TNT1 A 0 A_GiveInventory("STGrenadeTimer", 1)
 		TNT1 A 0 A_JumpIfInventory("STGrenadeTimer", 6, "Explode")
 		TNT1 A 0 A_CheckFloor("Death")
@@ -502,7 +504,7 @@ ACTOR ShortGrenade: GrenadeMissile
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(waterlevel > 1, "SpawnUnderwater")
+		GBPJ A 0 A_JumpIf(waterlevel > 1, "SpawnUnderwater")
 		GBPJ AAAAAAAAABBBBBBBCCCCCDDDDDEEEEEFFFFFGGGGGHHHHH 1 A_CustomMissile ("DoxGrenadeSmokeTrail", 2, 0, random (70, 110), 2, random (0, 360))
 		Loop
 
@@ -559,7 +561,7 @@ ACTOR ShortGrenade2: GrenadeMissile
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(waterlevel > 1, "SpawnUnderwater")
+		GBPJ A 0 A_JumpIf(waterlevel > 1, "SpawnUnderwater")
 		GBPJ AAAAAAAAABBBBBBBCCCCCDDDDDEEEEEFFFFFGGGGGHHHHH 1 A_CustomMissile ("DoxGrenadeSmokeTrail", 2, 0, random (70, 110), 2, random (0, 360))
 		Loop
 
@@ -613,8 +615,8 @@ ACTOR GrenadeMissileWeak: ShortGrenade
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(waterlevel > 1, "SpawnUnderwater")
-		TNT1 A 0 A_CheckFloor("Death")
+		GBPJ A 0 A_JumpIf(waterlevel > 1, "SpawnUnderwater")
+		GBPJ A 0 A_CheckFloor("Death")
 		GBPJ AAAAAAAABBBBBBBCCCCCCC 1 A_CustomMissile ("RocketSmokeTrail52", 2, 0, random (70, 110), 2, random (0, 360))
 		GBPJ C -1 A_CustomMissile ("RocketSmokeTrail52", 2, 0, random (70, 110), 2, random (0, 360))
 		Goto Explode
@@ -663,6 +665,7 @@ ACTOR GrenadeMissileBreaksGlass: ShortGrenade
 {
 	-BLOODSPLATTER
 	Damagetype "Normal"
+	RenderStyle "None"
 	+NOPAIN
 	Decal "None"
 	Damage (random (1,2))
@@ -731,7 +734,7 @@ Actor DragonBreath
 	radius 1
 	height 1
 	speed 40
-	renderstyle ADD
+	renderstyle "none"
 	alpha 0.9
 	scale .15
 	DamageType Flames
@@ -744,9 +747,6 @@ Actor DragonBreath
 		Stop
 
 	Death:
-		Stop
-
-	XDeath:
 		TNT1 A 0
 		Stop
 	}
@@ -781,7 +781,7 @@ ACTOR CyberBalls: Rocket2
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		WYVB A 0
 		TNT1 A 0 ACS_NamedExecuteAlways("BDCheckJanitor", 0, 0, 0, 0)//Check Effects
 
 	Spawn1:
@@ -844,7 +844,7 @@ ACTOR CyberballTrail
 	States
 	{
 	Spawn:
-		TNT1 A 2
+		WYVB A 0
 		WYVB CDE 1
 		Stop
 	}
@@ -874,8 +874,8 @@ ACTOR MarineGrenade
 	States
 	{
 	Spawn:
-		TNT1 A 0
-		BLUD C 0 ThrustThingZ (0,50,1,0)
+		GRND A 0
+		GRND C 0 ThrustThingZ (0,50,1,0)
 	Live:
 		GRND ABCDEFGH 2
 		Loop
@@ -912,8 +912,8 @@ ACTOR ZombiemanGrenade: MarineGrenade
 	States
 	{
 	Spawn:
-		TNT1 A 0
-		BLUD C 0 ThrustThingZ (0,50,1,0)
+		GRND A 0
+		GRND C 0 ThrustThingZ (0,50,1,0)
 	Live:
 		GRND ABCDEFGH 2
 		Loop
@@ -1014,9 +1014,7 @@ ACTOR TankFireEffect
 	States
 	{
 	Spawn:
-		TNT1 A 2
-		Goto Death
-
+		TKFL A 2
 	Death:
 		TNT1 A 0
 		TNT1 A 0 Radius_Quake(6, 12, 0, 4, 0)
@@ -1034,6 +1032,7 @@ ACTOR TankFireEffect
 ACTOR TankShotExplosionImpact
 {
 	damagetype "ExplosiveImpact"
+	RenderStyle "None"
 	+MISSILE
 	+NOCLIP
 	States

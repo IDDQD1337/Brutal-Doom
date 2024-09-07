@@ -380,7 +380,7 @@ ACTOR FriendDog_Guarding : FriendDog
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		DOGS A 0
 		TNT1 A 0 A_GiveInventory("TargetIsAMarine", 1)
 		DOGS A 4
 		TNT1 A 0 A_ChangeFLag("FRIENDLY", 1)
@@ -503,6 +503,7 @@ ACTOR DogPathfinder
 	damagefactor "SpawnMarine", 99999.0
 	MaxDropOffHeight 1200
 	MaxStepHeight 1200
+	RenderStyle "None"
 	-COUNTKILL
 	+NOTARGET
 	+THRUACTORS

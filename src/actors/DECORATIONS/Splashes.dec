@@ -21,12 +21,7 @@ Actor BloodParticleX
 	States
 	{
 	Spawn:
-		TNT1 A 1 
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE, 0)
-		TNT1 A 1
-		Goto Stand
-
-	Stand:
+		BSPH A 0
 		BSPH ABCDDDDDD 4
 		Stop
 
@@ -113,6 +108,7 @@ Actor BloodLiquidParticleX
 	States
 	{
 	Spawn:
+		MSBL A 0
 		MSBL ABCDEFG 2
 		MSBL H 100
 		Stop
@@ -217,12 +213,7 @@ Actor nukageParticleX
 	States
 	{
 	Spawn:
-		TNT1 A 1 
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE, 0)
-		TNT1 A 1
-		Goto Stand
-
-	Stand:
+		NKSH A 0 
 		NKSH ABCDDDDDD 4
 		Stop
 
@@ -397,12 +388,7 @@ Actor slimeParticleX
 	States
 	{
 	Spawn:
-		TNT1 A 1 
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE, 0)
-		TNT1 A 1
-		Goto Stand
-
-	Stand:
+		SLIM A 1 
 		SLIM ABCDDDDDD 4
 		Stop
 
@@ -610,8 +596,8 @@ actor LavaSplashBase : slimeSplashBase
 	States
 	{
 	Spawn:
-		TNT1 A 0
-		TNT1 A 0 A_RadiusGive("IsOverLava", 64, RGF_OBJECTS, 1)
+		SLIM A 0
+		SLIM A 0 A_RadiusGive("IsOverLava", 64, RGF_OBJECTS, 1)
 		SLIM HI 6
 		SLIM HI 6
 		TNT1 A 0 A_NoBlocking
@@ -633,8 +619,8 @@ actor BDLavaSplashBase : slimeSplashBase
 	States
 	{
 	Spawn:
-		TNT1 A 0
-		TNT1 A 0 A_RadiusGive("IsOverBDLava", 64, RGF_OBJECTS, 1)
+		SLIM A 0
+		SLIM A 0 A_RadiusGive("IsOverBDLava", 64, RGF_OBJECTS, 1)
 		SLIM HI 6
 		SLIM HI 6
 		TNT1 A 0 A_NoBlocking

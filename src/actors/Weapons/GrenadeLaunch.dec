@@ -418,10 +418,6 @@ Actor GrenadeCasingSpawner : ShotcaseSpawn
 	Spawn:
 		TNT1 A 0
 		TNT1 A 0 Thing_ChangeTID(0,390)
-		TNT1 A 0//1
-		Goto Death
-
-	Death:
 		TNT1 A 0 A_CustomMissile("GrenadeCasing",0,0,random(80,100),2,random(50,70))
 		Stop
 	}
@@ -471,76 +467,5 @@ ACTOR GrenadeCasing
 	Stoping:
 		TNT1 A 0
 		Stop
-	}
-}
-
-ACTOR GLTrailRed
-{
-	Radius 1
-	Height 2
-	Speed 0
-	RenderStyle Add
-	Scale 0.1
-	+FORCEXYBILLBOARD
-	+NOINTERACTION
-	+CLIENTSIDEONLY
-	+NOGRAVITY
-	+THRUACTORS
-	+BRIGHT
-	States
-	{
-	Spawn:
-		LEYS R 30 NODELAY
-		LEYS R 1 A_FadeOut(0.06)
-		wait
-	}
-}
-
-ACTOR GLTrailGreen : GLTrailRed
-{
-	States
-	{
-		Spawn:
-		LEYS G 30 NODELAY
-		LEYS G 1 A_FadeOut(0.06)
-		wait
-	}
-}
-
-ACTOR GLTrailYellow : GLTrailRed
-{
-	Scale 0.3
-	States
-	{
-		Spawn:
-		LEYS A 30 NODELAY
-		LEYS A 1 A_FadeOut(0.06)
-		wait
-	}
-}
-
-ACTOR GrenadeMissilePredictionTrail : GrenadeMissile //so it responsively takes the actual grenade's speed and other properties
-{
-	Damage (0)
-	+MISSILE
-	+THRUSPECIES
-	Species "Marines"
-	DamageType none
-	BounceSound "dsempty"
-	DeathSound "dsempty"
-	+USEBOUNCESTATE
-	+BRIGHT
-	States
-	{
-	//A_JumpIfInventory("STGrenadeTimer", 6, "Explode")
-	//A_GiveInventory("STGrenadeTimer", 1)
-	Spawn:
-		TNT1 A 0 NODELAY A_GiveInventory("STGrenadeTimer", 1)
-		TNT1 AAAAAAAAAAAA 1 A_SpawnItemEx("GLTrailRed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION| SXF_CLIENTSIDE)
-		TNT1 A 0 A_JumpIfInventory("STGrenadeTimer", 6, "Death")
-		loop
-	Death:
-		TNT1 A 2 A_SpawnItemEx("GLTrailYellow",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION| SXF_CLIENTSIDE)
-		stop
 	}
 }

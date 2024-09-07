@@ -1600,7 +1600,7 @@ ACTOR PoorLostSoul
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_CustomMissile ("FlameTrails", 24, 0, random(-2,2), 0, 0)
+		LSOL A 0 A_CustomMissile ("FlameTrails", 24, 0, random(-2,2), 0, 0)
 		LSOL B 2 BRIGHT A_SpawnItem("RedFlare",0,0)
 		Loop
 
@@ -1625,7 +1625,7 @@ ACTOR BarrelNukageSpawner
 	+THRUACTORS
 	+NOINTERACTION
 	+INVISIBLE
-	RenderStyle none
+	RenderStyle "none"
 	States
 	{
 	Spawn:
@@ -1647,15 +1647,15 @@ ACTOR ThrowedBarrel
 	Gravity 0.6
 	Scale 1.0
 	+FORCEXYBILLBOARD
-	DamageType Explosive
+	DamageType "Explosive"
 	Alpha 1
 	DeathSound "Barrel/explode"
 	tag "$TAGBD_THROWNBARREL"
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAy A_Jump(128,"Stay")
-		TNT1 A 0 A_SetScale(-scalex,scaley)
+		TBRA A 0 NODELAy A_Jump(128,"Stay")
+		TBRA A 0 A_SetScale(-scalex,scaley)
 	Stay:
 		TBRA ABC 2
 		TBRA DEFG 2 A_SpawnItemEX("BarrelNukageSpawner",0,0,-30,0,0,0,random(0,128),SXF_NOCHECKPOSITION|SXF_CLIENTSIDE)
@@ -1705,7 +1705,7 @@ ACTOR KickAttack: FastProjectile
 	Projectile
 	+FORCEXYBILLBOARD
 	+NOEXTREMEDEATH
-	RenderStyle none
+	RenderStyle "none"
 	Damage (random(14,14))
 	Speed 30
 	Obituary "$OBBD_KICK"

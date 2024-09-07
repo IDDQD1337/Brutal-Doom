@@ -282,6 +282,7 @@ Actor Alerter: MonsterTracer
 	damage (random(1,1))
 	DamageType Avoid
 	Decal "None"
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -601,7 +602,7 @@ Actor Penetrator: MarineTracer
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		TRAC A 0
 		TNT1 A 0 A_CustomMissile("SpawnBulletDecalBackwards", 0, 0, 0)
 		TRAC A 10 BRIGHT
 		Stop
@@ -669,7 +670,7 @@ Actor MonsterPenetrator: MarineTracer
 	States
 	{
 	Spawn:
-		TNT1 A 0
+		TRAC A 0
 		TNT1 A 0 A_CustomMissile("SpawnBulletDecalBackwards", 0, 0, 0)
 		TRAC A 10 BRIGHT
 		Stop

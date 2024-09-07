@@ -311,6 +311,7 @@ actor FragGrenadeExplosion
 	+MISSILE
 	+DONTSPLASH
 	Damagetype "Shrapnel"
+	RenderStyle "None"
 	Height 32
 	States
 	{
