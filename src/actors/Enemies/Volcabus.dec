@@ -720,7 +720,7 @@ ACTOR VolcabusBall
 	Scale 0.85
 	+FORCEXYBILLBOARD
 	+THRUGHOST
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	DamageType ExplosiveImpact
 	ExplosionRadius 150
 	ExplosionDamage 8

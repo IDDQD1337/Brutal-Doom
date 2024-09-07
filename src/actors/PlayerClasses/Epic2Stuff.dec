@@ -112,7 +112,7 @@ Actor SimpleRAinDrop
 	Speed 0
 	Height 2
 	Radius 2
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.7
 	Scale 1.2
 	Mass 0
@@ -166,7 +166,7 @@ Actor TVRRainDrop
 	Speed 0
 	Height 2
 	Radius 2
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.7
 	Scale 1.0
 	Mass 0
@@ -219,7 +219,7 @@ ACTOR AltMap01Cloud
 	Projectile
 	+RANDOMIZE
 	+THRUACTORS
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 1
 	Scale 2.0
 	SeeSound "imp/attack"

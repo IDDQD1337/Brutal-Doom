@@ -333,7 +333,7 @@ ACTOR HeavyMachinegunProjectile: FastProjectile
 	+NOEXTREMEDEATH
 	+FORCEXYBILLBOARD
 	Gravity 0.1
-	RenderStyle Add
+	RenderStyle "Add"
 	damagetype "Minigun"
 	Alpha 1.0
 	Decal "BulletChip"
@@ -383,7 +383,7 @@ ACTOR HeavyMachinegunFlash: FastProjectile
 	+BLOODSPLATTER
 	+FORCEXYBILLBOARD
 	Gravity 0.1
-	RenderStyle Add
+	RenderStyle "Add"
 	damagetype "Blast"
 	Alpha 0.2
 	Scale 0.4
@@ -428,7 +428,7 @@ actor HeavyMachinegunHitsProjectiles
 actor HeavyMachinegunProjectileTracerTrail
 {
 	Scale 2.0
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.9
 	+NOINTERACTION
 	+CLIENTSIDEONLY
@@ -577,7 +577,7 @@ Actor AutocannonPenetrator: AutoCannonProjectile
 actor AutoCannonTracerTrail
 {
 	Scale 0.8
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.9
 	+NOINTERACTION
 	+CLIENTSIDEONLY
@@ -635,7 +635,7 @@ ACTOR heavyplasmaProjectile: FastProjectile
 	+FORCEXYBILLBOARD
 	+BRIGHT
 	Gravity 0.1
-	RenderStyle Add
+	RenderStyle "Add"
 	damagetype "Plasma"
 	Alpha 1.0
 	Decal "Scorch"
@@ -702,7 +702,7 @@ ACTOR heavyplasmaFlash: FastProjectile
 	-NOGRAVITY
 	+BLOODSPLATTER
 	Gravity 0.1
-	RenderStyle Add
+	RenderStyle "Add"
 	damagetype "Plasma"
 	Alpha 0.2
 	Scale 0.4
@@ -746,7 +746,7 @@ actor heavyplasmaHitsProjectiles
 actor heavyplasmaProjectileTracerTrail
 {
 	Scale 1.0
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.9
 	+NOINTERACTION
 	+CLIENTSIDEONLY
@@ -763,7 +763,7 @@ actor heavyplasmaProjectileTracerTrail
 actor heavyplasmaProjectileHit
 {
 	Scale 2.1
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.7
 	+MISSILE
 	Speed 2

@@ -14,7 +14,7 @@ ACTOR ExplosionSmoke
 	Radius 0
 	Height 0
 	Alpha 0.01
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Scale 1.2
 	Speed 1
 	Mass 0
@@ -202,7 +202,7 @@ ACTOR AltSmoke: ExplosionSmoke
 ACTOR ShinnySmoke: AltSmoke
 {
 	Scale 2.0
-	Renderstyle Add
+	RenderStyle "Add"
 }
 
 Actor PlasmaSmoke
@@ -217,7 +217,7 @@ Actor PlasmaSmoke
 	Height 1
 	Scale 2.0
 	Speed 1
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.4
 	States
 	{
@@ -321,7 +321,7 @@ Actor HitpuffSmoke
 	Height 1
 	Scale 0.7
 	Speed 1
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.4
 	States
 	{
@@ -393,7 +393,7 @@ Actor SmokeSpawner
 {
 	Speed 20
 	+NOCLIP
-	Renderstyle none
+	RenderStyle "None"
 	+CLIENTSIDEONLY
 	+NOBLOCKMAP
 	+NOINTERACTION
@@ -412,7 +412,7 @@ Actor SmokeSpawner11
 {
 	Speed 25
 	+NOCLIP
-	Renderstyle none
+	RenderStyle "None"
 	+CLIENTSIDEONLY
 	+NOBLOCKMAP
 	+NOINTERACTION
@@ -436,7 +436,7 @@ ACTOR ShotSmoke
 	+FORCEXYBILLBOARD
 	+MISSILE
 	Speed 1
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.06
 	+CLIENTSIDEONLY
 	Radius 0
@@ -454,7 +454,7 @@ ACTOR ShotSmoke
 ACTOR CasingSmoke: Shotsmoke
 {
 	Speed 1
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.4
 	Scale 0.07
 	States
@@ -472,7 +472,7 @@ actor CyberStep
 	+NOBLOCKMAP
 	+NOGRAVITY
 	+NOTELEPORT
-	renderstyle translucent
+	RenderStyle "Translucent"
 	alpha 0.75
 	Scale 0.5
 	states
@@ -529,7 +529,7 @@ ACTOR BarrelExplosionSmokeColumn
 	Radius 0
 	Height 0
 	Alpha 0.7
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	//Scale 0.4
 	//Scale 0.8
 	XScale 1.6
@@ -578,7 +578,7 @@ ACTOR ExplosionSimpleSmokeColumn: BarrelExplosionSmokeColumn
 	Radius 0
 	Height 0
 	Alpha 0.4
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	//Scale 0.4
 	//Scale 0.8
 	XScale 1.5
@@ -590,7 +590,7 @@ ACTOR MicroSmokeColumn: BarrelExplosionSmokeColumn
 	Radius 0
 	Height 0
 	Alpha 0.2
-	RenderStyle Add
+	RenderStyle "Add"
 	XScale 0.2
 	YScale 0.2
 	States
@@ -631,7 +631,7 @@ ACTOR BigBlackSmoke
 	Radius 1
 	Height 1
 	Alpha 0.8
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	XScale 1.1
 	YScale 1.4
 	Speed 2
@@ -739,7 +739,7 @@ ACTOR GunBarrelSmoke: ExplosionSmoke
 {
  
 	Alpha 0.01
-	RenderStyle Add
+	RenderStyle "Add"
 	XScale 0.12
 	YScale 0.15
 	Speed 1

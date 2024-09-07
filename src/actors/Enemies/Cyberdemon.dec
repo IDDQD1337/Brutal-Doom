@@ -446,7 +446,7 @@ ACTOR CyberStomp
 	+MISSILE
 	Speed 15
 	Damage 50
-	renderstyle translucent
+	RenderStyle "Translucent"
 	alpha 0.9
 	DamageType Stomp
 	Gravity 1.0

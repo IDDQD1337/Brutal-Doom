@@ -114,7 +114,7 @@ actor MotherFire
 	radius 6
 	damage 5
 	speed 15
-	renderstyle Translucent
+	RenderStyle "Translucent"
 	alpha 0.5
 	damagetype "Vertigo"
 	seesound "skeleton/attack"
@@ -143,7 +143,7 @@ actor MotherFireTrail
 	radius 6
 	speed 0
 	damage 0
-	RenderStyle translucent
+	RenderStyle "Translucent"
 	Alpha 0.6
 	+NOGRAVITY
 	states
@@ -177,7 +177,7 @@ ACTOR SuperMotherBall : CacodemonBall
 	FastSpeed 25
 	Projectile
 	+RANDOMIZE
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 1
 	Scale 1.0
 	States

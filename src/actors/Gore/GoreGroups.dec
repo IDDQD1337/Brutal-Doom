@@ -5,7 +5,7 @@ ACTOR ZombieXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -73,7 +73,7 @@ ACTOR SargeXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -139,7 +139,7 @@ ACTOR ImpXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -204,7 +204,7 @@ ACTOR KnightXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -303,7 +303,7 @@ ACTOR CyberXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -342,7 +342,7 @@ ACTOR BullXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -405,7 +405,7 @@ ACTOR ChainXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -466,7 +466,7 @@ ACTOR MarineXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -524,7 +524,7 @@ ACTOR SpiderDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -575,7 +575,7 @@ ACTOR SkeletonXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -611,7 +611,7 @@ ACTOR SkeletonXDeathRare
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -646,7 +646,7 @@ ACTOR HalfManDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -682,7 +682,7 @@ ACTOR MeatDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -777,7 +777,7 @@ ACTOR MuchMeatDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -813,7 +813,7 @@ ACTOR RipGuts
 	Scale 0.8
 	Speed 1
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -846,7 +846,7 @@ ACTOR RipZombieMan
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -878,7 +878,7 @@ ACTOR FatalityZombieMan
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -912,7 +912,7 @@ ACTOR RipSergeant
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -945,7 +945,7 @@ ACTOR RipZombieman2
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -974,7 +974,7 @@ ACTOR RipImp
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -1007,7 +1007,7 @@ ACTOR CacoXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -1045,7 +1045,7 @@ ACTOR RipCaco
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE
@@ -1078,7 +1078,7 @@ ACTOR BeheadZombieMan
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	+MISSILE
 	-EXPLODEONWATER
 	+NOBLOCKMAP

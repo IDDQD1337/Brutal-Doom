@@ -215,7 +215,7 @@ Actor UnmakerLaser: FastProjectile
 	radius 1
 	height 1
 	speed 500
-	renderstyle ADD
+	RenderStyle "Add"
 	alpha 0.9
 	scale .15
 	decal "scorch"
@@ -279,7 +279,7 @@ Actor UnmakerLaserTrail
 	+NOTELEPORT
 	+CANNOTPUSH
 	+NODAMAGETHRUST
-	renderstyle ADD
+	RenderStyle "Add"
 	alpha 0.9
 	scale .15
 	states

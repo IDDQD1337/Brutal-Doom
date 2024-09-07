@@ -409,7 +409,7 @@ ACTOR ArchvileFire2 Replaces ArchvileFire
 	Game Doom
 	+NOBLOCKMAP +NOGRAVITY
 	+CLIENTSIDEONLY
-	RenderStyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:

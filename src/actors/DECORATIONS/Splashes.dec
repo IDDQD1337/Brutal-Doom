@@ -14,7 +14,7 @@ Actor BloodParticleX
 	+CLIENTSIDEONLY
 	+NOTELEPORT
 	Gravity 0.5
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 1.0
 	Alpha 0.5
 	Speed 2
@@ -46,7 +46,7 @@ Actor BloodParticleXSpawner
 	radius 2
 	height 0
 	speed 30
-	renderstyle none
+	RenderStyle "None"
 	alpha 0.5
 	scale .15
 	states
@@ -75,7 +75,7 @@ Actor SpawnBloodLiquidParticleX
 	+CLIENTSIDEONLY
 	+NOINTERACTION
 	+NOBLOCKMAP
-	Renderstyle none
+	RenderStyle "None"
 	states
 	{
 	Spawn:
@@ -100,7 +100,7 @@ Actor BloodLiquidParticleX
 	+DontSplash
 	BounceFactor 0.1
 	Gravity 0.5
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Scale 2.0
 	Alpha 0.3
 	//decal BloodWaterDecal
@@ -133,7 +133,7 @@ actor BloodSplashBase3
 	+DONTSPLASH
 	+CLIENTSIDEONLY
 	+NOBLOCKMAP
-	RenderStyle none
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -205,7 +205,7 @@ Actor nukageParticleX
 	+CLIENTSIDEONLY
 	+NOTELEPORT
 	Gravity 0.5
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 1.0
 	Alpha 0.5
 	Speed 3
@@ -232,7 +232,7 @@ actor nukageSplashBase
 	Mass 9999999
 	alpha .6
 	Scale 1.5
-	RenderStyle none
+	RenderStyle "None"
 	+NOGRAVITY  
 	+THRUACTORS  
 	+DONTSPLASH  
@@ -332,7 +332,7 @@ Actor SpawnGreenLiquidParticleX
 	+CLIENTSIDEONLY
 	+NOINTERACTION
 	+NOBLOCKMAP
-	Renderstyle none
+	RenderStyle "None"
 	states
 	{
 	Spawn:
@@ -344,7 +344,7 @@ Actor SpawnGreenLiquidParticleX
 Actor GreenLiquidParticleX: BloodLiquidParticleX
 {
 	Translation "179:191=112:127"
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.8
 	//decal BloodWaterDecal
 	damagetype "Slime"
@@ -381,7 +381,7 @@ Actor slimeParticleX
 	+NOTELEPORT
 	BounceFactor 0.1
 	Gravity 0.5
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 1.0
 	Alpha 0.8
 	Speed 2
@@ -423,7 +423,7 @@ Actor SlimeParticleXSpawner
 	radius 2
 	height 0
 	speed 40
-	renderstyle none
+	RenderStyle "None"
 	alpha 0.9
 	scale .15
 	states
@@ -473,7 +473,7 @@ Actor SpawnBrownLiquidParticleX
 	+CLIENTSIDEONLY
 	+NOINTERACTION
 	+NOBLOCKMAP
-	Renderstyle none
+	RenderStyle "None"
 	states
 	{
 	Spawn:
@@ -485,7 +485,7 @@ Actor SpawnBrownLiquidParticleX
 Actor BrownLiquidParticleX: BloodLiquidParticleX
 {
 	Translation "179:191=144:151"
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.8
 	//decal BloodWaterDecal
 	damagetype "Slime"
@@ -511,7 +511,7 @@ actor slimeSplashBase
 	Mass 999999
 	alpha .8
 	Scale 1.5
-	Renderstyle none
+	RenderStyle "None"
 	+NOGRAVITY
 	+THRUACTORS
 	+DONTSPLASH

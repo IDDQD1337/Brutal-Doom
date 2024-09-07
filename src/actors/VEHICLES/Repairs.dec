@@ -46,7 +46,7 @@ ACTOR RepairMissile
 	Damage (random (8, 8))
 	Projectile
 	+RANDOMIZE
-	RenderStyle Add
+	RenderStyle "Add"
 	Species "VehicleSpecial"
 	DamageType Repair
 	Decal "BulletChip"
@@ -69,7 +69,7 @@ ACTOR RepairMissile
 
 ACTOR RepairToolRicochet: BulletPuff
 {
-	renderstyle Add
+	RenderStyle "Add"
 	alpha 0.7
 	+NOBLOCKMAP
 	+NOGRAVITY
@@ -557,7 +557,7 @@ Actor TankBlood
 	+NOBLOODDECALS
 	-BLOODSPLATTER
 	+CLIENTSIDEONLY
-	Renderstyle Add
+	RenderStyle "Add"
 	Speed 0
 	Scale 0.4
 	States

@@ -1,7 +1,7 @@
 Actor Flare_General
 {
 	Mass 0
-	renderstyle Add
+	RenderStyle "Add"
 	radius 1
 	height 2
 	alpha 0.4
@@ -429,7 +429,7 @@ ACTOR PlayerMuzzle1
 	+NOINTERACTION
 	+CLIENTSIDEONLY
 	+FORCEXYBILLBOARD
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	States
 	{
 	Spawn:
@@ -457,7 +457,7 @@ ACTOR AutocannonMuzzle2
 	Speed 0
 	PROJECTILE
 	Scale 4.0
-	Renderstyle Add
+	RenderStyle "Add"
 	+NOCLIP
 	+NOGRAVITY
 	+NOINTERACTION
@@ -483,7 +483,7 @@ ACTOR MarineMuzzle1
 	+NOINTERACTION
 	+FORCEXYBILLBOARD
 	Speed 5
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:

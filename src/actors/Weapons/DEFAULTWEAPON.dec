@@ -947,7 +947,7 @@ ACTOR FlashlightSource: FlashlightProjectile
 	Radius 2
 	Height 2
 	Speed 0
-	Renderstyle Add
+	RenderStyle "Add"
 	YScale 0.3
 	XScale 0.5
 	Alpha 0.9
@@ -1175,7 +1175,7 @@ ACTOR TE_UseAttack
 	+BLOODLESSIMPACT
 	+NOCLIP
 	+NODAMAGETHRUST
-	RenderStyle Add
+	RenderStyle "Add"
 	Obituary "none"
 	SeeSound "dsempty"
 	DeathSound "dsempty"

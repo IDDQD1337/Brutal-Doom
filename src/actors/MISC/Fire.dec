@@ -10,7 +10,7 @@ ACTOR FlameTrails
 	+CLIENTSIDEONLY
 	+THRUACTORS
 	+DOOMBOUNCE
-	RenderStyle add
+	RenderStyle "Add"
 	damagetype fire
 	Scale 0.5
 	Gravity 0
@@ -60,7 +60,7 @@ ACTOR BlueFlameTrails: FlameTrails
 ACTOR SmallFlameTrails: FlameTrails
 {
 	Scale 0.4
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -74,7 +74,7 @@ ACTOR SmallFlameTrails2: SmallFlameTrails
 {
 	Scale 0.4
 	Speed 1
-	Renderstyle aDD
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -92,7 +92,7 @@ ACTOR SmallFlameTrails3: SmallFlameTrails
 {
 	Scale 0.2
 	Speed 1
-	Renderstyle ADD
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -120,7 +120,7 @@ ACTOR ImpFireBallFlames1: SmallFlameTrails
 {
 	Scale 1.2
 	Speed 6
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -136,7 +136,7 @@ ACTOR ImpFireBallFlames2: SmallFlameTrails
 {
 	Scale 1.2
 	Speed 1
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -155,7 +155,7 @@ ACTOR NightmareImpFireBallFlames: ImpFireBallFlames2
 
 ACTOR FireBallExplosion: FlameTrails
 {
-	Renderstyle Add
+	RenderStyle "Add"
 	Scale 1.6
 	States
 	{
@@ -172,7 +172,7 @@ ACTOR ExplosionFlames: FlameTrails
 {
 	Scale 1.0
 	Speed 2
-	Renderstyle ADd
+	RenderStyle "Add"
 	+DOOMBOUNCE
 	States
 	{
@@ -190,7 +190,7 @@ ACTOR TankExplosionFlames: FlameTrails
 	Scale 1.0
 	Speed 12
 	+DOOMBOUNCE
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.9	
 	States
 	{
@@ -297,7 +297,7 @@ ACTOR ImBallGettingReady: FlameTrails
 	+NOCLIP
 	Scale 0.5
 	Speed 1
-	Renderstyle ADd
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -314,7 +314,7 @@ ACTOR BallGettingReadyGreen: ImBallGettingReady
 Speed 0
 -FORCEXYBILLBOARD
 Alpha 1.0
-Renderstyle Add
+RenderStyle "Add"
 	Scale 1.6
 	States
 	{
@@ -331,7 +331,7 @@ ACTOR RealisticFireSparks1: ImBallGettingReady
 	+NOINTERACTION
 	+NOCLIP
 	Alpha 1.0
-	Renderstyle Add
+	RenderStyle "Add"
 	YScale 1.0
 	XScale -1.0
 	States
@@ -365,7 +365,7 @@ ACTOR RealisticFireSparks1Green: ImBallGettingReady
 	Speed 0
 	-FORCEXYBILLBOARD
 	Alpha 1.0
-	Renderstyle Add
+	RenderStyle "Add"
 	YScale 1.0
 	XScale -1.0
 	States
@@ -383,7 +383,7 @@ ACTOR RealisticFireSparks1Blue: ImBallGettingReady
 	Speed 0
 	-FORCEXYBILLBOARD
 	Alpha 1.0
-	Renderstyle Add
+	RenderStyle "Add"
 	Translation "112:127=[0,72,145]:[66,160,255]"
 	YScale 1.0
 	XScale -1.0
@@ -412,7 +412,7 @@ ACTOR RealFlameTrailsSmall
 	+NOINTERACTION
 	+NOCLIP
 	+NOINTERACTION
-	RenderStyle Add
+	RenderStyle "Add"
 	damagetype fire
 	Scale 0.8
 	Alpha 1.0
@@ -443,7 +443,7 @@ ACTOR CoolandNewFlameTrails: FlameTrails
 {
 	Scale 0.3
 	Speed 1
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -457,7 +457,7 @@ ACTOR CoolandNewFlameTrailsLong: FlameTrails
 {
 	Scale 0.6
 	Speed 1
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -476,7 +476,7 @@ ACTOR FireballExplosionFlames: FlameTrails
 {
 	Scale 0.8
 	Speed 1
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -489,7 +489,7 @@ ACTOR FireballExplosionFlamesSmall: FlameTrails
 {
 	Scale 0.8
 	Speed 1
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -553,7 +553,7 @@ ACTOR 100SmallFireFocusSpawnerz: BarrelExplosionSmokeColumn
 ACTOR SmallFireFocus24: BarrelExplosionSmokeColumn
 {
 	Alpha 0.9
-	RenderStyle ADD
+	RenderStyle "Add"
 	Scale 0.6
 	States
 	{
@@ -589,8 +589,8 @@ ACTOR FlyingBurningFuel
 	+THRUGHOST
 	+NODAMAGETHRUST
 	damagetype Fire
-	Decal Decal
-	Renderstyle Add
+	Decal "Decal"
+	RenderStyle "Add"
 	Mass 1
 	States
 	{
@@ -665,7 +665,7 @@ ACTOR FlamethrowerBurningStuff
 	+DONTFALL
 	+FORCERADIUSDMG
 	damagetype Fire
-	Renderstyle Add
+	RenderStyle "Add"
 	Gravity 0.1
 	Mass 0
 	States
@@ -745,7 +745,7 @@ ACTOR FlamethrowerBurningStuff
 
 ACTOR FlyingLava: FlyingBurningFuel
 {
-	Renderstyle ADd
+	RenderStyle "Add"
 	Alpha 1.0
 	Gravity 1.0
 	Speed 9
@@ -914,7 +914,7 @@ ACTOR FlamethrowerFireParticles
 	+NOCLIP
 	+FORCEXYBILLBOARD
 	damagetype fire
-	Renderstyle Add
+	RenderStyle "Add"
 	Scale 1.0
 	Alpha 0.9
 	Gravity 0
@@ -953,7 +953,7 @@ ACTOR FlamethrowerFireTrail
 	+CLIENTSIDEONLY
 	+NOINTERACTION
 	damagetype fire
-	Renderstyle Add
+	RenderStyle "Add"
 	//XScale 0.12
 	//YScale 0.2
 	Scale 0.2
@@ -1015,7 +1015,7 @@ ACTOR BurningGroundLowDamage
 	+NOCLIP
 	+FORCEXYBILLBOARD
 	-NOGRAVITY
-	RenderStyle none
+	RenderStyle "None"
 	DamageType Fire
 	Scale 1.0
 	Alpha 1.0
@@ -1051,7 +1051,7 @@ ACTOR SmallFireTrail: FlameTrails
 	Alpha 0.7
 	Radius 1
 	Height 1
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -1096,7 +1096,7 @@ ACTOR FlamethrowerMissile
 	+BOUNCEONFLOORS
 	+BOUNCEONCEILINGS
 	//+THRUACTORS
-	RenderStyle Add
+	RenderStyle "Add"
 	DamageType Fire
 	Decal "FlamethrowerScorch"
 	Scale 0.3
@@ -1271,7 +1271,7 @@ ACTOR TinyBurningPiece: BarrelExplosionSmokeColumn
 	Damagetype "Fire"
 	+CLIENTSIDEONLY
 	Alpha 0.9
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.9
 	+BRIGHT
 	States
@@ -1319,7 +1319,7 @@ ACTOR TinyBurningPieceInfinite: BarrelExplosionSmokeColumn
 	-CLIENTSIDEONLY
 	+NODAMAGETHRUST
 	Alpha 1.0
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.4
 	States
 	{
@@ -1380,7 +1380,7 @@ ACTOR PentagramSpawner
 	+CLIENTSIDEONLY
 	+NOCLIP
 	-NOGRAVITY
-	RenderStyle none
+	RenderStyle "None"
 	XScale 0.25
 	YScale 0.025
 	Alpha 1
@@ -1415,7 +1415,7 @@ ACTOR BurningPentagram: PentagramSpawner
 
 ACTOR PentagramOff: PentagramSpawner
 {
-	Renderstyle Normal
+	renderstyle "Normal"
 	States
 	{
 	Spawn:
@@ -1430,7 +1430,7 @@ ACTOR RailgunFlameTrails : FlameTrails
 {
 	Scale 0.4
 	Alpha 0.99
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -1443,7 +1443,7 @@ ACTOR RailgunFlameTrailsBlue : FlameTrails
 {
 	Scale 0.4
 	Alpha 0.99
-	Renderstyle Add
+	RenderStyle "Add"
 	+NOBLOCKMAP
 	+NOINTERACTION
 	States
@@ -1459,7 +1459,7 @@ ACTOR HighExplosiveFlames: FlameTrails
 	Scale 1.2
 	Speed 4
 	Alpha 1.0
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -1478,7 +1478,7 @@ ACTOR HighExplosiveFlames2: FlameTrails
 	Scale 1.6
 	Speed 4
 	Alpha 1.0
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -1498,7 +1498,7 @@ ACTOR HighExplosiveFlamesSmall: FlameTrails
 	Scale 0.7
 	Speed 1
 	Alpha 1.0
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -1550,7 +1550,7 @@ ACTOR BackblastFlames1: FlameTrails
 	Alpha 1.0
 	-DOOMBOUNCE
 	-BOUNCEONWALLS
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -1589,7 +1589,7 @@ ACTOR HugeBackblastFlames1
 	PROJECTILE
 	Radius 24
 	Height 42
-	Renderstyle Add
+	RenderStyle "Add"
 	+THRUACTORS
 	+CLIENTSIDEONLY
 	+DOOMBOUNCE
@@ -1632,7 +1632,7 @@ ACTOR HDFlamesGFX1
 	+NOGRAVITY
 	+NOINTERACTION
 	+NOBLOCKMAP
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 1.0
 	Scale 2.0
 	States
@@ -1659,7 +1659,7 @@ ACTOR HDFlamesGFX1Big: HDFlamesGFX1
 ////BD damaging lava particles
 ACTOR BDFlyingLava: FlyingBurningFuel
 {
-	Renderstyle ADd
+	RenderStyle "Add"
 	Alpha 1.0
 	Gravity 1.0
 	Speed 9

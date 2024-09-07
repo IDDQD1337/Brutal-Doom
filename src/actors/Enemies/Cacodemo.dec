@@ -550,7 +550,7 @@ ACTOR CacodemonBall_ Replaces CacodemonBall
 	+RANDOMIZE
 	+THRUGHOST
 	+FORCEXYBILLBOARD
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.95
 	damagetype Plasma
 	SeeSound "caco/attack"
@@ -603,7 +603,7 @@ ACTOR Shoque
 	+MISSILE
 	+FORCEXYBILLBOARD
 	+CLIENTSIDEONLY
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.7
 	Gravity 0
 	Alpha 0.5
@@ -629,7 +629,7 @@ ACTOR ShoqueAzul
 	+MISSILE
 	+FORCEXYBILLBOARD
 	+CLIENTSIDEONLY
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 1.0
 	Gravity 0
 	States

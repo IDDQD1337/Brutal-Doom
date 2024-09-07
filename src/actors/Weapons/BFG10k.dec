@@ -246,7 +246,7 @@ ACTOR BFG10K_Ball: FastProjectile
 	+FORCEXYBILLBOARD
 	Species "Marines"
 	Scale 1.0
-	renderstyle ADD
+	RenderStyle "Add"
 	alpha 0.99
 	Scale 0.4
 	DeathSound "weapons/plasmax"
@@ -290,7 +290,7 @@ ACTOR GreenExplosionFire
 	+CLIENTSIDEONLY
 	+NOINTERACTION
 	+NOCLIP
-	RenderStyle Add
+	RenderStyle "Add"
 	DamageType Flames
 	Scale 2.0
 	Alpha 1

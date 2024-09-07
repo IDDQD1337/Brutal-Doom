@@ -773,7 +773,7 @@ ACTOR MechMachinegunProjectile
 	+BLOODSPLATTER
 	+NOEXTREMEDEATH
 	Gravity 0.2
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	damagetype "Blast"
 	Alpha 0.9
 	Scale 1.1

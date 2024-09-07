@@ -131,7 +131,7 @@ Actor WillyPeteParticle
 	+THRUACTORS
 	+NODAMAGETHRUST
 	+USEBOUNCESTATE
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.8
 	Speed 16
 	Gravity 0.7
@@ -175,7 +175,7 @@ Actor WillyPeteParticleSmoke
 	+THRUACTORS
 	+NOGRAVITY
 	+FORCEXYBILLBOARD
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Scale 0.1
 	Alpha 0.5
 	Speed 0
@@ -213,7 +213,7 @@ Actor IncendiaryRocketSmoke
 	+DOOMBOUNCE
 	Scale 4.0
 	Speed 1
-	Renderstyle Normal
+	renderstyle "Normal"
 	Alpha 1.0
 	States
 	{

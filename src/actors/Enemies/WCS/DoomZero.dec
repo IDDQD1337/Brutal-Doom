@@ -21,7 +21,7 @@ Actor AlphaLostSoul
 	damagefactor "TeleportRemover", 0.0
 	DamageFactor "CauseSplash", 0.0 DamageFactor "CauseObjectsToSplashSlime", 0.0 DamageFactor "CauseObjectsToSplashNukage", 0.0
 	DamageFactor "CauseObjectsToSplashBlood", 0.0 DamageFactor "CauseObjectsToSplashLava", 0.0
-	RenderStyle Normal
+	renderstyle "Normal"
 	bloodcolor ""
 	+FLOAT +NOGRAVITY +DONTFALL +NOICEDEATH
 	+FORCEXYBILLBOARD
@@ -360,7 +360,7 @@ ACTOR DoomZeroSpawnShot : SpawnShot
 
 ACTOR Pentagram
 {
-	Renderstyle Normal
+	renderstyle "Normal"
 	States
 	{
 	Spawn:

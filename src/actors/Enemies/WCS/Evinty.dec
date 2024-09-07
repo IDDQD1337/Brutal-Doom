@@ -684,7 +684,7 @@ Actor WhiteSmoke
 	+DontSPlash
 	+FORCEXYBILLBOARD
 	+CLIENTSIDEONLY
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.5
 	Gravity 0
 	Alpha 0.9
@@ -1048,7 +1048,7 @@ ACTOR ArchangelusTeleport
 	+EXPLODEONWATER
 	+MOVEWITHSECTOR
 	Gravity 0.0
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 5.0
 	Speed 0
 	States
@@ -1067,7 +1067,7 @@ ACTOR ArchangelusShield
 	Mass 5000
 	Radius 85
 	Height 85
-	RenderStyle Add
+	RenderStyle "Add"
 	XScale 3.0
 	YScale 2.5
 	+SOLID
@@ -1096,7 +1096,7 @@ ACTOR AstralCacoSpawner
 	+MOVEWITHSECTOR
 	+NOGRAVITY
 	Alpha 0.9
-	//RenderStyle Add
+	//RenderStyle "Add"
 	Scale 2.0
 	States
 	{
@@ -2235,7 +2235,7 @@ Actor TE_RainDrop// replaces JOM5_RainDrop
 	Height 1
 	Radius 1
 	//Renderstyle "Translucent"
-	//Renderstyle Add
+	//RenderStyle "Add"
 	Alpha 0.0
 	XScale 0.8
 	YScale 4.0
@@ -2281,7 +2281,7 @@ Actor TE_WaterRipple
 	height 1
 	mass 1
 	Health 600
-	RenderStyle Normal
+	renderstyle "Normal"
 	Alpha 0.52
 	+NOTELEPORT
 	+FORCEXYBILLBOARD

@@ -68,7 +68,7 @@ ACTOR BurnParticles
 	-BLOODSPLATTER
 	+INVISIBLE
 	+NOINTERACTION
-	RenderStyle none
+	RenderStyle "None"
 	States
 	{
 	Spawn:

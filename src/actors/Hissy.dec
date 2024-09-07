@@ -527,7 +527,7 @@ ACTOR HissyFireball
 	+RANDOMIZE
 	+THRUSPECIES
 	+MTHRUSPECIES
-	RenderStyle Add
+	RenderStyle "Add"
 	Species "Marines"
 	Alpha 0.99
 	Scale 1.6

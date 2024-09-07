@@ -226,7 +226,7 @@ ACTOR GatekeeperFireBall
 	Scale 1.3
 	+FORCEXYBILLBOARD
 	+THRUGHOST
-	RenderStyle Add
+	RenderStyle "Add"
 	DamageType Extreme
 	ExplosionRadius 200
 	ExplosionDamage 100

@@ -297,7 +297,7 @@ Actor NukeFlare
 	+NOGRAVITY
 	+FORCEXYBILLBOARD
 	+THRUACTORS
-	Renderstyle Add
+	RenderStyle "Add"
 	alpha 0.8
 	yscale 19.2
 	xscale 19.2
@@ -320,7 +320,7 @@ ACTOR NuclearFlames: ExplosionFlames
 {
 	Scale 2.2
 	Speed 5
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -347,7 +347,7 @@ ACTOR NuclearFlames2: ExplosionFlames
 {
 	Scale 3.5
 	Speed 5
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -375,7 +375,7 @@ ACTOR NuclearFlames3: ExplosionFlames
 	YScale 8.5
 	XScale 10.5
 	Speed 5
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -391,7 +391,7 @@ ACTOR NuclearFlamesImpact: ExplosionFlames
 	-CLIENTSIDEONLY
 	+FORCERADIUSDMG
 	Damagetype "Nuke"
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.25
 	States
 	{
@@ -406,7 +406,7 @@ ACTOR NuclearFlamesBig: ExplosionFlames
 {
 	Scale 9.2
 	Speed 3
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:

@@ -659,7 +659,7 @@ ACTOR GreenPlasmaBall: BaronBall Replaces BaronBall
 	+FORCEXYBILLBOARD
 	+THRUGHOST
 	Damage (random(50,50))
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.95
 	Scale 1.0
 	SeeSound "baron/attack"
@@ -695,7 +695,7 @@ ACTOR GreenPlasmaBall: BaronBall Replaces BaronBall
 
 ACTOR BaronBall_SlaughterFest: GreenPlasmaBall
 {
-	RenderStyle Add
+	RenderStyle "Add"
 	Decal "None"
 	DamageType "SFestExplode"
 	States
@@ -772,7 +772,7 @@ ACTOR KnightAttack: BaronBall
 	+RANDOMIZE
 	+FORCEXYBILLBOARD
 	+THRUGHOST
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.6
 	Damage 10
 	Speed 42

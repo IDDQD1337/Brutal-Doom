@@ -277,7 +277,7 @@ ACTOR BDECGrassSpawner: BDdecorationBase 15848
 	+INVISIBLE
 	+NOINTERACTION
 	+NOBLOCKMAP
-	RenderStyle none
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -296,7 +296,7 @@ ACTOR BDECGrassSpawnerLarge: BDdecorationBase
 	+INVISIBLE
 	+NOINTERACTION
 	+NOBLOCKMAP
-	RenderStyle none
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -923,7 +923,7 @@ Actor BDECbigfire
 	+LOOKALLAROUND
 	+CLIENTSIDEONLY
 	+FORCEYBILLBOARD
-	Renderstyle add
+	RenderStyle "Add"
 	Scale 1.5
 	+BRIGHT
 	states
@@ -969,7 +969,7 @@ ACTOR BDECrealisticFireSparksT1
 	+NOGRAVITY
 	+FLOAT
 	Alpha 1.0
-	Renderstyle Add
+	RenderStyle "Add"
 	YScale 2.0
 	XScale -2.0
 	States
@@ -1012,7 +1012,7 @@ ACTOR LightShaft 11017
 	Height 1
 	XScale 1.0
 	YScale 1.8
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.25
 	+NOINTERACTION
 	+NOBLOCKMAP
@@ -1059,7 +1059,7 @@ ACTOR BDECSmallShaft1Red 11018
 	damagefactor "KillMe", 0.0 damagefactor "Trample", 0.0
 	Health 60
 	Mass 999999
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 1.0
 	States
 	{
@@ -1139,7 +1139,7 @@ ACTOR DestroyedCeilLamp
 	+FORCEYBILLBOARD
 	+CLIENTSIDEONLY
 	+NOINTERACTION
-	Renderstyle Normal
+	renderstyle "Normal"
 	States
 	{
 	Spawn:
@@ -1160,7 +1160,7 @@ ACTOR FloorShaft1Red 11019
 	+CLIENTSIDEONLY
 	+NOINTERACTION
 	+FORCEYBILLBOARD
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.2
 	States
 	{
@@ -1476,7 +1476,7 @@ ACTOR BDECvolumetricLight 11027
 	Height 1
 	XScale 2.9
 	YScale 2.9
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.15
 	States
 	{
@@ -1764,7 +1764,7 @@ ACTOR BDecWhiteFlareCagedLamp
 	+NOINTERACTION +NOGRAVITY +CLIENTSIDEONLY
 	hEIGHT 1
 	rADIUS 1
-	Renderstyle ADd
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -2468,7 +2468,7 @@ ACTOR BDECRedLightWall1: BDdecorationBase
 	+FLOAT 
 	+NOGRAVITY 
 	-SHOOTABLE
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.2
 	XScale 0.6
 	YScale 0.8
@@ -2593,7 +2593,7 @@ ACTOR BDECNukageGlow
 	+THRUACTORS
 	+CLIENTSIDEONLY
 	+FORCEXYBILLBOARD
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.2
 	XScale 4.2
 	YScale 2.0
@@ -2648,7 +2648,7 @@ ACTOR BDECLargeFireFocus
 	+FORCEXYBILLBOARD
 	+NOGRAVITY
 	+FLOAT
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.2
 	XScale 4.2
 	YScale 2.0
@@ -2697,7 +2697,7 @@ ACTOR BDECAddRedLight
 	+THRUACTORS
 	+CLIENTSIDEONLY
 	+FORCEXYBILLBOARD
-	Renderstyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -2710,13 +2710,13 @@ ACTOR BDECAddRedLight
 ACTOR BDECAddbLUELight :  BDECAddRedLight
 {
 	Radius 1
-	Renderstyle Add
+	RenderStyle "Add"
 }
 
 ACTOR BDECAddRedLightLarge :  BDECAddRedLight
 {
 	Radius 1
-	Renderstyle Add
+	RenderStyle "Add"
 	+NOGRAVITY
 	+FLOAT
 }
@@ -2724,7 +2724,7 @@ ACTOR BDECAddRedLightLarge :  BDECAddRedLight
 ACTOR BDECAddbLUELightLarge :  BDECAddRedLight
 {
 	Radius 1
-	Renderstyle Add
+	RenderStyle "Add"
 }
 
 ACTOR BDTitleMapThing 8347
@@ -3547,7 +3547,7 @@ Actor BDECWIndowGlass1: BDdestroyabledecorative
 	YScale 3.0
 	Radius 4
 	Height 128
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	Obituary "$OB_GLASS"
 	Alpha 0.65
 	states
@@ -3578,7 +3578,7 @@ Actor BDECWindowColision1: BDdestroyabledecorative
 	Health 1
 	Radius 4
 	Height 128
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	states
 	{
 	Spawn:
@@ -3919,7 +3919,7 @@ ACTOR HookColision
 	+BLOODSPLATTER
 	+NOTARGET
 	+FRIENDLY
-	RenderStyle Add
+	RenderStyle "Add"
 	Speed 0
 	Scale 1.0
 	States
@@ -4106,7 +4106,7 @@ Actor BDECCandleCorridor
 {
 	+NOINTERACTION
 	+NOBLOCKMAP
-	RenderStyle none
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -4124,7 +4124,7 @@ Actor BDECJungleLine1
 {
 	+NOINTERACTION
 	+NOBLOCKMAP
-	RenderStyle none
+	RenderStyle "None"
 	States
 	{
 		Spawn:
@@ -4145,7 +4145,7 @@ Actor BDECGrassLine1
 {
 	+NOINTERACTION
 	+NOBLOCKMAP
-	RenderStyle none
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -4178,7 +4178,7 @@ actor DeletusVeryLarge
 	+ACTIVATEMCROSS
 	+NOINTERACTION
 	+NOBLOCKMAP
-	RenderStyle none
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -4191,7 +4191,7 @@ actor DeletusVeryLarge
 Actor BDECFountain// 15858
 {
 	+THRUACTORS
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.7
 	Radius 4
 	Height 4
@@ -4377,7 +4377,7 @@ ACTOR BDECHellFire
 	Height 12
 	+THRUACTORS
 	damagetype Fire
-	Renderstyle Add
+	RenderStyle "Add"
 	Gravity 0.2
 	Mass 0
 	States
@@ -4402,7 +4402,7 @@ ACTOR BDECPentagram 25856
 	+CLIENTSIDEONLY
 	+NOCLIP
 	-NOGRAVITY
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	XScale 0.3
 	YScale 0.1
 	Alpha 1
@@ -4425,7 +4425,7 @@ ACTOR BDECPentagram 25856
 
 ACTOR BDSpawnBaron
 {
-	RenderStyle none
+	RenderStyle "None"
 	+NOBLOCKMAP
 	+NOINTERACTION
 	+INVISIBLE
@@ -4448,7 +4448,7 @@ ACTOR BDSpawnCacodemon
 	+THRUACTORS
 	Height 60
 	Radius 2
-	RenderStyle none
+	RenderStyle "None"
 	+NOBLOCKMAP
 	+NOINTERACTION
 	+INVISIBLE
@@ -4466,7 +4466,7 @@ ACTOR BDSpawnCacodemon
 
 ACTOR BDSpawnImps
 {
-	RenderStyle none
+	RenderStyle "None"
 	+NOBLOCKMAP
 	+NOINTERACTION
 	+INVISIBLE

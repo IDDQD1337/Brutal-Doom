@@ -293,7 +293,7 @@ ACTOR RevenantMissileFriendAttackSummon
 	Mass 999999999999999999
 	Health 1
 	gravity 0.5
-	Decal BloodSuper
+	Decal "BloodSuper"
 	+NOCLIP
 	MONSTER
 	+FRIENDLY

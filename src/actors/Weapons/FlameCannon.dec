@@ -256,7 +256,7 @@ ACTOR Flames
 	+FORCEXYBILLBOARD
 	+RIPPER
 	+BLOODLESSIMPACT
-	RenderStyle Add
+	RenderStyle "Add"
 	DamageType Flames
 	Scale 2.0
 	Alpha 1

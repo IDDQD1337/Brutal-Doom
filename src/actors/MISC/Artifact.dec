@@ -217,7 +217,7 @@ ACTOR SuperBlurSphere : CustomInventory //Replaces BlurSphere
 	+INVENTORY.ALWAYSPICKUP
 	+INVENTORY.BIGPOWERUP
 	+FORCEXYBILLBOARD
-	RenderStyle Translucent
+	RenderStyle "Translucent"
 	Inventory.PickupSound "Pickup/Invis" 
 	Inventory.PickupMessage "$GOTINVIS" // "Partial Invisibility"
 	States

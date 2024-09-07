@@ -541,7 +541,7 @@ ACTOR InvaderZimXdeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE

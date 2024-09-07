@@ -145,7 +145,7 @@ ACTOR ThrowedZman
 	DamageType Kick
 	BounceFactor 0.5
 	DamageFactor "Cut", 2.00 DamageFactor "Saw", 2.00 damagefactor "PussyGrab", 10.0
-	Decal BrutalBloodSuper
+	Decal "BrutalBloodSuper"
 	States
 	{
 	Spawn:

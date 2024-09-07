@@ -31,7 +31,7 @@ Actor TallTorch_RedFlames : TallTorch_Red
 {
 	XScale 1.0
 	YScale 1.2
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.9
 	+CLIENTSIDEONLY
 	+THRUACTORS
@@ -71,7 +71,7 @@ ACTOR TorchBall
 	+MOVEWITHSECTOR
 	+FORCEXYBILLBOARD
 	Alpha 1.0
-	Renderstyle Add
+	RenderStyle "Add"
 	YScale 1.2
 	XScale 1.6
 	Radius 1
@@ -191,7 +191,7 @@ Actor TallTorch_GreenFlames : TallTorch_Red
 {
 	XScale 1.0
 	YScale 1.2
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.9
 	+CLIENTSIDEONLY
 	+THRUACTORS
@@ -286,7 +286,7 @@ Actor ShortTorch_BlueFlames : ShortTorch_Blue
 {
 	XScale 1.0
 	YScale 1.2
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.9
 	+CLIENTSIDEONLY
 	+THRUACTORS
@@ -347,7 +347,7 @@ Actor ShortTorch_RedFlames : ShortTorch_Red
 {
 	XScale 1.0
 	YScale 1.2
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.9
 	+CLIENTSIDEONLY
 	+THRUACTORS
@@ -407,7 +407,7 @@ Actor ShortTorch_GreenFlames : ShortTorch_Red
 {
 	XScale 1.0
 	YScale 1.2
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.9
 	+CLIENTSIDEONLY
 	+THRUACTORS
@@ -517,7 +517,7 @@ Actor Candlestick1Flare : Candlestick
 {
 	XScale 0.4
 	YScale 0.18
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.8
 	+CLIENTSIDEONLY
 	+FORCEXYBILLBOARD
@@ -678,7 +678,7 @@ Actor TorchFlare
 	+NOGRAVITY
 	+CLIENTSIDEONLY
 	+FORCEXYBILLBOARD
-	renderstyle Add
+	RenderStyle "Add"
 	radius 1
 	height 1
 	alpha 0.4

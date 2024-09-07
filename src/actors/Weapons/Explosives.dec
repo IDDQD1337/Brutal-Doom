@@ -5,7 +5,7 @@ ACTOR HorizontalShockwave
 	Radius 2
 	Height 4
 	Alpha 0.3
-	Renderstyle add
+	RenderStyle "Add"
 	Scale 1.0 //you could easily make a bigger shockwave by just changing the scale
 	+NOGRAVITY
 	-SOLID
@@ -112,7 +112,7 @@ Actor RocketBackblast: FastProjectile
 	Height 12
 	Alpha 0.9
 	Scale 1.0
-	Renderstyle ADd
+	RenderStyle "Add"
 	+RIPPER
 	+GHOST
 	+THRUGHOST
@@ -767,7 +767,7 @@ ACTOR CyberBalls: Rocket2
 	DamageType Extreme
 	Gravity 0.00
 	Decal "Scorch"
-	Renderstyle Add
+	RenderStyle "Add"
 	-NOGRAVITY
 	+EXTREMEDEATH
 	//+THRUGHOST
@@ -830,7 +830,7 @@ ACTOR CyberballTrail
 	Radius 0
 	Height 0
 	Alpha 1.0
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.9
 	Speed 2
 	+NOBLOCKMAP

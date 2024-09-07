@@ -60,7 +60,7 @@ ACTOR XDeath2: XDeath1
 	Height 2
 	Gravity 0.4
 	DeathSound "misc/xdeath2"
-	Decal BrutalBloodSuper
+	Decal "BrutalBloodSuper"
 	Scale 1.1
 	States
 	{
@@ -165,7 +165,7 @@ actor CeilXDeath2: Brutal_BloodSpot
 	+NOGRAVITY
 	+DontSplash
 	+CEILINGHUGGER
-	Renderstyle Normal 
+	renderstyle "Normal" 
 	Scale 1.1
 	states
 	{
@@ -231,7 +231,7 @@ ACTOR XDeath2NoStick: XDeath2
 ACTOR XDeath3: XDeath2
 {
 	DeathSound "misc/xdeath3"
-	Decal BrutalBloodSuper
+	Decal "BrutalBloodSuper"
 	Scale 1.1
 	States
 	{
@@ -557,7 +557,7 @@ ACTOR Guts
 	+CLIENTSIDEONLY
 	+FORCEXYBILLBOARD
 	+THRUACTORS
-	Decal BrutalBloodSplat
+	Decal "BrutalBloodSplat"
 	Scale 1.0
 	Gravity 0.4
 	States
@@ -634,7 +634,7 @@ ACTOR SmallBrainPiece: Xdeath2
 	Height 2
 	Speed 10
 	Scale 0.4
-	Decal None
+	Decal "None"
 	States
 	{
 	Spawn:
@@ -827,7 +827,7 @@ ACTOR GibEyeball
 	Height 2
 	Speed 6
 	Mass 1
-	Decal BrutalBloodSplat
+	Decal "BrutalBloodSplat"
 	+CLIENTSIDEONLY
 	BounceFactor 0.5
 	+DOOMBOUNCE
@@ -899,7 +899,7 @@ ACTOR BurningFlyingMeatPiece
 	damagetype Blood
 	SeeSound "misc/xdeath4"
 	DeathSound "misc/xdeath1"
-	Decal BloodSuper
+	Decal "BloodSuper"
 	States
 	{
 	Spawn:

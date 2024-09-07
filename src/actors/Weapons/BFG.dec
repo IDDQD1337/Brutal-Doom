@@ -169,7 +169,7 @@ Actor BFGTrailParticle
 	+FORCEXYBILLBOARD
 	+CLIENTSIDEONLY
 	+NOINTERACTION
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.2
 	States
 	{
@@ -299,7 +299,7 @@ Actor BFGDeathParticle
 	Radius 1
 	Mass 0
 	BounceFactor 0.5
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.16
 	+Missile
 	+NoBlockMap
@@ -340,7 +340,7 @@ Actor BFGDeathParticleSuperFast: BFGDeathParticleFast { Speed 20 }
 
 Actor SuperBFGExtra : BFGExtra Replaces BFGExtra
 {
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.75
 	Damage 2
 	Scale 0.6
@@ -383,7 +383,7 @@ Actor BFGExtraParticle
 	Height 0
 	Radius 0
 	Mass 0
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.14
 	+Missile
 	+NOBLOCKMAP
@@ -425,7 +425,7 @@ Actor BFGSuperParticle
 	+DontSplash
 	+FORCEXYBILLBOARD
 	+NOINTERACTION
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.16
 	Speed 24
 	States
@@ -445,7 +445,7 @@ ACTOR GreenShockWave
 	Height 64
 	Radius 32
 	Scale 2.25
-	RenderStyle add
+	RenderStyle "Add"
 	Alpha 0.9
 	+DROPOFF
 	+NOBLOCKMAP
@@ -485,7 +485,7 @@ ACTOR BFGFOG
 	Radius 1
 	Height 1
 	Alpha 0.7
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.4
 	Speed 8
 	Gravity 0

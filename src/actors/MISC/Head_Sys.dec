@@ -646,7 +646,7 @@ actor HeadHitbox
 	DamageType head
 	BloodType "Brutal_Blood", "SawBlood", "SawBlood"
 	PainChance 255
-	//Renderstyle none
+	//RenderStyle "None"
 	//-COUNTKILL +NOTARGET
 	//+NOGRAVITY +SHOOTABLE +NOTELEPORT +FORCERADIUSDMG -SOLID +NODAMAGETHRUST
 	//+THRUGHOST +NORADIUSDMG +GHOST +SERVERSIDEONLY -COUNTKILL +NOTAUTOAIMED
@@ -894,7 +894,7 @@ actor NobleHeadshot: HeadHitbox
 	BloodColor "DarkGreen"
 	Radius 12
 	Height 24
-	Decal GreenBloodSplat
+	Decal "GreenBloodSplat"
 	+DONTRIP
 	States
 	{
