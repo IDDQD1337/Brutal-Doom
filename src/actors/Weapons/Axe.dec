@@ -325,7 +325,7 @@ ACTOR AxeAttack: FastProjectile
 	+BLOODSPLATTER
 	+FORCEPAIN
 	//+RIPPER
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.6
     Damage (random(20,25))//(random(90,95))
     Speed 30//60
@@ -506,7 +506,7 @@ Actor AltAxeAttackNoDecal: AxeAttack
 
 ACTOR AxePuffs: HitPuff
 {
-	renderstyle Translucent
+	RenderStyle "Translucent"
 	scale 0.15
 	alpha 0.7
 	Radius 20

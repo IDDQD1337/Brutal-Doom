@@ -51,7 +51,7 @@ Actor TechLamp1Flare
 {
 	//MONSTER
 	Health 1
-	Renderstyle Add
+	RenderStyle "Add"
 	Alpha 0.5
 	+ISMONSTER
 	+SHOOTABLE
@@ -117,7 +117,7 @@ Actor BreakingLamp
 {
 	+NOINTERACTION
 	+CLIENTSIDEONLY
-	RenderStyle none
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -201,7 +201,7 @@ Actor Column1Flare
 {
 	Health 1
 	//Mass 0
-	renderstyle Add
+	RenderStyle "Add"
 	//radius 1
 	//height 2
 	alpha 0.5

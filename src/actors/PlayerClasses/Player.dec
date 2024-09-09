@@ -4341,7 +4341,7 @@ ACTOR PlayerFlyingBlood
 	health 1
 	radius 8
 	height 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	+MISSILE
 	+CLIENTSIDEONLY
 	+NOTELEPORT

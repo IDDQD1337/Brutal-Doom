@@ -135,7 +135,7 @@ ACTOR DSAttack: FastProjectile
 	+FORCEXYBILLBOARD
 	+FORCERADIUSDMG
 	+BLOODSPLATTER
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.6
 	Damage (random(200,200))
 	Speed 60

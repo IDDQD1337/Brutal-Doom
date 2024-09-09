@@ -696,7 +696,7 @@ Actor RailgunProjectile
 	Species "Marines"
 	Scale 1.0
 	var int user_railangle;
-	renderstyle ADD
+	RenderStyle "Add"
 	alpha 0.90
 	Scale 0.10
 	DeathSound "weapons/plasmax"
@@ -802,7 +802,7 @@ Actor RailgunPenetrator1B: RailgunPenetrator1
 Actor RailgunTracerTrail
 {
 	Scale 0.2
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.9
 	+NOINTERACTION
 	+CLIENTSIDEONLY
@@ -884,7 +884,7 @@ Actor RailgunTrailEffect
 	+CLIENTSIDEONLY
 	+MISSILE
 	+NOGRAVITY
-	Renderstyle Add
+	RenderStyle "Add"
 	+NOBLOODDECALS
 	States
 	{

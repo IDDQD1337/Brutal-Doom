@@ -9,7 +9,7 @@ actor Spark_BD1
   +NOBLOCKMAP
   +MISSILE +NOBLOCKMAP +DOOMBOUNCE
   bouncefactor 0.3
-  renderstyle Add
+  RenderStyle "Add"
   scale 0.12
   Gravity 0.4
   states
@@ -53,7 +53,7 @@ actor SparkFlare_BD1
 +CLIENTSIDEONLY
   +NOINTERACTION
   +FORCEXYBILLBOARD
-  renderstyle Add
+  RenderStyle "Add"
   scale 1.0
   states
   {
@@ -91,7 +91,7 @@ actor BDSpark_Down
   +NOINTERACTION
   +INVISIBLE
   +NOBLOCKMAP
-  Renderstyle none
+  RenderStyle "None"
   states
   {
   Spawn:
@@ -173,7 +173,7 @@ actor BDSpark_Up
   +NOINTERACTION
   +INVISIBLE
   +NOBLOCKMAP
-  Renderstyle none
+  RenderStyle "None"
   states
   {
   Spawn:
@@ -257,7 +257,7 @@ actor Spark_UpOnce
   +NOINTERACTION
   +INVISIBLE
   +NOBLOCKMAP
-  Renderstyle none
+  RenderStyle "None"
   states
   {
   Spawn:
@@ -317,7 +317,7 @@ actor ShakeYourAss
   +CLIENTSIDEONLY
   +NOINTERACTION
   +INVISIBLE
-  Renderstyle none
+  RenderStyle "None"
   states
   {
   Spawn:

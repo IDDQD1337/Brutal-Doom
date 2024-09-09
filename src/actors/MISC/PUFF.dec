@@ -1,6 +1,6 @@
 ACTOR MeleePuff: BulletPuff
 {
-	renderstyle none
+	RenderStyle "None"
 	alpha 0.5
 	Scale 1.5
 	DamageType Melee
@@ -115,7 +115,7 @@ ACTOR FatalitySmashingPuff: SmashingPuff
 
 ACTOR HitPuff Replaces BulletPuff
 {
-	renderstyle none
+	RenderStyle "None"
 	alpha 0.3
 	Scale 0.8
 	radius 1
@@ -186,7 +186,7 @@ DamageType Minor
 
 ACTOR RicoChet
 {
-	renderstyle Add
+	RenderStyle "Add"
 	alpha 1.0
 	-COUNTKILL
 	-SHOOTABLE
@@ -459,7 +459,7 @@ ACTOR RicoChet50Call : RicoChet
 
 ACTOR DirtRicochet: RicoChet
 {
-	renderstyle Translucent
+	RenderStyle "Translucent"
 	alpha 0.5
 	Scale 0.5
 	Speed 2
@@ -476,7 +476,7 @@ ACTOR DirtRicochet: RicoChet
 
 ACTOR DirtRicochet2: DirtRicochet
 {
-	renderstyle Translucent
+	RenderStyle "Translucent"
 	alpha 0.2
 	Scale 0.6
 	Speed 5
@@ -491,7 +491,7 @@ ACTOR DirtRicochet2: DirtRicochet
 
 ACTOR WaterRicochet: DirtRicochet
 {
-	renderstyle Add
+	RenderStyle "Add"
 	-NOGRAVITY
 	Gravity 0.5
 	Speed 4
@@ -511,7 +511,7 @@ ACTOR WaterRicochet: DirtRicochet
 
 ACTOR NukageRicochet: WaterRicochet
 {
-	renderstyle Add
+	RenderStyle "Add"
 	states
 	{
 	Spawn:
@@ -525,7 +525,7 @@ ACTOR NukageRicochet: WaterRicochet
 
 ACTOR BloodRicochet: WaterRicochet
 {
-	renderstyle Add
+	RenderStyle "Add"
 	states
 	{
 	Spawn:
@@ -538,7 +538,7 @@ ACTOR BloodRicochet: WaterRicochet
 
 ACTOR GiantWaterRicochet: RicoChet
 {
-	renderstyle add
+	RenderStyle "Add"
 	alpha 0.9
 	XScale 3.0
 	YScale 2.0
@@ -585,7 +585,7 @@ Actor ATBulletPuff: HitPuff
 {
 	Scale 0.4
 	DamageType Blast
-	RenderStyle none
+	RenderStyle "None"
 	States
 	{
 	Spawn:
@@ -599,7 +599,7 @@ Actor ATBulletPuff: HitPuff
 
 ACTOR SSawPuff: HitPuff
 {
-	renderstyle add
+	RenderStyle "Add"
 	scale 0.15
 	alpha 0.7
 	Radius 20
@@ -655,7 +655,7 @@ Actor PuffSmoke
 	radius 1
 	height 1
 	mass 1
-	renderstyle Translucent
+	RenderStyle "Translucent"
 	alpha 0.9
 	Scale 1.5
 	Speed 1
@@ -671,7 +671,7 @@ Actor PuffSmoke
 
 ACTOR Sparks: BulletPuff
 {
-	renderstyle add
+	RenderStyle "Add"
 	alpha 0.8
 	+NOBLOCKMAP
 	+NOGRAVITY

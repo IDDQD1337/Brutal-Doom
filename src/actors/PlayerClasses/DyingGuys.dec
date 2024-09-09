@@ -2250,7 +2250,7 @@ ACTOR ZombiemanGotHisLegBlowed: DyingZombiemanNoArm
 
 ACTOR SergeantFatalizedByBaron: TeleportFog
 {
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	Alpha 1.0
 	States
 	{
@@ -2414,7 +2414,7 @@ ACTOR FlyingImpaledSergeant
 	damagetype Blood
 	SeeSound "misc/xdeath4"
 	DeathSound "misc/xdeath1"
-	Decal BrutalBloodSplat
+	Decal "BrutalBloodSplat"
 	Mass 1
 	+NOBLOODDECALS
 	BloodType "DeadBlood", "SawBlood", "SawBlood"	

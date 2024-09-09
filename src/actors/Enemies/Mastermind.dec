@@ -405,7 +405,7 @@ ACTOR MastermindStep
 	Height 32
 	Speed 0
 	Damage 50
-	renderstyle translucent
+	RenderStyle "Translucent"
 	alpha 0.75
 	DamageType Stomp
 	MeleeDamage 0

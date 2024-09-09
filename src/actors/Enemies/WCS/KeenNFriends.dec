@@ -430,7 +430,7 @@ Actor CometTail
 {
 	Projectile
 	+NoClip
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.4
 	States
 	{

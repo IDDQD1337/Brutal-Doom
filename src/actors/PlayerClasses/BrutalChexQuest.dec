@@ -370,7 +370,7 @@ ACTOR FlemoidAcidBall
 	Damage (random(10,15))
 	Projectile 
 	+RANDOMIZE
-	RenderStyle Add
+	RenderStyle "Add"
 	Damagetype "Slime"
 	Alpha 1
 	+THRUGHOST
@@ -400,7 +400,7 @@ ACTOR AcidBallTrails
 	+CLIENTSIDEONLY
 	+THRUACTORS
 	+NOGRAVITY
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.3
 	States
 	{
@@ -424,7 +424,7 @@ ACTOR FlyingAcidParticles
 	BounceFactor 0.01
 	Speed 6
 	Gravity 0.4
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.6
 	States
 	{
@@ -457,7 +457,7 @@ ACTOR FlemoidGib1
 	+FLOORCLIP
 	SeeSound "misc/xdeath4"
 	DeathSound "misc/xdeath1"
-	Decal BrutalBloodSplatGreen
+	Decal "BrutalBloodSplatGreen"
 	Mass 1
 	States
 	{

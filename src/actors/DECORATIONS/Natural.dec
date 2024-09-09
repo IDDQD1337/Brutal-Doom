@@ -1,6 +1,6 @@
 ACTOR TreeBlood
 {
-	renderstyle none
+	RenderStyle "None"
 	alpha 1.0
 	-COUNTKILL
 	-SHOOTABLE

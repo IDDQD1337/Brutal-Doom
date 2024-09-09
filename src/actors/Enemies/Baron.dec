@@ -1283,7 +1283,7 @@ ACTOR BaronAttack: BaronBall
 	+RANDOMIZE
 	+FORCEXYBILLBOARD
 	+THRUGHOST
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.6
 	Damage 25
 	Speed 28
@@ -1318,7 +1318,7 @@ ACTOR CallingTheBaronAFaggot: BaronBall
 	+RANDOMIZE
 	+FORCEXYBILLBOARD
 	+THRUGHOST
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.6
 	Damage (random (2, 3))
 	Speed 32

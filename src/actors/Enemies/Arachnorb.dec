@@ -235,7 +235,7 @@ ACTOR Aracnorb_Brain
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(waterlevel > 1, "Splash")
+		ID22 A 0 A_JumpIf(waterlevel > 1, "Splash")
 		ID22 A 2 A_CustomMissile("BloodTrails",0,0,180,2)
 		ID22 B 2 A_CustomMissile("BloodTrails",0,0,180,2)
 		ID22 C 2 A_CustomMissile("BloodTrails",0,0,180,2)

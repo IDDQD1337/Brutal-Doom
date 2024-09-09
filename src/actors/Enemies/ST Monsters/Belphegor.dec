@@ -275,7 +275,7 @@ ACTOR BelphegorGreenPlasmaBall: BaronBall
 	+FORCEXYBILLBOARD
 	+THRUGHOST
 	Damage (random(60,60))
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.9
 	Scale 1.6
 	SeeSound "baron/attack"

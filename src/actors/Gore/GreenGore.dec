@@ -272,7 +272,7 @@ ACTOR GreenWaterBloodCHecker: WaterBloodCHecker
 //muddy water bloodspot actor
 ACTOR GreenWaterBloodSpot: WaterBloodSpot
 {
-//Renderstyle Shaded
+//renderstyle "Shaded"
 	StencilColor "0 55 00"
 	Decal GreenBloodSplat
 	states

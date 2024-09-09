@@ -694,7 +694,7 @@ ACTOR BigFireBall Replaces Fatshot
 	+FORCEXYBILLBOARD
 	+THRUGHOST
 	+GHOST
-	RenderStyle Add
+	RenderStyle "Add"
 	DamageType Fire
 	ExplosionRadius 150
 	ExplosionDamage 8

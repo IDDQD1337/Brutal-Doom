@@ -699,7 +699,7 @@ ACTOR MarinePunch: BaronBall
 	+FORCEXYBILLBOARD
 	+THRUGHOST
 	+BLOODSPLATTER 
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.6
 	HitObituary "$OB_IMPHIT"
 	Obituary "$OB_IMPHIT"
@@ -826,7 +826,7 @@ Actor OrderTitle1
 	+THRUACTORS
 	+GHOST
 	+THRUGHOST
-	RenderStyle Add
+	RenderStyle "Add"
 	Scale 0.2
 	Speed 1
 	States

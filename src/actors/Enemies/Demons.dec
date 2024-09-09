@@ -1021,7 +1021,7 @@ ACTOR DemonAttack: BaronBall
 	+RIPPER
 	+FORCEXYBILLBOARD
 	+THRUGHOST
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.6
 	SeeSound "dsempty"
 	DeathSound "dsempty"

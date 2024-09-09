@@ -4,7 +4,7 @@ ACTOR Spectro: BullDemon Replaces Spectre
 	-FASTER
 	DropItem "DemonStrengthRune" 2
 	DropItem "SpectreBlurSphere" 12
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.45
 	speed 8
 	fastspeed 6

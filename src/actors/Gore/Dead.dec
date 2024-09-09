@@ -1708,7 +1708,7 @@ ACTOR SmallBloodPool2 Replaces SmallBloodPool
 	SpawnID 148
 	Radius 20
 	Height 1
-	RenderStyle none
+	RenderStyle "None"
 	+NOBLOCKMAP
 	+MOVEWITHSECTOR
 	+CLIENTSIDEONLY

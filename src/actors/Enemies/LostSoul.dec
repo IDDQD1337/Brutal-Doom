@@ -26,7 +26,7 @@ ACTOR TehLostSoul: LostSoul Replaces LostSoul
 	damagefactor "TeleportRemover", 0.0
 	DamageFactor "CauseSplash", 0.0 DamageFactor "CauseObjectsToSplashSlime", 0.0 DamageFactor "CauseObjectsToSplashNukage", 0.0
 	DamageFactor "CauseObjectsToSplashBlood", 0.0 DamageFactor "CauseObjectsToSplashLava", 0.0
-	RenderStyle Normal
+	renderstyle "Normal"
 	bloodcolor ""
 	+FLOAT +NOGRAVITY +DONTFALL +NOICEDEATH
 	+FORCEXYBILLBOARD
@@ -290,7 +290,7 @@ ACTOR SoulTrails
 	+MISSILE
 	+FORCEXYBILLBOARD
 	+CLIENTSIDEONLY
-	RenderStyle Add
+	RenderStyle "Add"
 	DamageType Flames
 	Scale 0.5
 	Alpha 0.6

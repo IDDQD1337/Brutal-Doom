@@ -3,7 +3,7 @@
 actor Brutal_Blood Replaces Blood
 {
 	Decal BrutalBloodSplat
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	+FORCEXYBILLBOARD
 	+GHOST
 	+NOBLOCKMAP
@@ -145,7 +145,7 @@ ACTOR Brutal_FlyingBlood
 	radius 8
 	height 1
 	Gravity 0.8
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.9
 	Decal BrutalBlood
 	Mass 1
@@ -219,7 +219,7 @@ actor Brutal_FlyingBloodTrail
 {
 	scale 0.5
 	mass 1
-	renderstyle Normal
+	renderstyle "Normal"
 	Decal None
 	+NOTELEPORT
 	+NOBLOCKMAP
@@ -276,7 +276,7 @@ ACTOR Brutal_FlyingBloodFake: Brutal_FlyingBloodTrail
 	scale 0.5
 	speed 3
 	Gravity 0.3
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.95
 	+NOCLIP
 	Mass 1
@@ -911,7 +911,7 @@ ACTOR WaterBloodSpot
 	+THRUACTORS
 	Radius 0
 	Height 0
-	Renderstyle Shaded
+	renderstyle "Shaded"
 	StencilColor "55 00 00"
 	Alpha 0.2
 	states
@@ -1012,7 +1012,7 @@ actor GrowingBloodPool: Brutal_BloodSpot
 	height 1
 	mass 1
 	Health 600
-	RenderStyle Normal
+	renderstyle "Normal"
 	Alpha 0.99
 	+NOTELEPORT
 	+FORCEXYBILLBOARD
@@ -1301,7 +1301,7 @@ actor CeilBloodSpot
 	Scale 0.5
 	Gravity 0.0
 	Decal BrutalBloodSplat
-	Renderstyle Normal
+	renderstyle "Normal"
 	Alpha 0.9
 	states
 	{
@@ -1643,7 +1643,7 @@ ACTOR Underblood1
 	radius 8
 	height 1
 	Gravity 0.9
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	Alpha 0.2
 	Decal BrutalBloodSplat
 	+MISSILE
@@ -1705,7 +1705,7 @@ actor SuperGore
 {
 	Decal BloodSplat
 	Alpha 0.6
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	+FORCEXYBILLBOARD
 	+GHOST
 	+NOBLOCKMAP
@@ -1785,7 +1785,7 @@ Actor SuperGoreSpawner
 	+MISSILE
 	+FORCEXYBILLBOARD
 	+THRUACTORS
-	Decal BloodSuper
+	Decal "BloodSuper"
 	radius 2
 	height 2
 	speed 15
@@ -1874,7 +1874,7 @@ ACTOR BootSmearerRed
 	+NOBLOCKMAP
 	+NOINTERACTION
 	+NOCLIP
-	RenderStyle none
+	RenderStyle "None"
 	Mass 0
 	Radius 0
 	Height 0
@@ -1968,7 +1968,7 @@ ACTOR RedBloodFootPrintRight: GrowingBloodPool
 actor DeadBlood
 {
 	Decal None
-	Renderstyle Translucent
+	RenderStyle "Translucent"
 	+FORCEXYBILLBOARD
 	+THRUACTORS
 	+CLIENTSIDEONLY

@@ -1140,7 +1140,7 @@ ACTOR REvenantAttack: BaronBall
 	+RANDOMIZE
 	+FORCEXYBILLBOARD
 	+THRUGHOST
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.6
 	Damage (random(15,15))
 	Speed 28

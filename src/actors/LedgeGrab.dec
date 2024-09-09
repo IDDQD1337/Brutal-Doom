@@ -6,6 +6,7 @@ Actor EdgeLord
 {
 	Radius 10
 	Height 28
+	RenderStyle "None"
 	States
 	{
 	Spawn:

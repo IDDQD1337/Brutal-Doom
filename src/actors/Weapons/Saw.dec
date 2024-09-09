@@ -511,7 +511,7 @@ ACTOR SawDamageHorizontal: FastProjectile
 	+FORCEXYBILLBOARD
 	+EXTREMEDEATH
 	+BLOODSPLATTER
-	RenderStyle none
+	RenderStyle "None"
 	Damage (random(5,6))
 	Speed 50
 	SeeSound "dsempty"

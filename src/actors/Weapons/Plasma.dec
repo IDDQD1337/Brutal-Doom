@@ -845,7 +845,7 @@ ACTOR Plasma_Ball: FastProjectile
 	damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood", 0.0 damagefactor "Taunt", 0.0 damagefactor "KillMe", 0.0 damagefactor "Shrapnel", 0.0
 	Health 5
 	Scale 1.0
-	renderstyle ADD
+	RenderStyle "Add"
 	alpha 0.99
 	DeathSound "Plasma/Impact"
 	//SeeSound "Plasma/Fire"

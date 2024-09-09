@@ -1336,7 +1336,7 @@ ACTOR ImpAttack: BaronBall
 	+FORCEXYBILLBOARD
 	+THRUGHOST
 	+BLOODSPLATTER 
-	RenderStyle none
+	RenderStyle "None"
 	+INVISIBLE
 	Alpha 0.6
 	HitObituary "$OB_IMPHIT"
@@ -1419,7 +1419,7 @@ ACTOR FireBall_ Replaces DoomImpBall
 	PROJECTILE
 	+THRUGHOST
 	+FORCEXYBILLBOARD
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 1
 	SeeSound "imp/attack"
 	DeathSound "imp/shotx"

@@ -14,7 +14,7 @@ ACTOR HitSides: FastProjectile
 	+FORCERADIUSDMG
 	+THRUGHOST
 	-NOCLIP
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 1
 	//DamageType Kick
 	States
@@ -261,7 +261,7 @@ ACTOR HitFrontTerminalSpeed: HitFront
 
 ACTOR SideBikeHitPuff: BulletPuff
 {
-	renderstyle Translucent
+	RenderStyle "Translucent"
 	scale 0.15
 	alpha 0.7
 	+NOBLOCKMAP
@@ -372,7 +372,7 @@ ACTOR CrashSparks
 	BounceFactor 0.5
 	Damage 0
 	alpha 1.0
-	renderstyle add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -391,7 +391,7 @@ ACTOR TireSmoke
 	Radius 0
 	Height 0
 	Alpha 0.4
-	RenderStyle Add
+	RenderStyle "Add"
 	Speed 1
 	Scale 2.0
 	+NOBLOCKMAP
@@ -797,7 +797,7 @@ ACTOR HitDetectionBase: FastProjectile
 	+FORCERADIUSDMG
 	+THRUGHOST
 	-NOCLIP
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 1
 	//DamageType Kick
 	States
@@ -859,7 +859,7 @@ ACTOR HelicopterHitDetectionGround: HitDetectionBase
 
 ACTOR HelicopterCrashPuff: BulletPuff
 {
-	renderstyle Translucent
+	RenderStyle "Translucent"
 	scale 0.15
 	alpha 0.7
 	+NOBLOCKMAP

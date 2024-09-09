@@ -6,7 +6,7 @@ ACTOR NaziKick: FastProjectile
 	Projectile 
 	+FORCEXYBILLBOARD
 	+NOEXTREMEDEATH
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.6
 	Damage 4
 	Speed 32
@@ -762,7 +762,7 @@ ACTOR BrutalWolfensteinXDeath
 	Scale 0.8
 	Speed 0
 	Mass 1
-	Decal BloodSuper
+	Decal "BloodSuper"
 	BounceFactor 0.5
 	+DOOMBOUNCE
 	+MISSILE

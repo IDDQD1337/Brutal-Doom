@@ -409,7 +409,7 @@ ACTOR ArchvileFire2 Replaces ArchvileFire
 	Game Doom
 	+NOBLOCKMAP +NOGRAVITY
 	+CLIENTSIDEONLY
-	RenderStyle Add
+	RenderStyle "Add"
 	States
 	{
 	Spawn:
@@ -530,8 +530,8 @@ ACTOR DyingArchvileNoArm: TehArchvile
 	States
 	{
 	Spawn:
-		TNT1 A 0
-		TNT1 A 0 A_FaceTarget
+		VID2 A 0
+		VID2 A 0 A_FaceTarget
 		VID2 KKKLLL 2 A_CustomMissile ("ArterialBlood22Big", 24, 0, random (0, 360), 2, random (0, 45))
 		VID2 KKKLLL 2 A_CustomMissile ("ArterialBlood22Big", 24, 0, random (0, 360), 2, random (0, 45))
 		VID2 KKKLLL 2 A_CustomMissile ("ArterialBlood22Big", 24, 0, random (0, 360), 2, random (0, 45))

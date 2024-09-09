@@ -13,7 +13,7 @@ Actor bd_Token : Inventory
 	Height 0
 	Alpha 0.0
 	Mass 0
-	RenderStyle none
+	RenderStyle "None"
 }
 
 ACTOR TokenCleaner : CustomInventory

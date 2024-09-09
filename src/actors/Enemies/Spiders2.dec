@@ -459,7 +459,7 @@ ACTOR PurplePlasmaBall: FastProjectile
 	DamageType Blackhole
 	Damage 0
 	Decal StunnerScorch
-	RenderStyle Add
+	RenderStyle "Add"
 	SeeSound "PAILGF3"
 	DeathSound "PAILGD3"
 	Projectile
@@ -492,7 +492,7 @@ ACTOR MarinePurplePlasmaBall: PurplePlasmaBall
 
 ACTOR IonPuff: BulletPuff
 {
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.95
 	+NOBLOCKMAP
 	+NOGRAVITY

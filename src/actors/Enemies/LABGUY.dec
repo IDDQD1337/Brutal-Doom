@@ -937,7 +937,7 @@ ACTOR ZombieAxeAttack
 	+FORCEXYBILLBOARD
 	+THRUGHOST
 	+BLOODSPLATTER
-	RenderStyle Add
+	RenderStyle "Add"
 	Alpha 0.6
 	HitObituary "$OB_IMPHIT"
 	Obituary "$OB_IMPHIT"
